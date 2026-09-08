@@ -35,8 +35,13 @@ OBSERVATIONS = (
     "net_electricity_consumption",
 )
 
-if str(SHARED_SITE_PACKAGES) not in sys.path:
-    sys.path.insert(0, str(SHARED_SITE_PACKAGES))
+# PySAM's macOS extension resolves its companion libraries relative to the
+# real ASCII runtime path.  Resolve the durable runtime symlink before adding
+# it to sys.path; keeping the project source under a non-ASCII Documents path
+# otherwise causes a native-loader crash.
+_SHARED_SITE_PACKAGES_REAL = SHARED_SITE_PACKAGES.resolve()
+if str(_SHARED_SITE_PACKAGES_REAL) not in sys.path:
+    sys.path.insert(0, str(_SHARED_SITE_PACKAGES_REAL))
 
 import pandas as pd  # noqa: E402
 import yaml  # noqa: E402

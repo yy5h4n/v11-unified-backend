@@ -1,0 +1,324 @@
+{
+  "active_native_work": true,
+  "active_soak_seconds": 600.3354911659844,
+  "completed_episodes": 2963,
+  "event_stream": "generated/episode_campaign_local_full/stability_measurement.events.jsonl",
+  "failed_episodes": 0,
+  "max_concurrent_episodes": 2,
+  "measurements": {
+    "active_soak_seconds": 600.3354911659844,
+    "max_concurrent_episodes": 2,
+    "queue_tasks": 30,
+    "wall_seconds_sum": 654.553638207959
+  },
+  "queue_completed": 30,
+  "queue_results": [
+    {
+      "error": null,
+      "job_id": 0,
+      "result_seed": 0,
+      "route": "d0_exogenous_context",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_r5j_5hfb",
+      "timed_out": false,
+      "wall_seconds": 0.005693333921954036
+    },
+    {
+      "error": null,
+      "job_id": 1,
+      "result_seed": 1,
+      "route": "d3_modelica_shared_heat",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_a3l3mpih",
+      "timed_out": false,
+      "wall_seconds": 0.01119145902339369
+    },
+    {
+      "error": null,
+      "job_id": 2,
+      "result_seed": 2,
+      "route": "d3_citylearn_multi_system",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_hyyoffzm",
+      "timed_out": false,
+      "wall_seconds": 3.8618094590492547
+    },
+    {
+      "error": null,
+      "job_id": 3,
+      "result_seed": 0,
+      "route": "d1_discrete_device_fault",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_cs3bwfxz",
+      "timed_out": false,
+      "wall_seconds": 0.023415207979269326
+    },
+    {
+      "error": null,
+      "job_id": 4,
+      "result_seed": 1,
+      "route": "d0_exogenous_context",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_j6oj54pz",
+      "timed_out": false,
+      "wall_seconds": 0.3073566249804571
+    },
+    {
+      "error": null,
+      "job_id": 5,
+      "result_seed": 2,
+      "route": "d3_modelica_shared_heat",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_06hoyuh1",
+      "timed_out": false,
+      "wall_seconds": 0.03975941601675004
+    },
+    {
+      "error": null,
+      "job_id": 6,
+      "result_seed": 0,
+      "route": "d3_citylearn_multi_system",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_qj_ohpt6",
+      "timed_out": false,
+      "wall_seconds": 3.4733159580500796
+    },
+    {
+      "error": null,
+      "job_id": 7,
+      "result_seed": 1,
+      "route": "d1_discrete_device_fault",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_xl_mt69g",
+      "timed_out": false,
+      "wall_seconds": 0.021563082933425903
+    },
+    {
+      "error": null,
+      "job_id": 8,
+      "result_seed": 2,
+      "route": "d0_exogenous_context",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_7sv0l4ct",
+      "timed_out": false,
+      "wall_seconds": 0.00017274997662752867
+    },
+    {
+      "error": null,
+      "job_id": 9,
+      "result_seed": 0,
+      "route": "d3_modelica_shared_heat",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_rqc_uyqo",
+      "timed_out": false,
+      "wall_seconds": 6.0125021263957024e-05
+    },
+    {
+      "error": null,
+      "job_id": 10,
+      "result_seed": 1,
+      "route": "d3_citylearn_multi_system",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_k3i364l_",
+      "timed_out": false,
+      "wall_seconds": 5.754106678068638e-05
+    },
+    {
+      "error": null,
+      "job_id": 11,
+      "result_seed": 2,
+      "route": "d1_discrete_device_fault",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_487yns_x",
+      "timed_out": false,
+      "wall_seconds": 0.00011550006456673145
+    },
+    {
+      "error": null,
+      "job_id": 12,
+      "result_seed": 0,
+      "route": "d0_exogenous_context",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_78yqjg9d",
+      "timed_out": false,
+      "wall_seconds": 2.7582980692386627e-05
+    },
+    {
+      "error": null,
+      "job_id": 13,
+      "result_seed": 1,
+      "route": "d3_modelica_shared_heat",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_n45ooqgi",
+      "timed_out": false,
+      "wall_seconds": 3.38749960064888e-05
+    },
+    {
+      "error": null,
+      "job_id": 14,
+      "result_seed": 2,
+      "route": "d3_citylearn_multi_system",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_38usch9d",
+      "timed_out": false,
+      "wall_seconds": 3.4762330839876086
+    },
+    {
+      "error": null,
+      "job_id": 15,
+      "result_seed": 0,
+      "route": "d1_discrete_device_fault",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_wjpxxmyj",
+      "timed_out": false,
+      "wall_seconds": 0.0002567500341683626
+    },
+    {
+      "error": null,
+      "job_id": 16,
+      "result_seed": 1,
+      "route": "d0_exogenous_context",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_21_j0q7p",
+      "timed_out": false,
+      "wall_seconds": 0.05843958305194974
+    },
+    {
+      "error": null,
+      "job_id": 17,
+      "result_seed": 2,
+      "route": "d3_modelica_shared_heat",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_opaa13dc",
+      "timed_out": false,
+      "wall_seconds": 0.24761924997437745
+    },
+    {
+      "error": null,
+      "job_id": 18,
+      "result_seed": 0,
+      "route": "d3_citylearn_multi_system",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_m2yylqdh",
+      "timed_out": false,
+      "wall_seconds": 3.837195958942175
+    },
+    {
+      "error": null,
+      "job_id": 19,
+      "result_seed": 1,
+      "route": "d1_discrete_device_fault",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_3g88r1cv",
+      "timed_out": false,
+      "wall_seconds": 0.01949725009035319
+    },
+    {
+      "error": null,
+      "job_id": 20,
+      "result_seed": 2,
+      "route": "d0_exogenous_context",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_h4knghh9",
+      "timed_out": false,
+      "wall_seconds": 0.047237624996341765
+    },
+    {
+      "error": null,
+      "job_id": 21,
+      "result_seed": 0,
+      "route": "d3_modelica_shared_heat",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_462jyalq",
+      "timed_out": false,
+      "wall_seconds": 0.23509645904414356
+    },
+    {
+      "error": null,
+      "job_id": 22,
+      "result_seed": 1,
+      "route": "d3_citylearn_multi_system",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_rxa6ov1m",
+      "timed_out": false,
+      "wall_seconds": 0.00018137507140636444
+    },
+    {
+      "error": null,
+      "job_id": 23,
+      "result_seed": 2,
+      "route": "d1_discrete_device_fault",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_rnzga4v9",
+      "timed_out": false,
+      "wall_seconds": 0.0001698751002550125
+    },
+    {
+      "error": null,
+      "job_id": 24,
+      "result_seed": 0,
+      "route": "d0_exogenous_context",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_2ewmdwu4",
+      "timed_out": false,
+      "wall_seconds": 3.26669542118907e-05
+    },
+    {
+      "error": null,
+      "job_id": 25,
+      "result_seed": 1,
+      "route": "d3_modelica_shared_heat",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_e_4vvqwz",
+      "timed_out": false,
+      "wall_seconds": 2.3625092580914497e-05
+    },
+    {
+      "error": null,
+      "job_id": 26,
+      "result_seed": 2,
+      "route": "d3_citylearn_multi_system",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_ocj0g6rh",
+      "timed_out": false,
+      "wall_seconds": 2.89316133398097
+    },
+    {
+      "error": null,
+      "job_id": 27,
+      "result_seed": 0,
+      "route": "d1_discrete_device_fault",
+      "seed": 0,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_pp8tkest",
+      "timed_out": false,
+      "wall_seconds": 0.00012854195665568113
+    },
+    {
+      "error": null,
+      "job_id": 28,
+      "result_seed": 1,
+      "route": "d0_exogenous_context",
+      "seed": 1,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_eblb5brq",
+      "timed_out": false,
+      "wall_seconds": 3.2542040571570396e-05
+    },
+    {
+      "error": null,
+      "job_id": 29,
+      "result_seed": 2,
+      "route": "d3_modelica_shared_heat",
+      "seed": 2,
+      "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/stability_sessions/v11_backend_sessions/episode_5i4j0xf5",
+      "timed_out": false,
+      "wall_seconds": 3.445800393819809e-05
+    }
+  ],
+  "queue_tasks": 30,
+  "resource_sampling": {
+    "rss_max_bytes": 1093582848,
+    "units": "bytes"
+  },
+  "schema": "v11.backend.stability.measurement.v3",
+  "status": "passed"
+}

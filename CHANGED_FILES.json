@@ -2,34 +2,34 @@
   "deleted": [],
   "entries": [
     {
-      "new_sha256": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
-      "old_sha256": "466edf0fb55633d521f22b2474e2b5c13f653e208e6360ed03fb4f4e77321e67",
-      "path": "unified_compiler/agent_interface.py",
-      "purpose": "third-round backend repair and evidence provenance"
-    },
-    {
-      "new_sha256": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3",
+      "new_sha256": "e4556ee61bae40111fce7845493d4275f29b87c8594952af35a05f59fd16f2b5",
       "old_sha256": null,
-      "path": "unified_compiler/route_registry.py",
+      "path": "BACKEND_PRODUCTION_REPAIR_REPORT.md",
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "df427823bf12a66d637db2ba2634df888770cae437701544dd63ce1e12a5864c",
-      "old_sha256": "31f397d807dec795722ab28f72bb6debcdc95186116c0bce78afcf32dcc46266",
-      "path": "unified_compiler/d2_closed_loop.py",
-      "purpose": "third-round backend repair and evidence provenance"
-    },
-    {
-      "new_sha256": "882bbe8074318856ad165a6ec5578ca5b2277cda868e35a62a3b8fad98fe951a",
+      "new_sha256": "1c710d9293aeaedde201304bba38d398f82c45bda5dfc77ae94e1032a495b686",
       "old_sha256": null,
-      "path": "unified_compiler/executor.py",
+      "path": "BACKEND_PUBLIC_PROTOCOL.md",
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "ab425d62cae7c3f3910d3192fe3b0bb57185faf9931b42a26fbdfe781028904a",
-      "old_sha256": "b53e85ce6f6124421019f6fc457a36c452c5dbaf4449409fa73b6dc0e77208a2",
-      "path": "unified_compiler/adapters/sustaingym_building.py",
+      "new_sha256": "0358a002db5d0e8dd1d2059c99f4956ee466c2cb9ecba08ec263290bfda7d328",
+      "old_sha256": null,
+      "path": "FDS_REPLAY_TARGET_SUPPLEMENT.md",
+      "purpose": "user-approved non-frozen FDS replay target supplement"
+    },
+    {
+      "new_sha256": "ce1e28a236a77a795584025938446af457ad56f4329b4d2ed5e447fb3122b567",
+      "old_sha256": null,
+      "path": "TEST_COMMANDS.json",
       "purpose": "third-round backend repair and evidence provenance"
+    },
+    {
+      "new_sha256": "10c710597948392b69930729a06a85c762ea5326edd9e8e6853f75407993fa48",
+      "old_sha256": null,
+      "path": "build_dynamic_mechanism_catalog.py",
+      "purpose": "current source manifest"
     },
     {
       "new_sha256": "fb1c0a8469057004d23f97224055933ec57ddf59873311114bb16a5eec178028",
@@ -44,10 +44,22 @@
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+      "new_sha256": "f23dbe105885b39916ca915fcc1a442c52168c4cf040b777df6a8d397c32b718",
       "old_sha256": null,
-      "path": "tools/backend_acceptance_runner.py",
-      "purpose": "third-round backend repair and evidence provenance"
+      "path": "d3_citylearn_coupling_adapter.py",
+      "purpose": "ASCII runtime-path fix for macOS native CityLearn/PySAM loader"
+    },
+    {
+      "new_sha256": "ae85a6b4e6b02c2eed53bad7c994fb312e7a38c6eb926fbe47847c93fb9fac58",
+      "old_sha256": null,
+      "path": "d3_energyplus_shared_ventilation_adapter.py",
+      "purpose": "unique native EnergyPlus model/output isolation per episode"
+    },
+    {
+      "new_sha256": "bf8c7e41da6f1cf445fd924cbb0aeba07171dfda2f06f10bd14db19fe5c2a6de",
+      "old_sha256": null,
+      "path": "probe_citylearn_battery_replay.py",
+      "purpose": "ASCII runtime-path fix for macOS native CityLearn/PySAM loader"
     },
     {
       "new_sha256": "6494d12ae58305cdd6d45c8a069cae473ed7bacad10625ac57780071111a6d2c",
@@ -68,58 +80,10 @@
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "1c710d9293aeaedde201304bba38d398f82c45bda5dfc77ae94e1032a495b686",
-      "old_sha256": null,
-      "path": "BACKEND_PUBLIC_PROTOCOL.md",
-      "purpose": "third-round backend repair and evidence provenance"
-    },
-    {
-      "new_sha256": "e4556ee61bae40111fce7845493d4275f29b87c8594952af35a05f59fd16f2b5",
-      "old_sha256": null,
-      "path": "BACKEND_PRODUCTION_REPAIR_REPORT.md",
-      "purpose": "third-round backend repair and evidence provenance"
-    },
-    {
-      "new_sha256": "d8c061512d71d1c95d4505fd5841a3c06e530f30ac01fd3765295db3d0eb12f9",
-      "old_sha256": null,
-      "path": "TEST_COMMANDS.json",
-      "purpose": "third-round backend repair and evidence provenance"
-    },
-    {
       "new_sha256": "eb948facf0e8a2fba13f129ca0f802df53661d37d040c6c6337dfbeac2d5f555",
       "old_sha256": "1393fe3757804531631f8b31bb6e00fc799950a6c61e3bb4a0c997461b18062b",
       "path": "tests/test_d2_fds_interactive.py",
       "purpose": "truthful FDS prefix-replay and online refusal regression"
-    },
-    {
-      "new_sha256": "1f5e3f9e5dc98890213f8fde2e07bec48a0873d2c0d1dfb1b8bfa0d200d63b11",
-      "old_sha256": null,
-      "path": "tools/probe_executor_limits.py",
-      "purpose": "executable worker cap, queue, timeout and reap probe"
-    },
-    {
-      "new_sha256": "ae85a6b4e6b02c2eed53bad7c994fb312e7a38c6eb926fbe47847c93fb9fac58",
-      "old_sha256": null,
-      "path": "d3_energyplus_shared_ventilation_adapter.py",
-      "purpose": "unique native EnergyPlus model/output isolation per episode"
-    },
-    {
-      "new_sha256": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
-      "old_sha256": null,
-      "path": "tools/run_episode_campaign.py",
-      "purpose": "three-seed full-horizon, lifecycle and concurrency campaign"
-    },
-    {
-      "new_sha256": "aaa5aad199b14989c09c801d5d6a8b557ee752b999c2a0028757cc2eb0aa76e2",
-      "old_sha256": null,
-      "path": "tools/run_causal_campaign.py",
-      "purpose": "same-prefix native causal divergence campaign"
-    },
-    {
-      "new_sha256": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
-      "old_sha256": null,
-      "path": "tools/run_stability_campaign.py",
-      "purpose": "30 mixed queue and 600-second active native stability campaign"
     },
     {
       "new_sha256": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
@@ -128,60 +92,90 @@
       "purpose": "fresh campaign evidence assembly and source-bound manifest"
     },
     {
-      "new_sha256": "0358a002db5d0e8dd1d2059c99f4956ee466c2cb9ecba08ec263290bfda7d328",
+      "new_sha256": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
       "old_sha256": null,
-      "path": "FDS_REPLAY_TARGET_SUPPLEMENT.md",
-      "purpose": "user-approved non-frozen FDS replay target supplement"
+      "path": "tools/backend_acceptance_runner.py",
+      "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "10c710597948392b69930729a06a85c762ea5326edd9e8e6853f75407993fa48",
-      "path": "build_dynamic_mechanism_catalog.py"
+      "new_sha256": "1705e92255af992584354e57f143747d90ac5757b322b859391b10b6cf21f142",
+      "old_sha256": null,
+      "path": "tools/build_v4_flash_offline_contracts.py",
+      "purpose": "current source manifest"
     },
     {
-      "new_sha256": "e6b86527c61fdb32242c077fb942d0dbe60cec974e2c87ae847f66cbf50d3f4c",
-      "path": "generated/dynamic_mechanism_catalog_v1.json"
+      "new_sha256": "6bf60475a605375822ac8cf85215695bcf886a11a36c4e1a934cec81066e31ac",
+      "old_sha256": null,
+      "path": "tools/local_preflight.py",
+      "purpose": "durable local runtime preflight and acceptance check"
     },
     {
-      "new_sha256": "430e26876271bff07f120c9d6e118b52bec2c800cd23804b4d7fc752533ea8a1",
-      "path": "generated/d3_agent_interface_v1.json"
+      "new_sha256": "1f5e3f9e5dc98890213f8fde2e07bec48a0873d2c0d1dfb1b8bfa0d200d63b11",
+      "old_sha256": null,
+      "path": "tools/probe_executor_limits.py",
+      "purpose": "executable worker cap, queue, timeout and reap probe"
     },
     {
-      "new_sha256": "beefe7704c5a66a2c1376cb2715e95fb69f0eef421fd0c0ac0907e6f64995250",
-      "path": "generated/agent_interface_d0_d1_v1.json"
+      "new_sha256": "71f7bb9e69060026d6fc76bed5b88802d0de5862c12adebcb58f11d5fa1a21c0",
+      "old_sha256": null,
+      "path": "tools/run_causal_campaign.py",
+      "purpose": "preserve complete causal evidence during campaign assembly"
     },
     {
-      "new_sha256": "354592372e118624918731f7fc0f7053bbbe4de942d79aed33d8cdb88f441028",
-      "path": "generated/d2_fds_v1/gate_report.json"
-    },
-    {
-      "new_sha256": "c560d2da903bf255f1d72e0cafbd4b7ace2451187461a65739bfba7988ffdb71",
-      "path": "generated/d2_closed_loop_v1/fds_smoke_fire.json"
+      "new_sha256": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+      "old_sha256": null,
+      "path": "tools/run_episode_campaign.py",
+      "purpose": "three-seed full-horizon, lifecycle and concurrency campaign"
     },
     {
       "new_sha256": "5436ab16050094757a63facf1325bd86ca014483abb5f974629db333f0a3faa0",
-      "path": "tools/run_episode_pilot_v1.py"
+      "old_sha256": null,
+      "path": "tools/run_episode_pilot_v1.py",
+      "purpose": "current source manifest"
     },
     {
-      "new_sha256": "68075f3d7fb5724ac4e2eb6d4b949c15806a85aa3b4a87ae78209b1cc6a79c4b",
-      "path": "PILOT_EPISODE_VALIDATION_REPORT.md"
+      "new_sha256": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+      "old_sha256": null,
+      "path": "tools/run_stability_campaign.py",
+      "purpose": "30 mixed queue and 600-second active native stability campaign"
     },
     {
-      "new_sha256": "b37783a0ec9e3c93c619e7ecdf9a9bfbcd73ac9c6d10400b42900b94b9a51646",
-      "path": "tools/run_v4_flash_all_backend_agent_pilot.py"
+      "new_sha256": "8aef0ca453fd1b7e972bc2ce469d784a189a966a6aa3e3c9ecd24e81cd2e4c0c",
+      "old_sha256": null,
+      "path": "tools/run_v4_flash_all_backend_agent_pilot.py",
+      "purpose": "current source manifest"
     },
     {
-      "new_sha256": "6b9724422718abfc5ebbdb04cea47b2af82ed819c364bd83e784ece6df43ae85",
-      "path": "V4_FLASH_ALL_BACKEND_AGENT_PILOT_REPORT.md"
+      "new_sha256": "ab425d62cae7c3f3910d3192fe3b0bb57185faf9931b42a26fbdfe781028904a",
+      "old_sha256": "b53e85ce6f6124421019f6fc457a36c452c5dbaf4449409fa73b6dc0e77208a2",
+      "path": "unified_compiler/adapters/sustaingym_building.py",
+      "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "09fab93d9f58227a1439c0c2e080e28bcc18e2503af3278d5cbd5d6adfc2b8cb",
-      "path": "tools/build_v4_flash_offline_contracts.py"
+      "new_sha256": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "old_sha256": "466edf0fb55633d521f22b2474e2b5c13f653e208e6360ed03fb4f4e77321e67",
+      "path": "unified_compiler/agent_interface.py",
+      "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "b0b36e67548b0f2cbabe1561e28dfd3ce5cd448ff8f5091e36bc19d8430c39dd",
-      "path": "V4_FLASH_OFFLINE_CONTRACT_REVIEW.md"
+      "new_sha256": "df427823bf12a66d637db2ba2634df888770cae437701544dd63ce1e12a5864c",
+      "old_sha256": "31f397d807dec795722ab28f72bb6debcdc95186116c0bce78afcf32dcc46266",
+      "path": "unified_compiler/d2_closed_loop.py",
+      "purpose": "third-round backend repair and evidence provenance"
+    },
+    {
+      "new_sha256": "882bbe8074318856ad165a6ec5578ca5b2277cda868e35a62a3b8fad98fe951a",
+      "old_sha256": null,
+      "path": "unified_compiler/executor.py",
+      "purpose": "third-round backend repair and evidence provenance"
+    },
+    {
+      "new_sha256": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3",
+      "old_sha256": null,
+      "path": "unified_compiler/route_registry.py",
+      "purpose": "third-round backend repair and evidence provenance"
     }
   ],
-  "evidence_directory": "generated/backend_acceptance_v1",
+  "evidence_directory": "acceptance/backend_acceptance_local_final",
   "schema": "v11.backend.changed_files.v1"
 }

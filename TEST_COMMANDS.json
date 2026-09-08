@@ -8,7 +8,8 @@
     {"name": "episode_campaign", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign --timeout 900"},
     {"name": "causal_campaign", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_causal_campaign.py --campaign-dir generated/episode_campaign"},
     {"name": "stability_campaign", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_stability_campaign.py --output generated/episode_campaign/stability_measurement.json --active-seconds 600 --queue-tasks 30"},
-    {"name": "acceptance_check", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir acceptance/backend_acceptance_round11_final"}
+    {"name": "local_preflight", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/local_preflight.py --strict"},
+    {"name": "acceptance_check", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir acceptance/backend_acceptance_local_final"}
   ],
   "external_runtime_note": "Native simulator binaries and the pinned EV2Gym runtime are documented in RUNTIME_DEPENDENCIES.md and are not vendored."
 }

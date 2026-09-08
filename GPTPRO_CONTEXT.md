@@ -5,16 +5,17 @@ before reading individual adapters.
 
 ## Source of truth
 
-The durable source tree is this directory. The accepted local runtime checkout
-that produced the evidence was `/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler`;
-that path is temporary and may be deleted by the operating system. The source
-files in this directory were copied from its final Round 11 state. Native
-simulator binaries, model packs, and generated campaign history are external
-dependencies and are described in `RUNTIME_DEPENDENCIES.md`.
+The durable source tree is this directory. The current local acceptance was
+rerun from this Documents checkout. Native simulator binaries, model packs,
+and generated campaign history are external dependencies; on this Mac their
+runtime mounts resolve to the durable ASCII-path checkout under
+`/Users/shanyingyu/DRPIE/...`, as described in `RUNTIME_DEPENDENCIES.md`.
+The old `/private/tmp/v11-production-repair/...` checkout is historical and
+must not be used as the local source of truth.
 
 The final evidence package is under
-`acceptance/backend_acceptance_round11_final/`. It is provenance evidence, not
-a substitute for installing native runtimes on another host.
+`acceptance/backend_acceptance_local_final/`. It is fresh local provenance
+evidence, not a substitute for installing native runtimes on another host.
 
 The repository is intentionally layered: current operating and acceptance
 documents stay at the root and the final review material is under `docs/`.
@@ -23,12 +24,13 @@ they cannot be mistaken for a second implementation.
 
 ## What passed
 
-The local Astra acceptance passed the agreed Episode-generation gate for all 15
+The local acceptance passed the agreed Episode-generation gate for all 15
 route records. The gate included full declared horizons, mechanism checks,
 reset/close cycles, paired concurrency, queue work, active stability work,
 source bindings, and negative evidence checks. The final review is in
-`docs/ASTRA_ROUND11_FINAL_REVIEW.md`; the repair history and earlier defects
-are in `docs/`.
+`docs/ASTRA_ROUND11_FINAL_REVIEW.md`; the fresh package is
+`acceptance/backend_acceptance_local_final/`, and the repair history and
+earlier defects are in `docs/`.
 
 ## Capability boundaries that must remain visible
 
@@ -55,6 +57,8 @@ are in `docs/`.
 - `tools/run_episode_campaign.py`: full-horizon, lifecycle, concurrency and
   causal campaign runner.
 - `tools/backend_acceptance_runner.py`: fail-closed acceptance checker.
+- `tools/local_preflight.py`: fast fail-closed check for this durable Mac
+  checkout and its mounted native runtimes.
 - `tests/`: protocol and regression tests.
 
 ## Python file layout
@@ -76,12 +80,19 @@ follows:
 
 ## Reproduction
 
-With the external runtimes mounted, run:
+Before every local campaign, run:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python \
+  tools/local_preflight.py --strict
+```
+
+The current evidence package can then be checked with:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python \
   tools/backend_acceptance_runner.py --check \
-  --output-dir acceptance/backend_acceptance_round11_final
+  --output-dir acceptance/backend_acceptance_local_final
 ```
 
 Do not treat `READY_FOR_ASTRA` in an old copied package as proof for changed

@@ -1,7 +1,0 @@
-{
-  "campaign_dir": "generated/episode_campaign_round11_all",
-  "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign_round11_all --timeout 900",
-  "python": "/opt/anaconda3/bin/python",
-  "route_count": 15,
-  "schema": "v11.backend.runtime_manifest.v1"
-}

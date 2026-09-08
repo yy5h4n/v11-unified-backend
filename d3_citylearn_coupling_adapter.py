@@ -365,7 +365,7 @@ def _require_assets(building_id: str) -> dict[str, Any]:
 def _load_data_prerequisites() -> tuple[Any, Any, Any, Any]:
     # Keep the adapter usable from both the v10 venv and the repository's
     # system Python.  The pinned v5 bootstrap resolves CityLearn itself.
-    shared_site_packages = ROOT / "shared_runtime" / "site-packages"
+    shared_site_packages = (ROOT / "shared_runtime" / "site-packages").resolve()
     if str(shared_site_packages) not in sys.path:
         sys.path.insert(0, str(shared_site_packages))
     bootstrap = V5_ROOT / "runtime_bootstrap.py"

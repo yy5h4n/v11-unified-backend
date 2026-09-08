@@ -1,0 +1,3626 @@
+{
+  "campaign": {
+    "causal": {
+      "branches": [
+        {
+          "action": 0.0,
+          "branch": 0,
+          "native_effect": null,
+          "observation": {
+            "heater_heat_flow_w": 0.0,
+            "room_a_relative_humidity_pct": 69.20281817882099,
+            "room_a_temperature_c": 20.0,
+            "room_b_relative_humidity_pct": 69.20281817882099,
+            "room_b_temperature_c": 20.0
+          },
+          "prefix_observation": {
+            "heater_heat_flow_w": 0.0,
+            "room_a_relative_humidity_pct": 69.20281817882099,
+            "room_a_temperature_c": 20.0,
+            "room_b_relative_humidity_pct": 69.20281817882099,
+            "room_b_temperature_c": 20.0
+          },
+          "prefix_time": 60.0,
+          "time": 480.0,
+          "trace": [
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 120.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 180.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 240.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 300.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 360.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 420.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 0.0,
+                "room_a_relative_humidity_pct": 69.20281817882099,
+                "room_a_temperature_c": 20.0,
+                "room_b_relative_humidity_pct": 69.20281817882099,
+                "room_b_temperature_c": 20.0
+              },
+              "time_seconds": 480.0
+            }
+          ]
+        },
+        {
+          "action": 1.0,
+          "branch": 1,
+          "native_effect": null,
+          "observation": {
+            "heater_heat_flow_w": 2000.0,
+            "room_a_relative_humidity_pct": 48.85408889108128,
+            "room_a_temperature_c": 25.749732226756294,
+            "room_b_relative_humidity_pct": 43.64666124562551,
+            "room_b_temperature_c": 27.666309635675077
+          },
+          "prefix_observation": {
+            "heater_heat_flow_w": 0.0,
+            "room_a_relative_humidity_pct": 69.20281817882099,
+            "room_a_temperature_c": 20.0,
+            "room_b_relative_humidity_pct": 69.20281817882099,
+            "room_b_temperature_c": 20.0
+          },
+          "prefix_time": 60.0,
+          "time": 480.0,
+          "trace": [
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 65.7821782582952,
+                "room_a_temperature_c": 20.821390318108058,
+                "room_b_relative_humidity_pct": 64.68458974199002,
+                "room_b_temperature_c": 21.095187090810725
+              },
+              "time_seconds": 120.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 62.55072095215708,
+                "room_a_temperature_c": 21.642780636216116,
+                "room_b_relative_humidity_pct": 60.495805980901416,
+                "room_b_temperature_c": 22.19037418162145
+              },
+              "time_seconds": 180.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 59.49694485576141,
+                "room_a_temperature_c": 22.464170954324118,
+                "room_b_relative_humidity_pct": 56.61010763777187,
+                "room_b_temperature_c": 23.285561272432176
+              },
+              "time_seconds": 240.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 56.61010763777187,
+                "room_a_temperature_c": 23.285561272432176,
+                "room_b_relative_humidity_pct": 53.00342121682932,
+                "room_b_temperature_c": 24.3807483632429
+              },
+              "time_seconds": 300.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 53.88017216416709,
+                "room_a_temperature_c": 24.106951590540234,
+                "room_b_relative_humidity_pct": 49.65374615821478,
+                "room_b_temperature_c": 25.475935454053626
+              },
+              "time_seconds": 360.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 51.2977567043404,
+                "room_a_temperature_c": 24.928341908648292,
+                "room_b_relative_humidity_pct": 46.54096313408682,
+                "room_b_temperature_c": 26.57112254486435
+              },
+              "time_seconds": 420.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "heater_heat_flow_w": 2000.0,
+                "room_a_relative_humidity_pct": 48.85408889108128,
+                "room_a_temperature_c": 25.749732226756294,
+                "room_b_relative_humidity_pct": 43.64666124562551,
+                "room_b_temperature_c": 27.666309635675077
+              },
+              "time_seconds": 480.0
+            }
+          ]
+        }
+      ],
+      "episode_ready": true,
+      "future_leakage_check": true,
+      "mechanism_gate": true,
+      "same_prefix_divergence": true
+    },
+    "concurrency": {
+      "distinct_action_controls": true,
+      "episodes": 2,
+      "pairs": [
+        {
+          "concurrent": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 3600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/modelica_buildings_aixlib_sessions/v11_backend_sessions/episode_yxe3bq9p",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "heater_heat_flow_w": 0.0,
+                  "room_a_relative_humidity_pct": 69.20281817882099,
+                  "room_a_temperature_c": 20.0,
+                  "room_b_relative_humidity_pct": 69.20281817882099,
+                  "room_b_temperature_c": 20.0
+                },
+                "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+                "time_seconds": 60.0
+              },
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "heater_heat_flow_w": 0.0,
+                  "room_a_relative_humidity_pct": 69.20281817882099,
+                  "room_a_temperature_c": 20.0,
+                  "room_b_relative_humidity_pct": 69.20281817882099,
+                  "room_b_temperature_c": 20.0
+                },
+                "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.022435665945522487,
+            "worker_pid": 51065
+          },
+          "serial": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 3600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "heater_heat_flow_w": 0.0,
+                  "room_a_relative_humidity_pct": 69.20281817882099,
+                  "room_a_temperature_c": 20.0,
+                  "room_b_relative_humidity_pct": 69.20281817882099,
+                  "room_b_temperature_c": 20.0
+                },
+                "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+                "time_seconds": 60.0
+              },
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "heater_heat_flow_w": 0.0,
+                  "room_a_relative_humidity_pct": 69.20281817882099,
+                  "room_a_temperature_c": 20.0,
+                  "room_b_relative_humidity_pct": 69.20281817882099,
+                  "room_b_temperature_c": 20.0
+                },
+                "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.021935083088465035,
+            "worker_pid": 46237
+          }
+        },
+        {
+          "concurrent": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 3600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/episode_campaign_local_full/modelica_buildings_aixlib_sessions/v11_backend_sessions/episode_pmwdzzbc",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "heater_heat_flow_w": 2000.0,
+                  "room_a_relative_humidity_pct": 65.7821782582952,
+                  "room_a_temperature_c": 20.821390318108058,
+                  "room_b_relative_humidity_pct": 64.68458974199002,
+                  "room_b_temperature_c": 21.095187090810725
+                },
+                "observation_digest": "a43ef775ff7ab64cca1f9b55436f2862a560657ea611ec543fb14d0e42c53b38",
+                "time_seconds": 60.0
+              },
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "heater_heat_flow_w": 2000.0,
+                  "room_a_relative_humidity_pct": 62.55072095215708,
+                  "room_a_temperature_c": 21.642780636216116,
+                  "room_b_relative_humidity_pct": 60.495805980901416,
+                  "room_b_temperature_c": 22.19037418162145
+                },
+                "observation_digest": "b2c6c2a0a7e542ce2017412d3f4694d247baa741c4d6d92ae07434d5540ce87f",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.02095300005748868,
+            "worker_pid": 51066
+          },
+          "serial": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 3600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "heater_heat_flow_w": 2000.0,
+                  "room_a_relative_humidity_pct": 65.7821782582952,
+                  "room_a_temperature_c": 20.821390318108058,
+                  "room_b_relative_humidity_pct": 64.68458974199002,
+                  "room_b_temperature_c": 21.095187090810725
+                },
+                "observation_digest": "a43ef775ff7ab64cca1f9b55436f2862a560657ea611ec543fb14d0e42c53b38",
+                "time_seconds": 60.0
+              },
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "heater_heat_flow_w": 2000.0,
+                  "room_a_relative_humidity_pct": 62.55072095215708,
+                  "room_a_temperature_c": 21.642780636216116,
+                  "room_b_relative_humidity_pct": 60.495805980901416,
+                  "room_b_temperature_c": 22.19037418162145
+                },
+                "observation_digest": "b2c6c2a0a7e542ce2017412d3f4694d247baa741c4d6d92ae07434d5540ce87f",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.021406874991953373,
+            "worker_pid": 46237
+          }
+        }
+      ],
+      "serial_match": true
+    },
+    "cycles": [
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_vzffigek",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02237645792774856
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_wld9qjx5",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02208191598765552
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_apq6dfqk",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02285729197319597
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_ilon7dz9",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02206945896614343
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_6rtyvmt5",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.022350125014781952
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_ss_qwuy2",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02266087499447167
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_yi4we54f",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.022302874946035445
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_hbrqwupg",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.022176917060278356
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_csx_lt4p",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.022094290936365724
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/Users/shanyingyu/Documents/ChatGPT/[iclr] \u5bb6\u5c45/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_ndt6h96i",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 46237,
+          "rss_bytes": 905199616,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.02179975004401058
+      }
+    ],
+    "execution_started_monotonic": 747427.787608583,
+    "metadata": {
+      "accepted_dt_seconds": [
+        60.0
+      ],
+      "cadence_seconds": 60.0,
+      "execution_mode": "process_isolated",
+      "horizon_seconds": 3600.0,
+      "layer": "D2",
+      "native_time_unit": "seconds",
+      "route_id": "modelica_buildings_aixlib",
+      "termination": "native_or_3600s_truncation"
+    },
+    "reset_close_cycles": 10,
+    "route_id": "modelica_buildings_aixlib",
+    "schema": "v11.backend.episode.campaign.v2",
+    "seed_runs": [
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 3600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 3600.0,
+        "seed": 0,
+        "session_dir": "",
+        "steps": 60,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 69.20281817882099,
+              "room_a_temperature_c": 20.0,
+              "room_b_relative_humidity_pct": 69.20281817882099,
+              "room_b_temperature_c": 20.0
+            },
+            "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+            "time_seconds": 60.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "a43ef775ff7ab64cca1f9b55436f2862a560657ea611ec543fb14d0e42c53b38",
+            "time_seconds": 120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "036432dfcc937a00268cda635886688d241e5689090e498c3cfb37048b7d2ddd",
+            "time_seconds": 180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "b2c6c2a0a7e542ce2017412d3f4694d247baa741c4d6d92ae07434d5540ce87f",
+            "time_seconds": 240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "191aa35e9c958e9bb15671556bf4bf924d60e95883e227565561de72c4f554ac",
+            "time_seconds": 300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "66d0fbade6abc98f459f8e06243cdb51149413ff2f8e256da79c091cbf2f33c5",
+            "time_seconds": 360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "eebef99eb3984a6b4df1ac94ba42182f3b61dac7fff94f2ce105f4accc18a9ed",
+            "time_seconds": 420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "c0b78a604f02ac4648bf5bf293f00d85205c2ce36676c0e91af1e3ced039d6c9",
+            "time_seconds": 480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "28ce28090b526028ee10da48641cb9b74a5736d44e4552ca4cb4404c81f952b4",
+            "time_seconds": 540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "792b6b90d05058fc4d55ccd1c1f36aa8cd8871627bd38971b7eaa4604cbcd3bd",
+            "time_seconds": 600.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "08e0117e30116a6e3801f410cd0f455baa1cd71e76db3d421c0ab85580b2314c",
+            "time_seconds": 660.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "e0794f3897293975306d7414c2d76176d197f6145d734d366e0ce3f95ea879ef",
+            "time_seconds": 720.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "fc9c914062b868057c3d0d58dab71c4279be22bc4285f70c488cdde3b04e11c1",
+            "time_seconds": 780.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "c99a030b6b49197e5bdcfbb171bcb77f6aac6c0957b79a7d523d89b468ecd619",
+            "time_seconds": 840.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "06d1dbf3b5c1abd295c8031cafb0010ec7a4425e8c03d43ac8b68db163c6e657",
+            "time_seconds": 900.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "13f0f23527f5fcd4d4c87733295cbd46dd10ae96f42bd7a37ebdc81152e6d279",
+            "time_seconds": 960.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "a3e62a13471fcdb60f72b58db85095770ed5e14410fb9c34d2d324ac67a55a4c",
+            "time_seconds": 1020.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "720c0522c7c96bc6226984b31ae056bd165d1fbb877235eee989a48b43fd5452",
+            "time_seconds": 1080.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "a28e38e485af23222d47403e4bf3ea5f7e98aebd03b9cc8809816c63df193600",
+            "time_seconds": 1140.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "b9cd03bb135a1b0487d28121b0824704886c1974dc3252a377fadff196f61046",
+            "time_seconds": 1200.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "0cedb3e9e3e5e337e64bb0de2ba1b492d957aa70dba62ec60d4a34498eecc68c",
+            "time_seconds": 1260.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "ce0a47fa962643ab5ad61c07cf1e9d00e833ba2fc54af6f914a5ddda0028f3c2",
+            "time_seconds": 1320.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "c133c3dabb62ef50e7bcf48e47582195247b13a5c8f788f60a0e09e56ac277f3",
+            "time_seconds": 1380.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 23,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "458d77fd896e2b3c1233f13e9c39594f4f15abaea43340db92172ba3fdf931d1",
+            "time_seconds": 1440.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 24,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "55789719f2ea462543bb7be5c3338ffa7108602c3088477d96668178a0c850e9",
+            "time_seconds": 1500.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 25,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "15e6d29732bebb3723f5f111b0b92831e24059fc1c0499453593fdb06788b059",
+            "time_seconds": 1560.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 26,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "7c11cf5301b2974e638f51191399af0716cc9e0677689a44c36948deff8522ed",
+            "time_seconds": 1620.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 27,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "6b7fda20c5e9db180e23e5280bb3a5ed8491137b85e5d8d1cdbd3d857fe6e1ec",
+            "time_seconds": 1680.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 28,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "0602e73b2306884ef1402f577e1cd5150d5e3a3632be2fbcfaa49adf44f290be",
+            "time_seconds": 1740.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 29,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "c95255cae5d475b8768a06d8587185f5b797253deff7a42136ee8622284ae108",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 30,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "69a21894ca534761cfb19169c6881d04ff5b3cc2092926487a1b631e84d53a05",
+            "time_seconds": 1860.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 31,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "d4fb62365531a1561c483c646f45d358114bb937ac91edf8b7c07f68bb7edde0",
+            "time_seconds": 1920.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 32,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "da67c677e7aaca07f5301a433192facf522b9f73f17ba2123493911d73866d79",
+            "time_seconds": 1980.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 33,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "cc4a5480765550ce815ed4dc82a2be83611a8053aa66aff3296f2c3c1c23725e",
+            "time_seconds": 2040.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 34,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "4689d3831fdc9199e8316f6c38cfd6b8a9a322fb7ad4b20e9440bc45b9bbddc9",
+            "time_seconds": 2100.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 35,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "a32ab74f1f8d754ed1332b1e5b5750fb48636f34be257e8a93951bc0c37fc3d3",
+            "time_seconds": 2160.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 36,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "129f1e8ccf35f5a96faac417ba42c0c44b230fed8451247ac79185c6b20d689e",
+            "time_seconds": 2220.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 37,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "80b4624be5bf76b51c64c2a53384f69734a2a7e29345012e93e36e3f31cfe5ea",
+            "time_seconds": 2280.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 38,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "ea4accd10ed84446d09958fbac592d4b392cbf114f88736f1438dd59356aacd0",
+            "time_seconds": 2340.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 39,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "ef8f9308c8b0d061f73d770bab03d4e6755229ff25a962146cc37afd7247b657",
+            "time_seconds": 2400.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 40,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "a21df70ec99d51825a8a7f219f406567cd36c3eef4d9649a107a4c10a779d18a",
+            "time_seconds": 2460.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 41,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "cf7db6714b6e481c07cda37becd8586a3fa87a9561b04ec21e89b7e4d6d739da",
+            "time_seconds": 2520.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 42,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "642779501287ab0abf0e89e401f0704738df230f19289606ea3a7d48ed47718e",
+            "time_seconds": 2580.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 43,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "d266288e582a38e7433f88e4e6d82f347db22b9714cf346c33e48aada919d385",
+            "time_seconds": 2640.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 44,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "202251ef6405f8d7063900ee0842e10840021bcdf8f85b200eaa75cfbe0a19fe",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 45,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "b8331cc39ee0aa2aec1f1c67827d27115599de76d36a733d35fae6e2cecf5b7b",
+            "time_seconds": 2760.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 46,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "5a8531ce41f9a40818638fe2da4c54c28326883948358b05a5684c4fe9d5f553",
+            "time_seconds": 2820.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 47,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "ef3def48637226c0a7048bcb35a5784d2d9a694cd766c25f9b48f88ad5f16ca9",
+            "time_seconds": 2880.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 48,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "cfd8fd9ff4c4662692e6b545fdf7e71945c91a4830bc9d57b1f1a1de57031dcc",
+            "time_seconds": 2940.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 49,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "46b266729158d629b411110e826211ca873e6a5359bb002eb6423b94069630fa",
+            "time_seconds": 3000.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 50,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "b6bf76532dff42dbfb02b180a85938f2f2ddd85ccb79362904ee79bdbb242598",
+            "time_seconds": 3060.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 51,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "f4fd66cebf76b3181223dba0166cbb9adfa6a7ebe07bef1719064ecf9319fa93",
+            "time_seconds": 3120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 52,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "2b916035ec86164cfffd3ead8d5c7df0530d707b218774fc3e3c391e1847d167",
+            "time_seconds": 3180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 53,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "a919d73bb207022c449865b1528d93d4fc3f5ca3e2923593783b7665950da548",
+            "time_seconds": 3240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 54,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "97b0f1a19696483cfd27ec65fe8a8a342a28f50e056d11ed97d11bd92736f2ed",
+            "time_seconds": 3300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 55,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "b91c863b37e31969a7fbe438a6b65ad97ad153f61daf119bda49773e7f7fd305",
+            "time_seconds": 3360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 56,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "c2e428ebf0eea7c7ae1e8eff504952d6da223469000509b78bffb0fd461ca90e",
+            "time_seconds": 3420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 57,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "4cd4029f40fa5d1baf9cdfa15d1c6520366e692893cbff255e6c240f945bc1fd",
+            "time_seconds": 3480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 58,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "25d4866775f9e28488c5dbb8f639939e4175dfbc8a08b66900344593440c9bbc",
+            "time_seconds": 3540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 59,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.196201406297398,
+              "room_a_temperature_c": 44.64170954324129,
+              "room_b_relative_humidity_pct": 11.394163110617486,
+              "room_b_temperature_c": 52.855612724321645
+            },
+            "observation_digest": "4bf0530bacc769ac3d507834756155910909fb014cdf0f3554176d95b236a2d9",
+            "time_seconds": 3600.0
+          }
+        ],
+        "wall_seconds": 0.09336829197127372,
+        "worker_pid": 46237
+      },
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 3600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 3600.0,
+        "seed": 1,
+        "session_dir": "",
+        "steps": 60,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 69.20281817882099,
+              "room_a_temperature_c": 20.0,
+              "room_b_relative_humidity_pct": 69.20281817882099,
+              "room_b_temperature_c": 20.0
+            },
+            "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+            "time_seconds": 60.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "a43ef775ff7ab64cca1f9b55436f2862a560657ea611ec543fb14d0e42c53b38",
+            "time_seconds": 120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "036432dfcc937a00268cda635886688d241e5689090e498c3cfb37048b7d2ddd",
+            "time_seconds": 180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "b2c6c2a0a7e542ce2017412d3f4694d247baa741c4d6d92ae07434d5540ce87f",
+            "time_seconds": 240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "191aa35e9c958e9bb15671556bf4bf924d60e95883e227565561de72c4f554ac",
+            "time_seconds": 300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "66d0fbade6abc98f459f8e06243cdb51149413ff2f8e256da79c091cbf2f33c5",
+            "time_seconds": 360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "eebef99eb3984a6b4df1ac94ba42182f3b61dac7fff94f2ce105f4accc18a9ed",
+            "time_seconds": 420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "c0b78a604f02ac4648bf5bf293f00d85205c2ce36676c0e91af1e3ced039d6c9",
+            "time_seconds": 480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "28ce28090b526028ee10da48641cb9b74a5736d44e4552ca4cb4404c81f952b4",
+            "time_seconds": 540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "792b6b90d05058fc4d55ccd1c1f36aa8cd8871627bd38971b7eaa4604cbcd3bd",
+            "time_seconds": 600.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "08e0117e30116a6e3801f410cd0f455baa1cd71e76db3d421c0ab85580b2314c",
+            "time_seconds": 660.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "e0794f3897293975306d7414c2d76176d197f6145d734d366e0ce3f95ea879ef",
+            "time_seconds": 720.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "fc9c914062b868057c3d0d58dab71c4279be22bc4285f70c488cdde3b04e11c1",
+            "time_seconds": 780.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "c99a030b6b49197e5bdcfbb171bcb77f6aac6c0957b79a7d523d89b468ecd619",
+            "time_seconds": 840.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "06d1dbf3b5c1abd295c8031cafb0010ec7a4425e8c03d43ac8b68db163c6e657",
+            "time_seconds": 900.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "13f0f23527f5fcd4d4c87733295cbd46dd10ae96f42bd7a37ebdc81152e6d279",
+            "time_seconds": 960.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "a3e62a13471fcdb60f72b58db85095770ed5e14410fb9c34d2d324ac67a55a4c",
+            "time_seconds": 1020.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "720c0522c7c96bc6226984b31ae056bd165d1fbb877235eee989a48b43fd5452",
+            "time_seconds": 1080.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "a28e38e485af23222d47403e4bf3ea5f7e98aebd03b9cc8809816c63df193600",
+            "time_seconds": 1140.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "b9cd03bb135a1b0487d28121b0824704886c1974dc3252a377fadff196f61046",
+            "time_seconds": 1200.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "0cedb3e9e3e5e337e64bb0de2ba1b492d957aa70dba62ec60d4a34498eecc68c",
+            "time_seconds": 1260.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "ce0a47fa962643ab5ad61c07cf1e9d00e833ba2fc54af6f914a5ddda0028f3c2",
+            "time_seconds": 1320.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "c133c3dabb62ef50e7bcf48e47582195247b13a5c8f788f60a0e09e56ac277f3",
+            "time_seconds": 1380.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 23,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "458d77fd896e2b3c1233f13e9c39594f4f15abaea43340db92172ba3fdf931d1",
+            "time_seconds": 1440.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 24,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "55789719f2ea462543bb7be5c3338ffa7108602c3088477d96668178a0c850e9",
+            "time_seconds": 1500.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 25,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "15e6d29732bebb3723f5f111b0b92831e24059fc1c0499453593fdb06788b059",
+            "time_seconds": 1560.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 26,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "7c11cf5301b2974e638f51191399af0716cc9e0677689a44c36948deff8522ed",
+            "time_seconds": 1620.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 27,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "6b7fda20c5e9db180e23e5280bb3a5ed8491137b85e5d8d1cdbd3d857fe6e1ec",
+            "time_seconds": 1680.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 28,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "0602e73b2306884ef1402f577e1cd5150d5e3a3632be2fbcfaa49adf44f290be",
+            "time_seconds": 1740.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 29,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "c95255cae5d475b8768a06d8587185f5b797253deff7a42136ee8622284ae108",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 30,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "69a21894ca534761cfb19169c6881d04ff5b3cc2092926487a1b631e84d53a05",
+            "time_seconds": 1860.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 31,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "d4fb62365531a1561c483c646f45d358114bb937ac91edf8b7c07f68bb7edde0",
+            "time_seconds": 1920.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 32,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "da67c677e7aaca07f5301a433192facf522b9f73f17ba2123493911d73866d79",
+            "time_seconds": 1980.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 33,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "cc4a5480765550ce815ed4dc82a2be83611a8053aa66aff3296f2c3c1c23725e",
+            "time_seconds": 2040.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 34,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "4689d3831fdc9199e8316f6c38cfd6b8a9a322fb7ad4b20e9440bc45b9bbddc9",
+            "time_seconds": 2100.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 35,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "a32ab74f1f8d754ed1332b1e5b5750fb48636f34be257e8a93951bc0c37fc3d3",
+            "time_seconds": 2160.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 36,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "129f1e8ccf35f5a96faac417ba42c0c44b230fed8451247ac79185c6b20d689e",
+            "time_seconds": 2220.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 37,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "80b4624be5bf76b51c64c2a53384f69734a2a7e29345012e93e36e3f31cfe5ea",
+            "time_seconds": 2280.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 38,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "ea4accd10ed84446d09958fbac592d4b392cbf114f88736f1438dd59356aacd0",
+            "time_seconds": 2340.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 39,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "ef8f9308c8b0d061f73d770bab03d4e6755229ff25a962146cc37afd7247b657",
+            "time_seconds": 2400.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 40,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "a21df70ec99d51825a8a7f219f406567cd36c3eef4d9649a107a4c10a779d18a",
+            "time_seconds": 2460.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 41,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "cf7db6714b6e481c07cda37becd8586a3fa87a9561b04ec21e89b7e4d6d739da",
+            "time_seconds": 2520.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 42,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "642779501287ab0abf0e89e401f0704738df230f19289606ea3a7d48ed47718e",
+            "time_seconds": 2580.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 43,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "d266288e582a38e7433f88e4e6d82f347db22b9714cf346c33e48aada919d385",
+            "time_seconds": 2640.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 44,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "202251ef6405f8d7063900ee0842e10840021bcdf8f85b200eaa75cfbe0a19fe",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 45,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "b8331cc39ee0aa2aec1f1c67827d27115599de76d36a733d35fae6e2cecf5b7b",
+            "time_seconds": 2760.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 46,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "5a8531ce41f9a40818638fe2da4c54c28326883948358b05a5684c4fe9d5f553",
+            "time_seconds": 2820.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 47,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "ef3def48637226c0a7048bcb35a5784d2d9a694cd766c25f9b48f88ad5f16ca9",
+            "time_seconds": 2880.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 48,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "cfd8fd9ff4c4662692e6b545fdf7e71945c91a4830bc9d57b1f1a1de57031dcc",
+            "time_seconds": 2940.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 49,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "46b266729158d629b411110e826211ca873e6a5359bb002eb6423b94069630fa",
+            "time_seconds": 3000.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 50,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "b6bf76532dff42dbfb02b180a85938f2f2ddd85ccb79362904ee79bdbb242598",
+            "time_seconds": 3060.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 51,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "f4fd66cebf76b3181223dba0166cbb9adfa6a7ebe07bef1719064ecf9319fa93",
+            "time_seconds": 3120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 52,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "2b916035ec86164cfffd3ead8d5c7df0530d707b218774fc3e3c391e1847d167",
+            "time_seconds": 3180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 53,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "a919d73bb207022c449865b1528d93d4fc3f5ca3e2923593783b7665950da548",
+            "time_seconds": 3240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 54,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "97b0f1a19696483cfd27ec65fe8a8a342a28f50e056d11ed97d11bd92736f2ed",
+            "time_seconds": 3300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 55,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "b91c863b37e31969a7fbe438a6b65ad97ad153f61daf119bda49773e7f7fd305",
+            "time_seconds": 3360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 56,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "c2e428ebf0eea7c7ae1e8eff504952d6da223469000509b78bffb0fd461ca90e",
+            "time_seconds": 3420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 57,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "4cd4029f40fa5d1baf9cdfa15d1c6520366e692893cbff255e6c240f945bc1fd",
+            "time_seconds": 3480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 58,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "25d4866775f9e28488c5dbb8f639939e4175dfbc8a08b66900344593440c9bbc",
+            "time_seconds": 3540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 59,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.196201406297398,
+              "room_a_temperature_c": 44.64170954324129,
+              "room_b_relative_humidity_pct": 11.394163110617486,
+              "room_b_temperature_c": 52.855612724321645
+            },
+            "observation_digest": "4bf0530bacc769ac3d507834756155910909fb014cdf0f3554176d95b236a2d9",
+            "time_seconds": 3600.0
+          }
+        ],
+        "wall_seconds": 0.0257105000782758,
+        "worker_pid": 46237
+      },
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 3600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 3600.0,
+        "seed": 2,
+        "session_dir": "",
+        "steps": 60,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 69.20281817882099,
+              "room_a_temperature_c": 20.0,
+              "room_b_relative_humidity_pct": 69.20281817882099,
+              "room_b_temperature_c": 20.0
+            },
+            "observation_digest": "bb2a854da654b516bbbf269185e9af03bd14940002e2495c4f99649569ffdb44",
+            "time_seconds": 60.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "a43ef775ff7ab64cca1f9b55436f2862a560657ea611ec543fb14d0e42c53b38",
+            "time_seconds": 120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 65.7821782582952,
+              "room_a_temperature_c": 20.821390318108058,
+              "room_b_relative_humidity_pct": 64.68458974199002,
+              "room_b_temperature_c": 21.095187090810725
+            },
+            "observation_digest": "036432dfcc937a00268cda635886688d241e5689090e498c3cfb37048b7d2ddd",
+            "time_seconds": 180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "b2c6c2a0a7e542ce2017412d3f4694d247baa741c4d6d92ae07434d5540ce87f",
+            "time_seconds": 240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 62.55072095215708,
+              "room_a_temperature_c": 21.642780636216116,
+              "room_b_relative_humidity_pct": 60.495805980901416,
+              "room_b_temperature_c": 22.19037418162145
+            },
+            "observation_digest": "191aa35e9c958e9bb15671556bf4bf924d60e95883e227565561de72c4f554ac",
+            "time_seconds": 300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "66d0fbade6abc98f459f8e06243cdb51149413ff2f8e256da79c091cbf2f33c5",
+            "time_seconds": 360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 59.49694485576141,
+              "room_a_temperature_c": 22.464170954324118,
+              "room_b_relative_humidity_pct": 56.61010763777187,
+              "room_b_temperature_c": 23.285561272432176
+            },
+            "observation_digest": "eebef99eb3984a6b4df1ac94ba42182f3b61dac7fff94f2ce105f4accc18a9ed",
+            "time_seconds": 420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "c0b78a604f02ac4648bf5bf293f00d85205c2ce36676c0e91af1e3ced039d6c9",
+            "time_seconds": 480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 56.61010763777187,
+              "room_a_temperature_c": 23.285561272432176,
+              "room_b_relative_humidity_pct": 53.00342121682932,
+              "room_b_temperature_c": 24.3807483632429
+            },
+            "observation_digest": "28ce28090b526028ee10da48641cb9b74a5736d44e4552ca4cb4404c81f952b4",
+            "time_seconds": 540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "792b6b90d05058fc4d55ccd1c1f36aa8cd8871627bd38971b7eaa4604cbcd3bd",
+            "time_seconds": 600.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 53.88017216416709,
+              "room_a_temperature_c": 24.106951590540234,
+              "room_b_relative_humidity_pct": 49.65374615821478,
+              "room_b_temperature_c": 25.475935454053626
+            },
+            "observation_digest": "08e0117e30116a6e3801f410cd0f455baa1cd71e76db3d421c0ab85580b2314c",
+            "time_seconds": 660.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "e0794f3897293975306d7414c2d76176d197f6145d734d366e0ce3f95ea879ef",
+            "time_seconds": 720.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 51.2977567043404,
+              "room_a_temperature_c": 24.928341908648292,
+              "room_b_relative_humidity_pct": 46.54096313408682,
+              "room_b_temperature_c": 26.57112254486435
+            },
+            "observation_digest": "fc9c914062b868057c3d0d58dab71c4279be22bc4285f70c488cdde3b04e11c1",
+            "time_seconds": 780.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "c99a030b6b49197e5bdcfbb171bcb77f6aac6c0957b79a7d523d89b468ecd619",
+            "time_seconds": 840.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 48.85408889108128,
+              "room_a_temperature_c": 25.749732226756294,
+              "room_b_relative_humidity_pct": 43.64666124562551,
+              "room_b_temperature_c": 27.666309635675077
+            },
+            "observation_digest": "06d1dbf3b5c1abd295c8031cafb0010ec7a4425e8c03d43ac8b68db163c6e657",
+            "time_seconds": 900.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "13f0f23527f5fcd4d4c87733295cbd46dd10ae96f42bd7a37ebdc81152e6d279",
+            "time_seconds": 960.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 46.54096313408682,
+              "room_a_temperature_c": 26.57112254486435,
+              "room_b_relative_humidity_pct": 40.953982145958555,
+              "room_b_temperature_c": 28.761496726485802
+            },
+            "observation_digest": "a3e62a13471fcdb60f72b58db85095770ed5e14410fb9c34d2d324ac67a55a4c",
+            "time_seconds": 1020.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "720c0522c7c96bc6226984b31ae056bd165d1fbb877235eee989a48b43fd5452",
+            "time_seconds": 1080.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 44.35070121203672,
+              "room_a_temperature_c": 27.39251286297241,
+              "room_b_relative_humidity_pct": 38.44747933167073,
+              "room_b_temperature_c": 29.85668381729647
+            },
+            "observation_digest": "a28e38e485af23222d47403e4bf3ea5f7e98aebd03b9cc8809816c63df193600",
+            "time_seconds": 1140.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "b9cd03bb135a1b0487d28121b0824704886c1974dc3252a377fadff196f61046",
+            "time_seconds": 1200.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 42.27611579137922,
+              "room_a_temperature_c": 28.213903181080468,
+              "room_b_relative_humidity_pct": 36.11299103800953,
+              "room_b_temperature_c": 30.951870908107196
+            },
+            "observation_digest": "0cedb3e9e3e5e337e64bb0de2ba1b492d957aa70dba62ec60d4a34498eecc68c",
+            "time_seconds": 1260.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "ce0a47fa962643ab5ad61c07cf1e9d00e833ba2fc54af6f914a5ddda0028f3c2",
+            "time_seconds": 1320.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 40.310476641063836,
+              "room_a_temperature_c": 29.03529349918847,
+              "room_b_relative_humidity_pct": 33.937525343212045,
+              "room_b_temperature_c": 32.04705799891792
+            },
+            "observation_digest": "c133c3dabb62ef50e7bcf48e47582195247b13a5c8f788f60a0e09e56ac277f3",
+            "time_seconds": 1380.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 23,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "458d77fd896e2b3c1233f13e9c39594f4f15abaea43340db92172ba3fdf931d1",
+            "time_seconds": 1440.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 24,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 38.447479331670586,
+              "room_a_temperature_c": 29.856683817296528,
+              "room_b_relative_humidity_pct": 31.90915623821712,
+              "room_b_temperature_c": 33.14224508972865
+            },
+            "observation_digest": "55789719f2ea462543bb7be5c3338ffa7108602c3088477d96668178a0c850e9",
+            "time_seconds": 1500.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 25,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "15e6d29732bebb3723f5f111b0b92831e24059fc1c0499453593fdb06788b059",
+            "time_seconds": 1560.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 26,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 36.68121622492907,
+              "room_a_temperature_c": 30.678074135404586,
+              "room_b_relative_humidity_pct": 30.016929551726406,
+              "room_b_temperature_c": 34.23743218053937
+            },
+            "observation_digest": "7c11cf5301b2974e638f51191399af0716cc9e0677689a44c36948deff8522ed",
+            "time_seconds": 1620.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 27,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "6b7fda20c5e9db180e23e5280bb3a5ed8491137b85e5d8d1cdbd3d857fe6e1ec",
+            "time_seconds": 1680.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 28,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 35.00614957562506,
+              "room_a_temperature_c": 31.499464453512644,
+              "room_b_relative_humidity_pct": 28.25077773917128,
+              "room_b_temperature_c": 35.3326192713501
+            },
+            "observation_digest": "0602e73b2306884ef1402f577e1cd5150d5e3a3632be2fbcfaa49adf44f290be",
+            "time_seconds": 1740.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 29,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "c95255cae5d475b8768a06d8587185f5b797253deff7a42136ee8622284ae108",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 30,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 33.417086582514784,
+              "room_a_temperature_c": 32.320854771620645,
+              "room_b_relative_humidity_pct": 26.601442649423053,
+              "room_b_temperature_c": 36.42780636216082
+            },
+            "observation_digest": "69a21894ca534761cfb19169c6881d04ff5b3cc2092926487a1b631e84d53a05",
+            "time_seconds": 1860.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 31,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "d4fb62365531a1561c483c646f45d358114bb937ac91edf8b7c07f68bb7edde0",
+            "time_seconds": 1920.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 32,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 31.90915623821706,
+              "room_a_temperature_c": 33.1422450897287,
+              "room_b_relative_humidity_pct": 25.06040547661198,
+              "room_b_temperature_c": 37.52299345297155
+            },
+            "observation_digest": "da67c677e7aaca07f5301a433192facf522b9f73f17ba2123493911d73866d79",
+            "time_seconds": 1980.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 33,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "cc4a5480765550ce815ed4dc82a2be83611a8053aa66aff3296f2c3c1c23725e",
+            "time_seconds": 2040.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 34,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 30.47778784026666,
+              "room_a_temperature_c": 33.96363540783676,
+              "room_b_relative_humidity_pct": 23.61982318757156,
+              "room_b_temperature_c": 38.61818054378227
+            },
+            "observation_digest": "4689d3831fdc9199e8316f6c38cfd6b8a9a322fb7ad4b20e9440bc45b9bbddc9",
+            "time_seconds": 2100.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 35,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "a32ab74f1f8d754ed1332b1e5b5750fb48636f34be257e8a93951bc0c37fc3d3",
+            "time_seconds": 2160.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 36,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 29.11869103666616,
+              "room_a_temperature_c": 34.78502572594482,
+              "room_b_relative_humidity_pct": 22.27247078940584,
+              "room_b_temperature_c": 39.713367634593
+            },
+            "observation_digest": "129f1e8ccf35f5a96faac417ba42c0c44b230fed8451247ac79185c6b20d689e",
+            "time_seconds": 2220.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 37,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "80b4624be5bf76b51c64c2a53384f69734a2a7e29345012e93e36e3f31cfe5ea",
+            "time_seconds": 2280.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 38,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 27.82783728948844,
+              "room_a_temperature_c": 35.60641604405282,
+              "room_b_relative_humidity_pct": 21.01168886754632,
+              "room_b_temperature_c": 40.808554725403724
+            },
+            "observation_digest": "ea4accd10ed84446d09958fbac592d4b392cbf114f88736f1438dd59356aacd0",
+            "time_seconds": 2340.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 39,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "ef8f9308c8b0d061f73d770bab03d4e6755229ff25a962146cc37afd7247b657",
+            "time_seconds": 2400.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 40,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 26.601442649422953,
+              "room_a_temperature_c": 36.42780636216088,
+              "room_b_relative_humidity_pct": 19.831335883354043,
+              "room_b_temperature_c": 41.90374181621445
+            },
+            "observation_digest": "a21df70ec99d51825a8a7f219f406567cd36c3eef4d9649a107a4c10a779d18a",
+            "time_seconds": 2460.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 41,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "cf7db6714b6e481c07cda37becd8586a3fa87a9561b04ec21e89b7e4d6d739da",
+            "time_seconds": 2520.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 42,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 25.43595174271489,
+              "room_a_temperature_c": 37.24919668026894,
+              "room_b_relative_humidity_pct": 18.72574477265215,
+              "room_b_temperature_c": 42.998928907025174
+            },
+            "observation_digest": "642779501287ab0abf0e89e401f0704738df230f19289606ea3a7d48ed47718e",
+            "time_seconds": 2580.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 43,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "d266288e582a38e7433f88e4e6d82f347db22b9714cf346c33e48aada919d385",
+            "time_seconds": 2640.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 44,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 24.32802287977848,
+              "room_a_temperature_c": 38.070586998376996,
+              "room_b_relative_humidity_pct": 17.68968343326679,
+              "room_b_temperature_c": 44.0941159978359
+            },
+            "observation_digest": "202251ef6405f8d7063900ee0842e10840021bcdf8f85b200eaa75cfbe0a19fe",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 45,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "b8331cc39ee0aa2aec1f1c67827d27115599de76d36a733d35fae6e2cecf5b7b",
+            "time_seconds": 2760.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 46,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 23.274514201947536,
+              "room_a_temperature_c": 38.891977316485054,
+              "room_b_relative_humidity_pct": 16.718318731344024,
+              "room_b_temperature_c": 45.189303088646625
+            },
+            "observation_digest": "5a8531ce41f9a40818638fe2da4c54c28326883948358b05a5684c4fe9d5f553",
+            "time_seconds": 2820.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 47,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "ef3def48637226c0a7048bcb35a5784d2d9a694cd766c25f9b48f88ad5f16ca9",
+            "time_seconds": 2880.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 48,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 22.27247078940576,
+              "room_a_temperature_c": 39.713367634593055,
+              "room_b_relative_humidity_pct": 15.807183693463006,
+              "room_b_temperature_c": 46.28449017945729
+            },
+            "observation_digest": "cfd8fd9ff4c4662692e6b545fdf7e71945c91a4830bc9d57b1f1a1de57031dcc",
+            "time_seconds": 2940.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 49,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "46b266729158d629b411110e826211ca873e6a5359bb002eb6423b94069630fa",
+            "time_seconds": 3000.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 50,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 21.319112659373786,
+              "room_a_temperature_c": 40.53475795270111,
+              "room_b_relative_humidity_pct": 14.95214758487163,
+              "room_b_temperature_c": 47.379677270268076
+            },
+            "observation_digest": "b6bf76532dff42dbfb02b180a85938f2f2ddd85ccb79362904ee79bdbb242598",
+            "time_seconds": 3060.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 51,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "f4fd66cebf76b3181223dba0166cbb9adfa6a7ebe07bef1719064ecf9319fa93",
+            "time_seconds": 3120.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 52,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 20.411823589167916,
+              "room_a_temperature_c": 41.35614827080917,
+              "room_b_relative_humidity_pct": 14.149388603974074,
+              "room_b_temperature_c": 48.474864361078744
+            },
+            "observation_digest": "2b916035ec86164cfffd3ead8d5c7df0530d707b218774fc3e3c391e1847d167",
+            "time_seconds": 3180.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 53,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "a919d73bb207022c449865b1528d93d4fc3f5ca3e2923593783b7665950da548",
+            "time_seconds": 3240.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 54,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 19.54814070382482,
+              "room_a_temperature_c": 42.17753858891717,
+              "room_b_relative_humidity_pct": 13.39536894987772,
+              "room_b_temperature_c": 49.57005145188947
+            },
+            "observation_digest": "97b0f1a19696483cfd27ec65fe8a8a342a28f50e056d11ed97d11bd92736f2ed",
+            "time_seconds": 3300.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 55,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "b91c863b37e31969a7fbe438a6b65ad97ad153f61daf119bda49773e7f7fd305",
+            "time_seconds": 3360.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 56,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 18.725744772652085,
+              "room_a_temperature_c": 42.99892890702523,
+              "room_b_relative_humidity_pct": 12.686812043716328,
+              "room_b_temperature_c": 50.665238542700195
+            },
+            "observation_digest": "c2e428ebf0eea7c7ae1e8eff504952d6da223469000509b78bffb0fd461ca90e",
+            "time_seconds": 3420.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 57,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "4cd4029f40fa5d1baf9cdfa15d1c6520366e692893cbff255e6c240f945bc1fd",
+            "time_seconds": 3480.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 58,
+            "observation": {
+              "heater_heat_flow_w": 0.0,
+              "room_a_relative_humidity_pct": 17.942451163351794,
+              "room_a_temperature_c": 43.82031922513329,
+              "room_b_relative_humidity_pct": 12.020681705893384,
+              "room_b_temperature_c": 51.76042563351092
+            },
+            "observation_digest": "25d4866775f9e28488c5dbb8f639939e4175dfbc8a08b66900344593440c9bbc",
+            "time_seconds": 3540.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 59,
+            "observation": {
+              "heater_heat_flow_w": 2000.0,
+              "room_a_relative_humidity_pct": 17.196201406297398,
+              "room_a_temperature_c": 44.64170954324129,
+              "room_b_relative_humidity_pct": 11.394163110617486,
+              "room_b_temperature_c": 52.855612724321645
+            },
+            "observation_digest": "4bf0530bacc769ac3d507834756155910909fb014cdf0f3554176d95b236a2d9",
+            "time_seconds": 3600.0
+          }
+        ],
+        "wall_seconds": 0.024870999972335994,
+        "worker_pid": 46237
+      }
+    ],
+    "source_bindings": {
+      "d2_modelica_buildings_aixlib_adapter.py": "a956a94062bd1f3978f8dee5dc9c7acc736f5a95596889f57ec9ae799e39b0cc",
+      "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+      "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+    },
+    "wall_seconds": 0.5650008330121636
+  },
+  "checks": {
+    "coupling_supported": true,
+    "episode_ready": true,
+    "full_horizon": true,
+    "future_leakage_check": true,
+    "mechanism_gate": true,
+    "reset_close_loops": 10,
+    "reset_observe_legal_actions": true,
+    "same_prefix_causality": true,
+    "seed_matrix": 3,
+    "two_actions": true
+  },
+  "horizon_seconds": 3600.0,
+  "metadata": {
+    "accepted_dt_seconds": [
+      60.0
+    ],
+    "cadence_seconds": 60.0,
+    "execution_mode": "process_isolated",
+    "horizon_seconds": 3600.0,
+    "layer": "D2",
+    "native_time_unit": "seconds",
+    "route_id": "modelica_buildings_aixlib",
+    "termination": "native_or_3600s_truncation"
+  },
+  "route_id": "modelica_buildings_aixlib",
+  "runner_wall_seconds": 0.5650008330121636,
+  "seed": 0,
+  "source_bindings": {
+    "d2_modelica_buildings_aixlib_adapter.py": "a956a94062bd1f3978f8dee5dc9c7acc736f5a95596889f57ec9ae799e39b0cc",
+    "tools/assemble_backend_acceptance.py": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
+    "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+    "tools/run_episode_campaign.py": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+    "tools/run_stability_campaign.py": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+    "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+    "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+  },
+  "status": "passed",
+  "wall_seconds": 0.5650008330121636
+}

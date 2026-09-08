@@ -8,5 +8,8 @@ runs/
 work/
 shared_assets/
 shared_runtime/
+# Local durable runtime mounts may be symlinks rather than directories.
+/shared_assets
+/shared_runtime
 .runtime/
 acceptance/*/sessions/
