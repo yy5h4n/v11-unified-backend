@@ -6,9 +6,8 @@ adapters, bounded executor, acceptance tools, tests, protocol documents, and
 the Round 11 acceptance evidence under `acceptance/`.
 
 The root keeps only the documents needed for operating and reviewing the
-backend. Earlier prototype audits, Harness iterations, pilot reports, and
-route notes are preserved under `docs/archive/`; dashboards and old catalog
-artifacts are under `docs/artifacts/`.
+backend. Historical research scripts and old pilot data were removed from the
+repository; the current review material is under `docs/`.
 
 The backend passed the agreed local Episode-generation acceptance for all 15
 route records. The following capability boundaries are intentional:

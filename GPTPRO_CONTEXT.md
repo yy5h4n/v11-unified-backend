@@ -17,9 +17,9 @@ The final evidence package is under
 a substitute for installing native runtimes on another host.
 
 The repository is intentionally layered: current operating and acceptance
-documents stay at the root, the final review material is under `docs/`, and
-older prototype/audit material is preserved under `docs/archive/`. The archive
-is historical context, not a second implementation.
+documents stay at the root and the final review material is under `docs/`.
+Historical research scripts, pilot data, and old dashboards were removed so
+they cannot be mistaken for a second implementation.
 
 ## What passed
 
@@ -69,11 +69,10 @@ follows:
   `tools/run_episode_campaign.py`, `tools/run_causal_campaign.py`,
   `tools/run_stability_campaign.py`, and
   `tools/assemble_backend_acceptance.py`.
-- Historical research pipeline: top-level `build_*`, `compile_*`,
-  `evaluate_*`, `probe_*`, `validate_*`, migration, pilot, dashboard, and
-  responsibility scripts. They remain for reproducibility and because some
-  regression tests import them; they are not runtime services and should not be
-  treated as separate production implementations.
+- The remaining top-level `probe_*` files are backend-specific evidence probes
+  referenced by the current mechanism catalog and tests. They are validation
+  programs, not runtime services. Historical build/evaluate/compile/pilot and
+  responsibility scripts were removed from this repository.
 
 ## Reproduction
 
