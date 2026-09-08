@@ -163,8 +163,12 @@ def apply_observation_delta(before: Any, delta: Any) -> Any:
     raise ConversationProtocolError("unknown observation delta op")
 
 
-def extend_system_content(base_system_content: str | Mapping[str, Any]) -> str:
-    """Add the V10 delta instructions to an existing JSON system document."""
+def extend_system_content(
+    base_system_content: str | Mapping[str, Any],
+    *,
+    public_action_schema: Mapping[str, Any] | None = None,
+) -> str:
+    """Add V10 delta instructions and, when supplied, the public action schema."""
 
     if isinstance(base_system_content, str):
         try:
@@ -181,6 +185,13 @@ def extend_system_content(base_system_content: str | Mapping[str, Any]) -> str:
         "instructions": list(OBSERVATION_DELTA_INSTRUCTIONS),
         "ops": deepcopy(DELTA_OPS),
     }
+    if public_action_schema is not None:
+        if not isinstance(public_action_schema, Mapping):
+            raise ConversationProtocolError("public action schema must be an object")
+        document["episode_action_interface"] = {
+            "legal_actions": deepcopy(dict(public_action_schema)),
+            "instruction": "Emit only one action matching this published public schema; never invent device channels.",
+        }
     return json.dumps(document, ensure_ascii=False, sort_keys=True, indent=1, allow_nan=False)
 
 
@@ -347,6 +358,7 @@ class CompactObservationConversation:
     query: str
     public_preferences: Mapping[str, Any]
     initial_observation: Mapping[str, Any]
+    public_action_schema: Mapping[str, Any] | None = None
     _messages: list[dict[str, str]] = field(init=False, repr=False)
     _latest_observation: dict[str, Any] = field(init=False, repr=False)
     _pending_action: bool = field(default=False, init=False, repr=False)
@@ -356,6 +368,19 @@ class CompactObservationConversation:
             raise ConversationProtocolError("system content must be non-empty text")
         if not isinstance(self.public_preferences, Mapping) or not isinstance(self.initial_observation, Mapping):
             raise ConversationProtocolError("public preferences and initial observation must be objects")
+        system_document = _parse_json_object(self.system_content, "system content JSON invalid")
+        has_action_schema = any(
+            key in system_document for key in ("episode_action_interface", "device_interfaces", "action_grammar")
+        )
+        if self.public_action_schema is not None:
+            self.system_content = extend_system_content(
+                self.system_content, public_action_schema=self.public_action_schema
+            )
+            has_action_schema = True
+        if not has_action_schema:
+            raise ConversationProtocolError(
+                "system content must publish device_interfaces/action_grammar or public_action_schema"
+            )
         self._messages = [
             {"role": "system", "content": self.system_content},
             build_initial_user_message(self.query, self.public_preferences, self.initial_observation),

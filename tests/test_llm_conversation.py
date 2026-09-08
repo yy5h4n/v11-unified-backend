@@ -36,6 +36,7 @@ def test_compact_conversation_sends_full_initial_observation_then_only_deltas() 
         query="keep the room comfortable",
         public_preferences={"quiet": True},
         initial_observation=initial,
+        public_action_schema={"native_action_names": ["set_temperature"], "range": [18.0, 26.0]},
     )
 
     assert len(conversation.messages()) == 2
@@ -54,7 +55,7 @@ def test_compact_conversation_sends_full_initial_observation_then_only_deltas() 
 
 def test_canonical_validator_rejects_tampered_delta() -> None:
     conversation = CompactObservationConversation(
-        system_content='{"role_directive":"test"}',
+        system_content='{"role_directive":"test", "device_interfaces": []}',
         query="query",
         public_preferences={},
         initial_observation={"step": 0, "value": 1},
@@ -82,7 +83,7 @@ def test_system_extension_and_protocol_hash_are_deterministic() -> None:
 
 def test_conversation_rejects_action_without_environment_feedback() -> None:
     conversation = CompactObservationConversation(
-        system_content='{"role_directive":"test"}',
+        system_content='{"role_directive":"test", "device_interfaces": []}',
         query="query",
         public_preferences={},
         initial_observation={"step": 0},

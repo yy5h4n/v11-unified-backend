@@ -28,8 +28,13 @@ replays the initial observation plus the delta chain and rejects tampered,
 ambiguous, duplicate-key, or non-finite JSON payloads.
 
 This layer is independent of the LLM provider. It does not make API calls or
-choose a model. A provider runner should pass `CompactObservationConversation.messages()`
-to the model, append the returned action with `append_action`, then append the
-native receipt's `public_action_result_from_receipt(receipt)` and observation
-with `append_environment`. The receipt projection intentionally excludes the
-full observation and the echoed action from `action_result`.
+choose a model. The system document must publish the route's device/action
+schema (`device_interfaces`, `action_grammar`, or
+`public_action_schema`); a runner can obtain it directly from
+`backend.legal_actions()` and pass it to `extend_system_content` or the
+conversation constructor. A provider runner should then pass
+`CompactObservationConversation.messages()` to the model, append the returned
+action with `append_action`, and append the native receipt's
+`public_action_result_from_receipt(receipt)` and observation with
+`append_environment`. The receipt projection intentionally excludes the full
+observation and the echoed action from `action_result`.

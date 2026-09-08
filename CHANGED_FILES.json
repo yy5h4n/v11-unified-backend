@@ -8,7 +8,7 @@
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "ffdb6d3c59e16d10c93eed5723fe0efadf3e8488da10910816b440e66592cd63",
+      "new_sha256": "d7ae147681d50c7e5eb1ff8dc9cacf6ba2fd49c417cd89c29951d06030bd3d74",
       "old_sha256": null,
       "path": "BACKEND_PUBLIC_PROTOCOL.md",
       "purpose": "LLM conversation protocol migration"
@@ -194,13 +194,13 @@
       "purpose": "LLM conversation protocol migration"
     },
     {
-      "new_sha256": "76ec8bc464c295d20e8517d4e556bfdee9567cc3d8c82fd8a1540e0fc9db0d35",
+      "new_sha256": "d3cf4b87acfa87f0918232de59b20d4dd2d12858ec997c1a99c7e1bfe22871c0",
       "old_sha256": null,
       "path": "unified_compiler/llm_conversation.py",
       "purpose": "LLM conversation protocol migration"
     },
     {
-      "new_sha256": "a930b913f5fa66e5ebdb8429c171dd44f3ddc154fc13898159d1032e230b5596",
+      "new_sha256": "44601d77a4f31675be5e2d8131fe746408d161daafc8357bd634d282019c195a",
       "old_sha256": null,
       "path": "tests/test_llm_conversation.py",
       "purpose": "LLM conversation protocol migration"
