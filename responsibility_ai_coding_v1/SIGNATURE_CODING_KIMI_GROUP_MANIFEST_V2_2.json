@@ -1,0 +1,236 @@
+[
+  {
+    "group": 2,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_02.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_491429d8fab5",
+      "rd_678537aa5e56",
+      "rd_1fb2eead6103",
+      "rd_efea5fb4f93f",
+      "rd_5aaf181229e6",
+      "rd_split_df4d7efb1b61",
+      "rd_split_f1dd61ebda25",
+      "rd_split_75756fc5714e",
+      "rd_split_bb0c7c2da137",
+      "rd_split_bd5e7664b9a8",
+      "rd_split_9cead2579fb2",
+      "rd_f484417ee0a3",
+      "rd_05920f8dade6",
+      "rd_split_39bba8cb11da",
+      "rd_split_57dc1a5ccd89"
+    ]
+  },
+  {
+    "group": 3,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_03.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_a948a16db4ab",
+      "rd_fcd3c198a00d",
+      "rd_9fa396d3191a",
+      "rd_d813bb2cad2c",
+      "rd_48cb6e53506a",
+      "rd_6c95ef8c36b1",
+      "rd_split_caa71a39ed10",
+      "rd_split_94be9427a8c4",
+      "rd_f61b22e412c4",
+      "rd_0f0211760666",
+      "rd_e0dd1723fdde",
+      "rd_2126fdb0eb1b",
+      "rd_701d4b0275df",
+      "rd_split_100f3f013adc",
+      "rd_split_a7109276d669"
+    ]
+  },
+  {
+    "group": 4,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_04.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_824cd77ac7e9",
+      "rd_211848da7f6e",
+      "rd_a3e2be6b2f22",
+      "rd_752ddefdc33b",
+      "rd_02fee0f03674",
+      "rd_9edc50334cc2",
+      "rd_c7707288c960",
+      "rd_5a104e7a438a",
+      "rd_bc53f8b79068",
+      "rd_45f013e7ba1d",
+      "rd_b62dd368cce0",
+      "rd_split_f74a4e4ba8f4",
+      "rd_split_9b7e8b0d9950",
+      "rd_split_c828da9fc975",
+      "rd_split_4053e031415b"
+    ]
+  },
+  {
+    "group": 5,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_05.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_b29cce0b1017",
+      "rd_d85f7d5c68b5",
+      "rd_cf2389fcc9f1",
+      "rd_split_b141f1a3d149",
+      "rd_split_153d4f41c1a4",
+      "rd_6fbd176f695c",
+      "rd_06f5ac8a120d",
+      "rd_05eb866a5fcf",
+      "rd_1783c33e2747",
+      "rd_7f75346b5a7f",
+      "rd_0fcb74542024",
+      "rd_c74f1fee0f28",
+      "rd_5e0e9919d03e",
+      "rd_f0dbcd030710",
+      "rd_691cb6d986d0"
+    ]
+  },
+  {
+    "group": 6,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_06.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_fcfa2c702918",
+      "rd_3aaa64a9c593",
+      "rd_3cd183cf73e1",
+      "rd_cbfe46f2692a",
+      "rd_099294a66240",
+      "rd_7ee875c27a63",
+      "rd_09da87f2ce06",
+      "rd_98be58ef05f9",
+      "rd_8b0f533b3eaa",
+      "rd_49465c88e9af",
+      "rd_7c16cf29a4f1",
+      "rd_ebe806fd446f",
+      "rd_89fd37b1d819",
+      "rd_0883e558daf8",
+      "rd_e3e91df71f31"
+    ]
+  },
+  {
+    "group": 7,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_07.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_cd308d98316b",
+      "rd_c294eab7c0fa",
+      "rd_split_ec369095da2a",
+      "rd_split_bb4c32068e04",
+      "rd_4bd7f3e54b9a",
+      "rd_bf3aba4bd811",
+      "rd_e1eeb14b01ab",
+      "rd_7232f3cd346d",
+      "rd_2bad2ff9e669",
+      "rd_ddf75b21d41e",
+      "rd_d061b1bb96d7",
+      "rd_86794f200f16",
+      "rd_split_af088787b04c",
+      "rd_split_0feef23c4030",
+      "rd_split_145ee393b9c2"
+    ]
+  },
+  {
+    "group": 8,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_08.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_split_a525cb032b19",
+      "rd_b1b401414581",
+      "rd_c04f5c3fa6c1",
+      "rd_1ddf8bfc651e",
+      "rd_425a5dee5607",
+      "rd_5d75d19a4827",
+      "rd_d462a7e3ecb1",
+      "rd_0c75e66e2768",
+      "rd_5b5f94def7b4",
+      "rd_45e7454d142a",
+      "rd_b1bb73bef03e",
+      "rd_89b104a21351",
+      "rd_805e8d711f99",
+      "rd_split_b8936d13fb0d",
+      "rd_split_44332c24ebca"
+    ]
+  },
+  {
+    "group": 9,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_09.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_8b7dca2e69c7",
+      "rd_6debc9157765",
+      "rd_split_272d269ff0c7",
+      "rd_split_07a629610220",
+      "rd_68c81fbf8bad",
+      "rd_42a8ea41a597",
+      "rd_cbfa7286a427",
+      "rd_5dd0c995ea28",
+      "rd_af2688f9787c",
+      "rd_b4f36043ef87",
+      "rd_c6fef22c7368",
+      "rd_952c27c5b039",
+      "rd_89ce1d2593d3",
+      "rd_bc735bdc916e",
+      "rd_120b0762bd34"
+    ]
+  },
+  {
+    "group": 10,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_10.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_f7384743e19c",
+      "rd_afa9de7bd514",
+      "rd_264b487be933",
+      "rd_bd6dfd6a2c77",
+      "rd_f540da710bc1",
+      "rd_e2cac1a64396",
+      "rd_fa8bdf6166e3",
+      "rd_a07aecceb886",
+      "rd_5278add36071",
+      "rd_5677579cc63f",
+      "rd_80682ef0d394",
+      "rd_670cf48458c9",
+      "rd_split_7b8e77e75605",
+      "rd_split_b8457e559b4d",
+      "rd_08ee0b241675"
+    ]
+  },
+  {
+    "group": 11,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_11.jsonl",
+    "rows": 15,
+    "responsibility_ids": [
+      "rd_split_5c776896ad46",
+      "rd_split_016151c7c038",
+      "rd_split_39d32cc7fd22",
+      "rd_40c93de13061",
+      "rd_37104b57370a",
+      "rd_ebd968ad40ce",
+      "rd_b3d657e0dc2e",
+      "rd_05e7a2929aa0",
+      "rd_54bdb4d1d881",
+      "rd_split_be2cdd7acdff",
+      "rd_split_137db9864548",
+      "rd_b5071d572e3d",
+      "rd_f4162b3d081d",
+      "rd_94d666a58c83",
+      "rd_a73f6a96c2fb"
+    ]
+  },
+  {
+    "group": 12,
+    "file": "SIGNATURE_CODING_KIMI_GROUP_V2_2_12.jsonl",
+    "rows": 7,
+    "responsibility_ids": [
+      "rd_0b5542d000c0",
+      "rd_f0bc2c668699",
+      "rd_6010f46a03e0",
+      "rd_fd30c82cb52f",
+      "rd_782fea3cbba2",
+      "rd_3b10527567db",
+      "rd_4c9f419a786a"
+    ]
+  }
+]

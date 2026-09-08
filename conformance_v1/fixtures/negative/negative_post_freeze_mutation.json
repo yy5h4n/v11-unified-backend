@@ -1,0 +1,43 @@
+{
+  "id": "negative_post_freeze_mutation",
+  "kind": "post_freeze_mutation",
+  "description": "Negative fixture: a frozen object is append-only. Attempting to replace or mutate it must raise POST_FREEZE_MUTATION (spec section 2).",
+  "object": {
+    "object_type": "CanonicalResponsibility",
+    "id": "CR-MUT",
+    "schema_version": "1.0",
+    "version": 1,
+    "created_at": "2026-08-30T00:00:00Z",
+    "statuses": {
+      "semantic_status": "human_validated",
+      "authorization_status": "authorized_agent_control",
+      "physical_status": "unassigned",
+      "release_status": "provisional"
+    },
+    "evidence_bundle_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "independence_unit_id": "IU-CR-MUT",
+    "desired_state": "living room warm",
+    "beneficiary": "self",
+    "accountable_party": "self",
+    "context": "winter",
+    "persistence": { "scope": "recurring", "supported": true },
+    "failure_meaning": "cold",
+    "override_release": "manual override",
+    "executable_control": {
+      "requires_agent_delegation": true,
+      "requires_authorized_action_set": true,
+      "authorized_action_set": ["heat_setpoint_up", "none"],
+      "authorization_evidence_span": "evidence"
+    },
+    "admission": {
+      "agreement_alpha": 0.82, "precision": 0.9, "recall": 0.8,
+      "confirmatory_units": 30, "adjudicated_positive_units": 12,
+      "eligible_denominator": 60, "missingness": 0.0,
+      "threshold_sensitivity": []
+    },
+    "critical_case_validated": false,
+    "backend_influence": "none"
+  },
+  "mutation": { "desired_state": "living room VERY warm" },
+  "expected_failure_code": "POST_FREEZE_MUTATION"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "golden_unsupported",
+  "class": "unsupported",
+  "description": "Unsupported golden fixture: the required capability or public information is absent, so the binding is unsupported and cannot enter the executable track (spec sections 7 and 9).",
+  "opportunity_inputs": {
+    "delta_lcb": 0.35,
+    "certified_ub": null,
+    "certified_covers_pi_auth": false,
+    "pi_hat_acceptable": true,
+    "pi_0_acceptable": true,
+    "capability_supported": false,
+    "information_supported": true
+  },
+  "expected": {
+    "physical_label": "unsupported",
+    "failure_codes": []
+  }
+}

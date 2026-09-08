@@ -1,0 +1,19 @@
+{
+  "id": "golden_positive",
+  "class": "positive",
+  "description": "Positive-opportunity golden fixture: the construction-oracle lower confidence bound clears delta_positive and pi_hat is acceptable, so the group is positive_opportunity (spec section 7).",
+  "opportunity_inputs": {
+    "delta_lcb": 0.35,
+    "certified_ub": null,
+    "certified_covers_pi_auth": false,
+    "pi_hat_acceptable": true,
+    "pi_0_acceptable": true,
+    "capability_supported": true,
+    "information_supported": true
+  },
+  "expected": {
+    "physical_label": "positive_opportunity",
+    "failure_codes": []
+  },
+  "e2e_reference": "fixtures/e2e/corpus_to_episode.json#expected.physical_labels.E-001"
+}

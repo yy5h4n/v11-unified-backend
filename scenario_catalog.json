@@ -1,0 +1,220 @@
+{
+  "catalog_version": "11.2.0",
+  "status_legend": {
+    "EXECUTABLE_REPLAY_VERIFIED": "real process windows replayed deterministically with legal actions, complete termination, action-sensitive physical trajectories, and responsibility-level feasibility gates",
+    "API_VERIFIED_NOT_DATA_PROBED": "API existence confirmed in installed backend source; behavior not yet probed with data",
+    "LEGACY_EXECUTABLE_PENDING_MIGRATION": "ran in an older prototype; not yet ported to the v11 adapter protocol",
+    "DATA_PROBED_PENDING_REPLAY": "real data probed: schema components, source columns, and asset files all present for the emitted process slices; replay/executable verification still pending, executability not claimed",
+    "CAPABILITY_UNVERIFIED": "planned; no verified backend capability yet"
+  },
+  "taxonomy": {
+    "supported_responsibility_lifecycles": "user-facing responsibility lifecycle: MAINTAIN | ACHIEVE_BY | PREPARE_FOR | RECOVER_AFTER_EVENT | OPTIMIZE_UNDER | GUARD (a scenario may naturally support several)",
+    "physical_topology": "physical dynamics of the underlying process: THERMAL_DYNAMICS | STORAGE_DYNAMICS | CONTAMINANT_DYNAMICS | NONINTERRUPTIBLE_CYCLE | SPATIAL_MOBILITY (independent of responsibility)"
+  },
+  "evaluator_clause_template_convention": {
+    "symbolic_param": "a param value of the form {\"symbol\": <name>, \"source\": \"responsibility_contract\"} is bound at contract-authoring time; the catalog never asserts responsibility thresholds",
+    "literal_param": "numeric literals are allowed only for universal device-domain invariants, e.g. normalized state-of-charge or actuator bounds in [0.0, 1.0] and non-negative power magnitudes (0.0)"
+  },
+  "scenarios": [
+    {
+      "scenario_id": "hvac_thermal_regulation",
+      "domain": "hvac",
+      "supported_responsibility_lifecycles": ["MAINTAIN"],
+      "physical_topology": "THERMAL_DYNAMICS",
+      "state_variables": ["indoor_temperature", "outdoor_temperature", "cooling_demand", "heating_demand", "hvac_power"],
+      "exogenous_events": ["weather_temperature", "occupancy_schedule", "solar_irradiance"],
+      "legal_action_types": ["cooling_setpoint_delta", "heating_setpoint_delta", "on_off"],
+      "evaluator_clause_templates": [
+        {"clause_id": "hvac_hard_power", "kind": "HARD_INVARIANT", "variable": "hvac_power", "op": ">=", "params": {"value": 0.0}},
+        {"clause_id": "hvac_comfort_band", "kind": "CUMULATIVE_SOFT_COST", "variable": "indoor_temperature", "op": "between", "params": {"lo": {"symbol": "comfort_band_lo", "source": "responsibility_contract"}, "hi": {"symbol": "comfort_band_hi", "source": "responsibility_contract"}}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["thermal.zone_temperature", "thermal.hvac_action"],
+      "implementation_status": "LEGACY_EXECUTABLE_PENDING_MIGRATION",
+      "evidence": ["prototypes/v10_diversity_aware_compiler/DESIGN.md", "prototypes/v9_scaled_responsibility_dataset/responsibility_catalog.json"]
+    },
+    {
+      "scenario_id": "ev_scheduled_charging",
+      "domain": "ev",
+      "supported_responsibility_lifecycles": ["ACHIEVE_BY"],
+      "physical_topology": "STORAGE_DYNAMICS",
+      "state_variables": ["ev_soc", "charger_power", "ev_connected"],
+      "exogenous_events": ["arrival_time", "departure_time", "arrival_soc", "electricity_price"],
+      "legal_action_types": ["charge_rate"],
+      "evaluator_clause_templates": [
+        {"clause_id": "ev_soc_bounds", "kind": "HARD_INVARIANT", "variable": "ev_soc", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "ev_departure_soc", "kind": "TERMINAL_GOAL", "variable": "ev_soc", "op": ">=", "params": {"value": {"symbol": "departure_soc_target", "source": "responsibility_contract"}}}
+      ],
+      "required_backend_capabilities": ["ev.soc", "ev.charge_action"],
+      "implementation_status": "LEGACY_EXECUTABLE_PENDING_MIGRATION",
+      "evidence": ["prototypes/v4_ev_charging", "prototypes/v6_ev2gym_miner"]
+    },
+    {
+      "scenario_id": "dhw_storage_cycle",
+      "domain": "domestic_hot_water",
+      "supported_responsibility_lifecycles": ["MAINTAIN"],
+      "physical_topology": "STORAGE_DYNAMICS",
+      "state_variables": ["dhw_soc", "dhw_demand", "dhw_power"],
+      "exogenous_events": ["dhw_draw_profile", "electricity_price"],
+      "legal_action_types": ["charge_discharge_rate"],
+      "evaluator_clause_templates": [
+        {"clause_id": "dhw_soc_bounds", "kind": "HARD_INVARIANT", "variable": "dhw_soc", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "dhw_terminal_soc", "kind": "TERMINAL_GOAL", "variable": "dhw_soc", "op": ">=", "params": {"value": {"symbol": "terminal_soc_target", "source": "responsibility_contract"}}},
+        {"clause_id": "dhw_unmet_demand", "kind": "CUMULATIVE_SOFT_COST", "variable": "dhw_soc", "op": ">=", "params": {"value": {"symbol": "min_reserve_soc", "source": "responsibility_contract"}}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["storage.soc", "storage.charge_discharge_action", "dhw.demand_profile"],
+      "implementation_status": "API_VERIFIED_NOT_DATA_PROBED",
+      "evidence": [
+        "external://citylearn@2.5.0/building.py#L39 dhw_storage : StorageTank",
+        "external://citylearn@2.5.0/building.py#L86-L97 dhw_storage constructor param and assignment",
+        "external://citylearn@2.5.0/energy_model.py#L805 class StorageTank(StorageDevice)"
+      ]
+    },
+    {
+      "scenario_id": "battery_pv_self_consumption",
+      "domain": "electrical_storage",
+      "supported_responsibility_lifecycles": ["OPTIMIZE_UNDER"],
+      "physical_topology": "STORAGE_DYNAMICS",
+      "state_variables": ["battery_soc", "net_electricity", "grid_import", "grid_export", "solar_generation"],
+      "exogenous_events": ["solar_irradiance", "load_profile", "electricity_price", "grid_carbon_intensity"],
+      "legal_action_types": ["charge_discharge_rate"],
+      "evaluator_clause_templates": [
+        {"clause_id": "batt_soc_bounds", "kind": "HARD_INVARIANT", "variable": "battery_soc", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "batt_terminal_soc", "kind": "TERMINAL_GOAL", "variable": "battery_soc", "op": ">=", "params": {"value": {"symbol": "terminal_soc_target", "source": "responsibility_contract"}}},
+        {"clause_id": "batt_grid_import", "kind": "CUMULATIVE_SOFT_COST", "variable": "grid_import", "op": "<=", "params": {"value": 0.0}, "weight": 1.0},
+        {"clause_id": "batt_grid_export", "kind": "CUMULATIVE_SOFT_COST", "variable": "grid_export", "op": "<=", "params": {"value": 0.0}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["storage.soc", "storage.charge_discharge_action", "pv.generation_profile"],
+      "implementation_status": "EXECUTABLE_REPLAY_VERIFIED",
+      "evidence": [
+        "external://citylearn@2.5.0/building.py#L45 electrical_storage : Battery",
+        "external://citylearn@2.5.0/building.py#L87-L100 electrical_storage constructor param and assignment",
+        "external://citylearn@2.5.0/building.py#L628 property solar_generation",
+        "external://citylearn@2.5.0/energy_model.py#L872 class Battery(StorageDevice, ElectricDevice)",
+        "external://citylearn@2.5.0/energy_model.py#L452 class PV(ElectricDevice)",
+        "prototypes/v11_unified_process_compiler/unified_compiler/adapters/citylearn_shared.py (probes electrical_storage+pv schema components and solar_generation/non_shiftable_load columns)",
+        "prototypes/v11_unified_process_compiler/generated/battery_pv_process_pool.json (48 selected source-grounded modeled load/PV windows across 12 residences)",
+        "prototypes/v11_unified_process_compiler/generated/battery_pv_process_replay_gate.json (48/48 deterministic, terminating, action-sensitive and responsibility-feasible)",
+        "prototypes/v11_unified_process_compiler/generated/battery_pv_release/build_report.json (48 primary Responsibility Episodes; leakage-safe 32/8/8 split)",
+        "../v5_scenario_compiler/source_cache/schema.json#buildings.* (electrical_storage, pv non-null)",
+        "../v5_scenario_compiler/source_cache/*.csv (solar_generation, non_shiftable_load columns probed)"
+      ]
+    },
+    {
+      "scenario_id": "thermal_storage_shift",
+      "domain": "thermal_storage",
+      "supported_responsibility_lifecycles": ["OPTIMIZE_UNDER"],
+      "physical_topology": "STORAGE_DYNAMICS",
+      "state_variables": ["thermal_storage_soc", "cooling_demand", "heating_demand", "chiller_power"],
+      "exogenous_events": ["weather_temperature", "electricity_price", "cooling_load_profile"],
+      "legal_action_types": ["charge_discharge_rate"],
+      "evaluator_clause_templates": [
+        {"clause_id": "ts_soc_bounds", "kind": "HARD_INVARIANT", "variable": "thermal_storage_soc", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "ts_peak_power", "kind": "CUMULATIVE_SOFT_COST", "variable": "chiller_power", "op": "<=", "params": {"value": {"symbol": "chiller_power_soft_cap", "source": "responsibility_contract"}}, "weight": 0.5}
+      ],
+      "required_backend_capabilities": ["storage.soc", "storage.charge_discharge_action", "thermal.cooling_load"],
+      "implementation_status": "API_VERIFIED_NOT_DATA_PROBED",
+      "evidence": [
+        "external://citylearn@2.5.0/building.py#L87 cooling_storage/heating_storage constructor params",
+        "external://citylearn@2.5.0/energy_model.py#L805 class StorageTank(StorageDevice)"
+      ]
+    },
+    {
+      "scenario_id": "iaq_ventilation",
+      "domain": "indoor_air_quality",
+      "supported_responsibility_lifecycles": ["GUARD"],
+      "physical_topology": "CONTAMINANT_DYNAMICS",
+      "state_variables": ["indoor_co2_ppm", "pm25", "ventilation_rate"],
+      "exogenous_events": ["occupancy_schedule", "outdoor_pm25", "outdoor_temperature"],
+      "legal_action_types": ["ventilation_rate_setpoint", "window_open_fraction"],
+      "evaluator_clause_templates": [
+        {"clause_id": "iaq_co2_ceiling", "kind": "HARD_INVARIANT", "variable": "indoor_co2_ppm", "op": "<=", "params": {"value": {"symbol": "co2_hard_ceiling", "source": "responsibility_contract"}}},
+        {"clause_id": "iaq_co2_quality", "kind": "CUMULATIVE_SOFT_COST", "variable": "indoor_co2_ppm", "op": "<=", "params": {"value": {"symbol": "co2_soft_ceiling", "source": "responsibility_contract"}}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["iaq.co2_state", "iaq.ventilation_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": []
+    },
+    {
+      "scenario_id": "humidity_recovery",
+      "domain": "humidity",
+      "supported_responsibility_lifecycles": ["MAINTAIN"],
+      "physical_topology": "CONTAMINANT_DYNAMICS",
+      "state_variables": ["indoor_rh", "humidity_recovery_power"],
+      "exogenous_events": ["outdoor_rh", "occupancy_schedule", "weather_temperature"],
+      "legal_action_types": ["humidify_dehumidify_rate"],
+      "evaluator_clause_templates": [
+        {"clause_id": "rh_band_hard", "kind": "HARD_INVARIANT", "variable": "indoor_rh", "op": "between", "params": {"lo": {"symbol": "rh_hard_lo", "source": "responsibility_contract"}, "hi": {"symbol": "rh_hard_hi", "source": "responsibility_contract"}}},
+        {"clause_id": "rh_comfort", "kind": "CUMULATIVE_SOFT_COST", "variable": "indoor_rh", "op": "between", "params": {"lo": {"symbol": "rh_comfort_lo", "source": "responsibility_contract"}, "hi": {"symbol": "rh_comfort_hi", "source": "responsibility_contract"}}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["humidity.rh_state", "humidity.recovery_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": []
+    },
+    {
+      "scenario_id": "blinds_daylighting",
+      "domain": "daylighting",
+      "supported_responsibility_lifecycles": ["MAINTAIN"],
+      "physical_topology": "THERMAL_DYNAMICS",
+      "state_variables": ["illuminance_lux", "blind_position", "glare_index"],
+      "exogenous_events": ["solar_irradiance", "sun_position", "occupancy_schedule"],
+      "legal_action_types": ["blind_position_setpoint"],
+      "evaluator_clause_templates": [
+        {"clause_id": "blind_position_bounds", "kind": "HARD_INVARIANT", "variable": "blind_position", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "daylight_target", "kind": "CUMULATIVE_SOFT_COST", "variable": "illuminance_lux", "op": "between", "params": {"lo": {"symbol": "daylight_target_lo", "source": "responsibility_contract"}, "hi": {"symbol": "daylight_target_hi", "source": "responsibility_contract"}}, "weight": 1.0}
+      ],
+      "required_backend_capabilities": ["daylight.illuminance_state", "daylight.blind_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": []
+    },
+    {
+      "scenario_id": "appliance_cycles",
+      "domain": "appliances",
+      "supported_responsibility_lifecycles": ["ACHIEVE_BY"],
+      "physical_topology": "NONINTERRUPTIBLE_CYCLE",
+      "state_variables": ["appliance_state", "cycle_progress", "appliance_power"],
+      "exogenous_events": ["usage_request_times", "electricity_price"],
+      "legal_action_types": ["start_defer", "on_off"],
+      "evaluator_clause_templates": [
+        {"clause_id": "cycle_completion", "kind": "TERMINAL_GOAL", "variable": "cycle_progress", "op": ">=", "params": {"value": {"symbol": "cycle_completion_target", "source": "responsibility_contract"}}},
+        {"clause_id": "peak_power", "kind": "CUMULATIVE_SOFT_COST", "variable": "appliance_power", "op": "<=", "params": {"value": {"symbol": "appliance_power_soft_cap", "source": "responsibility_contract"}}, "weight": 0.5}
+      ],
+      "required_backend_capabilities": ["appliance.cycle_state", "appliance.start_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": [
+        "external://citylearn@2.5.0/energy_model.py#L1244 class WashingMachine(ElectricDevice) exists but is not wired into building action space; treat as unverified"
+      ]
+    },
+    {
+      "scenario_id": "refrigeration",
+      "domain": "refrigeration",
+      "supported_responsibility_lifecycles": ["GUARD"],
+      "physical_topology": "THERMAL_DYNAMICS",
+      "state_variables": ["cabinet_temperature", "compressor_power"],
+      "exogenous_events": ["door_open_events", "ambient_temperature", "electricity_price"],
+      "legal_action_types": ["compressor_setpoint"],
+      "evaluator_clause_templates": [
+        {"clause_id": "compressor_power_nonnegative", "kind": "HARD_INVARIANT", "variable": "compressor_power", "op": ">=", "params": {"value": 0.0}},
+        {"clause_id": "food_safety_band", "kind": "HARD_INVARIANT", "variable": "cabinet_temperature", "op": "between", "params": {"lo": {"symbol": "food_safety_temp_lo", "source": "responsibility_contract"}, "hi": {"symbol": "food_safety_temp_hi", "source": "responsibility_contract"}}}
+      ],
+      "required_backend_capabilities": ["refrigeration.cabinet_temperature", "refrigeration.compressor_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": []
+    },
+    {
+      "scenario_id": "robot_cleaning",
+      "domain": "robotics",
+      "supported_responsibility_lifecycles": ["ACHIEVE_BY"],
+      "physical_topology": "SPATIAL_MOBILITY",
+      "state_variables": ["coverage_fraction", "robot_battery_soc", "robot_position"],
+      "exogenous_events": ["floor_plan", "obstacle_events", "dirt_distribution"],
+      "legal_action_types": ["move_command", "dock_command"],
+      "evaluator_clause_templates": [
+        {"clause_id": "robot_soc_bounds", "kind": "HARD_INVARIANT", "variable": "robot_battery_soc", "op": "between", "params": {"lo": 0.0, "hi": 1.0}},
+        {"clause_id": "coverage_goal", "kind": "TERMINAL_GOAL", "variable": "coverage_fraction", "op": ">=", "params": {"value": {"symbol": "coverage_target", "source": "responsibility_contract"}}}
+      ],
+      "required_backend_capabilities": ["robot.coverage_state", "robot.motion_action"],
+      "implementation_status": "CAPABILITY_UNVERIFIED",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "responsibility-induction-pilot-v3",
+  "motivation": "Batch 2 showed that preference, task, and goal are overlapping rather than mutually exclusive labels. V3 replaces the flat construct_type decision with orthogonal semantic, temporal, and ownership axes.",
+  "required_fields": {
+    "evidence_id": "stable evidence-unit identifier",
+    "semantic_content": {
+      "type": "multi_label_enum",
+      "values": [
+        "mechanism_only",
+        "desired_behavior",
+        "desired_human_state",
+        "value_or_boundary",
+        "conflict_or_failure_experience"
+      ]
+    },
+    "temporal_scope": {
+      "type": "multi_label_enum",
+      "values": ["one_shot", "event_conditioned", "recurring", "persistent", "unknown"]
+    },
+    "ownership_evidence": "explicit | implicit | absent | conflicting",
+    "purpose_uniqueness": "unique | one_of_multiple | unknown",
+    "actor_or_accountable_party": "string or null",
+    "beneficiary": "string or null",
+    "desired_state": "human-relevant outcome or null",
+    "activation_context": "string or null",
+    "failure_or_harm": "string or null",
+    "constraints": "array of evidence-supported strings",
+    "tradeoffs": "array of evidence-supported strings",
+    "override_or_release": "string or null",
+    "means_or_device": "array of implementation strings",
+    "responsibility_slot_completeness": {
+      "actor": "present | absent | ambiguous",
+      "beneficiary": "present | absent | ambiguous",
+      "desired_state": "present | absent | ambiguous",
+      "persistence_or_recurrence": "present | absent | ambiguous",
+      "failure_meaning": "present | absent | ambiguous",
+      "override_or_release": "present | absent | ambiguous"
+    },
+    "standing_responsibility_hypothesis": "device-independent candidate or null",
+    "standing_responsibility_support": "entails | strongly_implies | compatible_only | contradicts | irrelevant",
+    "confidence_by_axis": {
+      "semantic_content": "high | medium | low",
+      "temporal_scope": "high | medium | low",
+      "ownership_evidence": "high | medium | low",
+      "standing_responsibility_support": "high | medium | low"
+    },
+    "rationale": "short source-grounded explanation"
+  },
+  "admission_logic": [
+    "No single evidence unit can satisfy cross-household admission.",
+    "A routine containing mechanism_only with unknown purpose is at most compatible_only.",
+    "An admitted responsibility requires cross-source support for desired_human_state, recurring or persistent temporal scope, ownership, beneficiary, failure meaning, and release or override.",
+    "Unknown or conflicting ownership must be preserved, especially in multi-member and caregiver households.",
+    "Preference, task, and goal terminology may be derived for description but is not used as the admission gate."
+  ]
+}

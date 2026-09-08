@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "canonical_responsibility.schema.json",
+  "title": "CanonicalResponsibility",
+  "description": "Frozen human-level obligation: desired state, beneficiary, accountable party, context, persistence, failure meaning, override/release, evidence hash (normative doc sections 2 and 5).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "evidence_bundle_hash", "independence_unit_id", "desired_state", "beneficiary", "accountable_party", "context", "persistence", "failure_meaning", "override_release", "executable_control", "admission"],
+  "properties": {
+    "object_type": { "const": "CanonicalResponsibility" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "evidence_bundle_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "independence_unit_id": { "type": "string" },
+    "desired_state": { "type": "string" },
+    "beneficiary": { "type": "string" },
+    "accountable_party": { "type": "string" },
+    "context": { "type": "string" },
+    "persistence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scope", "supported"],
+      "properties": {
+        "scope": { "type": "string", "enum": ["recurring", "persistent"] },
+        "supported": { "type": "boolean" }
+      }
+    },
+    "failure_meaning": { "type": "string" },
+    "override_release": { "type": "string" },
+    "executable_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requires_agent_delegation", "requires_authorized_action_set", "authorized_action_set", "authorization_evidence_span"],
+      "properties": {
+        "requires_agent_delegation": { "type": "boolean" },
+        "requires_authorized_action_set": { "type": "boolean" },
+        "authorized_action_set": { "type": ["array", "null"], "items": { "type": "string" } },
+        "authorization_evidence_span": { "type": "string" }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["agreement_alpha", "precision", "recall", "confirmatory_units", "adjudicated_positive_units", "eligible_denominator", "missingness", "threshold_sensitivity"],
+      "properties": {
+        "agreement_alpha": { "type": "number", "minimum": 0, "maximum": 1 },
+        "precision": { "type": "number", "minimum": 0, "maximum": 1 },
+        "recall": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confirmatory_units": { "type": "integer", "minimum": 0 },
+        "adjudicated_positive_units": { "type": "integer", "minimum": 0 },
+        "eligible_denominator": { "type": "integer", "minimum": 0 },
+        "missingness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "threshold_sensitivity": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "critical_case_validated": { "type": "boolean" },
+    "backend_influence": { "type": "string" }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

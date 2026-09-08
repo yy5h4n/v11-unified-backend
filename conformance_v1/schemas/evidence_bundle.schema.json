@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "evidence_bundle.schema.json",
+  "title": "EvidenceBundle",
+  "description": "Cross-unit support for one candidate: supporting, compatible, contradicting and boundary evidence with independent support counts (normative doc section 2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "candidate_key", "corpus_card_id", "supporting", "compatible", "contradicting", "boundary", "independent_support_counts"],
+  "properties": {
+    "object_type": { "const": "EvidenceBundle" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "candidate_key": { "type": "string" },
+    "corpus_card_id": { "type": "string" },
+    "supporting": { "type": "array", "items": { "type": "string" } },
+    "compatible": { "type": "array", "items": { "type": "string" } },
+    "contradicting": { "type": "array", "items": { "type": "string" } },
+    "boundary": { "type": "array", "items": { "type": "string" } },
+    "independent_support_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["household_components", "studies", "modalities", "entails_or_strongly_implies_households", "behavioral_or_longitudinal_corroboration"],
+      "properties": {
+        "household_components": { "type": "integer", "minimum": 0 },
+        "studies": { "type": "integer", "minimum": 0 },
+        "modalities": { "type": "integer", "minimum": 0 },
+        "entails_or_strongly_implies_households": { "type": "integer", "minimum": 0 },
+        "behavioral_or_longitudinal_corroboration": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

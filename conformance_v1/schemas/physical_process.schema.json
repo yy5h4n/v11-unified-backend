@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "physical_process.schema.json",
+  "title": "PhysicalProcess",
+  "description": "Canonical source-grounded backend window: backend/version, source hash, horizon, exogenous trace reference, capabilities (normative doc sections 2 and 8).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "backend", "backend_version", "source", "source_hash", "source_retrieval_date", "original_checksum", "access_status", "subject_key", "horizon", "exogenous_trace_ref", "capabilities"],
+  "properties": {
+    "object_type": { "const": "PhysicalProcess" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "backend": { "type": "string" },
+    "backend_version": { "type": "string" },
+    "source": { "type": "string", "enum": ["synthetic_fixture", "real_backend"] },
+    "source_hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "source_retrieval_date": { "type": "string" },
+    "original_checksum": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "access_status": { "type": "string", "enum": ["recorded", "unknown"] },
+    "subject_key": { "type": "string" },
+    "horizon": { "type": "integer", "minimum": 1 },
+    "exogenous_trace_ref": { "type": "string" },
+    "capabilities": { "type": "array", "items": { "type": "string" } },
+    "physical_meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["building_id", "generator_seed", "weather_ref"],
+      "properties": {
+        "building_id": { "type": "string" },
+        "vehicle_id": { "type": "string" },
+        "simulator_config_id": { "type": "string" },
+        "generator_seed": { "type": "integer" },
+        "weather_ref": { "type": "string" },
+        "model_ancestor": { "type": "string" }
+      }
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["horizon", "obs", "actions_used", "transition"],
+      "properties": {
+        "horizon": { "type": "integer", "minimum": 1 },
+        "obs": { "type": "array", "items": { "type": "object" } },
+        "actions_used": { "type": "array", "items": { "type": ["string", "object"] } },
+        "transition": { "type": "object" }
+      }
+    }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

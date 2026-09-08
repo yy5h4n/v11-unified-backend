@@ -1,0 +1,121 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_3",
+  "clusters": [
+    {
+      "canonical_name": "maintain_adequate_daily_hydration",
+      "objective": "Keep the occupant adequately hydrated across the day by prompting fluid intake when intake is low or activity is high.",
+      "beneficiary": "self",
+      "lifecycle": "recurring_daily",
+      "meaningful_failure": "care_lapse (dehydration risk)",
+      "authorized_action_scope": "explicit hypothetical: reminders via speaker/app/light/sound; no actuation on body",
+      "evidence_ids": ["userneeds_u05_r029", "userneeds_u23_r137"],
+      "independence_unit_ids": ["mattioli-user-05", "mattioli-user-23"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none: only 2 independent demand owners within a single study cluster; both coders rate compatible_only, so direct path unavailable and convergent/candidate thresholds (>=3 owners) unmet",
+      "rationale": "Two independent participants converge on the same maintained outcome (hydration maintenance) with agreeing beneficiary (self) and delegation (automation of reminders). Strongest below-threshold candidate in this packet.",
+      "confidence": "medium",
+      "boundary_notes": "Not merged with health monitoring generally; limited to hydration prompting. Disagreement on r137 failure_meaning (luna care_lapse vs kimi unknown) noted.",
+      "coding_disagreements": ["userneeds_u23_r137: luna temporal event_conditioned/failure care_lapse vs kimi recurring/unknown"]
+    },
+    {
+      "canonical_name": "maintain_household_cleanliness",
+      "objective": "Keep floors and waste containers clean and sanitary without occupant effort.",
+      "beneficiary": "household",
+      "lifecycle": "recurring_event_conditioned",
+      "meaningful_failure": "inconvenience / unhygienic conditions",
+      "authorized_action_scope": "explicit hypothetical: robot vacuum activation; sanitizer activation and bag insertion",
+      "evidence_ids": ["userneeds_u05_r027", "userneeds_u32_r187"],
+      "independence_unit_ids": ["mattioli-user-05", "mattioli-user-32"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none: 2 owners, 1 study cluster, compatible_only ratings; below all admission thresholds",
+      "rationale": "Both units express maintained cleanliness outcomes (waste sanitization, floor cleaning) delegated to automation; merged only at the cleanliness-outcome level, not by device.",
+      "confidence": "medium",
+      "boundary_notes": "Garbage sanitizing and floor cleaning kept as one cleanliness cluster; could be split if granularity preferred. Beneficiary disagreement on r027 (luna unknown vs kimi household).",
+      "coding_disagreements": ["userneeds_u05_r027: luna failure inconvenience vs kimi unknown", "userneeds_u32_r187: luna beneficiary self vs kimi household"]
+    },
+    {
+      "canonical_name": "protect_occupants_from_fire_and_power_emergencies",
+      "objective": "Detect and respond to fire or power-loss emergencies to prevent harm to occupants.",
+      "beneficiary": "household",
+      "lifecycle": "persistent_standby_event_conditioned",
+      "meaningful_failure": "harm (fire injury, emergency without light/communication)",
+      "authorized_action_scope": "explicit hypothetical: auxiliary lighting, emergency call, fire-sensor activation, cooktop shutoff",
+      "evidence_ids": ["userneeds_u14_r084", "userneeds_u32_r188"],
+      "independence_unit_ids": ["mattioli-user-14", "mattioli-user-32"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none: 2 owners, 1 study cluster, compatible_only; below thresholds despite high-severity failure meaning",
+      "rationale": "Both units target fire-related harm prevention/response for the household; jointly managed emergency response justifies compound trigger (fire or power loss in r084).",
+      "confidence": "medium",
+      "boundary_notes": "r084 also covers power outage; kept with fire because the maintained outcome is emergency harm prevention. Not merged with away-security (r134). Disagreement: luna security_failure vs kimi harm on both.",
+      "coding_disagreements": ["userneeds_u14_r084: luna failure security_failure vs kimi harm", "userneeds_u32_r188: luna failure unknown/beneficiary self vs kimi harm/household"]
+    },
+    {
+      "canonical_name": "protect_home_from_water_and_weather_damage",
+      "objective": "Prevent property damage from leaks and rain by shutting off water and securing shutters.",
+      "beneficiary": "household",
+      "lifecycle": "persistent_standby_event_conditioned",
+      "meaningful_failure": "property damage / waste (water loss, weather damage)",
+      "authorized_action_scope": "explicit hypothetical: water system shutoff with owner notification; shutters moved to safety position",
+      "evidence_ids": ["userneeds_u14_r085", "userneeds_u23_r133"],
+      "independence_unit_ids": ["mattioli-user-14", "mattioli-user-23"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none: 2 owners, 1 study cluster, compatible_only; below thresholds",
+      "rationale": "Shared maintained outcome of asset protection from water/weather; explicit protective actuation authorized in both.",
+      "confidence": "medium",
+      "boundary_notes": "Leak shutoff (interior water) and rain shutters (exterior weather) merged at outcome level; split defensible. luna codes r085 failure unknown, kimi waste.",
+      "coding_disagreements": ["userneeds_u14_r085: luna beneficiary household/failure unknown vs kimi self/waste", "userneeds_u23_r133: luna beneficiary unknown/failure unknown vs kimi household/harm"]
+    },
+    {
+      "canonical_name": "prepare_comfortable_sleep_environment",
+      "objective": "Ensure the bedroom is warm, dark, and closed up for nighttime sleep.",
+      "beneficiary": "self",
+      "lifecycle": "recurring_nightly",
+      "meaningful_failure": "discomfort (cold bed, lights/windows left open)",
+      "authorized_action_scope": "explicit hypothetical: bed warmer on schedule; lights off and windows closed on bed occupancy",
+      "evidence_ids": ["userneeds_u05_r028", "userneeds_u32_r190"],
+      "independence_unit_ids": ["mattioli-user-05", "mattioli-user-32"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none: 2 owners, 1 study cluster, compatible_only; below thresholds",
+      "rationale": "Two owners converge on a maintained pre-sleep/sleep bedroom environment; recurring nightly temporal scope (kimi) though luna reads both as event_conditioned.",
+      "confidence": "medium",
+      "boundary_notes": "Thermal comfort (r028) and closure/darkness (r190) are distinct facets; merged only under sleep-environment outcome. Not merged with ambiance-convenience group.",
+      "coding_disagreements": ["userneeds_u05_r028: luna temporal event_conditioned/beneficiary unknown vs kimi recurring/self"]
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_reason": "mechanism_only_uninterpretable_record",
+      "evidence_ids": ["smartsense_us_007"],
+      "independence_unit_ids": ["unresolved-smartsense_us_007"],
+      "rationale": "Opaque device-sequence log line; trigger, direction, purpose, beneficiary, and authorship all unknown. Both coders: authorized_action_scope absent; kimi rates standing_responsibility_support irrelevant. No maintained outcome recoverable."
+    },
+    {
+      "group_reason": "one_shot_or_ambiance_convenience_without_meaningful_failure",
+      "evidence_ids": ["practicaltap_p3", "userneeds_u05_r031", "userneeds_u23_r135", "userneeds_u23_r136", "userneeds_u23_r138", "userneeds_u32_r189", "userneeds_u32_r191"],
+      "independence_unit_ids": ["unresolved-practicaltap_p3", "mattioli-user-05", "mattioli-user-23", "mattioli-user-32"],
+      "rationale": "Activity-ambiance and convenience preferences (coffee before alarm, reading mode, garden lighting, home theater, dinner scene, TV schedule, shower music). Failure meaning absent, unknown, or coder-disagreed (luna reads practicaltap_p3 as security_failure vs kimi inconvenience); no care objective or harm; r138 additionally read as one_shot by luna. Single demand owner each; convenience only."
+    },
+    {
+      "group_reason": "plausible_standing_outcome_single_owner_hypothetical_below_threshold",
+      "evidence_ids": ["userneeds_u05_r026", "userneeds_u05_r030", "userneeds_u14_r080", "userneeds_u14_r081", "userneeds_u14_r082", "userneeds_u14_r083", "userneeds_u23_r134", "userneeds_u32_r192"],
+      "independence_unit_ids": ["mattioli-user-05", "mattioli-user-14", "mattioli-user-23", "mattioli-user-32"],
+      "rationale": "Each expresses a coherent maintained outcome (idle-device energy waste reduction, infant crib fall prevention, mail arrival awareness, pet location, key remembering, plant watering, away-mode home security, remote visitor gate access) but from exactly one demand owner, participant-authored and not deployed, compatible_only from both coders. Neither direct path (no strongly_implies/entails) nor convergent/candidate owner counts are met. r134 (away security: alarm+lock+water/gas shutoff) is the strongest single-unit case and a priority for cross-study confirmation."
+    }
+  ],
+  "coverage_check": {
+    "input_evidence_count": 26,
+    "clustered_evidence_count": 10,
+    "excluded_evidence_count": 16,
+    "union_count": 26,
+    "union_ids": ["practicaltap_p3", "smartsense_us_007", "userneeds_u05_r026", "userneeds_u05_r027", "userneeds_u05_r028", "userneeds_u05_r029", "userneeds_u05_r030", "userneeds_u05_r031", "userneeds_u14_r080", "userneeds_u14_r081", "userneeds_u14_r082", "userneeds_u14_r083", "userneeds_u14_r084", "userneeds_u14_r085", "userneeds_u23_r133", "userneeds_u23_r134", "userneeds_u23_r135", "userneeds_u23_r136", "userneeds_u23_r137", "userneeds_u23_r138", "userneeds_u32_r187", "userneeds_u32_r188", "userneeds_u32_r189", "userneeds_u32_r190", "userneeds_u32_r191", "userneeds_u32_r192"],
+    "overlaps_between_clusters": "none",
+    "exact_union_match_with_input": true,
+    "metadata_copied_from_packet": ["evidence_id", "independence_unit_id", "study_cluster_id", "luna/kimi coding values cited in coding_disagreements"]
+  }
+}

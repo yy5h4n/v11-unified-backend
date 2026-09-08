@@ -1,0 +1,18 @@
+{
+  "id": "golden_boundary",
+  "class": "boundary",
+  "description": "Boundary-opportunity golden fixture: the certified upper bound covers only Pi_cert (not Pi_auth_pub), so certified_no_opportunity is NOT established and the group is boundary_opportunity. Waiting/no-op may be acceptable in boundary cases (spec section 7).",
+  "opportunity_inputs": {
+    "delta_lcb": 0.05,
+    "certified_ub": 0.01,
+    "certified_covers_pi_auth": false,
+    "pi_hat_acceptable": true,
+    "pi_0_acceptable": true,
+    "capability_supported": true,
+    "information_supported": true
+  },
+  "expected": {
+    "physical_label": "boundary_opportunity",
+    "failure_codes": ["BOUND_NOT_COVERING_PI_AUTH"]
+  }
+}

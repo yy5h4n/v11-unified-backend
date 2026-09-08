@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "corpus_card.schema.json",
+  "title": "CorpusCard",
+  "description": "Audited source: provenance, collection unit, household/participant counts, access/license, bias (normative doc section 2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "provenance", "counts", "access", "bias", "ethics"],
+  "properties": {
+    "object_type": { "const": "CorpusCard" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collection_unit", "population", "platform", "collection_method"],
+      "properties": {
+        "collection_unit": { "type": "string" },
+        "population": { "type": "string" },
+        "platform": { "type": "string" },
+        "collection_method": { "type": "string" }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["households", "participants"],
+      "properties": {
+        "households": { "type": "integer", "minimum": 0 },
+        "participants": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["access_status", "license", "legal_access_status", "secondary_use_scope"],
+      "properties": {
+        "access_status": { "type": "string", "enum": ["open", "restricted", "closed"] },
+        "license": { "type": "string" },
+        "legal_access_status": { "type": "string", "enum": ["recorded", "unknown"] },
+        "secondary_use_scope": { "type": "string" }
+      }
+    },
+    "bias": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collection_bias", "platform_bias", "population_bias"],
+      "properties": {
+        "collection_bias": { "type": "string" },
+        "platform_bias": { "type": "string" },
+        "population_bias": { "type": "string" }
+      }
+    },
+    "ethics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["consent_recorded", "deidentification_applied", "compensation_recorded", "secondary_use_allowed"],
+      "properties": {
+        "consent_recorded": { "type": "boolean" },
+        "deidentification_applied": { "type": "boolean" },
+        "compensation_recorded": { "type": "boolean" },
+        "secondary_use_allowed": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

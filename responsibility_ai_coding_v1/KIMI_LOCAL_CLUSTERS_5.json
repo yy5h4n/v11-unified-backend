@@ -1,0 +1,99 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_5",
+  "clusters": [
+    {
+      "canonical_name": "Support resident daily care and health routines",
+      "objective": "Maintain the resident's recurring daily care routines (morning activity lighting, low-light illumination, and reminders for cognitive training, eye drops, and hydration) through negotiated automation.",
+      "beneficiary": "self (resident)",
+      "lifecycle": "recurring",
+      "meaningful_failure": "care_lapse",
+      "authorized_action_scope": "implicit-to-explicit; resident-caregiver negotiated deployment authorizing lighting control and periodic reminders",
+      "evidence_ids": ["tareme_trial3_001"],
+      "independence_unit_ids": ["Trial-3"],
+      "study_cluster_ids": ["manca_2021_tareme"],
+      "proposed_status": "admitted_provisional",
+      "proposed_path": "direct",
+      "rationale": "Both coders rate the unit strongly_implies with identifiable beneficiary, recurring temporal scope, accepted automation delegation, and a care_lapse failure objective in a negotiated deployment; this is the narrowest compound claim the single unit supports because the rules are jointly negotiated as one care-routine program.",
+      "confidence": "medium",
+      "boundary_notes": "Illumination and reminder facets are kept together because the evidence presents them as one negotiated care program; not merged with hypothetical lighting-comfort (userneeds_u25_r146) or fitness-goal (userneeds_u07_r038) evidence, which have different outcomes and weaker standing.",
+      "coding_disagreements": ["authorized_action_scope: luna=implicit, kimi=explicit"]
+    },
+    {
+      "canonical_name": "Guard home access and perimeter security",
+      "objective": "Maintain household security by monitoring door visitors when the family is away, ensuring nighttime closure of blinds/windows/doors, and responding to failed alarm-code entries.",
+      "beneficiary": "household",
+      "lifecycle": "event_conditioned with recurring nightly checks",
+      "meaningful_failure": "security_failure",
+      "authorized_action_scope": "explicit; authorized actions limited to monitoring, notification, closure/locking, and alarm",
+      "evidence_ids": ["userneeds_u07_r042", "userneeds_u16_r093", "userneeds_u25_r149", "userneeds_u34_r200"],
+      "independence_unit_ids": ["mattioli-user-07", "mattioli-user-16", "mattioli-user-25", "mattioli-user-34"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "single_study_cluster_convergence",
+      "rationale": "Four independent demand owners within one study cluster converge on the same maintained outcome (home access/perimeter security) with security_failure meaning and explicit action authorization, but all evidence is hypothetical, no unit is rated strongly_implies, and no cross-study confirmation exists.",
+      "confidence": "medium",
+      "boundary_notes": "Delivery-gate opening (userneeds_u16_r096) is excluded as a convenience/access-for-expected-delivery objective with unknown failure meaning, not merged here. All evidence is participant-authored hypothetical and not deployed.",
+      "coding_disagreements": ["userneeds_u16_r093 beneficiary: luna=unknown, kimi=household", "userneeds_u25_r149 failure_meaning: luna=unknown, kimi=security_failure"]
+    },
+    {
+      "canonical_name": "Keep floors and home clean while unoccupied",
+      "objective": "Maintain routine household cleanliness by running cleaning chores (robot floor cleaning, laundry) on a recurring schedule while the home is unoccupied.",
+      "beneficiary": "household",
+      "lifecycle": "recurring",
+      "meaningful_failure": "inconvenience from lapsed cleanliness",
+      "authorized_action_scope": "explicit; authorized actions limited to starting cleaning/laundry appliances",
+      "evidence_ids": ["practicaltap_p5", "userneeds_u07_r041", "userneeds_u25_r148"],
+      "independence_unit_ids": ["unresolved-practicaltap_p5", "mattioli-user-07", "mattioli-user-25"],
+      "study_cluster_ids": ["ur_2014_practical_tap", "mattioli_2023_recruitment_pool"],
+      "proposed_status": "admitted_provisional",
+      "proposed_path": "convergent",
+      "rationale": "Three independent demand owners across two study clusters express the same maintained outcome (scheduled cleaning while away) with recurring scope, accepted automation delegation, and explicit action authorization; failure meaning is supported only weakly as inconvenience, so confidence is low.",
+      "confidence": "low",
+      "boundary_notes": "Laundry (userneeds_u07_r041) is retained only as part of the cleaning-while-away program; standalone laundry upkeep is not separately supported. All units are hypothetical desired behaviors; none establish deployment or failure experience.",
+      "coding_disagreements": ["practicaltap_p5 beneficiary: luna=household, kimi=self", "practicaltap_p5 failure_meaning: luna=inconvenience, kimi=none", "userneeds_u07_r041 temporal_scope: luna=event_conditioned, kimi=recurring; failure_meaning: luna=unknown, kimi=none", "userneeds_u25_r148 temporal_scope: luna=event_conditioned, kimi=event_conditioned but kimi objective frames cleanliness upkeep"]
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_name": "occupied_space_thermal_comfort",
+      "evidence_ids": ["userneeds_u07_r040", "userneeds_u34_r202"],
+      "reason": "below_evidence_threshold: only two independent demand owners (mattioli-user-07, mattioli-user-34) in one study cluster; candidate path requires three; all evidence hypothetical compatible_only with failure meaning discomfort"
+    },
+    {
+      "group_name": "lighting_and_heating_energy_conservation",
+      "evidence_ids": ["userneeds_u07_r039", "userneeds_u34_r201", "userneeds_u34_r203"],
+      "reason": "below_evidence_threshold: only two independent demand owners; convergence on reducing energy waste in unused spaces and efficient heating source selection but hypothetical only; failure meaning disputed between waste/discomfort/unknown"
+    },
+    {
+      "group_name": "child_sleep_and_screen_curfew",
+      "evidence_ids": ["userneeds_u07_r043", "userneeds_u16_r095"],
+      "reason": "below_evidence_threshold: only two independent demand owners; shared outcome of enforcing nighttime device/TV curfews for children but hypothetical only and failure meaning disputed (care_lapse vs unknown)"
+    },
+    {
+      "group_name": "pet_care_and_safety",
+      "evidence_ids": ["userneeds_u25_r147", "userneeds_u34_r199"],
+      "reason": "below_evidence_threshold: only two independent demand owners; convergent pet-welfare intent (cold protection, perimeter tracking) but hypothetical only; beneficiary coded inconsistently (third_party vs household)"
+    },
+    {
+      "group_name": "garden_and_outdoor_upkeep",
+      "evidence_ids": ["userneeds_u16_r097", "userneeds_u34_r204"],
+      "reason": "below_evidence_threshold: only two independent demand owners; shared garden-watering/pool upkeep outcome but hypothetical only with unknown or disputed failure meaning"
+    },
+    {
+      "group_name": "single_owner_hypothetical_convenience_or_unsupported",
+      "evidence_ids": ["userneeds_u07_r038", "userneeds_u16_r092", "userneeds_u16_r094", "userneeds_u16_r096", "userneeds_u25_r145", "userneeds_u25_r146", "userneeds_u25_r150"],
+      "reason": "below_evidence_threshold: each objective (step-goal reminder, fridge-open alert, child window safety, delivery gate access, wake-up coffee, low-brightness lighting, pantry restocking) is supported by only one demand owner of hypothetical non-deployed evidence; several are one-shot convenience or have unknown failure meaning"
+    }
+  ],
+  "coverage_check": {
+    "input_evidence_count": 26,
+    "clustered_evidence_count": 8,
+    "excluded_evidence_count": 18,
+    "union_evidence_ids": ["practicaltap_p5", "tareme_trial3_001", "userneeds_u07_r038", "userneeds_u07_r039", "userneeds_u07_r040", "userneeds_u07_r041", "userneeds_u07_r042", "userneeds_u07_r043", "userneeds_u16_r092", "userneeds_u16_r093", "userneeds_u16_r094", "userneeds_u16_r095", "userneeds_u16_r096", "userneeds_u16_r097", "userneeds_u25_r145", "userneeds_u25_r146", "userneeds_u25_r147", "userneeds_u25_r148", "userneeds_u25_r149", "userneeds_u25_r150", "userneeds_u34_r199", "userneeds_u34_r200", "userneeds_u34_r201", "userneeds_u34_r202", "userneeds_u34_r203", "userneeds_u34_r204"],
+    "union_count": 26,
+    "missing_ids": [],
+    "unexpected_ids": [],
+    "exact_union_coverage": true
+  }
+}

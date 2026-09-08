@@ -1,0 +1,1239 @@
+{
+  "meta": {
+    "id": "e2e_corpus_to_episode",
+    "is_synthetic_fixture": true,
+    "schema_version": "1.0",
+    "note": "Tiny synthetic corpus; admission fields are fixture values, not benchmark claims. No real backends are scanned."
+  },
+  "corpus": {
+    "corpus_card": {
+      "id": "CC-001",
+      "provenance": {
+        "collection_unit": "household-pilot",
+        "population": "synthetic-conformance",
+        "platform": "interview+smart-home",
+        "collection_method": "semi-structured"
+      },
+      "counts": {
+        "households": 2,
+        "participants": 2
+      },
+      "access": {
+        "access_status": "restricted",
+        "license": "research-only",
+        "legal_access_status": "recorded",
+        "secondary_use_scope": "conformance-fixture"
+      },
+      "bias": {
+        "collection_bias": "self-selected volunteers",
+        "platform_bias": "synthetic",
+        "population_bias": "none claimed"
+      },
+      "ethics": {
+        "consent_recorded": true,
+        "deidentification_applied": true,
+        "compensation_recorded": false,
+        "secondary_use_allowed": true
+      },
+      "object_type": "CorpusCard",
+      "schema_version": "1.0",
+      "version": 1,
+      "created_at": "2026-08-30T00:00:00Z",
+      "statuses": {
+        "semantic_status": "provisional_ai_pilot",
+        "authorization_status": "unknown",
+        "physical_status": "unassigned",
+        "release_status": "provisional"
+      },
+      "hash": "f0384e30b763b1f8dde5e07f435cb3b4ba398239d6e5c828575ba06266015ab3"
+    },
+    "evidence_units": [
+      {
+        "id": "EU-001",
+        "corpus_card_id": "CC-001",
+        "source": {
+          "source_type": "direct_interview_diary_quotation",
+          "stable_locator": "fixture:interview/log-01",
+          "span_or_rule": "log-01 entry 3",
+          "collection_unit": "household-pilot"
+        },
+        "household_id": "hh-01",
+        "participant_id": "P1",
+        "authorship": "authored",
+        "verbatim_text": "I want the living room warm before I get home in winter and I am the one responsible for it; if the heating fails my family complains, and I only want the agent to raise the setpoint, never below 10 outside.",
+        "paper_described_example": false,
+        "semantics": {
+          "desired_state": "living_room_temp >= 18C on winter evenings",
+          "beneficiary": "self/household",
+          "context": "winter evenings, outside_temp below 10",
+          "temporal_scope": "recurring evenings",
+          "ownership_evidence": "explicit self-attribution",
+          "failure_meaning": "cold living room / family discomfort",
+          "constraints": "setpoint only when outside above -10C",
+          "tradeoffs": "energy cost",
+          "override_release": "manual override allowed"
+        },
+        "device_action": {
+          "means": "thermostat",
+          "device": "heating",
+          "action": "raise setpoint"
+        },
+        "evidence_limitations": "single-interview self-report; no behavioral log",
+        "propositions": [
+          {
+            "code": "reported_purpose",
+            "value": "keep living room warm",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "desired_state",
+            "value": "living_room_temp>=18 winter evenings",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "beneficiary",
+            "value": "self/household",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "accountability",
+            "value": "self",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "failure_meaning",
+            "value": "cold living room",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "override_release",
+            "value": "manual override allowed",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "authorized_action",
+            "value": "raise setpoint only",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          },
+          {
+            "code": "delegation_acceptance",
+            "value": "agent may raise setpoint",
+            "inference_matrix_row": "Direct interview/diary quotation",
+            "matrix_row_source_type": "direct_interview_diary_quotation"
+          }
+        ],
+        "object_type": "EvidenceUnit",
+        "schema_version": "1.0",
+        "version": 1,
+        "created_at": "2026-08-30T00:00:00Z",
+        "statuses": {
+          "semantic_status": "provisional_ai_pilot",
+          "authorization_status": "unknown",
+          "physical_status": "unassigned",
+          "release_status": "provisional"
+        },
+        "hash": "a3b8b4c00bea784b61cbbc1f8873fdd6ae0c24ed26c6d10c2021083cff6e1123"
+      },
+      {
+        "id": "EU-002",
+        "corpus_card_id": "CC-001",
+        "source": {
+          "source_type": "naturally_authored_routine",
+          "stable_locator": "fixture:routine/schedule-02",
+          "span_or_rule": "thermostat schedule, 6 weeks",
+          "collection_unit": "household-pilot"
+        },
+        "household_id": "hh-02",
+        "participant_id": "P2",
+        "authorship": "authored",
+        "verbatim_text": "Thermostat setpoint 17C weekdays 16:00-20:00; overridden to 19C on 4 evenings.",
+        "paper_described_example": false,
+        "semantics": {
+          "desired_state": "setpoint reached weekday evenings",
+          "beneficiary": "",
+          "context": "weekday evenings",
+          "temporal_scope": "6-week window",
+          "ownership_evidence": "",
+          "failure_meaning": "",
+          "constraints": "",
+          "tradeoffs": "",
+          "override_release": "manual override observed"
+        },
+        "device_action": {
+          "means": "thermostat",
+          "device": "heating",
+          "action": "setpoint"
+        },
+        "evidence_limitations": "configured mechanism + longitudinal metadata; no purpose statement",
+        "propositions": [
+          {
+            "code": "configured_mechanism",
+            "value": "17C weekdays 16-20",
+            "inference_matrix_row": "Naturally authored Routine",
+            "matrix_row_source_type": "naturally_authored_routine"
+          },
+          {
+            "code": "recurrence",
+            "value": "6-week window",
+            "inference_matrix_row": "Naturally authored Routine",
+            "matrix_row_source_type": "naturally_authored_routine"
+          },
+          {
+            "code": "context",
+            "value": "weekday evenings",
+            "inference_matrix_row": "Naturally authored Routine",
+            "matrix_row_source_type": "naturally_authored_routine"
+          }
+        ],
+        "object_type": "EvidenceUnit",
+        "schema_version": "1.0",
+        "version": 1,
+        "created_at": "2026-08-30T00:00:00Z",
+        "statuses": {
+          "semantic_status": "provisional_ai_pilot",
+          "authorization_status": "unknown",
+          "physical_status": "unassigned",
+          "release_status": "provisional"
+        },
+        "hash": "b55a219b50aff963eef0e78a5b1a16ec2efe7fbf37c02f4c7b7d6373a46880f9"
+      },
+      {
+        "id": "EU-003",
+        "corpus_card_id": "CC-001",
+        "source": {
+          "source_type": "participant_authored_desired_automation",
+          "stable_locator": "fixture:desired_automation/poll-02",
+          "span_or_rule": "poll-02 response",
+          "collection_unit": "household-pilot"
+        },
+        "household_id": "hh-02",
+        "participant_id": "P2",
+        "authorship": "authored",
+        "verbatim_text": "I wish the heating would run on its own before I get back.",
+        "paper_described_example": false,
+        "semantics": {
+          "desired_state": "preheat before return",
+          "beneficiary": "",
+          "context": "away return",
+          "temporal_scope": "",
+          "ownership_evidence": "",
+          "failure_meaning": "",
+          "constraints": "",
+          "tradeoffs": "",
+          "override_release": ""
+        },
+        "device_action": {
+          "means": "heating",
+          "device": "thermostat",
+          "action": "automatic preheat"
+        },
+        "evidence_limitations": "desired automation only; no deployment or purpose attribution",
+        "propositions": [
+          {
+            "code": "desired_state",
+            "value": "preheat before return",
+            "inference_matrix_row": "Participant-authored desired automation",
+            "matrix_row_source_type": "participant_authored_desired_automation"
+          },
+          {
+            "code": "context",
+            "value": "away return",
+            "inference_matrix_row": "Participant-authored desired automation",
+            "matrix_row_source_type": "participant_authored_desired_automation"
+          },
+          {
+            "code": "trigger",
+            "value": "before return",
+            "inference_matrix_row": "Participant-authored desired automation",
+            "matrix_row_source_type": "participant_authored_desired_automation"
+          }
+        ],
+        "object_type": "EvidenceUnit",
+        "schema_version": "1.0",
+        "version": 1,
+        "created_at": "2026-08-30T00:00:00Z",
+        "statuses": {
+          "semantic_status": "provisional_ai_pilot",
+          "authorization_status": "unknown",
+          "physical_status": "unassigned",
+          "release_status": "provisional"
+        },
+        "hash": "c9278a104bc886b1f14f3dbda514c15bccf3ff0e60ab4e0ce5e4a56f18c9f960"
+      }
+    ]
+  },
+  "bundle_draft": {
+    "id": "EB-001",
+    "candidate_key": "candidate_living_room_comfort",
+    "corpus_card_id": "CC-001",
+    "supporting": [
+      "EU-001"
+    ],
+    "compatible": [
+      "EU-002",
+      "EU-003"
+    ],
+    "contradicting": [],
+    "boundary": [],
+    "independent_support_counts": {
+      "household_components": 2,
+      "studies": 1,
+      "modalities": 3,
+      "entails_or_strongly_implies_households": 1,
+      "behavioral_or_longitudinal_corroboration": 1
+    }
+  },
+  "responsibility_draft": {
+    "id": "CR-001",
+    "desired_state": "living room comfortable (>=18C) during winter evenings",
+    "beneficiary": "household (self + family)",
+    "accountable_party": "participant P1",
+    "context": "winter, outside_temp below 10C, weekday evenings",
+    "persistence": {
+      "scope": "recurring",
+      "supported": true
+    },
+    "failure_meaning": "living room below comfort temperature in winter evening",
+    "override_release": "manual override is always allowed",
+    "executable_control": {
+      "requires_agent_delegation": true,
+      "requires_authorized_action_set": true,
+      "authorized_action_set": [
+        "heat_setpoint_up",
+        "none"
+      ],
+      "authorization_evidence_span": "EU-001 propositions"
+    },
+    "admission": {
+      "agreement_alpha": 0.82,
+      "precision": 0.9,
+      "recall": 0.75,
+      "confirmatory_units": 30,
+      "adjudicated_positive_units": 12,
+      "eligible_denominator": 60,
+      "missingness": 0.02,
+      "threshold_sensitivity": [
+        {
+          "household_support": 3,
+          "agreement": 0.8
+        }
+      ]
+    },
+    "critical_case_validated": false,
+    "backend_influence": "none"
+  },
+  "query_draft": {
+    "id": "Q-001",
+    "text": "Keep the living room warm on winter evenings.",
+    "paraphrase_set": [
+      "Keep the living room warm on winter evenings.",
+      "Make sure the living room stays comfortable when it is cold outside."
+    ],
+    "equivalence_verdict": "bidirectional_entailed"
+  },
+  "contract_draft": {
+    "id": "CT-001",
+    "anti_gaming_rule": "terminal_guard_band",
+    "priority_order": [
+      "CL-1",
+      "CL-2",
+      "CL-3",
+      "CL-4",
+      "CL-5"
+    ],
+    "clauses": [
+      {
+        "clause_id": "CL-1",
+        "kind": "hard_invariant",
+        "formula": {
+          "op": "not",
+          "expr": {
+            "op": "and",
+            "exprs": [
+              {
+                "op": "action",
+                "variable": "heat_setpoint_up",
+                "cmp": "eq",
+                "value": true
+              },
+              {
+                "op": "obs",
+                "variable": "outside_temp",
+                "cmp": "le",
+                "value": -10
+              }
+            ]
+          }
+        },
+        "coverage": [
+          {
+            "responsibility_field": "authorized_action_set",
+            "clause_ref": "CL-1",
+            "transformation_rule": "setpoint raise forbidden when outside <= -10C",
+            "evidence_span_or_design_choice": "EU-001 authorized action statement",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          },
+          {
+            "responsibility_field": "failure_meaning",
+            "clause_ref": "CL-1",
+            "transformation_rule": "never worsen toward failure via prohibited action",
+            "evidence_span_or_design_choice": "EU-001 failure meaning",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          },
+          {
+            "responsibility_field": "accountable_party",
+            "clause_ref": "CL-1",
+            "transformation_rule": "identity carried; no obligation change",
+            "evidence_span_or_design_choice": "EU-001 accountability",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "semantic identity only"
+          }
+        ]
+      },
+      {
+        "clause_id": "CL-2",
+        "kind": "conditional_obligation",
+        "formula": {
+          "op": "within",
+          "trigger": {
+            "op": "and",
+            "exprs": [
+              {
+                "op": "obs",
+                "variable": "outside_temp",
+                "cmp": "lt",
+                "value": 10
+              },
+              {
+                "op": "time",
+                "cmp": "ge",
+                "value": 1
+              }
+            ]
+          },
+          "obligation": {
+            "op": "obs",
+            "variable": "living_room_temp",
+            "cmp": "ge",
+            "value": 18.0
+          },
+          "deadline_intervals": 4
+        },
+        "coverage": [
+          {
+            "responsibility_field": "context",
+            "clause_ref": "CL-2",
+            "transformation_rule": "cold outside (outside_temp<10) is the trigger window",
+            "evidence_span_or_design_choice": "EU-001 context",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          },
+          {
+            "responsibility_field": "desired_state",
+            "clause_ref": "CL-2",
+            "transformation_rule": "obligation: living_room_temp >= 18C within 4 intervals",
+            "evidence_span_or_design_choice": "EU-001 desired state",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "deadline is a design choice"
+          },
+          {
+            "responsibility_field": "beneficiary",
+            "clause_ref": "CL-2",
+            "transformation_rule": "beneficiary carried; obligation unchanged",
+            "evidence_span_or_design_choice": "EU-001 beneficiary",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "semantic identity only"
+          }
+        ]
+      },
+      {
+        "clause_id": "CL-3",
+        "kind": "terminal_goal",
+        "formula": {
+          "op": "terminal_goal",
+          "goal": {
+            "op": "obs",
+            "variable": "living_room_temp",
+            "cmp": "ge",
+            "value": 18.0
+          },
+          "deadline_intervals": 6
+        },
+        "coverage": [
+          {
+            "responsibility_field": "desired_state",
+            "clause_ref": "CL-3",
+            "transformation_rule": "terminal comfort goal by interval 6",
+            "evidence_span_or_design_choice": "EU-001 desired state",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          },
+          {
+            "responsibility_field": "persistence",
+            "clause_ref": "CL-3",
+            "transformation_rule": "standing goal assumed to continue beyond window unless released",
+            "evidence_span_or_design_choice": "EU-002 longitudinal recurrence",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          }
+        ]
+      },
+      {
+        "clause_id": "CL-4",
+        "kind": "soft_cost",
+        "formula": {
+          "op": "soft_cost",
+          "amount": 1.0,
+          "trigger": {
+            "op": "action",
+            "variable": "heat_setpoint_up",
+            "cmp": "eq",
+            "value": true
+          }
+        },
+        "coverage": [
+          {
+            "responsibility_field": "context",
+            "clause_ref": "CL-4",
+            "transformation_rule": "each setpoint raise costs 1 (energy), resolution only",
+            "evidence_span_or_design_choice": "benchmark_design_choice",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "measurement resolution; no new obligation"
+          },
+          {
+            "responsibility_field": "authorized_action_set",
+            "clause_ref": "CL-4",
+            "transformation_rule": "costs accrue only on authorized setpoint raises",
+            "evidence_span_or_design_choice": "EU-001 authorized action",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          }
+        ]
+      },
+      {
+        "clause_id": "CL-5",
+        "kind": "release_condition",
+        "formula": {
+          "op": "release_when",
+          "expr": {
+            "op": "action",
+            "variable": "manual_override",
+            "cmp": "eq",
+            "value": true
+          }
+        },
+        "coverage": [
+          {
+            "responsibility_field": "override_release",
+            "clause_ref": "CL-5",
+            "transformation_rule": "manual override releases the responsibility",
+            "evidence_span_or_design_choice": "EU-001 override/release",
+            "reviewer_A": "pass",
+            "reviewer_B": "pass",
+            "adjudication": "pass",
+            "adjudication_reason": "no expansion"
+          }
+        ]
+      }
+    ],
+    "rejected_predicates": [
+      {
+        "predicate": "raise setpoint when outside > 25C",
+        "reason": "not entailed by evidence",
+        "reason_code": "ENTAILMENT_FAILURE",
+        "timestamp": "2026-08-30T00:00:00Z"
+      }
+    ]
+  },
+  "predicate_draft": {
+    "id": "OP-001",
+    "required_state_variables": [
+      "living_room_temp",
+      "outside_temp",
+      "season"
+    ],
+    "required_observations": [
+      "living_room_temp",
+      "outside_temp",
+      "season"
+    ],
+    "legal_action_types": [
+      "heat_setpoint_up",
+      "none",
+      "manual_override"
+    ],
+    "authorization_boundaries": "setpoint raise only when outside above -10C; no actions in manual override mode",
+    "required_dynamics": [
+      "heating rise on setpoint raise; residual drift otherwise"
+    ],
+    "exogenous_processes": [
+      "outside temperature schedule"
+    ],
+    "horizon": 12,
+    "observation_cadence": "1h",
+    "action_sensitivity_criterion": "living_room_temp at interval 6 changes materially with setpoint actions",
+    "agent_information": {
+      "has_forecasts": false,
+      "public_observation_vars": [
+        "living_room_temp",
+        "outside_temp",
+        "season"
+      ],
+      "authorized_actions": [
+        "heat_setpoint_up",
+        "none"
+      ]
+    },
+    "strata": {
+      "positive_opportunity": "multiplicity-adjusted lower confidence bound of Delta_witness(g) >= delta_positive and pi_hat acceptable",
+      "boundary_opportunity": "all other applicable groups, including no detected gain, optimization gaps, uncertainty, ties or incompatible acceptable actions",
+      "certified_no_opportunity": "released upper bound on improvement over Pi_auth_pub <= delta_noop and pi_0 acceptable",
+      "unsupported": "required capability, authorized action or public information absent"
+    }
+  },
+  "process_drafts": [
+    {
+      "id": "PP-001",
+      "backend": "citylearn",
+      "backend_version": "0.0.0-fixture",
+      "source": "synthetic_fixture",
+      "source_retrieval_date": "2026-08-30",
+      "access_status": "recorded",
+      "horizon": 12,
+      "exogenous_trace_ref": "synthetic:outside_temp_schedule_v1",
+      "capabilities": [
+        "heating_actuation",
+        "temperature_observation"
+      ],
+      "physical_meta": {
+        "building_id": "bldg-01",
+        "generator_seed": 1,
+        "weather_ref": "winter-fixture-v1"
+      },
+      "trace": {
+        "horizon": 12,
+        "obs": [
+          {
+            "living_room_temp": 16.0,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 17.5,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.0,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.2,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.4,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.6,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.8,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.0,
+            "outside_temp": 1,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.2,
+            "outside_temp": 1,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.4,
+            "outside_temp": 0,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.6,
+            "outside_temp": 0,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.8,
+            "outside_temp": 0,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 21.0,
+            "outside_temp": 0,
+            "season": "winter"
+          }
+        ],
+        "actions_used": [
+          "heat_setpoint_up",
+          "heat_setpoint_up",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "transition": {
+          "heat_setpoint_up": {
+            "living_room_temp": {
+              "delta": 1.5
+            }
+          },
+          "none": {
+            "living_room_temp": {
+              "delta": 0.2
+            }
+          },
+          "exogenous": {
+            "outside_temp": {
+              "schedule": [
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                2,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "PP-002",
+      "backend": "citylearn",
+      "backend_version": "0.0.0-fixture",
+      "source": "synthetic_fixture",
+      "source_retrieval_date": "2026-08-30",
+      "access_status": "recorded",
+      "horizon": 12,
+      "exogenous_trace_ref": "synthetic:outside_temp_schedule_v2",
+      "capabilities": [
+        "heating_actuation",
+        "temperature_observation"
+      ],
+      "physical_meta": {
+        "building_id": "bldg-02",
+        "generator_seed": 2,
+        "weather_ref": "winter-fixture-v2"
+      },
+      "trace": {
+        "horizon": 12,
+        "obs": [
+          {
+            "living_room_temp": 16.0,
+            "outside_temp": 5,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 17.5,
+            "outside_temp": 5,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.0,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.2,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.4,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.6,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.8,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.0,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.2,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.4,
+            "outside_temp": 1,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.6,
+            "outside_temp": 1,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.8,
+            "outside_temp": 1,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 21.0,
+            "outside_temp": 1,
+            "season": "winter"
+          }
+        ],
+        "actions_used": [
+          "heat_setpoint_up",
+          "heat_setpoint_up",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "transition": {
+          "heat_setpoint_up": {
+            "living_room_temp": {
+              "delta": 1.5
+            }
+          },
+          "none": {
+            "living_room_temp": {
+              "delta": 0.2
+            }
+          },
+          "exogenous": {
+            "outside_temp": {
+              "schedule": [
+                5,
+                5,
+                4,
+                4,
+                3,
+                3,
+                3,
+                2,
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "PP-003",
+      "backend": "citylearn",
+      "backend_version": "0.0.0-fixture",
+      "source": "synthetic_fixture",
+      "source_retrieval_date": "2026-08-30",
+      "access_status": "recorded",
+      "horizon": 12,
+      "exogenous_trace_ref": "synthetic:outside_temp_schedule_v3",
+      "capabilities": [
+        "heating_actuation",
+        "temperature_observation"
+      ],
+      "physical_meta": {
+        "building_id": "bldg-03",
+        "generator_seed": 3,
+        "weather_ref": "winter-fixture-v3"
+      },
+      "trace": {
+        "horizon": 12,
+        "obs": [
+          {
+            "living_room_temp": 16.0,
+            "outside_temp": 6,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 17.5,
+            "outside_temp": 6,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.0,
+            "outside_temp": 5,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.2,
+            "outside_temp": 5,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.4,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.6,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 19.8,
+            "outside_temp": 4,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.0,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.2,
+            "outside_temp": 3,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.4,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.6,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 20.8,
+            "outside_temp": 2,
+            "season": "winter"
+          },
+          {
+            "living_room_temp": 21.0,
+            "outside_temp": 2,
+            "season": "winter"
+          }
+        ],
+        "actions_used": [
+          "heat_setpoint_up",
+          "heat_setpoint_up",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "transition": {
+          "heat_setpoint_up": {
+            "living_room_temp": {
+              "delta": 1.5
+            }
+          },
+          "none": {
+            "living_room_temp": {
+              "delta": 0.2
+            }
+          },
+          "exogenous": {
+            "outside_temp": {
+              "schedule": [
+                6,
+                6,
+                5,
+                5,
+                4,
+                4,
+                4,
+                3,
+                3,
+                2,
+                2,
+                2,
+                2
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "noop_trace": {
+    "horizon": 12,
+    "obs": [
+      {
+        "living_room_temp": 16.0,
+        "outside_temp": 4,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 16.2,
+        "outside_temp": 4,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 16.4,
+        "outside_temp": 3,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 16.6,
+        "outside_temp": 3,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 16.8,
+        "outside_temp": 2,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 17.0,
+        "outside_temp": 2,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 17.2,
+        "outside_temp": 2,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 17.4,
+        "outside_temp": 1,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 17.6,
+        "outside_temp": 1,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 17.8,
+        "outside_temp": 0,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 18.0,
+        "outside_temp": 0,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 18.2,
+        "outside_temp": 0,
+        "season": "winter"
+      },
+      {
+        "living_room_temp": 18.4,
+        "outside_temp": 0,
+        "season": "winter"
+      }
+    ],
+    "actions_used": [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "transition": {
+      "heat_setpoint_up": {
+        "living_room_temp": {
+          "delta": 1.5
+        }
+      },
+      "none": {
+        "living_room_temp": {
+          "delta": 0.2
+        }
+      },
+      "exogenous": {
+        "outside_temp": {
+          "schedule": [
+            4,
+            4,
+            3,
+            3,
+            2,
+            2,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    }
+  },
+  "opportunity_groups": [
+    {
+      "group_id": "g1",
+      "process_id": "PP-001",
+      "delta_lcb": 0.35,
+      "certified_ub": null,
+      "certified_covers_pi_auth": false,
+      "pi_hat_acceptable": true,
+      "pi_0_acceptable": true,
+      "capability_supported": true,
+      "information_supported": true,
+      "certificate_margin": 0.45
+    },
+    {
+      "group_id": "g2",
+      "process_id": "PP-002",
+      "delta_lcb": 0.35,
+      "certified_ub": null,
+      "certified_covers_pi_auth": false,
+      "pi_hat_acceptable": true,
+      "pi_0_acceptable": true,
+      "capability_supported": true,
+      "information_supported": true,
+      "certificate_margin": 0.4
+    },
+    {
+      "group_id": "g3",
+      "process_id": "PP-003",
+      "delta_lcb": 0.35,
+      "certified_ub": null,
+      "certified_covers_pi_auth": false,
+      "pi_hat_acceptable": true,
+      "pi_0_acceptable": true,
+      "capability_supported": true,
+      "information_supported": true,
+      "certificate_margin": 0.35
+    }
+  ],
+  "expected": {
+    "track": "seen_responsibility_unseen_process",
+    "object_hashes": {
+      "CC-001": "f0384e30b763b1f8dde5e07f435cb3b4ba398239d6e5c828575ba06266015ab3",
+      "EU-001": "a3b8b4c00bea784b61cbbc1f8873fdd6ae0c24ed26c6d10c2021083cff6e1123",
+      "EU-002": "b55a219b50aff963eef0e78a5b1a16ec2efe7fbf37c02f4c7b7d6373a46880f9",
+      "EU-003": "c9278a104bc886b1f14f3dbda514c15bccf3ff0e60ab4e0ce5e4a56f18c9f960",
+      "EB-001": "ce701faf31cadc605d8094524999eb70aa752c34cc3c7a046439791605a340d1",
+      "CR-001": "b03e2594e1f8fca2c8b3b6e25e337b48f7fd51db4d6c8d3e1c9ab975f2c8e4f8",
+      "Q-001": "725a5339d971d613756157a19507133a8963999f790882b592de57f3e87c958d",
+      "CT-001": "0037e481fd6092399e29d6bcef754c0069e4e236bfdf26b756183b6762ab5c18",
+      "OP-001": "6d4f49f15802fa943db4818f8c9536c5cad133633739e11ae3646c33e5322d4f",
+      "PP-001": "141fec79617c58fff4fcae96467baa24771bd256cb76497a07ea84c23534c45c",
+      "PP-002": "a2fae0349747ecd18602dcfcf1d618c0214cf3c7ee96da201a828be848ab2b43",
+      "PP-003": "a2eafe00cc6daaa8ce180c672ee55abf58cd36e1006070efd945ce1e0e4ba96c",
+      "E-001": "0ba52f9780ebcaa2dbc4c6094663351e3040afcfaa344482c08642a65486ec93",
+      "E-002": "d5218120b1da37ab66fc6800b4800e6cfad52a451ec9bb0714c83a987d598bcc",
+      "E-003": "2d4d04bd63752a9d8b1f6d22ebcace73d7c2b9625f882ba0687fc7997251d92d"
+    },
+    "semantic_status": "human_validated",
+    "authorization_status": "authorized_agent_control",
+    "physical_labels": {
+      "E-001": "positive_opportunity",
+      "E-002": "positive_opportunity",
+      "E-003": "positive_opportunity"
+    },
+    "assignment": {
+      "PP-001": "CR-001",
+      "PP-002": "CR-001",
+      "PP-003": "CR-001"
+    },
+    "assignment_order": [
+      "PP-001",
+      "PP-002",
+      "PP-003"
+    ],
+    "splits": {
+      "E-002": "train",
+      "E-001": "dev",
+      "E-003": "test"
+    },
+    "replay_digests": {
+      "E-001": "0fdd780f8eb217fca33a912b96624e38948d67217a4f5d3f2d1cde881dc84968",
+      "E-002": "deb0b99d7d206505278d030be37b004ca9aa2d2f5798d5309da20c7bc6b6e2dc",
+      "E-003": "9d4fd39855784d78f5046e2c73db9bcb88552a35578d33b005caa77ff834abf5"
+    },
+    "terminal_verdicts": {
+      "E-001": "continues_beyond_window",
+      "E-002": "continues_beyond_window",
+      "E-003": "continues_beyond_window"
+    },
+    "sensitivity": {
+      "material": true,
+      "utility_delta": 1.0,
+      "pi0_terminal_verdict": "violated_at_truncation"
+    },
+    "release_verdict": "PASS",
+    "failure_codes_exercised": []
+  }
+}

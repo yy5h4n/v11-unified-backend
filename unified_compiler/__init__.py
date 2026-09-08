@@ -1,0 +1,83 @@
+from .adapter_registry import AdapterRegistry, DuplicateAdapterError
+from .compiler import CompileReport, UnifiedCompiler
+from .evaluator import (
+    ClauseResult,
+    EvaluationResult,
+    StateTrajectory,
+    evaluate_clause,
+    evaluate_trajectory,
+    lexicographic_better,
+)
+from .process_pool import (
+    PrimaryBindingConflict,
+    ProcessConflictError,
+    ProcessPool,
+    UnknownProcessError,
+)
+from .types import (
+    BackendCapability,
+    BindingRole,
+    CapabilityStatus,
+    ClauseKind,
+    Episode,
+    PhysicalProcess,
+    PhysicalTopology,
+    ProcessAdapter,
+    ProcessRequirement,
+    ResponsibilityContract,
+    ResponsibilityLifecycle,
+    TrajectoryClause,
+)
+from .d2_closed_loop import (
+    D2ClosedLoopAdapter,
+    D2ClosedLoopBackend,
+    D2ProtocolError,
+    make_d2_backend,
+)
+from .agent_interface import (
+    AgentActionError,
+    AgentClosedLoopBackend,
+    AgentInterfaceError,
+    AgentReceiptAdapter,
+    HarnessD1AgentBackend,
+    make_agent_backend,
+)
+
+__all__ = [
+    "AdapterRegistry",
+    "D2ClosedLoopAdapter",
+    "D2ClosedLoopBackend",
+    "D2ProtocolError",
+    "BackendCapability",
+    "BindingRole",
+    "CapabilityStatus",
+    "ClauseKind",
+    "ClauseResult",
+    "CompileReport",
+    "DuplicateAdapterError",
+    "Episode",
+    "EvaluationResult",
+    "PhysicalProcess",
+    "PhysicalTopology",
+    "PrimaryBindingConflict",
+    "ProcessAdapter",
+    "ProcessConflictError",
+    "ProcessPool",
+    "ProcessRequirement",
+    "ResponsibilityContract",
+    "ResponsibilityLifecycle",
+    "StateTrajectory",
+    "TrajectoryClause",
+    "UnifiedCompiler",
+    "UnknownProcessError",
+    "evaluate_clause",
+    "evaluate_trajectory",
+    "lexicographic_better",
+    "make_d2_backend",
+    "AgentActionError",
+    "AgentClosedLoopBackend",
+    "AgentInterfaceError",
+    "AgentReceiptAdapter",
+    "HarnessD1AgentBackend",
+    "make_agent_backend",
+]

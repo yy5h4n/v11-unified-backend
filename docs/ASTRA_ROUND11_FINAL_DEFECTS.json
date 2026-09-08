@@ -1,0 +1,27 @@
+{
+  "round": "11-final",
+  "verdict": "PASS",
+  "package": "generated/backend_acceptance_round11_final",
+  "blocking_defects": [],
+  "closed": [
+    "B2 capability consistency in registry, metadata, catalog builder/generated catalog and public documentation",
+    "B2 missing-runs and unequal/missing raw-prefix negative checks"
+  ],
+  "scope_limits": [
+    "CityLearn multi-system Episode generation supported; verified D3 coupling unsupported/unproven and excluded from coupling-required selection",
+    "FDS real prefix replay accepted; native online continuation not supported",
+    "EV accepted as conditional shared-transformer feasibility, not native clipping",
+    "Local pinned runtime/windows and owned-process-group cleanup model"
+  ],
+  "checks": {
+    "positive_exit": 0,
+    "catalog_check_exit": 0,
+    "empty_runs_exit": 1,
+    "unequal_prefix_exit": 1,
+    "missing_prefix_exit": 1,
+    "manifest_mismatches": [],
+    "changed_file_mismatches": [],
+    "original_baseline_mismatches": []
+  },
+  "evidence_dir": "astra_round11_final_evidence"
+}

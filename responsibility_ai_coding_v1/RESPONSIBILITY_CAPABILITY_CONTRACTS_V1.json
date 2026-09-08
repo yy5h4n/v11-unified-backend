@@ -1,0 +1,2948 @@
+{
+  "contracts": [
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_02fee0f03674",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_05920f8dade6",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_05eb866a5fcf",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_06f5ac8a120d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_0883e558daf8",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "care_recipient.change",
+          "clock.window"
+        ],
+        "observations": [
+          "care_recipient.state",
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "care-recipient state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:relevant household schedule or time window",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_08ee0b241675",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_099294a66240",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_09da87f2ce06",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_0c75e66e2768",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_0f0211760666",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_0fcb74542024",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_120b0762bd34",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_128e426f1ff3",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_1783c33e2747",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_1fb2eead6103",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_2126fdb0eb1b",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_264b487be933",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_37104b57370a",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_3aaa64a9c593",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_3cd183cf73e1",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_425a5dee5607",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_45e7454d142a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "energy.integral",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window",
+          "occupancy.change"
+        ],
+        "observations": [
+          "clock",
+          "device.energy_state",
+          "device.light_state",
+          "occupancy",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "occupancy and presence state",
+        "device and energy state"
+      ],
+      "episode_inputs": [
+        "profile:energy priorities and protected loads",
+        "profile:lighting preferences"
+      ],
+      "responsibility_id": "rd_45f013e7ba1d",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_48cb6e53506a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_491429d8fab5",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_49465c88e9af",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_4c9f419a786a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5278add36071",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "air_quality.control"
+        ],
+        "dynamics": [
+          "air_quality.multiroom"
+        ],
+        "evaluators": [
+          "air_quality.trajectory",
+          "command.ack"
+        ],
+        "events": [
+          "care_recipient.change",
+          "clock.window"
+        ],
+        "observations": [
+          "care_recipient.state",
+          "clock",
+          "device.air_control_state",
+          "room.humidity_or_air_quality"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "humidity_air_quality",
+      "dynamic_context_requirements": [
+        "care-recipient state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range"
+      ],
+      "responsibility_id": "rd_54bdb4d1d881",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "care_recipient.change",
+          "clock.window"
+        ],
+        "observations": [
+          "care_recipient.state",
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state",
+        "care-recipient state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:relevant household schedule or time window",
+        "profile:resident comfort targets",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_5677579cc63f",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5aaf181229e6",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5b5f94def7b4",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5d75d19a4827",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5dd0c995ea28",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5e0e9919d03e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_5f50fe481d06",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_6010f46a03e0",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "air_quality.control"
+        ],
+        "dynamics": [
+          "air_quality.multiroom"
+        ],
+        "evaluators": [
+          "air_quality.trajectory",
+          "command.ack"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.air_control_state",
+          "room.humidity_or_air_quality"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "humidity_air_quality",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range"
+      ],
+      "responsibility_id": "rd_670cf48458c9",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_6756752dd66e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_678537aa5e56",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_68c81fbf8bad",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_691cb6d986d0",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_6c7e7f12f6df",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_6c95ef8c36b1",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_6debc9157765",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_701d4b0275df",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_7232f3cd346d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_782fea3cbba2",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_7c16cf29a4f1",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_7ee875c27a63",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_7f75346b5a7f",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_805e8d711f99",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_80682ef0d394",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_824cd77ac7e9",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_86794f200f16",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_89b104a21351",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_89ce1d2593d3",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_8b0f533b3eaa",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_8b7dca2e69c7",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:household occupancy or absence context",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_94d666a58c83",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_952c27c5b039",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_98be58ef05f9",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_9edc50334cc2",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_9fa396d3191a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_a07aecceb886",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_a18aa9450c7b",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_a73f6a96c2fb",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_a948a16db4ab",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_af2688f9787c",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_afa9de7bd514",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_b1b401414581",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_b1bb73bef03e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "responsibility_specific.state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "responsibility-relevant observable state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_b29cce0b1017",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_b4f36043ef87",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "air_quality.control"
+        ],
+        "dynamics": [
+          "air_quality.multiroom"
+        ],
+        "evaluators": [
+          "air_quality.trajectory",
+          "command.ack"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.air_control_state",
+          "responsibility_specific.state",
+          "room.humidity_or_air_quality"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "humidity_air_quality",
+      "dynamic_context_requirements": [
+        "responsibility-relevant observable state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range"
+      ],
+      "responsibility_id": "rd_b5071d572e3d",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_b62dd368cce0",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "responsibility_specific.state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "responsibility-relevant observable state"
+      ],
+      "episode_inputs": [],
+      "responsibility_id": "rd_bc53f8b79068",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_bc735bdc916e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_bd6dfd6a2c77",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_bf52ea0cf49d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_c6fef22c7368",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_cbfa7286a427",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_cbfe46f2692a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "care_recipient.change",
+          "clock.window",
+          "occupancy.change"
+        ],
+        "observations": [
+          "care_recipient.state",
+          "clock",
+          "device.light_state",
+          "occupancy",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "occupancy and presence state",
+        "clock, calendar, and lifecycle state",
+        "care-recipient state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_cf2389fcc9f1",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_d061b1bb96d7",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_d462a7e3ecb1",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_d813bb2cad2c",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_d85f7d5c68b5",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_ddf75b21d41e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_e0dd1723fdde",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_e1eeb14b01ab",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "air_quality.control"
+        ],
+        "dynamics": [
+          "air_quality.multiroom"
+        ],
+        "evaluators": [
+          "air_quality.trajectory",
+          "command.ack"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.air_control_state",
+          "room.humidity_or_air_quality"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "humidity_air_quality",
+      "dynamic_context_requirements": [
+        "thermal and air state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_ebd968ad40ce",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_ebe806fd446f",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "energy.source_select",
+          "thermal.setpoint"
+        ],
+        "dynamics": [
+          "household.energy_flow",
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "energy.cost",
+          "energy.integral",
+          "temperature.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.energy_state",
+          "energy.source_state",
+          "room.temperature",
+          "tariff"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_energy",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "device and energy state"
+      ],
+      "episode_inputs": [
+        "profile:energy priorities and protected loads"
+      ],
+      "responsibility_id": "rd_f0bc2c668699",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_f0dbcd030710",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_f4162b3d081d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_f540da710bc1",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_f61b22e412c4",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_f7384743e19c",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_fa8bdf6166e3",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_fcd3c198a00d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_fd30c82cb52f",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "room.addressable"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "REVIEWED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:relevant household schedule or time window",
+        "profile:resident comfort targets",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_split_016151c7c038",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json",
+        "generated/simuhome_kitchen_evening_release_v1/build_report.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_07a629610220",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_0feef23c4030",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_137db9864548",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_145ee393b9c2",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_153d4f41c1a4",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_272d269ff0c7",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_39d32cc7fd22",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "responsibility_specific.state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "responsibility-relevant observable state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_split_4053e031415b",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:resident comfort targets"
+      ],
+      "responsibility_id": "rd_split_42d866d7dbea",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_44332c24ebca",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "authorized.energy_control"
+        ],
+        "dynamics": [
+          "household.energy_flow"
+        ],
+        "evaluators": [
+          "energy.integral"
+        ],
+        "events": [
+          "occupancy.change"
+        ],
+        "observations": [
+          "clock",
+          "device.energy_state",
+          "household.load",
+          "occupancy"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "energy",
+      "dynamic_context_requirements": [
+        "occupancy and presence state",
+        "device and energy state"
+      ],
+      "episode_inputs": [
+        "profile:energy priorities and protected loads"
+      ],
+      "responsibility_id": "rd_split_57dc1a5ccd89",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences",
+        "profile:relevant household schedule or time window",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_split_5c776896ad46",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_75756fc5714e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences",
+        "profile:relevant household schedule or time window",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_split_7b8e77e75605",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_94be9427a8c4",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_a525cb032b19",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_af088787b04c",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "multiroom.addressable"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "REVIEWED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "thermal and air state",
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:configured comfort, safety, or moisture range",
+        "profile:relevant household schedule or time window",
+        "profile:resident comfort targets",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_split_b8457e559b4d",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json",
+        "generated/simuhome_multiroom_evening_release_v1/build_report.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_b8936d13fb0d",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_bb0c7c2da137",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "thermal.setpoint",
+          "wait"
+        ],
+        "dynamics": [
+          "thermal.multiroom"
+        ],
+        "evaluators": [
+          "command.ack",
+          "temperature.trajectory",
+          "trajectory.complete"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "room.temperature"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop",
+          "scheduled.window"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "thermal_temperature",
+      "dynamic_context_requirements": [
+        "clock, calendar, and lifecycle state"
+      ],
+      "episode_inputs": [
+        "profile:relevant household schedule or time window",
+        "profile:resident comfort targets",
+        "profile:resident schedule or timing preferences"
+      ],
+      "responsibility_id": "rd_split_be2cdd7acdff",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [
+          "light.on_off"
+        ],
+        "dynamics": [
+          "lighting.state_machine"
+        ],
+        "evaluators": [
+          "command.ack",
+          "illuminance.trajectory"
+        ],
+        "events": [
+          "clock.window"
+        ],
+        "observations": [
+          "clock",
+          "device.light_state",
+          "responsibility_specific.state",
+          "room.illuminance"
+        ],
+        "spatial": [
+          "scope.unresolved"
+        ],
+        "temporal": [
+          "closed_loop"
+        ]
+      },
+      "contract_status": "PROVISIONAL_AI_STRUCTURED",
+      "domain": "lighting",
+      "dynamic_context_requirements": [
+        "responsibility-relevant observable state"
+      ],
+      "episode_inputs": [
+        "profile:lighting preferences"
+      ],
+      "responsibility_id": "rd_split_c828da9fc975",
+      "source_refs": [
+        "generated/direct_adapter_packet_v1.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_e27a3c692e50",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_ec369095da2a",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_split_f1dd61ebda25",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    },
+    {
+      "capabilities": {
+        "actions": [],
+        "dynamics": [],
+        "evaluators": [],
+        "events": [],
+        "observations": [],
+        "spatial": [],
+        "temporal": []
+      },
+      "contract_status": "MISSING_OPERATIONAL_CONTRACT",
+      "domain": null,
+      "episode_inputs": [],
+      "responsibility_id": "rd_v25_03537f61f15e",
+      "source_refs": [
+        "responsibility_ai_coding_v1/NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_5.json"
+      ]
+    }
+  ],
+  "policy": {
+    "full_requires_contract_status": "REVIEWED",
+    "matcher_may_parse_natural_language": false,
+    "missing_contract_fails_closed": true
+  },
+  "schema_version": "responsibility-capability-contracts-v1",
+  "summary": {
+    "missing": 105,
+    "provisional": 22,
+    "responsibility_count": 129,
+    "reviewed": 2
+  }
+}

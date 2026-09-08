@@ -1,0 +1,25 @@
+{
+  "rows": 142,
+  "batches": [
+    {
+      "batch": 0,
+      "rows": 36,
+      "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_standing_query_review_v2_3/batch_00"
+    },
+    {
+      "batch": 1,
+      "rows": 36,
+      "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_standing_query_review_v2_3/batch_01"
+    },
+    {
+      "batch": 2,
+      "rows": 35,
+      "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_standing_query_review_v2_3/batch_02"
+    },
+    {
+      "batch": 3,
+      "rows": 35,
+      "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_standing_query_review_v2_3/batch_03"
+    }
+  ]
+}

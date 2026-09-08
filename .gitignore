@@ -1,0 +1,12 @@
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+*.py[cod]
+.DS_Store
+generated/
+runs/
+work/
+shared_assets/
+shared_runtime/
+.runtime/
+acceptance/*/sessions/

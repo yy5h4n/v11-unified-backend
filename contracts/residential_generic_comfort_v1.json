@@ -1,0 +1,36 @@
+{
+  "schema_version": "responsibility-contract-v1",
+  "contract_id": "residential_generic_comfort_v1",
+  "version": 1,
+  "frozen_at": "2026-08-31T17:23:09+08:00",
+  "responsibility_id": "rd_37104b57370a",
+  "natural_query": "Keep the indoor temperature comfortable.",
+  "lifecycle": "MAINTAIN",
+  "profile": {
+    "target_c": 22.0,
+    "tolerance_c": 2.0,
+    "provenance": "benchmark_design_choice inherited from compile_supported_hvac_episodes.py; not query semantics"
+  },
+  "active_scope": "all_steps",
+  "hard_clauses": [
+    "trajectory_complete",
+    "all(abs(zone_temperature_c - target_c) <= tolerance_c)"
+  ],
+  "soft_metric": "mean(abs(zone_temperature_c - target_c)); lower_is_better",
+  "legal_action_schema": {
+    "type": "discrete_schedule_command_c",
+    "values": [21.0, 22.0]
+  },
+  "opportunity_predicate": {
+    "same_prefix_and_runtime_lineage": true,
+    "minimum_soft_metric_delta_c": 0.1,
+    "fixed_witness_must_satisfy_all_hard_clauses": true,
+    "noop_must_be_replayed": true,
+    "exact_replicates_per_certification_policy": 2
+  },
+  "terminal_semantics": "continues_beyond_window",
+  "semantic_status": "provisional_ai_pilot",
+  "authorization_status": "unknown",
+  "release_status": "provisional",
+  "execution_scope": "benchmark_sandbox_only"
+}

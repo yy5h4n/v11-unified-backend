@@ -1,0 +1,68 @@
+{
+  "manifest_version": "standing-query-packet-v2.3",
+  "status": "ai_derived_provisional_not_human_validated",
+  "purpose": "Source packets for canonical standing-intent query compilation per STANDING_QUERY_PROTOCOL_V2_3.md; contains no generated queries.",
+  "sources": {
+    "catalog": {
+      "file": "PROVISIONAL_AI_RESPONSIBILITY_CATALOG_V2_2.json",
+      "sha256": "53b161b620369e6da6be86275b082345333b3caad5550a66a58ed995e88024a1"
+    },
+    "evidence_ledger": {
+      "file": "EVIDENCE_LEDGER.jsonl",
+      "sha256": "08841c0a8ef0888b34543f011fbe91f9ae759aba3504523e9da01dead193a48e"
+    },
+    "signatures_luna": {
+      "file": "SIGNATURE_ANNOTATIONS_LUNA_V2_2.jsonl",
+      "sha256": "2acf9b85bf23452e8af84465d99968ed21d2695d306896ce3eeaa15e54460ac5"
+    },
+    "signatures_kimi_isolated": {
+      "file": "SIGNATURE_ANNOTATIONS_KIMI_ISOLATED_V2_2.jsonl",
+      "sha256": "f9ce7db6aad59f1a54717791d0cdb7fc47a162b169cca2c907a16902bd7ce400"
+    },
+    "protocol": {
+      "file": "STANDING_QUERY_PROTOCOL_V2_3.md",
+      "sha256": "a0e6f535fa70b6d4f7d7aefed924fd011e62c563c318474278e48c1453cce70b"
+    }
+  },
+  "packets": [
+    {
+      "file": "STANDING_QUERY_PACKET_V2_3_00.jsonl",
+      "rows": 71,
+      "first_responsibility_id": "rd_split_6b76eff02ef0",
+      "last_responsibility_id": "rd_ebe806fd446f",
+      "sha256": "2fbb0013b8151e9bb92ac5cc99d3336a1128d12fde792ba34f28fd38f2b73252"
+    },
+    {
+      "file": "STANDING_QUERY_PACKET_V2_3_01.jsonl",
+      "rows": 71,
+      "first_responsibility_id": "rd_89fd37b1d819",
+      "last_responsibility_id": "rd_4c9f419a786a",
+      "sha256": "58108a196996f75913b945cbfb95b554e90f28b304ec16695b33266efc708ce6"
+    }
+  ],
+  "split_policy": "catalog order, contiguous balanced halves (71/71), deterministic",
+  "validation": {
+    "catalog_responsibility_count": 142,
+    "emitted_row_count": 142,
+    "id_coverage_exact": true,
+    "missing_ids": [],
+    "extra_ids": [],
+    "unique_ids": true,
+    "packet_count": 2,
+    "packet_row_counts": [
+      71,
+      71
+    ],
+    "evidence_references_checked": 186,
+    "all_evidence_references_resolved": true,
+    "signature_coverage": {
+      "member_ids_total": 167,
+      "luna_missing": [],
+      "kimi_isolated_missing": []
+    },
+    "queries_generated": false
+  },
+  "source_anomalies": [
+    "kimi_isolated: 45 signature rows lack responsibility_name: ['rd_02fee0f03674', 'rd_05920f8dade6', 'rd_05eb866a5fcf', 'rd_06f5ac8a120d', 'rd_099294a66240', 'rd_0f0211760666', 'rd_0fcb74542024', 'rd_1783c33e2747', 'rd_211848da7f6e', 'rd_2126fdb0eb1b', 'rd_3aaa64a9c593', 'rd_3cd183cf73e1', 'rd_48cb6e53506a', 'rd_5e0e9919d03e', 'rd_691cb6d986d0', 'rd_6c95ef8c36b1', 'rd_6fbd176f695c', 'rd_701d4b0275df', 'rd_752ddefdc33b', 'rd_7f75346b5a7f', 'rd_824cd77ac7e9', 'rd_9fa396d3191a', 'rd_a3e2be6b2f22', 'rd_a948a16db4ab', 'rd_c74f1fee0f28', 'rd_cbfe46f2692a', 'rd_d813bb2cad2c', 'rd_e0dd1723fdde', 'rd_f0dbcd030710', 'rd_f484417ee0a3', 'rd_f61b22e412c4', 'rd_fcd3c198a00d', 'rd_fcfa2c702918', 'rd_split_100f3f013adc', 'rd_split_39bba8cb11da', 'rd_split_57dc1a5ccd89', 'rd_split_75756fc5714e', 'rd_split_94be9427a8c4', 'rd_split_9cead2579fb2', 'rd_split_a7109276d669', 'rd_split_bb0c7c2da137', 'rd_split_bd5e7664b9a8', 'rd_split_caa71a39ed10', 'rd_split_df4d7efb1b61', 'rd_split_f1dd61ebda25']"
+  ]
+}

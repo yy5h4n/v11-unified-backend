@@ -1,0 +1,164 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "temporal_contract_dsl.schema.json",
+  "title": "Temporal Contract DSL v1",
+  "description": "Structured temporal expression language for Contract clauses. Operators cover interval closure (at), trigger/deadline timing (within, terminal_goal), persistence (persist_after), release (release_when), soft cost (soft_cost), hard invariants (always), missing observations (tri-state evaluation: an obligation/goal defers while a required observation is missing) and conflict resolution (Contract.priority_order decides simultaneous events).",
+  "type": "object",
+  "required": ["op"],
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "value"],
+      "properties": { "op": { "const": "const" }, "value": { "type": "boolean" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "expr"],
+      "properties": { "op": { "const": "not" }, "expr": { "$ref": "#/$defs/expr" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "exprs"],
+      "properties": { "op": { "const": "and" }, "exprs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/expr" } } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "exprs"],
+      "properties": { "op": { "const": "or" }, "exprs": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/expr" } } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "offset", "pred"],
+      "properties": { "op": { "const": "at" }, "offset": { "type": "integer", "enum": [0, 1] }, "pred": { "$ref": "#/$defs/pred" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "expr"],
+      "properties": { "op": { "const": "always" }, "expr": { "$ref": "#/$defs/expr" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "trigger", "obligation", "deadline_intervals"],
+      "properties": {
+        "op": { "const": "within" },
+        "trigger": { "$ref": "#/$defs/expr" },
+        "obligation": { "$ref": "#/$defs/expr" },
+        "deadline_intervals": { "type": "integer", "minimum": 1 }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "goal", "deadline_intervals"],
+      "properties": {
+        "op": { "const": "terminal_goal" },
+        "goal": { "$ref": "#/$defs/expr" },
+        "deadline_intervals": { "type": "integer", "minimum": 1 }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "amount", "trigger"],
+      "properties": {
+        "op": { "const": "soft_cost" },
+        "amount": { "type": "number" },
+        "trigger": { "$ref": "#/$defs/expr" }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "expr"],
+      "properties": { "op": { "const": "release_when" }, "expr": { "$ref": "#/$defs/expr" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "trigger", "expr"],
+      "properties": {
+        "op": { "const": "persist_after" },
+        "trigger": { "$ref": "#/$defs/expr" },
+        "expr": { "$ref": "#/$defs/expr" }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "trigger", "intervals"],
+      "properties": {
+        "op": { "const": "cooldown_after" },
+        "trigger": { "$ref": "#/$defs/expr" },
+        "intervals": { "type": "integer", "minimum": 0 }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "variable", "cmp", "value"],
+      "properties": {
+        "op": { "const": "state" },
+        "variable": { "type": "string" },
+        "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] },
+        "value": { "type": ["number", "string", "boolean"] }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "variable", "cmp", "value"],
+      "properties": {
+        "op": { "const": "obs" },
+        "variable": { "type": "string" },
+        "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] },
+        "value": { "type": ["number", "string", "boolean"] }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "variable", "cmp", "value"],
+      "properties": {
+        "op": { "const": "action" },
+        "variable": { "type": "string" },
+        "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] },
+        "value": { "type": ["number", "string", "boolean"] }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "clause_id"],
+      "properties": { "op": { "const": "pending" }, "clause_id": { "type": "string" } }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["op", "cmp", "value"],
+      "properties": {
+        "op": { "const": "time" },
+        "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] },
+        "value": { "type": "integer" }
+      }
+    }
+  ],
+  "$defs": {
+    "expr": { "$ref": "#" },
+    "pred": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["op", "variable", "cmp", "value"], "properties": { "op": { "const": "state" }, "variable": { "type": "string" }, "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] }, "value": { "type": ["number", "string", "boolean"] } } },
+        { "type": "object", "additionalProperties": false, "required": ["op", "variable", "cmp", "value"], "properties": { "op": { "const": "obs" }, "variable": { "type": "string" }, "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] }, "value": { "type": ["number", "string", "boolean"] } } },
+        { "type": "object", "additionalProperties": false, "required": ["op", "variable", "cmp", "value"], "properties": { "op": { "const": "action" }, "variable": { "type": "string" }, "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] }, "value": { "type": ["number", "string", "boolean"] } } },
+        { "type": "object", "additionalProperties": false, "required": ["op", "clause_id"], "properties": { "op": { "const": "pending" }, "clause_id": { "type": "string" } } },
+        { "type": "object", "additionalProperties": false, "required": ["op", "cmp", "value"], "properties": { "op": { "const": "time" }, "cmp": { "type": "string", "enum": ["eq", "ne", "lt", "le", "gt", "ge"] }, "value": { "type": "integer" } } }
+      ]
+    }
+  }
+}

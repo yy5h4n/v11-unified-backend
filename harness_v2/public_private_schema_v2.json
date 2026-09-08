@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://responsibility-benchmark.example/schemas/public_private_schema_v2.json",
+  "title": "Responsibility Harness V2 public/private boundary",
+  "description": "Machine-checkable boundary. The agent receives only public DTOs; evaluator and selection metadata are private.",
+  "type": "object",
+  "required": ["schema_version", "kind", "payload"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "public_private_schema_v2"},
+    "kind": {"enum": ["agent_view", "callback_envelope", "inspect_response", "execution_feedback", "private_artifact", "audit_metadata", "serializer_input"]},
+    "payload": {}
+  },
+  "x-boundary-invariants": [
+    "counterfactual_group_id MUST NOT contain examples from more than one track; track is a stratification variable only and MUST NOT be used as a query attribution factor",
+    "public serializer/process accepts only public DTOs (agent_view, query, profile, inventory, observations, events, costs_budgets); import/dependency tests MUST fail if evaluator, private artifacts, or canary references are reachable",
+    "at every nesting level of agent_view, source_hash, visibility_justification, canonical_contract, active_mask, evaluator, oracle, simulator_seed, backend_seed_and_source_window, selection_stratum, target_scope, required_rooms, and benchmark_scenario_parameter are forbidden",
+    "inventory is complete over every publicly controllable device, including available, unavailable, and offline devices; inventory selection is independent of query and contract",
+    "preference provenance is public only when it is user-grounded and never benchmark_scenario_parameter"
+    ,"explicit_profile_control MUST omit ask_user from tool_schema.allowed_actions; interactive_clarification MAY include ask_user and is governed by max_questions"
+  ],
+  "x-runtime-validation": ["All identifiers are checked against episode-declared catalogs before serialization; unknown identifiers, private canaries, and benchmark_scenario_parameter are rejected.", "Serializer dependency/import test must prove evaluator/private artifacts are unreachable from public DTOs."],
+  "$defs": {
+    "date_time": {"$ref":"shared_types_v2.json#/$defs/timestamp"},
+    "identifier": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+    "public_identifier": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+    "scalar": {"$ref":"shared_types_v2.json#/$defs/scalar"},
+    "public_scalar_map": {
+      "type": "object",
+      "propertyNames": {"$ref":"#/$defs/public_identifier"},
+      "additionalProperties": {"$ref": "#/$defs/scalar"}
+    },
+    "track": {"enum": ["explicit_profile_control", "interactive_clarification"]},
+    "query": {
+      "type": "object", "required": ["text", "language"], "additionalProperties": false,
+      "properties": {
+        "text": {"type": "string"},
+        "language": {"type": "string", "minLength": 2},
+        "context": {
+          "type": "object",
+          "required": ["room_refs", "named_period_refs"],
+          "additionalProperties": false,
+          "description": "Public referents needed to resolve expressions such as these rooms or evening. They are request context, not evaluator scope.",
+          "properties": {
+            "room_refs": {"type": "array", "items": {"$ref": "#/$defs/public_identifier"}, "uniqueItems": true},
+            "named_period_refs": {"type": "array", "items": {"$ref": "#/$defs/public_identifier"}, "uniqueItems": true}
+          }
+        }
+      }
+    },
+    "profile": {
+      "type": "object", "required": ["timezone", "preferences"], "additionalProperties": false,
+      "description": "Public user profile. Provenance is required for every preference and cannot identify benchmark scenario parameters.",
+      "properties": {
+        "timezone": {"type": "string", "minLength": 1},
+        "preferences": {"type": "array", "items": {"type": "object", "required": ["name", "value", "provenance", "evidence_id"], "additionalProperties": false, "properties": {"name": {"$ref":"#/$defs/public_identifier"}, "value": {"$ref": "#/$defs/scalar"}, "provenance": {"enum": ["user_stated", "user_history", "environment_observable", "system_configuration"]}, "evidence_id": {"$ref":"#/$defs/public_identifier"}}}}
+      }
+    },
+    "inventory_item": {
+      "type": "object", "required": ["device_id", "device_type", "capabilities", "availability", "state"], "additionalProperties": false,
+      "properties": {
+        "device_id": {"$ref":"#/$defs/public_identifier"},
+        "device_type": {"$ref":"#/$defs/public_identifier"},
+        "capabilities": {"type": "array", "items": {"$ref":"#/$defs/public_identifier"}, "uniqueItems": true},
+        "availability": {"enum": ["available", "unavailable", "offline"]},
+        "state": {"$ref": "#/$defs/public_scalar_map"}
+      }
+    },
+    "inventory": {
+      "description": "Complete inventory of all publicly controllable devices, including unavailable and offline devices; selection is query/contract independent.",
+      "type": "object", "required": ["complete", "devices"], "additionalProperties": false,
+      "properties": {"complete": {"const": true}, "devices": {"type": "array", "items": {"$ref": "#/$defs/inventory_item"}, "minItems": 1}}
+    },
+    "operation": {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"$ref":"#/$defs/public_identifier"},"parameters":{"type":"array","items":{"type":"object","required":["name","type","required"],"additionalProperties":false,"properties":{"name":{"$ref":"#/$defs/public_identifier"},"type":{"enum":["number","integer","string","boolean"]},"unit":{"type":["string","null"]},"required":{"type":"boolean"},"minimum":{"type":"number"},"maximum":{"type":"number"},"allowed_values":{"type":"array","minItems":1,"uniqueItems":true,"items":{"$ref":"#/$defs/scalar"}}}}}}},
+    "capability": {"type":"object","required":["capability_id","operations"],"additionalProperties":false,"properties":{"capability_id":{"$ref":"#/$defs/public_identifier"},"operations":{"type":"array","items":{"$ref":"#/$defs/operation"},"minItems":1}}},
+    "capability_catalog": {"type":"array","minItems":1,"items":{"$ref":"#/$defs/capability"}},
+    "room": {"type":"object","required":["room_id","device_ids","availability"],"additionalProperties":false,"properties":{"room_id":{"$ref":"#/$defs/public_identifier"},"device_ids":{"type":"array","items":{"$ref":"#/$defs/public_identifier"}},"availability":{"enum":["available","unavailable","offline"]}}},
+    "event_filter_field": {"type":"object","required":["name","value_type","required"],"additionalProperties":false,"properties":{"name":{"$ref":"#/$defs/public_identifier"},"value_type":{"enum":["number","integer","string","boolean"]},"required":{"type":"boolean"},"unit":{"type":["string","null"]},"minimum":{"type":"number"},"maximum":{"type":"number"},"allowed_values":{"type":"array","minItems":1,"uniqueItems":true,"items":{"$ref":"#/$defs/scalar"}}}},
+    "event_catalog": {"type":"object","required":["event_types","filters"],"additionalProperties":false,"properties":{"event_types":{"type":"array","items":{"$ref":"#/$defs/public_identifier"},"uniqueItems":true},"filters":{"type":"array","items":{"type":"object","required":["event_type","fields"],"additionalProperties":false,"properties":{"event_type":{"$ref":"#/$defs/public_identifier"},"fields":{"type":"array","items":{"$ref":"#/$defs/event_filter_field"}}}}}}},
+    "observation_catalog": {"type":"array","items":{"type":"object","required":["field","value_type","unit"],"additionalProperties":false,"properties":{"field":{"allOf":[{"type":"string","pattern":"^(rooms|devices|context)\\.[A-Za-z0-9_.:-]+$"},{"not":{"pattern":"(^|[_.:-])(canonical_contract|active_mask|evaluator|oracle|required_rooms|target_scope)([_.:-]|$)"}}]},"value_type":{"enum":["number","integer","string","boolean"]},"unit":{"type":"string"}}}},
+    "observation": {
+      "type": "object", "required": ["name", "value", "unit", "quality", "observed_at"], "additionalProperties": false,
+      "properties": {"name": {"allOf":[{"type":"string","pattern":"^(rooms|devices|context)\\.[A-Za-z0-9_.:-]+$"},{"not":{"pattern":"(^|[_.:-])(canonical_contract|active_mask|evaluator|oracle|required_rooms|target_scope)([_.:-]|$)"}}]}, "value": {"$ref": "#/$defs/scalar"}, "unit": {"type": "string"}, "quality": {"enum": ["fresh", "stale", "missing"]}, "observed_at": {"$ref":"#/$defs/date_time"}},
+      "allOf": [
+        {"if":{"properties":{"quality":{"enum":["fresh","stale"]}},"required":["quality"]},"then":{"properties":{"value":{"not":{"type":"null"}}}}},
+        {"if":{"properties":{"quality":{"const":"missing"}},"required":["quality"]},"then":{"properties":{"value":{"type":"null"}}}}
+      ]
+    },
+    "event": {
+      "type": "object", "required": ["event_id", "type", "occurred_at", "payload"], "additionalProperties": false,
+      "properties": {"event_id": {"$ref":"#/$defs/public_identifier"}, "type": {"$ref":"#/$defs/public_identifier"}, "occurred_at": {"$ref":"#/$defs/date_time"}, "payload": {"$ref": "#/$defs/public_scalar_map"}}
+    },
+    "workflow_result": {
+      "type":"object","required":["workflow_id","status","timestamp","result","error_code"],"additionalProperties":false,
+      "properties":{"workflow_id":{"$ref":"#/$defs/public_identifier"},"status":{"enum":["running","completed","failed","cancelled"]},"timestamp":{"$ref":"#/$defs/date_time"},"result":{"$ref":"#/$defs/public_scalar_map"},"error_code":{"type":["string","null"]}},
+      "allOf":[{"if":{"properties":{"status":{"const":"failed"}},"required":["status"]},"then":{"properties":{"error_code":{"type":"string","minLength":1}}}},{"if":{"properties":{"status":{"enum":["running","completed","cancelled"]}},"required":["status"]},"then":{"properties":{"error_code":{"type":"null"}}}}]
+    },
+    "mutation_feedback": {"type":"object","required":["mutation_kind","mutation_id","status","error_code"],"additionalProperties":false,"properties":{"mutation_kind":{"enum":["command","create_rule","cancel_rule","subscription","wake_request"]},"mutation_id":{"$ref":"#/$defs/public_identifier"},"status":{"enum":["committed","not_applied"]},"error_code":{"type":["string","null"]}}},
+    "execution_feedback": {
+      "type":"object","required":["transaction_id","timestamp","status","mutation_outcomes","protocol_error"],"additionalProperties":false,
+      "properties":{"transaction_id":{"$ref":"#/$defs/public_identifier"},"timestamp":{"$ref":"#/$defs/date_time"},"status":{"enum":["committed","rejected"]},"mutation_outcomes":{"type":"array","items":{"$ref":"#/$defs/mutation_feedback"}},"protocol_error":{"type":["string","null"]}},
+      "allOf":[{"if":{"properties":{"status":{"const":"rejected"}},"required":["status"]},"then":{"properties":{"mutation_outcomes":{"items":{"properties":{"status":{"const":"not_applied"}}}},"protocol_error":{"type":"string","minLength":1}}}},{"if":{"properties":{"status":{"const":"committed"}},"required":["status"]},"then":{"properties":{"mutation_outcomes":{"items":{"properties":{"status":{"const":"committed"},"error_code":{"type":"null"}}}},"protocol_error":{"type":"null"}}}}]
+    },
+    "inspect_response": {
+      "type":"object","required":["request_id","timestamp","rooms","inventory","observations","workflows"],"additionalProperties":false,
+      "properties":{"request_id":{"$ref":"#/$defs/public_identifier"},"timestamp":{"$ref":"#/$defs/date_time"},"rooms":{"type":"array","items":{"$ref":"#/$defs/room"}},"inventory":{"$ref":"#/$defs/inventory"},"observations":{"type":"array","items":{"$ref":"#/$defs/observation"}},"workflows":{"type":"array","items":{"$ref":"#/$defs/workflow_result"}}}
+    },
+    "callback_envelope": {
+      "type":"object","required":["callback_id","timestamp","reasons","observation_deltas","events","workflow_results","execution_feedback","user_reply","termination"],"additionalProperties":false,
+      "properties":{"callback_id":{"$ref":"#/$defs/public_identifier"},"timestamp":{"$ref":"#/$defs/date_time"},"reasons":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["subscribed_public_event","requested_wake_time","subscribed_workflow_result","user_reply","episode_termination"]}},"observation_deltas":{"type":"array","items":{"$ref":"#/$defs/observation"}},"events":{"type":"array","items":{"$ref":"#/$defs/event"}},"workflow_results":{"type":"array","items":{"$ref":"#/$defs/workflow_result"}},"execution_feedback":{"type":"array","items":{"$ref":"#/$defs/execution_feedback"}},"user_reply":{"type":["string","null"]},"termination":{"type":"boolean"}},
+      "allOf":[
+        {"if":{"properties":{"reasons":{"contains":{"const":"episode_termination"}}},"required":["reasons"]},"then":{"properties":{"termination":{"const":true}}},"else":{"properties":{"termination":{"const":false}}}},
+        {"if":{"properties":{"reasons":{"contains":{"const":"subscribed_workflow_result"}}},"required":["reasons"]},"then":{"properties":{"workflow_results":{"minItems":1}}}},
+        {"if":{"properties":{"workflow_results":{"minItems":1}},"required":["workflow_results"]},"then":{"properties":{"reasons":{"contains":{"const":"subscribed_workflow_result"}}}}},
+        {"if":{"properties":{"reasons":{"contains":{"const":"subscribed_public_event"}}},"required":["reasons"]},"then":{"properties":{"events":{"minItems":1}}}},
+        {"if":{"properties":{"events":{"minItems":1}},"required":["events"]},"then":{"properties":{"reasons":{"contains":{"const":"subscribed_public_event"}}}}},
+        {"if":{"properties":{"reasons":{"contains":{"const":"user_reply"}}},"required":["reasons"]},"then":{"properties":{"user_reply":{"type":"string"}}},"else":{"properties":{"user_reply":{"type":"null"}}}}
+      ]
+    },
+    "costs_budgets": {
+      "type": "object", "required": ["currency", "budgets", "periods", "action_costs"], "additionalProperties": false,
+      "properties": {
+        "currency": {"type": "string", "minLength": 1},
+        "budgets": {"type": "object", "propertyNames": {"$ref":"#/$defs/public_identifier"}, "additionalProperties": {"type": "number", "minimum": 0}},
+        "periods": {"type": "array", "items": {"type": "object", "required": ["name", "start", "end"], "additionalProperties": false, "properties": {"name":{"$ref":"#/$defs/public_identifier"},"start": {"$ref":"#/$defs/date_time"}, "end": {"$ref":"#/$defs/date_time"}}}},
+        "action_costs": {"type":"array","items":{"type":"object","required":["capability","operation","cost","unit"],"additionalProperties":false,"properties":{"capability":{"$ref":"#/$defs/public_identifier"},"operation":{"$ref":"#/$defs/public_identifier"},"cost":{"type":"number","minimum":0},"unit":{"type":"string"}}}}
+      }
+    },
+    "tool_schema": {
+      "type": "object", "required": ["allowed_actions", "interaction_budgets"], "additionalProperties": false,
+      "properties": {"allowed_actions": {"type": "array", "items": {"enum": ["inspect", "act_now", "create_rule", "cancel_rule", "subscribe", "wake_at", "ask_user"]}, "uniqueItems": true}, "interaction_budgets":{"type":"object","required":["max_callbacks","max_inspect_calls","max_mutation_transactions","max_questions","minimum_callback_interval_seconds"],"additionalProperties":false,"properties":{"max_callbacks":{"type":"integer","minimum":1},"max_inspect_calls":{"type":"integer","minimum":0},"max_mutation_transactions":{"type":"integer","minimum":0},"max_questions":{"type":"integer","minimum":0},"minimum_callback_interval_seconds":{"type":"integer","minimum":1}}}}
+    },
+    "horizon": {"oneOf":[
+      {"type":"object","required":["start","termination_disclosure","termination"],"additionalProperties":false,"properties":{"start":{"$ref":"#/$defs/date_time"},"termination_disclosure":{"const":"exact"},"termination":{"$ref":"#/$defs/date_time"}}},
+      {"type":"object","required":["start","termination_disclosure","earliest_termination","latest_termination"],"additionalProperties":false,"properties":{"start":{"$ref":"#/$defs/date_time"},"termination_disclosure":{"const":"bounded"},"earliest_termination":{"$ref":"#/$defs/date_time"},"latest_termination":{"$ref":"#/$defs/date_time"}}},
+      {"type":"object","required":["start","termination_disclosure"],"additionalProperties":false,"properties":{"start":{"$ref":"#/$defs/date_time"},"termination_disclosure":{"const":"undisclosed"}}}
+    ]},
+    "agent_view": {
+      "type": "object", "required": ["query", "track", "profile", "rooms", "virtual_clock", "horizon", "inventory", "capability_catalog", "observation_catalog", "observations", "events", "event_catalog", "named_periods", "costs_budgets", "tool_schema", "safety_limits"], "additionalProperties": false,
+      "properties": {
+        "query": {"$ref": "#/$defs/query"}, "track": {"$ref": "#/$defs/track"}, "profile": {"$ref": "#/$defs/profile"},
+        "rooms":{"type":"array","items":{"$ref":"#/$defs/room"},"minItems":1}, "virtual_clock": {"type": "object", "required": ["now", "timezone"], "additionalProperties": false, "properties": {"now": {"$ref":"#/$defs/date_time"}, "timezone": {"type": "string"}}}, "horizon":{"$ref":"#/$defs/horizon"},
+        "inventory": {"$ref": "#/$defs/inventory"}, "capability_catalog":{"$ref":"#/$defs/capability_catalog"}, "observation_catalog":{"$ref":"#/$defs/observation_catalog"}, "observations": {"type": "array", "items": {"$ref": "#/$defs/observation"}}, "events": {"type": "array", "items": {"$ref": "#/$defs/event"}}, "event_catalog":{"$ref":"#/$defs/event_catalog"}, "named_periods":{"type":"array","items":{"type":"object","required":["name","start","end"],"additionalProperties":false,"properties":{"name":{"$ref":"#/$defs/public_identifier"},"start":{"$ref":"#/$defs/date_time"},"end":{"$ref":"#/$defs/date_time"}}}}, "safety_limits":{"type":"array","items":{"type":"object","required":["name","value","unit","provenance"],"additionalProperties":false,"properties":{"name":{"$ref":"#/$defs/public_identifier"},"value":{"type":"number"},"unit":{"type":"string"},"provenance":{"const":"system_configuration"}}}},
+        "costs_budgets": {"$ref": "#/$defs/costs_budgets"}, "tool_schema": {"$ref": "#/$defs/tool_schema"}
+      },
+      "allOf": [
+        {"if":{"properties":{"track":{"const":"explicit_profile_control"}},"required":["track"]},"then":{"properties":{"tool_schema":{"properties":{"allowed_actions":{"const":["inspect","act_now","create_rule","cancel_rule","subscribe","wake_at"]},"interaction_budgets":{"properties":{"max_questions":{"const":0}}}}}}}},
+        {"if":{"properties":{"track":{"const":"interactive_clarification"}},"required":["track"]},"then":{"properties":{"tool_schema":{"properties":{"allowed_actions":{"const":["inspect","act_now","create_rule","cancel_rule","subscribe","wake_at","ask_user"]},"interaction_budgets":{"properties":{"max_questions":{"minimum":1}}}}}}}}
+      ]
+    },
+    "audit_metadata": {
+      "type": "object", "required": ["evidence_records"], "additionalProperties": false,
+      "properties": {"evidence_records":{"type":"array","minItems":1,"items":{"type":"object","required":["evidence_id","source_hash","visibility_justification","source_class"],"additionalProperties":false,"properties":{"evidence_id":{"$ref":"#/$defs/public_identifier"},"source_hash":{"$ref":"shared_types_v2.json#/$defs/sha256"},"visibility_justification":{"type":"string","minLength":1},"source_class":{"enum":["user_stated","user_history","environment_observable","system_configuration"]}}}}}
+    },
+    "private_artifact": {
+      "type": "object", "required": ["canonical_contract", "evaluator_config", "scenario_group_assignment", "track"], "additionalProperties": false,
+      "properties": {"canonical_contract": {"type": "object"}, "evaluator_config": {"type": "object"}, "scenario_group_assignment": {"type": "string"}, "track": {"$ref": "#/$defs/track"}, "active_room_time_mask": {"type": "object"}, "future_exogenous_trace": {"type": "array"}, "backend_seed_and_source_window": {"type": "object"}}
+    },
+    "serializer_input": {
+      "type": "object", "required": ["message"], "additionalProperties": false,
+      "properties": {"message": {"oneOf":[{"$ref":"#/$defs/agent_view"},{"$ref":"#/$defs/callback_envelope"},{"$ref":"#/$defs/inspect_response"},{"$ref":"#/$defs/execution_feedback"}]}}
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"kind": {"const": "agent_view"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/agent_view"}}}},
+    {"if": {"properties": {"kind": {"const": "callback_envelope"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/callback_envelope"}}}},
+    {"if": {"properties": {"kind": {"const": "inspect_response"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/inspect_response"}}}},
+    {"if": {"properties": {"kind": {"const": "execution_feedback"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/execution_feedback"}}}},
+    {"if": {"properties": {"kind": {"const": "serializer_input"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/serializer_input"}}}},
+    {"if": {"properties": {"kind": {"const": "audit_metadata"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/audit_metadata"}}}},
+    {"if": {"properties": {"kind": {"const": "private_artifact"}}}, "then": {"properties": {"payload": {"$ref": "#/$defs/private_artifact"}}}}
+  ]
+}

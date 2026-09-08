@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "contract.schema.json",
+  "title": "Contract",
+  "description": "Trajectory-level operationalization of the frozen responsibility: hard invariants, conditional obligations, terminal goals, soft costs, priorities and clause provenance. Formula shape is validated against temporal_contract_dsl.schema.json (single source of truth).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "query_id", "anti_gaming_rule", "priority_order", "clauses", "rejected_predicates"],
+  "properties": {
+    "object_type": { "const": "Contract" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "query_id": { "type": "string" },
+    "anti_gaming_rule": { "type": "string", "enum": ["terminal_guard_band", "terminal_viability"] },
+    "priority_order": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "clauses": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["clause_id", "kind", "formula", "coverage"],
+        "properties": {
+          "clause_id": { "type": "string" },
+          "kind": { "type": "string", "enum": ["hard_invariant", "conditional_obligation", "terminal_goal", "soft_cost", "release_condition"] },
+          "formula": { "type": "object", "required": ["op"] },
+          "cooldown": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["trigger", "intervals"],
+            "properties": {
+              "trigger": { "type": "object", "required": ["op"] },
+              "intervals": { "type": "integer", "minimum": 0 }
+            }
+          },
+          "coverage": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["responsibility_field", "clause_ref", "transformation_rule", "evidence_span_or_design_choice", "reviewer_A", "reviewer_B", "adjudication", "adjudication_reason"],
+              "properties": {
+                "responsibility_field": { "type": "string" },
+                "clause_ref": { "type": "string" },
+                "transformation_rule": { "type": "string" },
+                "evidence_span_or_design_choice": { "type": "string" },
+                "reviewer_A": { "type": "string", "enum": ["pass", "fail"] },
+                "reviewer_B": { "type": "string", "enum": ["pass", "fail"] },
+                "adjudication": { "type": "string", "enum": ["pass", "fail"] },
+                "adjudication_reason": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rejected_predicates": { "type": "array", "items": { "type": "object" } }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

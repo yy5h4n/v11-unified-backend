@@ -1,0 +1,114 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_1",
+  "clusters": [
+    {
+      "canonical_name": "guard_home_against_intrusion_when_unoccupied_or_at_night",
+      "objective": "Keep the home monitored and raise alarm/notify occupants when unauthorized entry is attempted while the house is empty or during night hours.",
+      "beneficiary": "household",
+      "lifecycle": "event_conditioned_recurring_vigilance",
+      "meaningful_failure": "security_failure",
+      "authorized_action_scope": "explicit: activate alarm/pre-alarm, turn on cameras, send notifications to home users or owner",
+      "evidence_ids": ["userneeds_u03_r017", "userneeds_u12_r072", "userneeds_u21_r122"],
+      "independence_unit_ids": ["mattioli-user-03", "mattioli-user-12", "mattioli-user-21"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent_single_study",
+      "rationale": "Three independent demand owners (u03, u12, u21) within one study cluster converge on the same maintained outcome (intrusion detection and alerting when home is unoccupied or at night), with both coders agreeing on security_failure meaning and explicit authorized action. All units are compatible_only hypotheticals, so no direct-path anchor exists and cross-study confirmation is absent; per protocol this meets candidate_needs_confirmation (>=3 owners, one study cluster) but not admission.",
+      "confidence": "medium",
+      "boundary_notes": "Not merged with unattended-appliance fire hazard (userneeds_u30_r176): different failure (fire vs intrusion) and different single owner. Night-time condition in r017 and unoccupied condition in r072/r122 treated as the same vigilance lifecycle.",
+      "coding_disagreements": ["userneeds_u12_r072 beneficiary: luna=household vs kimi=self", "temporal_scope uniformly event_conditioned; recurrence inferred from standing vigilance intent, not from text"]
+    },
+    {
+      "canonical_name": "maintain_comfortable_indoor_temperature_and_humidity",
+      "objective": "Keep indoor temperature and humidity within a comfortable range, including restoring heating when it fails.",
+      "beneficiary": "household",
+      "lifecycle": "event_conditioned_recurring",
+      "meaningful_failure": "discomfort",
+      "authorized_action_scope": "explicit: turn on fan, turn up heating, activate humidifier, reset boiler and restore water pressure",
+      "evidence_ids": ["practicaltap_p1", "userneeds_u03_r015", "userneeds_u12_r069"],
+      "independence_unit_ids": ["unresolved-practicaltap_p1", "mattioli-user-03", "mattioli-user-12"],
+      "study_cluster_ids": ["ur_2014_practical_tap", "mattioli_2023_recruitment_pool"],
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent_cross_study_weak",
+      "rationale": "Three independent owners across two study clusters express the same maintained thermal-comfort outcome (cooling when hot, heating+humidification when cold/dry, heating restoration on radiator failure). However every unit is hypothetical and rated only compatible_only by both coders, recurrence is asserted only for the vacuum unit (not these), and luna records failure_meaning=unknown on p1 and r069, so the aggregate does not cleanly support the recurring/meaningful-failure requirements of the convergent admission path; proposed as candidate pending confirmation.",
+      "confidence": "medium_low",
+      "boundary_notes": "Daylight/shading comfort (userneeds_u12_r071) not merged: distinct light/glare objective, single owner. Indoor air quality (r014, r124) not merged: air composition vs thermal comfort. r069 is a failure-restoration rule; included only because its maintained outcome is heating/thermal comfort.",
+      "coding_disagreements": ["practicaltap_p1 failure_meaning: luna=unknown vs kimi=discomfort", "userneeds_u03_r015 beneficiary: luna=household vs kimi=self; only kimi proposed a candidate_responsibility", "userneeds_u12_r069 failure_meaning: luna=unknown vs kimi=discomfort; beneficiary luna=unknown vs kimi=household"]
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_name": "mechanism_only_uninterpretable_sequence",
+      "evidence_ids": ["smartsense_sp_001"],
+      "reason": "Opaque numeric device sequence with unknown authorship, trigger, purpose, and beneficiary; kimi rated standing_responsibility_support=irrelevant; mechanism-only record with unsupported purpose."
+    },
+    {
+      "group_name": "event_ambiance_one_shot_convenience",
+      "evidence_ids": ["userneeds_u03_r018", "userneeds_u30_r178", "userneeds_u30_r180"],
+      "reason": "Party/movie ambiance automations (playlist, lights, blinds, volume); luna rates r018 one_shot, kimi records failure_meaning=none on r018; no meaningful failure or maintained outcome; one-shot convenience / unsupported standing purpose."
+    },
+    {
+      "group_name": "household_chore_consumable_and_cooking_convenience_single_owner",
+      "evidence_ids": ["userneeds_u03_r016", "userneeds_u21_r121", "userneeds_u21_r125", "userneeds_u21_r126", "userneeds_u30_r177"],
+      "reason": "Floor cleaning, bin-full and soap-refill indicators, pasta-boiling notification, fridge-restock reminder: each is a single-owner convenience/maintenance prompt; at most one demand owner per outcome, below the 3-owner convergent threshold and no dual-coder strong rating."
+    },
+    {
+      "group_name": "rain_protection_below_threshold",
+      "evidence_ids": ["userneeds_u03_r019", "userneeds_u12_r068"],
+      "reason": "Two owners converge on protecting interiors and drying laundry from rain, but only two demand owners within one study cluster; failure meaning disputed (luna=unknown both; kimi=inconvenience only on r068); below candidate threshold.",
+      "coding_disagreements": ["userneeds_u12_r068 failure_meaning: luna=unknown vs kimi=inconvenience; beneficiary luna=unknown vs kimi=self", "userneeds_u03_r019 beneficiary: luna=household vs kimi=household (agree) but failure_meaning unknown both"]
+    },
+    {
+      "group_name": "indoor_air_quality_below_threshold",
+      "evidence_ids": ["userneeds_u03_r014", "userneeds_u21_r124"],
+      "reason": "Cooking extraction and CO2-triggered ventilation/purification share an air-quality objective but have only two demand owners, one study cluster, and failure_meaning=unknown from both coders on both units; below candidate threshold.",
+      "coding_disagreements": ["userneeds_u03_r014 beneficiary: luna=household vs kimi=self", "only kimi proposed candidate_responsibility on r124"]
+    },
+    {
+      "group_name": "dependent_and_illness_care_single_owner",
+      "evidence_ids": ["userneeds_u30_r175", "userneeds_u30_r179"],
+      "reason": "Infant night soothing and fever-driven medication procurement are genuine care objectives (care_lapse agreed by both coders) but each rests on a single demand owner (mattioli-user-30); r175 is kimi=strongly_implies but luna=compatible_only, so the direct path (both coders strong) fails; below convergent threshold.",
+      "coding_disagreements": ["userneeds_u30_r175 standing_responsibility_support: luna=compatible_only vs kimi=strongly_implies; beneficiary luna=household vs kimi=third_party", "userneeds_u30_r179 beneficiary: luna=household vs kimi=self"]
+    },
+    {
+      "group_name": "unattended_appliance_hazard_single_owner",
+      "evidence_ids": ["userneeds_u30_r176"],
+      "reason": "Fire-hazard prevention from a forgotten hair straightener is a meaningful harm objective but supported by one owner only; luna records failure_meaning=unknown vs kimi=harm; below threshold.",
+      "coding_disagreements": ["failure_meaning: luna=unknown vs kimi=harm; beneficiary: luna=household vs kimi=self"]
+    },
+    {
+      "group_name": "plant_watering_single_owner",
+      "evidence_ids": ["userneeds_u12_r070"],
+      "reason": "Soil-moisture maintenance for plants: single owner, failure meaning disputed (luna=discomfort vs kimi=harm), below threshold.",
+      "coding_disagreements": ["failure_meaning: luna=discomfort vs kimi=harm; beneficiary: luna=unknown vs kimi=household"]
+    },
+    {
+      "group_name": "daylight_shading_comfort_single_owner",
+      "evidence_ids": ["userneeds_u12_r071"],
+      "reason": "Occupancy/daylight-driven shading: single owner, kimi records failure_meaning=none (no meaningful failure), distinct from thermal comfort cluster; below threshold.",
+      "coding_disagreements": ["failure_meaning: luna=discomfort vs kimi=none; beneficiary: luna=unknown vs kimi=self"]
+    },
+    {
+      "group_name": "morning_routine_support_single_owner",
+      "evidence_ids": ["userneeds_u12_r073"],
+      "reason": "Wake-up coffee/shutter routine: single owner, convenience-leaning with disputed failure meaning (luna=care_lapse vs kimi=unknown); below threshold.",
+      "coding_disagreements": ["failure_meaning: luna=care_lapse vs kimi=unknown"]
+    },
+    {
+      "group_name": "tv_gaze_autooff_unsupported_purpose",
+      "evidence_ids": ["userneeds_u21_r123"],
+      "reason": "TV switch-off after 15 min without gaze: purpose (energy saving vs attention) not established, failure_meaning=unknown from both coders, single owner; unsupported purpose, below threshold."
+    }
+  ],
+  "coverage_check": {
+    "input_evidence_count": 26,
+    "clustered_count": 6,
+    "excluded_count": 20,
+    "union_count": 26,
+    "exact_union": true,
+    "missing_ids": [],
+    "duplicate_assignments": [],
+    "input_ids": ["practicaltap_p1", "smartsense_sp_001", "userneeds_u03_r014", "userneeds_u03_r015", "userneeds_u03_r016", "userneeds_u03_r017", "userneeds_u03_r018", "userneeds_u03_r019", "userneeds_u12_r068", "userneeds_u12_r069", "userneeds_u12_r070", "userneeds_u12_r071", "userneeds_u12_r072", "userneeds_u12_r073", "userneeds_u21_r121", "userneeds_u21_r122", "userneeds_u21_r123", "userneeds_u21_r124", "userneeds_u21_r125", "userneeds_u21_r126", "userneeds_u30_r175", "userneeds_u30_r176", "userneeds_u30_r177", "userneeds_u30_r178", "userneeds_u30_r179", "userneeds_u30_r180"]
+  }
+}

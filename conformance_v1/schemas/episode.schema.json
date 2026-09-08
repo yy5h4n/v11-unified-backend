@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "episode.schema.json",
+  "title": "Episode",
+  "description": "Executable evaluation unit: exactly one responsibility/Query/Contract bound to one process and interaction protocol. Public and private records are separated; gold_actions must stay empty (no public gold-action leakage).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "responsibility_id", "query_id", "contract_id", "physical_process_id", "protocol", "physical_label", "split", "replay_digest", "terminal_verdict", "public_record", "private_record"],
+  "properties": {
+    "object_type": { "const": "Episode" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "responsibility_id": { "type": "string" },
+    "query_id": { "type": "string" },
+    "contract_id": { "type": "string" },
+    "physical_process_id": { "type": "string" },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cadence", "horizon", "termination"],
+      "properties": {
+        "cadence": { "type": "string" },
+        "horizon": { "type": "integer", "minimum": 1 },
+        "termination": { "type": "string", "enum": ["finite_window"] }
+      }
+    },
+    "physical_label": { "type": "string", "enum": ["positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported", "none"] },
+    "split": { "type": "string", "enum": ["train", "dev", "test", "none"] },
+    "replay_digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "terminal_verdict": { "type": "string", "enum": ["released", "continues_beyond_window", "censored_pending", "violated_at_truncation"] },
+    "public_record": { "$ref": "#/$defs/public_record" },
+    "private_record": { "$ref": "#/$defs/private_record" }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    },
+    "public_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["responsibility_query", "initial_observation", "observation_schema", "legal_action_schema", "cadence", "horizon", "termination", "semantic_status", "authorization_status", "physical_status", "content_hashes", "split"],
+      "properties": {
+        "responsibility_query": { "type": "string" },
+        "initial_observation": { "type": "object" },
+        "observation_schema": { "type": "string" },
+        "legal_action_schema": { "type": "string" },
+        "cadence": { "type": "string" },
+        "horizon": { "type": "integer" },
+        "termination": { "type": "string" },
+        "semantic_status": { "type": "string" },
+        "authorization_status": { "type": "string" },
+        "physical_status": { "type": "string" },
+        "content_hashes": { "type": "object" },
+        "split": { "type": "string" }
+      }
+    },
+    "private_record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lineage", "backend_binding", "source_hashes", "evaluator_clauses", "qa_verdicts", "selection_stratum", "replay_digests", "witness_digest", "gold_actions"],
+      "properties": {
+        "lineage": { "type": "object" },
+        "backend_binding": { "type": "object" },
+        "source_hashes": { "type": "object" },
+        "evaluator_clauses": { "type": "string" },
+        "qa_verdicts": { "type": "object" },
+        "selection_stratum": { "type": "string" },
+        "replay_digests": { "type": "object" },
+        "witness_digest": { "type": "string" },
+        "gold_actions": { "type": "array", "maxItems": 0 }
+      }
+    }
+  }
+}

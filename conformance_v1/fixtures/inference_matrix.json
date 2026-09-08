@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "note": "Machine-readable evidence inference matrix (normative doc section 2.1). cannot_establish_alone is binding: a coded proposition with a code in that list is a conformance failure. may_support enumerates the promoted codes; for directly-stated semantic fields the row permits the code only when the unit records it as verbatim/labeled content, never by analyst interpretation.",
+  "rows": [
+    {
+      "label": "Direct interview/diary quotation",
+      "source_type": "direct_interview_diary_quotation",
+      "may_support": ["reported_purpose", "beneficiary", "failure_experience", "failure_meaning", "preference", "refusal", "desired_state", "ownership", "accountability", "override_release", "authorized_action", "delegation_acceptance"],
+      "cannot_establish_alone": ["recurrence", "persistence", "prevalence", "deployment", "consent"]
+    },
+    {
+      "label": "Participant-authored desired automation",
+      "source_type": "participant_authored_desired_automation",
+      "may_support": ["desired_state", "trigger", "context", "reported_purpose", "preference"],
+      "cannot_establish_alone": ["deployment", "persistence", "recurrence", "accountability", "ownership", "delegation_acceptance", "consent"]
+    },
+    {
+      "label": "Naturally authored Routine",
+      "source_type": "naturally_authored_routine",
+      "may_support": ["configured_mechanism", "context", "recurrence", "observed_action_recurrence"],
+      "cannot_establish_alone": ["reported_purpose", "accountability", "beneficiary", "delegation_acceptance", "consent", "ownership", "persistence"]
+    },
+    {
+      "label": "Interaction log",
+      "source_type": "interaction_log",
+      "may_support": ["observed_action_recurrence", "override_behavior", "recurrence", "deployment"],
+      "cannot_establish_alone": ["reported_purpose", "beneficiary", "accountability", "delegation_acceptance", "consent", "desired_state"]
+    },
+    {
+      "label": "Caregiver/researcher-authored rule",
+      "source_type": "caregiver_researcher_authored_rule",
+      "may_support": ["configured_mechanism", "context", "beneficiary", "authorized_action", "ownership"],
+      "cannot_establish_alone": ["reported_purpose", "delegation_acceptance", "consent", "desired_state", "recurrence"]
+    },
+    {
+      "label": "Default/copied/synthetic rule",
+      "source_type": "default_copied_synthetic_rule",
+      "may_support": ["platform_capability", "test_fixture"],
+      "cannot_establish_alone": ["reported_purpose", "beneficiary", "recurrence", "delegation_acceptance", "consent", "deployment", "desired_state", "accountability"]
+    }
+  ]
+}

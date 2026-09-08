@@ -1,0 +1,1218 @@
+{
+  "campaign": {
+    "causal": {
+      "branches": [
+        {
+          "action": {
+            "laundry_valve_open": 0.0,
+            "shower_valve_open": 0.0
+          },
+          "branch": 0,
+          "native_effect": null,
+          "observation": {
+            "flow_laundry_m3_s": 0.0,
+            "flow_shower_m3_s": 0.0,
+            "flow_source_fill_m3_s": 0.0,
+            "pressure_laundry_m": 0.0,
+            "pressure_shower_m": 0.0,
+            "served_laundry_m3_s": 0.0,
+            "served_shower_m3_s": 0.0,
+            "tank_level_m": 4.002234852099
+          },
+          "prefix_observation": {
+            "flow_laundry_m3_s": 0.0,
+            "flow_shower_m3_s": 0.0,
+            "flow_source_fill_m3_s": 0.0,
+            "pressure_laundry_m": 0.0,
+            "pressure_shower_m": 0.0,
+            "served_laundry_m3_s": 0.0,
+            "served_shower_m3_s": 0.0,
+            "tank_level_m": 4.002234852099
+          },
+          "prefix_time": 3600.0,
+          "time": 21600.0,
+          "trace": [
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.0,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 0.0,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.0,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 7200.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.0,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 0.0,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.0,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 10800.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.0,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 0.0,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.0,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 14400.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.0,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 0.0,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.0,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 18000.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.0,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 0.0,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.0,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 21600.0
+            }
+          ]
+        },
+        {
+          "action": {
+            "laundry_valve_open": 0.0,
+            "shower_valve_open": 1.0
+          },
+          "branch": 1,
+          "native_effect": null,
+          "observation": {
+            "flow_laundry_m3_s": 0.0,
+            "flow_shower_m3_s": 0.007871632709,
+            "flow_source_fill_m3_s": 0.007872941116,
+            "pressure_laundry_m": 0.0,
+            "pressure_shower_m": 17.554473057342,
+            "served_laundry_m3_s": 0.0,
+            "served_shower_m3_s": 0.004871632709,
+            "tank_level_m": 2.70806581244
+          },
+          "prefix_observation": {
+            "flow_laundry_m3_s": 0.0,
+            "flow_shower_m3_s": 0.0,
+            "flow_source_fill_m3_s": 0.0,
+            "pressure_laundry_m": 0.0,
+            "pressure_shower_m": 0.0,
+            "served_laundry_m3_s": 0.0,
+            "served_shower_m3_s": 0.0,
+            "tank_level_m": 4.002234852099
+          },
+          "prefix_time": 3600.0,
+          "time": 21600.0,
+          "trace": [
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 1.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.008047067153,
+                "flow_source_fill_m3_s": 0.0,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 18.841719073179,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.005047067153,
+                "tank_level_m": 4.002234852099
+              },
+              "time_seconds": 7200.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 1.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.007864257122,
+                "flow_source_fill_m3_s": 0.007883091024,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 17.501506286451,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.004864257122,
+                "tank_level_m": 2.654811843508
+              },
+              "time_seconds": 10800.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 1.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.007868936366,
+                "flow_source_fill_m3_s": 0.007876665099,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 17.535046266611,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.004868936366,
+                "tank_level_m": 2.688533816412
+              },
+              "time_seconds": 14400.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 1.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.007870846855,
+                "flow_source_fill_m3_s": 0.007874026846,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 17.548809971623,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.004870846855,
+                "tank_level_m": 2.702372060715
+              },
+              "time_seconds": 18000.0
+            },
+            {
+              "action": {
+                "laundry_valve_open": 0.0,
+                "shower_valve_open": 1.0
+              },
+              "effect": null,
+              "observation": {
+                "flow_laundry_m3_s": 0.0,
+                "flow_shower_m3_s": 0.007871632709,
+                "flow_source_fill_m3_s": 0.007872941116,
+                "pressure_laundry_m": 0.0,
+                "pressure_shower_m": 17.554473057342,
+                "served_laundry_m3_s": 0.0,
+                "served_shower_m3_s": 0.004871632709,
+                "tank_level_m": 2.70806581244
+              },
+              "time_seconds": 21600.0
+            }
+          ]
+        }
+      ],
+      "future_leakage_check": true,
+      "same_prefix_divergence": true
+    },
+    "concurrency": {
+      "distinct_action_controls": true,
+      "episodes": 2,
+      "pairs": [
+        {
+          "concurrent": {
+            "cadence_seconds": 3600.0,
+            "declared_horizon_seconds": 21600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 7200.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d3_wntr_water_competition_sessions/v11_backend_sessions/episode_lzqe4lbc",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 0.0
+                },
+                "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.0,
+                  "flow_source_fill_m3_s": 0.0,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 0.0,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.0,
+                  "tank_level_m": 4.002234852099
+                },
+                "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+                "time_seconds": 3600.0
+              },
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 0.0
+                },
+                "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.0,
+                  "flow_source_fill_m3_s": 0.0,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 0.0,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.0,
+                  "tank_level_m": 4.002234852099
+                },
+                "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+                "time_seconds": 7200.0
+              }
+            ],
+            "wall_seconds": 3.1591705000028014,
+            "worker_pid": 42694
+          },
+          "serial": {
+            "cadence_seconds": 3600.0,
+            "declared_horizon_seconds": 21600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 7200.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 0.0
+                },
+                "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.0,
+                  "flow_source_fill_m3_s": 0.0,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 0.0,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.0,
+                  "tank_level_m": 4.002234852099
+                },
+                "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+                "time_seconds": 3600.0
+              },
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 0.0
+                },
+                "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.0,
+                  "flow_source_fill_m3_s": 0.0,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 0.0,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.0,
+                  "tank_level_m": 4.002234852099
+                },
+                "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+                "time_seconds": 7200.0
+              }
+            ],
+            "wall_seconds": 3.1300829160027206,
+            "worker_pid": 37553
+          }
+        },
+        {
+          "concurrent": {
+            "cadence_seconds": 3600.0,
+            "declared_horizon_seconds": 21600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 7200.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d3_wntr_water_competition_sessions/v11_backend_sessions/episode_1ms2qacd",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 1.0
+                },
+                "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.007959531726,
+                  "flow_source_fill_m3_s": 0.007749537051,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 18.193813014323,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.004959531726,
+                  "tank_level_m": 3.350855631806
+                },
+                "observation_digest": "06f62264e8f32129cbeaa1dce6470c8470a6728123f57b2d9912f8292704e381",
+                "time_seconds": 3600.0
+              },
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 1.0
+                },
+                "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.007908315213,
+                  "flow_source_fill_m3_s": 0.00782192252,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 17.819834008835,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.004908315213,
+                  "tank_level_m": 2.974861613866
+                },
+                "observation_digest": "ce40e0f310ca82eefa65e430e9c442e401b3961b8e40f3f48f911d8c30ec0eb5",
+                "time_seconds": 7200.0
+              }
+            ],
+            "wall_seconds": 3.1627583750523627,
+            "worker_pid": 42695
+          },
+          "serial": {
+            "cadence_seconds": 3600.0,
+            "declared_horizon_seconds": 21600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 7200.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 1.0
+                },
+                "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.007959531726,
+                  "flow_source_fill_m3_s": 0.007749537051,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 18.193813014323,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.004959531726,
+                  "tank_level_m": 3.350855631806
+                },
+                "observation_digest": "06f62264e8f32129cbeaa1dce6470c8470a6728123f57b2d9912f8292704e381",
+                "time_seconds": 3600.0
+              },
+              {
+                "action": {
+                  "laundry_valve_open": 0.0,
+                  "shower_valve_open": 1.0
+                },
+                "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "flow_laundry_m3_s": 0.0,
+                  "flow_shower_m3_s": 0.007908315213,
+                  "flow_source_fill_m3_s": 0.00782192252,
+                  "pressure_laundry_m": 0.0,
+                  "pressure_shower_m": 17.819834008835,
+                  "served_laundry_m3_s": 0.0,
+                  "served_shower_m3_s": 0.004908315213,
+                  "tank_level_m": 2.974861613866
+                },
+                "observation_digest": "ce40e0f310ca82eefa65e430e9c442e401b3961b8e40f3f48f911d8c30ec0eb5",
+                "time_seconds": 7200.0
+              }
+            ],
+            "wall_seconds": 3.1514322499278933,
+            "worker_pid": 37553
+          }
+        }
+      ],
+      "serial_match": true
+    },
+    "cycles": [
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_eb6udag8",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.212989417021163
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_wonvn869",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 2.9798725419677794
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_lzfxx6m6",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 2.869680125033483
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_nuq5kg7t",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.027992375078611
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_squwqqqv",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.0870372090721503
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_urnt9okw",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.1861115830251947
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_omvs_hun",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.22279058303684
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_w0v2jct7",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.165701749967411
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_9oert60r",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 3.1574503750307485
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_5qeqm_zf",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 2.912586999940686
+      }
+    ],
+    "execution_started_monotonic": 708886.079129833,
+    "metadata": {
+      "accepted_dt_seconds": [
+        3600.0
+      ],
+      "cadence_seconds": 3600.0,
+      "execution_mode": "process_isolated",
+      "horizon_seconds": 21600.0,
+      "layer": "D3",
+      "native_time_unit": "seconds",
+      "route_id": "d3_wntr_water_competition",
+      "termination": "native_or_21600s_truncation"
+    },
+    "reset_close_cycles": 10,
+    "route_id": "d3_wntr_water_competition",
+    "schema": "v11.backend.episode.campaign.v2",
+    "seed_runs": [
+      {
+        "cadence_seconds": 3600.0,
+        "declared_horizon_seconds": 21600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 21600.0,
+        "seed": 0,
+        "session_dir": "",
+        "steps": 6,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.008047067153,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 18.841719073179,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.005047067153,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "07ff3fdbea7237b0b4de92d1017d37a20aaf7531f55b8bdc6964047ca7898b40",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.010107180033,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": -10.405983440182
+            },
+            "observation_digest": "0f192352110e21620a9e6ac7618aad0c471cc9eae1ffda9a0ee68faa09fa0f28",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007639107642,
+              "flow_source_fill_m3_s": 0.008181421348,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.918834980147,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004639107642,
+              "tank_level_m": 1.063488081149
+            },
+            "observation_digest": "56eca32c45993e7ddae5d9ff57b04e2a710ba976e4983babb64ab7ccb4512ceb",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.008000510185,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 2.034497034988
+            },
+            "observation_digest": "fe07bc3c6970dc33a3a8bcacb568f155ff4944c1146a6a9a61fa1c7a1ce2e398",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": true,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007571935828,
+              "flow_source_fill_m3_s": 0.00826597947,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.461179898454,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004571935828,
+              "tank_level_m": 0.603300271331
+            },
+            "observation_digest": "a81e456632b7fe716a604ba801d17bfad670a015db12fa4d2d320600b9ba3403",
+            "time_seconds": 21600.0
+          }
+        ],
+        "wall_seconds": 3.9009047920117155,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 3600.0,
+        "declared_horizon_seconds": 21600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 21600.0,
+        "seed": 1,
+        "session_dir": "",
+        "steps": 6,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.008047067153,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 18.841719073179,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.005047067153,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "07ff3fdbea7237b0b4de92d1017d37a20aaf7531f55b8bdc6964047ca7898b40",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.010107180033,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": -10.405983440182
+            },
+            "observation_digest": "0f192352110e21620a9e6ac7618aad0c471cc9eae1ffda9a0ee68faa09fa0f28",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007639107642,
+              "flow_source_fill_m3_s": 0.008181421348,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.918834980147,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004639107642,
+              "tank_level_m": 1.063488081149
+            },
+            "observation_digest": "56eca32c45993e7ddae5d9ff57b04e2a710ba976e4983babb64ab7ccb4512ceb",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.008000510185,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 2.034497034988
+            },
+            "observation_digest": "fe07bc3c6970dc33a3a8bcacb568f155ff4944c1146a6a9a61fa1c7a1ce2e398",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": true,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007571935828,
+              "flow_source_fill_m3_s": 0.00826597947,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.461179898454,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004571935828,
+              "tank_level_m": 0.603300271331
+            },
+            "observation_digest": "a81e456632b7fe716a604ba801d17bfad670a015db12fa4d2d320600b9ba3403",
+            "time_seconds": 21600.0
+          }
+        ],
+        "wall_seconds": 3.2423378330422565,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 3600.0,
+        "declared_horizon_seconds": 21600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 21600.0,
+        "seed": 2,
+        "session_dir": "",
+        "steps": 6,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "fc9d2b3e515ff0766e9f7fc6a7e70dba58f0216144a427567cc692d08385cd8c",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.008047067153,
+              "flow_source_fill_m3_s": 0.0,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 18.841719073179,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.005047067153,
+              "tank_level_m": 4.002234852099
+            },
+            "observation_digest": "07ff3fdbea7237b0b4de92d1017d37a20aaf7531f55b8bdc6964047ca7898b40",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.010107180033,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": -10.405983440182
+            },
+            "observation_digest": "0f192352110e21620a9e6ac7618aad0c471cc9eae1ffda9a0ee68faa09fa0f28",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007639107642,
+              "flow_source_fill_m3_s": 0.008181421348,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.918834980147,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004639107642,
+              "tank_level_m": 1.063488081149
+            },
+            "observation_digest": "56eca32c45993e7ddae5d9ff57b04e2a710ba976e4983babb64ab7ccb4512ceb",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 0.0
+            },
+            "action_digest": "56813e7a5a97f08de9d32d796bafa0d5ee75fde253c8e3adbeb2bb50cb86bda8",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.0,
+              "flow_source_fill_m3_s": 0.008000510185,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 0.0,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.0,
+              "tank_level_m": 2.034497034988
+            },
+            "observation_digest": "fe07bc3c6970dc33a3a8bcacb568f155ff4944c1146a6a9a61fa1c7a1ce2e398",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "laundry_valve_open": 0.0,
+              "shower_valve_open": 1.0
+            },
+            "action_digest": "7a6643ef5b38d29a908c9868199ac8a5760c0ad628759c10d1aebdf669180908",
+            "done": true,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "flow_laundry_m3_s": 0.0,
+              "flow_shower_m3_s": 0.007571935828,
+              "flow_source_fill_m3_s": 0.00826597947,
+              "pressure_laundry_m": 0.0,
+              "pressure_shower_m": 15.461179898454,
+              "served_laundry_m3_s": 0.0,
+              "served_shower_m3_s": 0.004571935828,
+              "tank_level_m": 0.603300271331
+            },
+            "observation_digest": "a81e456632b7fe716a604ba801d17bfad670a015db12fa4d2d320600b9ba3403",
+            "time_seconds": 21600.0
+          }
+        ],
+        "wall_seconds": 3.2928161659510806,
+        "worker_pid": 37553
+      }
+    ],
+    "source_bindings": {
+      "d3_wntr_water_competition_adapter.py": "9d427238782d8d1809015c523eab165233b2d675430b1f015cdf61a04ffcc86e",
+      "tools/backend_acceptance_runner.py": "b309d4b53c79fa6fbfc6096a86ff375a26bac841392a17df71a41f71ea67ce78",
+      "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "unified_compiler/route_registry.py": "5aa2ae55f22bbf72db21a0c533f96794be453995365d18773d58c73851ae4792"
+    },
+    "wall_seconds": 59.37878408294637
+  },
+  "checks": {
+    "coupling_supported": true,
+    "episode_ready": true,
+    "full_horizon": true,
+    "future_leakage_check": true,
+    "mechanism_gate": true,
+    "reset_close_loops": 10,
+    "reset_observe_legal_actions": true,
+    "same_prefix_causality": true,
+    "seed_matrix": 3,
+    "two_actions": true
+  },
+  "horizon_seconds": 21600.0,
+  "metadata": {
+    "accepted_dt_seconds": [
+      3600.0
+    ],
+    "cadence_seconds": 3600.0,
+    "execution_mode": "process_isolated",
+    "horizon_seconds": 21600.0,
+    "layer": "D3",
+    "native_time_unit": "seconds",
+    "route_id": "d3_wntr_water_competition",
+    "termination": "native_or_21600s_truncation"
+  },
+  "route_id": "d3_wntr_water_competition",
+  "runner_wall_seconds": 59.37878408294637,
+  "seed": 0,
+  "source_bindings": {
+    "d3_wntr_water_competition_adapter.py": "9d427238782d8d1809015c523eab165233b2d675430b1f015cdf61a04ffcc86e",
+    "tools/assemble_backend_acceptance.py": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
+    "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+    "tools/run_episode_campaign.py": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+    "tools/run_stability_campaign.py": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+    "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+    "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+  },
+  "status": "passed",
+  "wall_seconds": 59.37878408294637
+}

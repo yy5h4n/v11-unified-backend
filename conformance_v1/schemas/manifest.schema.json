@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "manifest.schema.json",
+  "title": "Conformance package manifest",
+  "description": "Release manifest separating public_reproducible, restricted_audit and operator_private artifacts (normative doc section 12).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["spec_version", "package_version", "status", "normative_document", "artifacts", "tiers", "conformance_claims", "test_command", "known_limitations", "hash_algorithm", "artifact_sha256", "release_tuple_sha256"],
+  "properties": {
+    "spec_version": { "type": "string" },
+    "package_version": { "type": "string" },
+    "status": { "type": "string", "enum": ["frozen", "pending", "invalidated"] },
+    "normative_document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "full_sha256", "normative_sha256_excluding_section_15"],
+      "properties": {
+        "path": { "type": "string" },
+        "full_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "normative_sha256_excluding_section_15": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tier"],
+        "properties": {
+          "tier": { "type": "string", "enum": ["public_reproducible", "restricted_audit", "operator_private"] },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "tiers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_reproducible", "restricted_audit", "operator_private"],
+      "properties": {
+        "public_reproducible": { "type": "array", "items": { "type": "string" } },
+        "restricted_audit": { "type": "array", "items": { "type": "string" } },
+        "operator_private": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "conformance_claims": { "type": "array", "items": { "type": "string" } },
+    "test_command": { "type": "string" },
+    "known_limitations": { "type": "array", "items": { "type": "string" } }
+    ,"hash_algorithm": { "type": "string" }
+    ,"artifact_sha256": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    }
+    ,"release_tuple_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+  }
+}

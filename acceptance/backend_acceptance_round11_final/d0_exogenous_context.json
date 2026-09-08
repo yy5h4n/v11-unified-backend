@@ -1,0 +1,2726 @@
+{
+  "campaign": {
+    "causal": {
+      "branches": [
+        {
+          "action": {
+            "command": {
+              "operation": "off",
+              "target": "interior_lights"
+            },
+            "kind": "act"
+          },
+          "branch": 0,
+          "native_effect": null,
+          "observation": {
+            "context": {
+              "occupancy_count": 2,
+              "occupancy_status": "home",
+              "time_context": "evening",
+              "weather": "rain"
+            },
+            "devices": {
+              "front_door": "open",
+              "interior_lights": "off"
+            },
+            "events": [
+              {
+                "event_type": "action_applied",
+                "operation": "off",
+                "source": "agent",
+                "step": 7,
+                "target": "interior_lights"
+              },
+              {
+                "event_type": "occupancy_change",
+                "payload": {
+                  "count": 2,
+                  "status": "home"
+                },
+                "source": "external",
+                "step": 8
+              }
+            ],
+            "step": 8,
+            "terminal": false,
+            "time_seconds": 480
+          },
+          "prefix_observation": {
+            "context": {
+              "occupancy_count": 2,
+              "occupancy_status": "home",
+              "time_context": "evening",
+              "weather": "clear"
+            },
+            "devices": {
+              "front_door": "closed",
+              "interior_lights": "off"
+            },
+            "events": [
+              {
+                "event_type": "action_applied",
+                "operation": "off",
+                "source": "agent",
+                "step": 0,
+                "target": "interior_lights"
+              }
+            ],
+            "step": 1,
+            "terminal": false,
+            "time_seconds": 60
+          },
+          "prefix_time": 60.0,
+          "time": 480.0,
+          "trace": [
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "closed",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 1,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "occupancy_change",
+                    "payload": {
+                      "count": 0,
+                      "status": "away"
+                    },
+                    "source": "external",
+                    "step": 2
+                  }
+                ],
+                "step": 2,
+                "terminal": false,
+                "time_seconds": 120
+              },
+              "time_seconds": 120.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "closed",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 2,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 3,
+                "terminal": false,
+                "time_seconds": 180
+              },
+              "time_seconds": 180.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 3,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "door_state_change",
+                    "payload": {
+                      "source": "external",
+                      "state": "open"
+                    },
+                    "source": "external",
+                    "step": 4
+                  }
+                ],
+                "step": 4,
+                "terminal": false,
+                "time_seconds": 240
+              },
+              "time_seconds": 240.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 4,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 5,
+                "terminal": false,
+                "time_seconds": 300
+              },
+              "time_seconds": 300.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 5,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "context_update",
+                    "payload": {
+                      "key": "weather",
+                      "value": "rain"
+                    },
+                    "source": "external",
+                    "step": 6
+                  }
+                ],
+                "step": 6,
+                "terminal": false,
+                "time_seconds": 360
+              },
+              "time_seconds": 360.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 6,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 7,
+                "terminal": false,
+                "time_seconds": 420
+              },
+              "time_seconds": 420.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "off",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 2,
+                  "occupancy_status": "home",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "off"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "off",
+                    "source": "agent",
+                    "step": 7,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "occupancy_change",
+                    "payload": {
+                      "count": 2,
+                      "status": "home"
+                    },
+                    "source": "external",
+                    "step": 8
+                  }
+                ],
+                "step": 8,
+                "terminal": false,
+                "time_seconds": 480
+              },
+              "time_seconds": 480.0
+            }
+          ]
+        },
+        {
+          "action": {
+            "command": {
+              "operation": "on",
+              "target": "interior_lights"
+            },
+            "kind": "act"
+          },
+          "branch": 1,
+          "native_effect": null,
+          "observation": {
+            "context": {
+              "occupancy_count": 2,
+              "occupancy_status": "home",
+              "time_context": "evening",
+              "weather": "rain"
+            },
+            "devices": {
+              "front_door": "open",
+              "interior_lights": "on"
+            },
+            "events": [
+              {
+                "event_type": "action_applied",
+                "operation": "on",
+                "source": "agent",
+                "step": 7,
+                "target": "interior_lights"
+              },
+              {
+                "event_type": "occupancy_change",
+                "payload": {
+                  "count": 2,
+                  "status": "home"
+                },
+                "source": "external",
+                "step": 8
+              }
+            ],
+            "step": 8,
+            "terminal": false,
+            "time_seconds": 480
+          },
+          "prefix_observation": {
+            "context": {
+              "occupancy_count": 2,
+              "occupancy_status": "home",
+              "time_context": "evening",
+              "weather": "clear"
+            },
+            "devices": {
+              "front_door": "closed",
+              "interior_lights": "off"
+            },
+            "events": [
+              {
+                "event_type": "action_applied",
+                "operation": "off",
+                "source": "agent",
+                "step": 0,
+                "target": "interior_lights"
+              }
+            ],
+            "step": 1,
+            "terminal": false,
+            "time_seconds": 60
+          },
+          "prefix_time": 60.0,
+          "time": 480.0,
+          "trace": [
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "closed",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 1,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "occupancy_change",
+                    "payload": {
+                      "count": 0,
+                      "status": "away"
+                    },
+                    "source": "external",
+                    "step": 2
+                  }
+                ],
+                "step": 2,
+                "terminal": false,
+                "time_seconds": 120
+              },
+              "time_seconds": 120.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "closed",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 2,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 3,
+                "terminal": false,
+                "time_seconds": 180
+              },
+              "time_seconds": 180.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 3,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "door_state_change",
+                    "payload": {
+                      "source": "external",
+                      "state": "open"
+                    },
+                    "source": "external",
+                    "step": 4
+                  }
+                ],
+                "step": 4,
+                "terminal": false,
+                "time_seconds": 240
+              },
+              "time_seconds": 240.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "clear"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 4,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 5,
+                "terminal": false,
+                "time_seconds": 300
+              },
+              "time_seconds": 300.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 5,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "context_update",
+                    "payload": {
+                      "key": "weather",
+                      "value": "rain"
+                    },
+                    "source": "external",
+                    "step": 6
+                  }
+                ],
+                "step": 6,
+                "terminal": false,
+                "time_seconds": 360
+              },
+              "time_seconds": 360.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 0,
+                  "occupancy_status": "away",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 6,
+                    "target": "interior_lights"
+                  }
+                ],
+                "step": 7,
+                "terminal": false,
+                "time_seconds": 420
+              },
+              "time_seconds": 420.0
+            },
+            {
+              "action": {
+                "command": {
+                  "operation": "on",
+                  "target": "interior_lights"
+                },
+                "kind": "act"
+              },
+              "effect": null,
+              "observation": {
+                "context": {
+                  "occupancy_count": 2,
+                  "occupancy_status": "home",
+                  "time_context": "evening",
+                  "weather": "rain"
+                },
+                "devices": {
+                  "front_door": "open",
+                  "interior_lights": "on"
+                },
+                "events": [
+                  {
+                    "event_type": "action_applied",
+                    "operation": "on",
+                    "source": "agent",
+                    "step": 7,
+                    "target": "interior_lights"
+                  },
+                  {
+                    "event_type": "occupancy_change",
+                    "payload": {
+                      "count": 2,
+                      "status": "home"
+                    },
+                    "source": "external",
+                    "step": 8
+                  }
+                ],
+                "step": 8,
+                "terminal": false,
+                "time_seconds": 480
+              },
+              "time_seconds": 480.0
+            }
+          ]
+        }
+      ],
+      "future_leakage_check": true,
+      "same_prefix_divergence": true
+    },
+    "concurrency": {
+      "distinct_action_controls": true,
+      "episodes": 2,
+      "pairs": [
+        {
+          "concurrent": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d0_exogenous_context_sessions/v11_backend_sessions/episode_99l5cq_4",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "command": {
+                    "operation": "off",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 2,
+                    "occupancy_status": "home",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "off"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "off",
+                      "source": "agent",
+                      "step": 0,
+                      "target": "interior_lights"
+                    }
+                  ],
+                  "step": 1,
+                  "terminal": false,
+                  "time_seconds": 60
+                },
+                "observation_digest": "eeb356e43445fd2363c26d66a2eef40a6193d25a4ec67d9bf344f7a033638fbb",
+                "time_seconds": 60.0
+              },
+              {
+                "action": {
+                  "command": {
+                    "operation": "off",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 0,
+                    "occupancy_status": "away",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "off"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "off",
+                      "source": "agent",
+                      "step": 1,
+                      "target": "interior_lights"
+                    },
+                    {
+                      "event_type": "occupancy_change",
+                      "payload": {
+                        "count": 0,
+                        "status": "away"
+                      },
+                      "source": "external",
+                      "step": 2
+                    }
+                  ],
+                  "step": 2,
+                  "terminal": false,
+                  "time_seconds": 120
+                },
+                "observation_digest": "74d87c0edacb6170cd21d3cb84bf4e2abff3e6ea71aa856d9593559e442d1194",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.0141216249903664,
+            "worker_pid": 37573
+          },
+          "serial": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "command": {
+                    "operation": "off",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 2,
+                    "occupancy_status": "home",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "off"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "off",
+                      "source": "agent",
+                      "step": 0,
+                      "target": "interior_lights"
+                    }
+                  ],
+                  "step": 1,
+                  "terminal": false,
+                  "time_seconds": 60
+                },
+                "observation_digest": "eeb356e43445fd2363c26d66a2eef40a6193d25a4ec67d9bf344f7a033638fbb",
+                "time_seconds": 60.0
+              },
+              {
+                "action": {
+                  "command": {
+                    "operation": "off",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 0,
+                    "occupancy_status": "away",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "off"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "off",
+                      "source": "agent",
+                      "step": 1,
+                      "target": "interior_lights"
+                    },
+                    {
+                      "event_type": "occupancy_change",
+                      "payload": {
+                        "count": 0,
+                        "status": "away"
+                      },
+                      "source": "external",
+                      "step": 2
+                    }
+                  ],
+                  "step": 2,
+                  "terminal": false,
+                  "time_seconds": 120
+                },
+                "observation_digest": "74d87c0edacb6170cd21d3cb84bf4e2abff3e6ea71aa856d9593559e442d1194",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.0013747079065069556,
+            "worker_pid": 37553
+          }
+        },
+        {
+          "concurrent": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d0_exogenous_context_sessions/v11_backend_sessions/episode_c8jcivoo",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "command": {
+                    "operation": "on",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 2,
+                    "occupancy_status": "home",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "on"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "on",
+                      "source": "agent",
+                      "step": 0,
+                      "target": "interior_lights"
+                    }
+                  ],
+                  "step": 1,
+                  "terminal": false,
+                  "time_seconds": 60
+                },
+                "observation_digest": "3f6c9fba73c67be32aec69de9e0809237ffd154a09c220f9cceeafffc84abd6a",
+                "time_seconds": 60.0
+              },
+              {
+                "action": {
+                  "command": {
+                    "operation": "on",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 0,
+                    "occupancy_status": "away",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "on"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "on",
+                      "source": "agent",
+                      "step": 1,
+                      "target": "interior_lights"
+                    },
+                    {
+                      "event_type": "occupancy_change",
+                      "payload": {
+                        "count": 0,
+                        "status": "away"
+                      },
+                      "source": "external",
+                      "step": 2
+                    }
+                  ],
+                  "step": 2,
+                  "terminal": false,
+                  "time_seconds": 120
+                },
+                "observation_digest": "0289cbdd9514d9e03a78ebfeb2d449d8e8def60e710566034dca5d25a6424fa7",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.002067166962660849,
+            "worker_pid": 37574
+          },
+          "serial": {
+            "cadence_seconds": 60.0,
+            "declared_horizon_seconds": 600.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 120.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "command": {
+                    "operation": "on",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 2,
+                    "occupancy_status": "home",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "on"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "on",
+                      "source": "agent",
+                      "step": 0,
+                      "target": "interior_lights"
+                    }
+                  ],
+                  "step": 1,
+                  "terminal": false,
+                  "time_seconds": 60
+                },
+                "observation_digest": "3f6c9fba73c67be32aec69de9e0809237ffd154a09c220f9cceeafffc84abd6a",
+                "time_seconds": 60.0
+              },
+              {
+                "action": {
+                  "command": {
+                    "operation": "on",
+                    "target": "interior_lights"
+                  },
+                  "kind": "act"
+                },
+                "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "context": {
+                    "occupancy_count": 0,
+                    "occupancy_status": "away",
+                    "time_context": "evening",
+                    "weather": "clear"
+                  },
+                  "devices": {
+                    "front_door": "closed",
+                    "interior_lights": "on"
+                  },
+                  "events": [
+                    {
+                      "event_type": "action_applied",
+                      "operation": "on",
+                      "source": "agent",
+                      "step": 1,
+                      "target": "interior_lights"
+                    },
+                    {
+                      "event_type": "occupancy_change",
+                      "payload": {
+                        "count": 0,
+                        "status": "away"
+                      },
+                      "source": "external",
+                      "step": 2
+                    }
+                  ],
+                  "step": 2,
+                  "terminal": false,
+                  "time_seconds": 120
+                },
+                "observation_digest": "0289cbdd9514d9e03a78ebfeb2d449d8e8def60e710566034dca5d25a6424fa7",
+                "time_seconds": 120.0
+              }
+            ],
+            "wall_seconds": 0.0009622499346733093,
+            "worker_pid": 37553
+          }
+        }
+      ],
+      "serial_match": true
+    },
+    "cycles": [
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_eehoc6jo",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27328512,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0016274170484393835
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_7o7234im",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0016450000694021583
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_39tzry5d",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.001742499996908009
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_e2k1s_hf",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0016536249313503504
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_5l272fxo",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0016563329845666885
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_wk0fm_ul",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0015614998992532492
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_g54ur06i",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0037673329934477806
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_1y15owlj",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0013673329958692193
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_mp8amleg",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.00183766707777977
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_ejft4rsv",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 27820032,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.0017942910781130195
+      }
+    ],
+    "execution_started_monotonic": 708328.422298125,
+    "metadata": {
+      "cadence_seconds": 60.0,
+      "execution_mode": "in_process",
+      "horizon_seconds": 600.0,
+      "layer": "D0",
+      "native_time_unit": "seconds",
+      "route_id": "d0_exogenous_context"
+    },
+    "reset_close_cycles": 10,
+    "route_id": "d0_exogenous_context",
+    "schema": "v11.backend.episode.campaign.v2",
+    "seed_runs": [
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 600.0,
+        "seed": 0,
+        "session_dir": "",
+        "steps": 10,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 0,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 1,
+              "terminal": false,
+              "time_seconds": 60
+            },
+            "observation_digest": "eeb356e43445fd2363c26d66a2eef40a6193d25a4ec67d9bf344f7a033638fbb",
+            "time_seconds": 60.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 1,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 0,
+                    "status": "away"
+                  },
+                  "source": "external",
+                  "step": 2
+                }
+              ],
+              "step": 2,
+              "terminal": false,
+              "time_seconds": 120
+            },
+            "observation_digest": "0289cbdd9514d9e03a78ebfeb2d449d8e8def60e710566034dca5d25a6424fa7",
+            "time_seconds": 120.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 2,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 3,
+              "terminal": false,
+              "time_seconds": 180
+            },
+            "observation_digest": "4462fe21ce83028943fc072f0e2af532cdea517c2a7fafefba275b9c57de2161",
+            "time_seconds": 180.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 3,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "door_state_change",
+                  "payload": {
+                    "source": "external",
+                    "state": "open"
+                  },
+                  "source": "external",
+                  "step": 4
+                }
+              ],
+              "step": 4,
+              "terminal": false,
+              "time_seconds": 240
+            },
+            "observation_digest": "42f2067790b8b3e1b8040b4298c7fdbb5da17e54b52d35f1909726d6d627b424",
+            "time_seconds": 240.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 4,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 5,
+              "terminal": false,
+              "time_seconds": 300
+            },
+            "observation_digest": "ab4671c61a31168eaacd3d671845ac975fcec45eb8299724c8b5377354320010",
+            "time_seconds": 300.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 5,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "context_update",
+                  "payload": {
+                    "key": "weather",
+                    "value": "rain"
+                  },
+                  "source": "external",
+                  "step": 6
+                }
+              ],
+              "step": 6,
+              "terminal": false,
+              "time_seconds": 360
+            },
+            "observation_digest": "64ed75cb31bc0b1660b00a0ed1e28a5ba48f6825ce6b0b36bbd05b20fe726a96",
+            "time_seconds": 360.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 6,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 7,
+              "terminal": false,
+              "time_seconds": 420
+            },
+            "observation_digest": "a95a37fbe2aa15547b5176762742fea61a4859634db66e128495dd810d01d8da",
+            "time_seconds": 420.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 7,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 2,
+                    "status": "home"
+                  },
+                  "source": "external",
+                  "step": 8
+                }
+              ],
+              "step": 8,
+              "terminal": false,
+              "time_seconds": 480
+            },
+            "observation_digest": "651d65f767f995a9794739dd5c3a05c654a20414ef076a2ea57c6b2b112911f7",
+            "time_seconds": 480.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 8,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 9,
+              "terminal": false,
+              "time_seconds": 540
+            },
+            "observation_digest": "f77b47d424c0fffa0321a5d8f01a54adea11fb8706e5bbbe74d048b3e4919c50",
+            "time_seconds": 540.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 9,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 10,
+              "terminal": false,
+              "time_seconds": 600
+            },
+            "observation_digest": "bb88bb117b7e41973600beb6da0b5688ca4ea0a72f3d3f2a0f5d762028bc1d81",
+            "time_seconds": 600.0
+          }
+        ],
+        "wall_seconds": 0.006824875017628074,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 600.0,
+        "seed": 1,
+        "session_dir": "",
+        "steps": 10,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 0,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 1,
+              "terminal": false,
+              "time_seconds": 60
+            },
+            "observation_digest": "eeb356e43445fd2363c26d66a2eef40a6193d25a4ec67d9bf344f7a033638fbb",
+            "time_seconds": 60.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 1,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 0,
+                    "status": "away"
+                  },
+                  "source": "external",
+                  "step": 2
+                }
+              ],
+              "step": 2,
+              "terminal": false,
+              "time_seconds": 120
+            },
+            "observation_digest": "0289cbdd9514d9e03a78ebfeb2d449d8e8def60e710566034dca5d25a6424fa7",
+            "time_seconds": 120.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 2,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 3,
+              "terminal": false,
+              "time_seconds": 180
+            },
+            "observation_digest": "4462fe21ce83028943fc072f0e2af532cdea517c2a7fafefba275b9c57de2161",
+            "time_seconds": 180.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 3,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "door_state_change",
+                  "payload": {
+                    "source": "external",
+                    "state": "open"
+                  },
+                  "source": "external",
+                  "step": 4
+                }
+              ],
+              "step": 4,
+              "terminal": false,
+              "time_seconds": 240
+            },
+            "observation_digest": "42f2067790b8b3e1b8040b4298c7fdbb5da17e54b52d35f1909726d6d627b424",
+            "time_seconds": 240.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 4,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 5,
+              "terminal": false,
+              "time_seconds": 300
+            },
+            "observation_digest": "ab4671c61a31168eaacd3d671845ac975fcec45eb8299724c8b5377354320010",
+            "time_seconds": 300.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 5,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "context_update",
+                  "payload": {
+                    "key": "weather",
+                    "value": "rain"
+                  },
+                  "source": "external",
+                  "step": 6
+                }
+              ],
+              "step": 6,
+              "terminal": false,
+              "time_seconds": 360
+            },
+            "observation_digest": "64ed75cb31bc0b1660b00a0ed1e28a5ba48f6825ce6b0b36bbd05b20fe726a96",
+            "time_seconds": 360.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 6,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 7,
+              "terminal": false,
+              "time_seconds": 420
+            },
+            "observation_digest": "a95a37fbe2aa15547b5176762742fea61a4859634db66e128495dd810d01d8da",
+            "time_seconds": 420.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 7,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 2,
+                    "status": "home"
+                  },
+                  "source": "external",
+                  "step": 8
+                }
+              ],
+              "step": 8,
+              "terminal": false,
+              "time_seconds": 480
+            },
+            "observation_digest": "651d65f767f995a9794739dd5c3a05c654a20414ef076a2ea57c6b2b112911f7",
+            "time_seconds": 480.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 8,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 9,
+              "terminal": false,
+              "time_seconds": 540
+            },
+            "observation_digest": "f77b47d424c0fffa0321a5d8f01a54adea11fb8706e5bbbe74d048b3e4919c50",
+            "time_seconds": 540.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 9,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 10,
+              "terminal": false,
+              "time_seconds": 600
+            },
+            "observation_digest": "bb88bb117b7e41973600beb6da0b5688ca4ea0a72f3d3f2a0f5d762028bc1d81",
+            "time_seconds": 600.0
+          }
+        ],
+        "wall_seconds": 0.0018167500384151936,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 60.0,
+        "declared_horizon_seconds": 600.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 600.0,
+        "seed": 2,
+        "session_dir": "",
+        "steps": 10,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 0,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 1,
+              "terminal": false,
+              "time_seconds": 60
+            },
+            "observation_digest": "eeb356e43445fd2363c26d66a2eef40a6193d25a4ec67d9bf344f7a033638fbb",
+            "time_seconds": 60.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 1,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 0,
+                    "status": "away"
+                  },
+                  "source": "external",
+                  "step": 2
+                }
+              ],
+              "step": 2,
+              "terminal": false,
+              "time_seconds": 120
+            },
+            "observation_digest": "0289cbdd9514d9e03a78ebfeb2d449d8e8def60e710566034dca5d25a6424fa7",
+            "time_seconds": 120.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "closed",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 2,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 3,
+              "terminal": false,
+              "time_seconds": 180
+            },
+            "observation_digest": "4462fe21ce83028943fc072f0e2af532cdea517c2a7fafefba275b9c57de2161",
+            "time_seconds": 180.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 3,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "door_state_change",
+                  "payload": {
+                    "source": "external",
+                    "state": "open"
+                  },
+                  "source": "external",
+                  "step": 4
+                }
+              ],
+              "step": 4,
+              "terminal": false,
+              "time_seconds": 240
+            },
+            "observation_digest": "42f2067790b8b3e1b8040b4298c7fdbb5da17e54b52d35f1909726d6d627b424",
+            "time_seconds": 240.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "clear"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 4,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 5,
+              "terminal": false,
+              "time_seconds": 300
+            },
+            "observation_digest": "ab4671c61a31168eaacd3d671845ac975fcec45eb8299724c8b5377354320010",
+            "time_seconds": 300.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 5,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "context_update",
+                  "payload": {
+                    "key": "weather",
+                    "value": "rain"
+                  },
+                  "source": "external",
+                  "step": 6
+                }
+              ],
+              "step": 6,
+              "terminal": false,
+              "time_seconds": 360
+            },
+            "observation_digest": "64ed75cb31bc0b1660b00a0ed1e28a5ba48f6825ce6b0b36bbd05b20fe726a96",
+            "time_seconds": 360.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "context": {
+                "occupancy_count": 0,
+                "occupancy_status": "away",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 6,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 7,
+              "terminal": false,
+              "time_seconds": 420
+            },
+            "observation_digest": "a95a37fbe2aa15547b5176762742fea61a4859634db66e128495dd810d01d8da",
+            "time_seconds": 420.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 7,
+                  "target": "interior_lights"
+                },
+                {
+                  "event_type": "occupancy_change",
+                  "payload": {
+                    "count": 2,
+                    "status": "home"
+                  },
+                  "source": "external",
+                  "step": 8
+                }
+              ],
+              "step": 8,
+              "terminal": false,
+              "time_seconds": 480
+            },
+            "observation_digest": "651d65f767f995a9794739dd5c3a05c654a20414ef076a2ea57c6b2b112911f7",
+            "time_seconds": 480.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "off",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "c1819822560263367ea59b75a97f2afd2347e5e357f2c2dfdbb7089b3b3751ae",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "off"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "off",
+                  "source": "agent",
+                  "step": 8,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 9,
+              "terminal": false,
+              "time_seconds": 540
+            },
+            "observation_digest": "f77b47d424c0fffa0321a5d8f01a54adea11fb8706e5bbbe74d048b3e4919c50",
+            "time_seconds": 540.0
+          },
+          {
+            "action": {
+              "command": {
+                "operation": "on",
+                "target": "interior_lights"
+              },
+              "kind": "act"
+            },
+            "action_digest": "7272e3200d2315cfe07770becfd5e949c694301bc7b915b7f434bcde7e885769",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "context": {
+                "occupancy_count": 2,
+                "occupancy_status": "home",
+                "time_context": "evening",
+                "weather": "rain"
+              },
+              "devices": {
+                "front_door": "open",
+                "interior_lights": "on"
+              },
+              "events": [
+                {
+                  "event_type": "action_applied",
+                  "operation": "on",
+                  "source": "agent",
+                  "step": 9,
+                  "target": "interior_lights"
+                }
+              ],
+              "step": 10,
+              "terminal": false,
+              "time_seconds": 600
+            },
+            "observation_digest": "bb88bb117b7e41973600beb6da0b5688ca4ea0a72f3d3f2a0f5d762028bc1d81",
+            "time_seconds": 600.0
+          }
+        ],
+        "wall_seconds": 0.0015140409814193845,
+        "worker_pid": 37553
+      }
+    ],
+    "source_bindings": {
+      "tools/backend_acceptance_runner.py": "b309d4b53c79fa6fbfc6096a86ff375a26bac841392a17df71a41f71ea67ce78",
+      "unified_compiler/adapters/d0_exogenous_context.py": "f6b45b3b3fe5755250b8a6f9e1911e0dc3fbf127624807520854ab781f961643",
+      "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "unified_compiler/route_registry.py": "5aa2ae55f22bbf72db21a0c533f96794be453995365d18773d58c73851ae4792"
+    },
+    "wall_seconds": 0.08902837499044836
+  },
+  "checks": {
+    "coupling_supported": true,
+    "episode_ready": true,
+    "full_horizon": true,
+    "future_leakage_check": true,
+    "mechanism_gate": true,
+    "reset_close_loops": 10,
+    "reset_observe_legal_actions": true,
+    "same_prefix_causality": true,
+    "seed_matrix": 3,
+    "two_actions": true
+  },
+  "horizon_seconds": 600.0,
+  "metadata": {
+    "cadence_seconds": 60.0,
+    "execution_mode": "in_process",
+    "horizon_seconds": 600.0,
+    "layer": "D0",
+    "native_time_unit": "seconds",
+    "route_id": "d0_exogenous_context"
+  },
+  "route_id": "d0_exogenous_context",
+  "runner_wall_seconds": 0.08902837499044836,
+  "seed": 0,
+  "source_bindings": {
+    "tools/assemble_backend_acceptance.py": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
+    "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+    "tools/run_episode_campaign.py": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+    "tools/run_stability_campaign.py": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+    "unified_compiler/adapters/d0_exogenous_context.py": "f6b45b3b3fe5755250b8a6f9e1911e0dc3fbf127624807520854ab781f961643",
+    "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+    "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+  },
+  "status": "passed",
+  "wall_seconds": 0.08902837499044836
+}

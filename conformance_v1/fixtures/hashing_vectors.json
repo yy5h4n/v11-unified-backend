@@ -1,0 +1,98 @@
+{
+  "version": "1.0",
+  "vectors": [
+    {
+      "id": "v1_rfc8785_appendix",
+      "source": "RFC 8785 section 3.2 example",
+      "input": {
+        "numbers": [
+          333333333.3333333,
+          1e+30,
+          4.5,
+          0.002,
+          1e-27
+        ],
+        "string": "€$\u000f\nA'B\"\\",
+        "literals": [
+          null,
+          true,
+          false
+        ]
+      },
+      "canonical": "{\"literals\":[null,true,false],\"numbers\":[333333333.3333333,1e+30,4.5,0.002,1e-27],\"string\":\"€$\\u000f\\nA'B\\\"\\\\\"}",
+      "sha256": "40175a7fbc6cec26fda2aabd63d01415250a6c7fb9dd727118636a078e8a1f6e"
+    },
+    {
+      "id": "v2_key_sort",
+      "source": "RFC 8785 key ordering; duplicate last-wins",
+      "input": {
+        "aa": 1,
+        "ab": 1,
+        "": 2,
+        "a": 1
+      },
+      "canonical": "{\"\":2,\"a\":1,\"aa\":1,\"ab\":1}",
+      "sha256": "95c2936941e4ce19aaf7f7908f30e5895959ea14730002e0e6a24f2e998dbd6c"
+    },
+    {
+      "id": "v3_number_rules",
+      "source": "JCS number rules: -0.0 -> 0, 1.0 -> 1, -1.5e2 -> -150, 2e-3 -> 0.002",
+      "input": {
+        "a": -0.0,
+        "b": 1.0,
+        "c": -150.0,
+        "d": 0.002
+      },
+      "canonical": "{\"a\":0,\"b\":1,\"c\":-150,\"d\":0.002}",
+      "sha256": "de76d7338b895d0cc4598da7559adb46fa83dff8de16f352cc12f4593ec47185"
+    },
+    {
+      "id": "v4_escaped_key_order",
+      "source": "RFC 8785: escaped control characters sort before letters",
+      "input": {
+        "\u0001": "1",
+        "aa": 1,
+        "\u0000": "0",
+        "a": 1
+      },
+      "canonical": "{\"\\u0000\":\"0\",\"\\u0001\":\"1\",\"a\":1,\"aa\":1}",
+      "sha256": "93e7e00fa46a1f592214f021c43fe73e5a72a8016e3dfd848148efef20d1b28c"
+    },
+    {
+      "id": "v5_sha256_a",
+      "source": "SHA-256 over UTF-8 bytes of canonical form",
+      "input": {
+        "raw": "{\"a\":1}"
+      },
+      "canonical": "{\"a\":1}",
+      "sha256": "015abd7f5cc57a2dd94b7590f04ad8084273905ee33ec5cebeae62276a97f862"
+    },
+    {
+      "id": "v5_sha256_b",
+      "source": "SHA-256 over UTF-8 bytes of canonical form",
+      "input": {
+        "raw": "{\"b\":2}"
+      },
+      "canonical": "{\"b\":2}",
+      "sha256": "0ab1a6d394cd30195f0642b67ae1180c375ffadf5dd7f39c390668b5fdb6da93"
+    },
+    {
+      "id": "v5_sha256_empty",
+      "source": "SHA-256 over UTF-8 bytes of canonical form",
+      "input": {
+        "raw": "{}"
+      },
+      "canonical": "{}",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "id": "v5_sha256_nested",
+      "source": "SHA-256 over UTF-8 bytes of canonical form",
+      "input": {
+        "raw": "{\"a\":{\"b\":[1,2.5,true,null]}}"
+      },
+      "canonical": "{\"a\":{\"b\":[1,2.5,true,null]}}",
+      "sha256": "d7b9bf19a056facabd90f9ec7e32b68d71edf3bfc88d1d627c6d6c82a901669d"
+    }
+  ]
+}

@@ -1,0 +1,3315 @@
+{
+  "catalog_version": "responsibility-dedup-v2",
+  "validation_status": "provisional_ai_derived",
+  "construction_policy": {
+    "source_unit": "non-null Kimi candidate_responsibility attached to audited evidence",
+    "new_semantics_generated": false,
+    "exact_normalization": "NFKC, casefold, punctuation removal, whitespace collapse",
+    "fuzzy_method": "character TF-IDF 3-5 grams, complete-link guarded clustering",
+    "cosine_threshold": 0.86,
+    "guards": [
+      "beneficiary entity",
+      "context",
+      "token overlap"
+    ],
+    "evidence_strength_filters_catalog": false,
+    "backend_blind": true
+  },
+  "summary": {
+    "audited_evidence_units": 223,
+    "candidate_mentions": 155,
+    "evidence_without_candidate": 68,
+    "deduplicated_responsibilities": 146,
+    "merged_mentions": 9,
+    "compound_review_count": 32
+  },
+  "evidence_level_counts": {
+    "repeated_candidate": 4,
+    "isolated_candidate": 138,
+    "well_supported": 3,
+    "recurrent_single_source": 1
+  },
+  "family_counts": {
+    "thermal_air_comfort": 19,
+    "energy_resource": 7,
+    "lighting": 10,
+    "care_health": 16,
+    "cleanliness_housework": 15,
+    "other_household_outcome": 21,
+    "safety_security": 20,
+    "pet_plant_care": 15,
+    "visitor_communication": 5,
+    "supplies_food": 6,
+    "routine_readiness": 11,
+    "comfort_ambiance": 1
+  },
+  "responsibilities": [
+    {
+      "responsibility_id": "rd_bf52ea0cf49d",
+      "canonical_name": "ensure children stop devices and sleep on time",
+      "normalized_key": "ensure children stop devices and sleep on time",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r043"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "ensure children stop devices and sleep on time"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_6756752dd66e",
+      "canonical_name": "Ensure infant is soothed back to sleep during night crying",
+      "normalized_key": "ensure infant is soothed back to sleep during night crying",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u30_r175"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure infant is soothed back to sleep during night crying"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5f50fe481d06",
+      "canonical_name": "ensure morning medication adherence",
+      "normalized_key": "ensure morning medication adherence",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r051"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "ensure morning medication adherence"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_a18aa9450c7b",
+      "canonical_name": "Keep children away from open windows",
+      "normalized_key": "keep children away from open windows",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r094"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep children away from open windows"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_065187c5c12e",
+      "canonical_name": "Keep the newborn's room at safe temperature and soothe the baby",
+      "normalized_key": "keep the newborn s room at safe temperature and soothe the baby",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u17_r102"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-17"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the newborn's room at safe temperature and soothe the baby"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_d007a1afed42",
+      "canonical_name": "Keep the pet fed and assist elderly stair mobility",
+      "normalized_key": "keep the pet fed and assist elderly stair mobility",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u17_r099"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-17"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the pet fed and assist elderly stair mobility"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_128e426f1ff3",
+      "canonical_name": "maintain adequate daily hydration",
+      "normalized_key": "maintain adequate daily hydration",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r029"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain adequate daily hydration"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_6c7e7f12f6df",
+      "canonical_name": "maintain daily step-count activity goal",
+      "normalized_key": "maintain daily step count activity goal",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r038"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain daily step-count activity goal"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_491429d8fab5",
+      "canonical_name": "maintain healthy indoor air quality and address mould",
+      "normalized_key": "maintain healthy indoor air quality and address mould",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u04_r023"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-04"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain healthy indoor air quality and address mould"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_678537aa5e56",
+      "canonical_name": "obtain timely treatment and medication when ill",
+      "normalized_key": "obtain timely treatment and medication when ill",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u30_r179"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "obtain timely treatment and medication when ill"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_1fb2eead6103",
+      "canonical_name": "prevent infant falling from crib",
+      "normalized_key": "prevent infant falling from crib",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r030"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent infant falling from crib"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_efea5fb4f93f",
+      "canonical_name": "soothe and monitor distressed baby",
+      "normalized_key": "soothe and monitor distressed baby",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u08_r048"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-08"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "soothe and monitor distressed baby"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_5aaf181229e6",
+      "canonical_name": "Support fitness when measured health falls below threshold",
+      "normalized_key": "support fitness when measured health falls below threshold",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u17_r101"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-17"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support fitness when measured health falls below threshold"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_fbc9b67bc6c0",
+      "canonical_name": "Support medication adherence, cognitive training, and emotional comfort",
+      "normalized_key": "support medication adherence cognitive training and emotional comfort",
+      "family": "care_health",
+      "evidence_level": "well_supported",
+      "evidence_ids": [
+        "tareme_trial5_001"
+      ],
+      "independence_unit_ids": [
+        "Trial-5"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme"
+      ],
+      "jointly_strong_evidence_ids": [
+        "tareme_trial5_001"
+      ],
+      "name_variants": [
+        "Support medication adherence, cognitive training, and emotional comfort"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_4ae8c9a53040",
+      "canonical_name": "Support the resident's daily health routines and safe illumination",
+      "normalized_key": "support the resident s daily health routines and safe illumination",
+      "family": "care_health",
+      "evidence_level": "well_supported",
+      "evidence_ids": [
+        "tareme_trial3_001"
+      ],
+      "independence_unit_ids": [
+        "Trial-3"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme"
+      ],
+      "jointly_strong_evidence_ids": [
+        "tareme_trial3_001"
+      ],
+      "name_variants": [
+        "Support the resident's daily health routines and safe illumination"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_f484417ee0a3",
+      "canonical_name": "support timely daily medication intake",
+      "normalized_key": "support timely daily medication intake",
+      "family": "care_health",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u08_r044"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-08"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "support timely daily medication intake"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_05920f8dade6",
+      "canonical_name": "be informed when laundry finishes",
+      "normalized_key": "be informed when laundry finishes",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r056"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "be informed when laundry finishes"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_76991a32b4c9",
+      "canonical_name": "clean home and save energy when unoccupied",
+      "normalized_key": "clean home and save energy when unoccupied",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u08_r045"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-08"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "clean home and save energy when unoccupied"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_a948a16db4ab",
+      "canonical_name": "Ensure a full garbage bin is emptied promptly",
+      "normalized_key": "ensure a full garbage bin is emptied promptly",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u13_r077"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-13"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure a full garbage bin is emptied promptly"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_fcd3c198a00d",
+      "canonical_name": "Ensure toilet paper is restocked before it runs out",
+      "normalized_key": "ensure toilet paper is restocked before it runs out",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r089"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure toilet paper is restocked before it runs out"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_9fa396d3191a",
+      "canonical_name": "ensure weekly floor cleaning happens",
+      "normalized_key": "ensure weekly floor cleaning happens",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r034"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "ensure weekly floor cleaning happens"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d813bb2cad2c",
+      "canonical_name": "keep floors clean",
+      "normalized_key": "keep floors clean",
+      "family": "cleanliness_housework",
+      "evidence_level": "repeated_candidate",
+      "evidence_ids": [
+        "userneeds_u31_r183",
+        "userneeds_u32_r187"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-31",
+        "mattioli-user-32"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep floors clean"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_48cb6e53506a",
+      "canonical_name": "keep garbage container sanitized and bagged",
+      "normalized_key": "keep garbage container sanitized and bagged",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r027"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep garbage container sanitized and bagged"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_6c95ef8c36b1",
+      "canonical_name": "Keep kitchen air safe and clean while cooking",
+      "normalized_key": "keep kitchen air safe and clean while cooking",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u28_r167"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep kitchen air safe and clean while cooking"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_fb00b498d5ac",
+      "canonical_name": "Keep the house cleaned and laundry done on holidays",
+      "normalized_key": "keep the house cleaned and laundry done on holidays",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u13_r079"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-13"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the house cleaned and laundry done on holidays"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_f61b22e412c4",
+      "canonical_name": "Keep the toilet flushed after use",
+      "normalized_key": "keep the toilet flushed after use",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r002"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the toilet flushed after use"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_0f0211760666",
+      "canonical_name": "keep toilet hygienically clean",
+      "normalized_key": "keep toilet hygienically clean",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r195"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep toilet hygienically clean"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_e0dd1723fdde",
+      "canonical_name": "maintain floor cleanliness",
+      "normalized_key": "maintain floor cleanliness",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u03_r016"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-03"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain floor cleanliness"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_2126fdb0eb1b",
+      "canonical_name": "maintain home cleanliness",
+      "normalized_key": "maintain home cleanliness",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u25_r148"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-25"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain home cleanliness"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_701d4b0275df",
+      "canonical_name": "protect drying laundry from rain",
+      "normalized_key": "protect drying laundry from rain",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r068"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect drying laundry from rain"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_18e110e92a7b",
+      "canonical_name": "run cleaning and laundry while family away",
+      "normalized_key": "run cleaning and laundry while family away",
+      "family": "cleanliness_housework",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r041"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "run cleaning and laundry while family away"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_824cd77ac7e9",
+      "canonical_name": "Ensure music does not keep playing in an empty house",
+      "normalized_key": "ensure music does not keep playing in an empty house",
+      "family": "comfort_ambiance",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u17_r098"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-17"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure music does not keep playing in an empty house"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_211848da7f6e",
+      "canonical_name": "avoid energy waste from unwatched TV",
+      "normalized_key": "avoid energy waste from unwatched tv",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r052"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "avoid energy waste from unwatched TV"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_a3e2be6b2f22",
+      "canonical_name": "Avoid energy waste in unoccupied bathroom",
+      "normalized_key": "avoid energy waste in unoccupied bathroom",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u28_r164"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Avoid energy waste in unoccupied bathroom"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_752ddefdc33b",
+      "canonical_name": "Avoid wasting energy in vacated rooms",
+      "normalized_key": "avoid wasting energy in vacated rooms",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r007"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Avoid wasting energy in vacated rooms"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_02fee0f03674",
+      "canonical_name": "manage household energy cost",
+      "normalized_key": "manage household energy cost",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "aagaard_kirsten_004"
+      ],
+      "independence_unit_ids": [
+        "Kirsten-home"
+      ],
+      "study_cluster_ids": [
+        "aagaard_2023_my_smart_home"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "manage household energy cost"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_9edc50334cc2",
+      "canonical_name": "reduce energy waste from idle devices",
+      "normalized_key": "reduce energy waste from idle devices",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r026"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "reduce energy waste from idle devices"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_c7707288c960",
+      "canonical_name": "reduce energy waste in unused living room",
+      "normalized_key": "reduce energy waste in unused living room",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r039"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "reduce energy waste in unused living room"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5a104e7a438a",
+      "canonical_name": "stop power draw once devices fully charged",
+      "normalized_key": "stop power draw once devices fully charged",
+      "family": "energy_resource",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r064"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "stop power draw once devices fully charged"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_bc53f8b79068",
+      "canonical_name": "adjust room shading to daylight and occupancy",
+      "normalized_key": "adjust room shading to daylight and occupancy",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r071"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "adjust room shading to daylight and occupancy"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_45f013e7ba1d",
+      "canonical_name": "avoid lighting energy waste in empty entrance",
+      "normalized_key": "avoid lighting energy waste in empty entrance",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r201"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "avoid lighting energy waste in empty entrance"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_b62dd368cce0",
+      "canonical_name": "Ensure blinds are closed during the night",
+      "normalized_key": "ensure blinds are closed during the night",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r093"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure blinds are closed during the night"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_239257b5440c",
+      "canonical_name": "Ensure lights are off and shutters closed when the house is empty",
+      "normalized_key": "ensure lights are off and shutters closed when the house is empty",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r104"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure lights are off and shutters closed when the house is empty"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_9484aa67f9db",
+      "canonical_name": "Maintain adequate lighting for the resident's safety and comfort",
+      "normalized_key": "maintain adequate lighting for the resident s safety and comfort",
+      "family": "lighting",
+      "evidence_level": "well_supported",
+      "evidence_ids": [
+        "tareme_trial1_001"
+      ],
+      "independence_unit_ids": [
+        "Trial-1"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme"
+      ],
+      "jointly_strong_evidence_ids": [
+        "tareme_trial1_001"
+      ],
+      "name_variants": [
+        "Maintain adequate lighting for the resident's safety and comfort"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_b29cce0b1017",
+      "canonical_name": "Maintain comfortable lighting ambiance during music listening",
+      "normalized_key": "maintain comfortable lighting ambiance during music listening",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u02_r008"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-02"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Maintain comfortable lighting ambiance during music listening"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d85f7d5c68b5",
+      "canonical_name": "maintain working lighting by replacing failed bulbs",
+      "normalized_key": "maintain working lighting by replacing failed bulbs",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r057"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain working lighting by replacing failed bulbs"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_cf2389fcc9f1",
+      "canonical_name": "Provide illuminated, monitored entry when arriving home in the evening",
+      "normalized_key": "provide illuminated monitored entry when arriving home in the evening",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u13_r078"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-13"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Provide illuminated, monitored entry when arriving home in the evening"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_569e6cdb2ea4",
+      "canonical_name": "Save lighting energy and secure the kitchen when unoccupied",
+      "normalized_key": "save lighting energy and secure the kitchen when unoccupied",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r003"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Save lighting energy and secure the kitchen when unoccupied"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_6fbd176f695c",
+      "canonical_name": "Support waking with morning daylight when oversleeping",
+      "normalized_key": "support waking with morning daylight when oversleeping",
+      "family": "lighting",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r004"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support waking with morning daylight when oversleeping"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_06f5ac8a120d",
+      "canonical_name": "enable keyless automatic home entry",
+      "normalized_key": "enable keyless automatic home entry",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r062"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "enable keyless automatic home entry"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_05eb866a5fcf",
+      "canonical_name": "Enforce an eleven-thirty television curfew",
+      "normalized_key": "enforce an eleven thirty television curfew",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r095"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Enforce an eleven-thirty television curfew"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_1783c33e2747",
+      "canonical_name": "Ensure a lit unattended stove is shut off promptly",
+      "normalized_key": "ensure a lit unattended stove is shut off promptly",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r087"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure a lit unattended stove is shut off promptly"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_7f75346b5a7f",
+      "canonical_name": "Ensure house keys are remembered before leaving",
+      "normalized_key": "ensure house keys are remembered before leaving",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r082"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure house keys are remembered before leaving"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_0fcb74542024",
+      "canonical_name": "Ensure safe passage on stairs at night",
+      "normalized_key": "ensure safe passage on stairs at night",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u28_r165"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure safe passage on stairs at night"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_c74f1fee0f28",
+      "canonical_name": "Ensure the fridge door is not left open",
+      "normalized_key": "ensure the fridge door is not left open",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r092"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the fridge door is not left open"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5e0e9919d03e",
+      "canonical_name": "Ensure the full bin is put out on collection day",
+      "normalized_key": "ensure the full bin is put out on collection day",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u17_r100"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-17"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the full bin is put out on collection day"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f0dbcd030710",
+      "canonical_name": "keep pets undisturbed",
+      "normalized_key": "keep pets undisturbed",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u24_r140"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-24"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep pets undisturbed"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_691cb6d986d0",
+      "canonical_name": "Keep the unoccupied home monitored against unauthorized entry",
+      "normalized_key": "keep the unoccupied home monitored against unauthorized entry",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r072"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the unoccupied home monitored against unauthorized entry"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_fcfa2c702918",
+      "canonical_name": "keep the unoccupied home secured",
+      "normalized_key": "keep the unoccupied home secured",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u31_r184"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-31"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep the unoccupied home secured"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_3aaa64a9c593",
+      "canonical_name": "maintain household supplies",
+      "normalized_key": "maintain household supplies",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u25_r150"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-25"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain household supplies"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_3cd183cf73e1",
+      "canonical_name": "maintain safe pool water sanitation",
+      "normalized_key": "maintain safe pool water sanitation",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r193"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain safe pool water sanitation"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_cbfe46f2692a",
+      "canonical_name": "monitor home remotely for suspicious activity",
+      "normalized_key": "monitor home remotely for suspicious activity",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r063"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "monitor home remotely for suspicious activity"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_099294a66240",
+      "canonical_name": "prevent fridge being left open",
+      "normalized_key": "prevent fridge being left open",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u08_r046"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-08"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent fridge being left open"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_7ee875c27a63",
+      "canonical_name": "prevent indoor mosquito presence",
+      "normalized_key": "prevent indoor mosquito presence",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r196"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent indoor mosquito presence"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_09da87f2ce06",
+      "canonical_name": "protect home from weather damage",
+      "normalized_key": "protect home from weather damage",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u23_r133"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-23"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect home from weather damage"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_98be58ef05f9",
+      "canonical_name": "Protect the boiler and electrical system during pressure faults",
+      "normalized_key": "protect the boiler and electrical system during pressure faults",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r110"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Protect the boiler and electrical system during pressure faults"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_8b0f533b3eaa",
+      "canonical_name": "Protect the home from forecast rain and warn the occupant",
+      "normalized_key": "protect the home from forecast rain and warn the occupant",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r005"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Protect the home from forecast rain and warn the occupant"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_49465c88e9af",
+      "canonical_name": "secure home when leaving",
+      "normalized_key": "secure home when leaving",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r037"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "secure home when leaving"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_7c16cf29a4f1",
+      "canonical_name": "suggest recipes from available fridge contents",
+      "normalized_key": "suggest recipes from available fridge contents",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r067"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "suggest recipes from available fridge contents"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_ebe806fd446f",
+      "canonical_name": "Support waking at the intended time",
+      "normalized_key": "support waking at the intended time",
+      "family": "other_household_outcome",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u29_r169",
+        "userneeds_u29_r170"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-29"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support waking at the intended time"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_89fd37b1d819",
+      "canonical_name": "detect and record nighttime garden intrusions when away",
+      "normalized_key": "detect and record nighttime garden intrusions when away",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r061"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "detect and record nighttime garden intrusions when away"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_0883e558daf8",
+      "canonical_name": "deter garden intrusions when occupants absent or sleeping",
+      "normalized_key": "deter garden intrusions when occupants absent or sleeping",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r198"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "deter garden intrusions when occupants absent or sleeping"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_e3e91df71f31",
+      "canonical_name": "Ensure the cat can be located when it leaves detection range",
+      "normalized_key": "ensure the cat can be located when it leaves detection range",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r081"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the cat can be located when it leaves detection range"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_cd308d98316b",
+      "canonical_name": "Ensure the dog is fed measured portions at set times",
+      "normalized_key": "ensure the dog is fed measured portions at set times",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r113"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the dog is fed measured portions at set times"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_c294eab7c0fa",
+      "canonical_name": "keep potted plants watered",
+      "normalized_key": "keep potted plants watered",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u20_r117"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-20"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep potted plants watered"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_ee099e352036",
+      "canonical_name": "Keep the dog watered and the home monitored when away",
+      "normalized_key": "keep the dog watered and the home monitored when away",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u02_r009"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-02"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the dog watered and the home monitored when away"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_4bd7f3e54b9a",
+      "canonical_name": "Keep the garden watered on summer nights",
+      "normalized_key": "keep the garden watered on summer nights",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r097"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the garden watered on summer nights"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_bf3aba4bd811",
+      "canonical_name": "Keep the veranda plant adequately watered overnight",
+      "normalized_key": "keep the veranda plant adequately watered overnight",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r083"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the veranda plant adequately watered overnight"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_e1eeb14b01ab",
+      "canonical_name": "keep track of pet when it leaves property",
+      "normalized_key": "keep track of pet when it leaves property",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r199"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep track of pet when it leaves property"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_7232f3cd346d",
+      "canonical_name": "Maintain adequate soil moisture for plants",
+      "normalized_key": "maintain adequate soil moisture for plants",
+      "family": "pet_plant_care",
+      "evidence_level": "repeated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r070",
+        "userneeds_u28_r166"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12",
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Maintain adequate soil moisture for plants",
+        "maintain adequate soil moisture for plants"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_2bad2ff9e669",
+      "canonical_name": "maintain pet feeding",
+      "normalized_key": "maintain pet feeding",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u27_r159"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-27"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain pet feeding"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_ddf75b21d41e",
+      "canonical_name": "maintain safe aquarium water temperature",
+      "normalized_key": "maintain safe aquarium water temperature",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r033"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain safe aquarium water temperature"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d061b1bb96d7",
+      "canonical_name": "protect dog from sprinklers in garden",
+      "normalized_key": "protect dog from sprinklers in garden",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r060"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect dog from sprinklers in garden"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_86794f200f16",
+      "canonical_name": "protect pet from cold",
+      "normalized_key": "protect pet from cold",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u25_r147"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-25"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect pet from cold"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d576afaa5c6e",
+      "canonical_name": "schedule garden irrigation and pool cleaning",
+      "normalized_key": "schedule garden irrigation and pool cleaning",
+      "family": "pet_plant_care",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r204"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "schedule garden irrigation and pool cleaning"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_5eeec6ebeb37",
+      "canonical_name": "automate bathroom comfort and occupancy signaling",
+      "normalized_key": "automate bathroom comfort and occupancy signaling",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r066"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "automate bathroom comfort and occupancy signaling"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_b1b401414581",
+      "canonical_name": "Encourage studying before gaming during school study hours",
+      "normalized_key": "encourage studying before gaming during school study hours",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r111"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Encourage studying before gaming during school study hours"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_c04f5c3fa6c1",
+      "canonical_name": "Ensure waking at seven each morning",
+      "normalized_key": "ensure waking at seven each morning",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r103"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure waking at seven each morning"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_1ddf8bfc651e",
+      "canonical_name": "help user wake up on weekday mornings",
+      "normalized_key": "help user wake up on weekday mornings",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r053"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "help user wake up on weekday mornings"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_425a5dee5607",
+      "canonical_name": "prepare dining environment before scheduled dinner",
+      "normalized_key": "prepare dining environment before scheduled dinner",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r054"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prepare dining environment before scheduled dinner"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5d75d19a4827",
+      "canonical_name": "provide optional music during shower",
+      "normalized_key": "provide optional music during shower",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u11_r065"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-11"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "provide optional music during shower"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d462a7e3ecb1",
+      "canonical_name": "Support a consistent wake-up morning routine",
+      "normalized_key": "support a consistent wake up morning routine",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r073"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support a consistent wake-up morning routine"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_0c75e66e2768",
+      "canonical_name": "support distraction-free studying",
+      "normalized_key": "support distraction free studying",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r055"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "support distraction-free studying"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5b5f94def7b4",
+      "canonical_name": "Support the morning bath routine",
+      "normalized_key": "support the morning bath routine",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r107"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support the morning bath routine"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_45e7454d142a",
+      "canonical_name": "support undistracted comfortable reading environment",
+      "normalized_key": "support undistracted comfortable reading environment",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r031"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "support undistracted comfortable reading environment"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_b1bb73bef03e",
+      "canonical_name": "wake up reliably in the morning",
+      "normalized_key": "wake up reliably in the morning",
+      "family": "routine_readiness",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u31_r182"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-31"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "wake up reliably in the morning"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_89b104a21351",
+      "canonical_name": "alert occupants to failed door access attempts",
+      "normalized_key": "alert occupants to failed door access attempts",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r194"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "alert occupants to failed door access attempts"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_805e8d711f99",
+      "canonical_name": "avoid heating while windows are open",
+      "normalized_key": "avoid heating while windows are open",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r036"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "avoid heating while windows are open"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_d48edb8a9278",
+      "canonical_name": "Ensure emergency lighting and an emergency call during fire or power loss",
+      "normalized_key": "ensure emergency lighting and an emergency call during fire or power loss",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r084"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure emergency lighting and an emergency call during fire or power loss"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_8b7dca2e69c7",
+      "canonical_name": "Ensure expected deliveries trigger gate access and notification",
+      "normalized_key": "ensure expected deliveries trigger gate access and notification",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u16_r096"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-16"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure expected deliveries trigger gate access and notification"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_6debc9157765",
+      "canonical_name": "Ensure only authorised vehicles can open the garage gate",
+      "normalized_key": "ensure only authorised vehicles can open the garage gate",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r114"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure only authorised vehicles can open the garage gate"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f9853c842428",
+      "canonical_name": "Ensure the garage is closed and lit after parking",
+      "normalized_key": "ensure the garage is closed and lit after parking",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u01_r006"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the garage is closed and lit after parking"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_68c81fbf8bad",
+      "canonical_name": "Ensure the water system is shut off and the owner alerted on leakage",
+      "normalized_key": "ensure the water system is shut off and the owner alerted on leakage",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r085"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the water system is shut off and the owner alerted on leakage"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_42a8ea41a597",
+      "canonical_name": "Ensure waking when the alarm clock is not switched off",
+      "normalized_key": "ensure waking when the alarm clock is not switched off",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u20_r116"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-20"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure waking when the alarm clock is not switched off"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_cbfa7286a427",
+      "canonical_name": "Keep the house warm when the fireplace dies down",
+      "normalized_key": "keep the house warm when the fireplace dies down",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r090"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the house warm when the fireplace dies down"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5dd0c995ea28",
+      "canonical_name": "maintain home security",
+      "normalized_key": "maintain home security",
+      "family": "safety_security",
+      "evidence_level": "recurrent_single_source",
+      "evidence_ids": [
+        "userneeds_u21_r122",
+        "userneeds_u22_r128",
+        "userneeds_u23_r134",
+        "userneeds_u25_r149",
+        "userneeds_u27_r158"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-21",
+        "mattioli-user-22",
+        "mattioli-user-23",
+        "mattioli-user-25",
+        "mattioli-user-27"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain home security"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_af2688f9787c",
+      "canonical_name": "manage visitor gate access remotely",
+      "normalized_key": "manage visitor gate access remotely",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u32_r192"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-32"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "manage visitor gate access remotely"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_b4f36043ef87",
+      "canonical_name": "Prevent bath overflow when left unattended",
+      "normalized_key": "prevent bath overflow when left unattended",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u27_r162"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-27"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Prevent bath overflow when left unattended"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_c6fef22c7368",
+      "canonical_name": "Prevent fire hazards from unattended heated appliances",
+      "normalized_key": "prevent fire hazards from unattended heated appliances",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u30_r176"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Prevent fire hazards from unattended heated appliances"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_952c27c5b039",
+      "canonical_name": "prevent gas and carbon monoxide hazard from stove",
+      "normalized_key": "prevent gas and carbon monoxide hazard from stove",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u08_r049"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-08"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent gas and carbon monoxide hazard from stove"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_89ce1d2593d3",
+      "canonical_name": "prevent harm from gas leaks when unoccupied",
+      "normalized_key": "prevent harm from gas leaks when unoccupied",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u33_r197"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent harm from gas leaks when unoccupied"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_bc735bdc916e",
+      "canonical_name": "prevent kitchen fires when unattended",
+      "normalized_key": "prevent kitchen fires when unattended",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u32_r188"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-32"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "prevent kitchen fires when unattended"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_120b0762bd34",
+      "canonical_name": "protect home electronics during storms",
+      "normalized_key": "protect home electronics during storms",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r035"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect home electronics during storms"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f7384743e19c",
+      "canonical_name": "protect household against intrusion",
+      "normalized_key": "protect household against intrusion",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u03_r017"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-03"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect household against intrusion"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_afa9de7bd514",
+      "canonical_name": "protect pool during storms",
+      "normalized_key": "protect pool during storms",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u09_r050"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-09"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "protect pool during storms"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_264b487be933",
+      "canonical_name": "respond to failed alarm code entry attempts",
+      "normalized_key": "respond to failed alarm code entry attempts",
+      "family": "safety_security",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r200"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "respond to failed alarm code entry attempts"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_bd6dfd6a2c77",
+      "canonical_name": "Ensure the pellet tank is refilled before it runs out",
+      "normalized_key": "ensure the pellet tank is refilled before it runs out",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r109"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the pellet tank is refilled before it runs out"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f540da710bc1",
+      "canonical_name": "have coffee ready at wake time",
+      "normalized_key": "have coffee ready at wake time",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u06_r032"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-06"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "have coffee ready at wake time"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_e2cac1a64396",
+      "canonical_name": "Have morning coffee ready at eight",
+      "normalized_key": "have morning coffee ready at eight",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r086"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Have morning coffee ready at eight"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_fa8bdf6166e3",
+      "canonical_name": "keep needed fridge items stocked",
+      "normalized_key": "keep needed fridge items stocked",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u04_r021"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-04"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep needed fridge items stocked"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_a07aecceb886",
+      "canonical_name": "Keep the beer dispenser stocked",
+      "normalized_key": "keep the beer dispenser stocked",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u19_r112"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-19"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the beer dispenser stocked"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5278add36071",
+      "canonical_name": "keep the household stocked with usual foods",
+      "normalized_key": "keep the household stocked with usual foods",
+      "family": "supplies_food",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u30_r177"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "keep the household stocked with usual foods"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_5677579cc63f",
+      "canonical_name": "Ensure comfortable room temperature before waking",
+      "normalized_key": "ensure comfortable room temperature before waking",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u29_r173"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-29"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure comfortable room temperature before waking"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_80682ef0d394",
+      "canonical_name": "Ensure the room is warm after showering",
+      "normalized_key": "ensure the room is warm after showering",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r088"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure the room is warm after showering"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_670cf48458c9",
+      "canonical_name": "Ensure ventilation while cooking",
+      "normalized_key": "ensure ventilation while cooking",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u20_r115"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-20"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure ventilation while cooking"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_3072f93a7efa",
+      "canonical_name": "Keep evening rooms lit and warm",
+      "normalized_key": "keep evening rooms lit and warm",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r106"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep evening rooms lit and warm"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_08ee0b241675",
+      "canonical_name": "Keep sleeper warm during cold nights",
+      "normalized_key": "keep sleeper warm during cold nights",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u28_r168"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep sleeper warm during cold nights"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_94f6539eadb0",
+      "canonical_name": "Keep the evening kitchen lit, warm and cooking-ready",
+      "normalized_key": "keep the evening kitchen lit warm and cooking ready",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r108"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Keep the evening kitchen lit, warm and cooking-ready"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_40c93de13061",
+      "canonical_name": "Maintain bedroom warmth in the evening",
+      "normalized_key": "maintain bedroom warmth in the evening",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u13_r074"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-13"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Maintain bedroom warmth in the evening"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_37104b57370a",
+      "canonical_name": "maintain comfortable indoor temperature",
+      "normalized_key": "maintain comfortable indoor temperature",
+      "family": "thermal_air_comfort",
+      "evidence_level": "repeated_candidate",
+      "evidence_ids": [
+        "aagaard_kirsten_003",
+        "userneeds_u22_r129"
+      ],
+      "independence_unit_ids": [
+        "Kirsten-home",
+        "mattioli-user-22"
+      ],
+      "study_cluster_ids": [
+        "aagaard_2023_my_smart_home",
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain comfortable indoor temperature"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_ebd968ad40ce",
+      "canonical_name": "maintain comfortable indoor temperature and humidity",
+      "normalized_key": "maintain comfortable indoor temperature and humidity",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u03_r015"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-03"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain comfortable indoor temperature and humidity"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_b3d657e0dc2e",
+      "canonical_name": "maintain comfortable indoor temperature when occupied",
+      "normalized_key": "maintain comfortable indoor temperature when occupied",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r040"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain comfortable indoor temperature when occupied"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_05e7a2929aa0",
+      "canonical_name": "maintain comfortable warmth for occupants in cold rooms",
+      "normalized_key": "maintain comfortable warmth for occupants in cold rooms",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r202"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain comfortable warmth for occupants in cold rooms"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_54bdb4d1d881",
+      "canonical_name": "maintain indoor air quality",
+      "normalized_key": "maintain indoor air quality",
+      "family": "thermal_air_comfort",
+      "evidence_level": "repeated_candidate",
+      "evidence_ids": [
+        "userneeds_u20_r119",
+        "userneeds_u21_r124"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-20",
+        "mattioli-user-21"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain indoor air quality"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_7960fc8e86a8",
+      "canonical_name": "Maintain morning shower comfort with heating and news",
+      "normalized_key": "maintain morning shower comfort with heating and news",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u02_r011"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-02"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Maintain morning shower comfort with heating and news"
+      ],
+      "compound_review_required": true
+    },
+    {
+      "responsibility_id": "rd_b5071d572e3d",
+      "canonical_name": "Maintain safe kitchen humidity levels",
+      "normalized_key": "maintain safe kitchen humidity levels",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u13_r076"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-13"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Maintain safe kitchen humidity levels"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f4162b3d081d",
+      "canonical_name": "maintain warm bed before nighttime use",
+      "normalized_key": "maintain warm bed before nighttime use",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u05_r028"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain warm bed before nighttime use"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_94d666a58c83",
+      "canonical_name": "maintain warm indoor temperature when home",
+      "normalized_key": "maintain warm indoor temperature when home",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r059"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "maintain warm indoor temperature when home"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_a73f6a96c2fb",
+      "canonical_name": "restore radiator heating automatically",
+      "normalized_key": "restore radiator heating automatically",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u12_r069"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "restore radiator heating automatically"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_0b5542d000c0",
+      "canonical_name": "Support midday cooking by preheating the oven",
+      "normalized_key": "support midday cooking by preheating the oven",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u18_r105"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-18"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Support midday cooking by preheating the oven"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_f0bc2c668699",
+      "canonical_name": "use efficient heating energy source",
+      "normalized_key": "use efficient heating energy source",
+      "family": "thermal_air_comfort",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u34_r203"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "use efficient heating energy source"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_6010f46a03e0",
+      "canonical_name": "Ensure occupants are alerted when mail arrives",
+      "normalized_key": "ensure occupants are alerted when mail arrives",
+      "family": "visitor_communication",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u14_r080"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-14"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure occupants are alerted when mail arrives"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_fd30c82cb52f",
+      "canonical_name": "Ensure visitors are acknowledged when nobody is home",
+      "normalized_key": "ensure visitors are acknowledged when nobody is home",
+      "family": "visitor_communication",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u15_r091"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-15"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Ensure visitors are acknowledged when nobody is home"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_782fea3cbba2",
+      "canonical_name": "monitor door visitors when family away",
+      "normalized_key": "monitor door visitors when family away",
+      "family": "visitor_communication",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u07_r042"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-07"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "monitor door visitors when family away"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_3b10527567db",
+      "canonical_name": "monitor doorbell visitors remotely when away",
+      "normalized_key": "monitor doorbell visitors remotely when away",
+      "family": "visitor_communication",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u10_r058"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-10"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "monitor doorbell visitors remotely when away"
+      ],
+      "compound_review_required": false
+    },
+    {
+      "responsibility_id": "rd_4c9f419a786a",
+      "canonical_name": "Stay informed of intercom visitors when away",
+      "normalized_key": "stay informed of intercom visitors when away",
+      "family": "visitor_communication",
+      "evidence_level": "isolated_candidate",
+      "evidence_ids": [
+        "userneeds_u02_r010"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-02"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "jointly_strong_evidence_ids": [],
+      "name_variants": [
+        "Stay informed of intercom visitors when away"
+      ],
+      "compound_review_required": false
+    }
+  ],
+  "merge_edges": [
+    {
+      "left_evidence_id": "userneeds_u21_r124",
+      "right_evidence_id": "userneeds_u20_r119",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u22_r128",
+      "right_evidence_id": "userneeds_u21_r122",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u22_r129",
+      "right_evidence_id": "aagaard_kirsten_003",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u23_r134",
+      "right_evidence_id": "userneeds_u21_r122",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u23_r134",
+      "right_evidence_id": "userneeds_u22_r128",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u25_r149",
+      "right_evidence_id": "userneeds_u21_r122",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u25_r149",
+      "right_evidence_id": "userneeds_u22_r128",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u25_r149",
+      "right_evidence_id": "userneeds_u23_r134",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u27_r158",
+      "right_evidence_id": "userneeds_u21_r122",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u27_r158",
+      "right_evidence_id": "userneeds_u22_r128",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u27_r158",
+      "right_evidence_id": "userneeds_u23_r134",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u27_r158",
+      "right_evidence_id": "userneeds_u25_r149",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u28_r166",
+      "right_evidence_id": "userneeds_u12_r070",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u29_r170",
+      "right_evidence_id": "userneeds_u29_r169",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    },
+    {
+      "left_evidence_id": "userneeds_u32_r187",
+      "right_evidence_id": "userneeds_u31_r183",
+      "score": 1.0,
+      "reason": "exact_normalized"
+    }
+  ],
+  "rejected_high_similarity_pairs": [
+    {
+      "left_evidence_id": "userneeds_u07_r040",
+      "right_evidence_id": "aagaard_kirsten_003",
+      "score": 0.870559,
+      "guard": "context_guard"
+    }
+  ],
+  "evidence_without_candidate": [
+    "aagaard_kirsten_001",
+    "aagaard_kirsten_002",
+    "practicaltap_p1",
+    "practicaltap_p2",
+    "practicaltap_p3",
+    "practicaltap_p4",
+    "practicaltap_p5",
+    "practicaltap_p6",
+    "practicaltap_p7",
+    "practicaltap_p8",
+    "smartsense_kr_003",
+    "smartsense_sp_001",
+    "smartsense_us_001",
+    "smartsense_us_007",
+    "tareme_trial4_001",
+    "userneeds_u02_r012",
+    "userneeds_u02_r013",
+    "userneeds_u03_r014",
+    "userneeds_u03_r018",
+    "userneeds_u03_r019",
+    "userneeds_u04_r020",
+    "userneeds_u04_r022",
+    "userneeds_u04_r024",
+    "userneeds_u04_r025",
+    "userneeds_u08_r047",
+    "userneeds_u13_r075",
+    "userneeds_u20_r118",
+    "userneeds_u20_r120",
+    "userneeds_u21_r121",
+    "userneeds_u21_r123",
+    "userneeds_u21_r125",
+    "userneeds_u21_r126",
+    "userneeds_u22_r127",
+    "userneeds_u22_r130",
+    "userneeds_u22_r131",
+    "userneeds_u22_r132",
+    "userneeds_u23_r135",
+    "userneeds_u23_r136",
+    "userneeds_u23_r137",
+    "userneeds_u23_r138",
+    "userneeds_u24_r139",
+    "userneeds_u24_r141",
+    "userneeds_u24_r142",
+    "userneeds_u24_r143",
+    "userneeds_u24_r144",
+    "userneeds_u25_r145",
+    "userneeds_u25_r146",
+    "userneeds_u26_r151",
+    "userneeds_u26_r152",
+    "userneeds_u26_r153",
+    "userneeds_u26_r154",
+    "userneeds_u26_r155",
+    "userneeds_u26_r156",
+    "userneeds_u27_r157",
+    "userneeds_u27_r160",
+    "userneeds_u27_r161",
+    "userneeds_u28_r163",
+    "userneeds_u29_r171",
+    "userneeds_u29_r172",
+    "userneeds_u29_r174",
+    "userneeds_u30_r178",
+    "userneeds_u30_r180",
+    "userneeds_u31_r181",
+    "userneeds_u31_r185",
+    "userneeds_u31_r186",
+    "userneeds_u32_r189",
+    "userneeds_u32_r190",
+    "userneeds_u32_r191"
+  ],
+  "validation": {
+    "valid": true,
+    "all_candidate_evidence_accounted_for": true,
+    "no_backend_inputs": true,
+    "no_model_generated_responsibility_text": true
+  }
+}

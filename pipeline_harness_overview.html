@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsibility Benchmark · 数据构造与 Harness</title>
+  <style>
+    :root {
+      --ink: #17211d;
+      --muted: #66736d;
+      --paper: #f5f3ed;
+      --card: #fffdfa;
+      --line: #d8d7cf;
+      --green: #176b51;
+      --green-soft: #e5f1eb;
+      --blue: #315b7d;
+      --blue-soft: #e9f0f6;
+      --amber: #a85f18;
+      --amber-soft: #f9eddd;
+      --red: #9d493f;
+      --shadow: 0 14px 38px rgba(28, 38, 33, .08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 4%, rgba(23,107,81,.08), transparent 28rem),
+        var(--paper);
+      font: 15px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+    }
+    main { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 48px 0 72px; }
+    header { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: end; margin-bottom: 30px; }
+    .eyebrow { color: var(--green); font-weight: 750; letter-spacing: .12em; text-transform: uppercase; font-size: 12px; }
+    h1 { margin: 8px 0 10px; font-size: clamp(34px, 5vw, 62px); line-height: 1.02; letter-spacing: -.045em; }
+    h2 { margin: 0 0 5px; font-size: 23px; letter-spacing: -.02em; }
+    h3 { margin: 0 0 6px; font-size: 16px; }
+    p { margin: 0; }
+    .lede { color: var(--muted); font-size: 17px; max-width: 720px; }
+    .principle { padding: 18px 20px; border: 1px solid #b9d1c5; border-radius: 16px; background: var(--green-soft); }
+    .principle strong { display: block; color: var(--green); margin-bottom: 3px; }
+    .section { margin-top: 22px; padding: 26px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,253,250,.88); box-shadow: var(--shadow); }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: start; margin-bottom: 20px; }
+    .section-head p { color: var(--muted); max-width: 680px; }
+    .tag { flex: none; border-radius: 999px; padding: 5px 10px; background: #ecebe5; color: #59635e; font-size: 12px; font-weight: 700; }
+    .flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+    .step { position: relative; min-height: 162px; padding: 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--card); }
+    .step:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; right: -16px; top: 67px; width: 22px; text-align: center; color: var(--green); font-weight: 900; }
+    .num { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; margin-bottom: 12px; color: white; background: var(--green); font-size: 12px; font-weight: 800; }
+    .step p, .micro { color: var(--muted); font-size: 13px; line-height: 1.5; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .panel { border: 1px solid var(--line); border-radius: 16px; padding: 19px; background: var(--card); }
+    .panel.public { border-color: #b8ccdc; background: var(--blue-soft); }
+    .panel.private { border-color: #e1c8aa; background: var(--amber-soft); }
+    ul { margin: 10px 0 0; padding-left: 19px; }
+    li { margin: 4px 0; }
+    .harness { display: grid; grid-template-columns: 1fr 44px 1.2fr 44px 1fr; align-items: stretch; gap: 8px; }
+    .node { border: 1px solid var(--line); border-radius: 17px; padding: 19px; background: var(--card); }
+    .node.agent { border-top: 5px solid var(--blue); }
+    .node.runtime { border-top: 5px solid var(--green); }
+    .node.eval { border-top: 5px solid var(--amber); }
+    .arrow { display: grid; place-items: center; color: var(--green); font-size: 26px; font-weight: 900; }
+    code { padding: 2px 6px; border-radius: 6px; background: rgba(0,0,0,.055); font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .command { margin-top: 12px; padding: 12px; border-radius: 12px; color: #eaf4ef; background: #20352c; font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; }
+    .gates { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .gate { padding: 14px; border-left: 3px solid var(--green); border-radius: 9px; background: #f0f0ea; }
+    .gate strong { display: block; font-size: 13px; }
+    .gate span { color: var(--muted); font-size: 12px; }
+    .status { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .status-card { padding: 16px; border: 1px solid var(--line); border-radius: 14px; }
+    .status-card b { display: block; margin-bottom: 4px; }
+    .ok b { color: var(--green); } .warn b { color: var(--amber); } .stop b { color: var(--red); }
+    footer { margin-top: 22px; color: var(--muted); text-align: center; font-size: 12px; }
+    @media (max-width: 900px) {
+      header, .split { grid-template-columns: 1fr; }
+      .flow { grid-template-columns: repeat(2, 1fr); }
+      .step:not(:last-child)::after { display: none; }
+      .harness { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); min-height: 30px; }
+      .gates, .status { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      main { width: min(100% - 20px, 1180px); padding-top: 28px; }
+      .section { padding: 18px; border-radius: 16px; }
+      .flow, .gates, .status { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .tag { display: inline-block; margin-top: 9px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="eyebrow">Responsibility Benchmark</div>
+      <h1>数据怎么来，<br>Agent 怎么被测</h1>
+      <p class="lede">一套自顶向下的构造流程：从真实用户证据中归纳长期责任，再把责任绑定到可执行物理过程，最终放入闭环 harness 评测。</p>
+    </div>
+    <div class="principle">
+      <strong>核心边界</strong>
+      责任由用户需求定义，不能从后端设备反推；后端只决定哪些责任目前能够形成可执行 Episode。
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2>01 · 数据构造流程</h2><p>上游保证责任有证据、Query 有人味；下游保证 Episode 可观察、可控制、可判分。</p></div>
+      <span class="tag">Corpus → Episode</span>
+    </div>
+    <div class="flow">
+      <article class="step"><div class="num">1</div><h3>真实用户证据</h3><p>用户规则、访谈、日记与真实 Routine；保存原文、来源和限制。</p></article>
+      <article class="step"><div class="num">2</div><h3>AI 提取候选</h3><p>高召回识别持续目标、受益人、触发、释放与失败意义。</p></article>
+      <article class="step"><div class="num">3</div><h3>责任准入</h3><p>人工核对证据并去重；区分 responsibility type 与 scope/profile variant。</p></article>
+      <article class="step"><div class="num">4</div><h3>自然 Query</h3><p>保留 source-near 表达，再生成多种语用改写并检查关键语义槽。</p></article>
+      <article class="step"><div class="num">5</div><h3>能力匹配</h3><p>Contract 所需观测、动作、动力学、事件和 evaluator 与后端逐项匹配。</p></article>
+      <article class="step"><div class="num">6</div><h3>Episode 挖掘</h3><p>扫描物理窗口，经可控性、语言敏感性、no-op/oracle 与泄漏门禁后发布。</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2>02 · Episode 的两面</h2><p>同一个 Episode 分成 Agent 可见面和私有评测面，避免把答案混进输入。</p></div>
+      <span class="tag">Information boundary</span>
+    </div>
+    <div class="split">
+      <article class="panel public">
+        <h3>Agent View · 可以看到</h3>
+        <ul>
+          <li>自然语言 Query 与用户明确表达的偏好</li>
+          <li>完整场景设备清单、当前状态和公开事件</li>
+          <li>安全边界、动作成本、cadence 与 horizon</li>
+          <li>统一的 capability-family 合法动作 schema</li>
+          <li>每步动作执行结果与新的增量观测</li>
+        </ul>
+      </article>
+      <article class="panel private">
+        <h3>Private Evaluator · 不能看到</h3>
+        <ul>
+          <li>标准责任 Contract、active mask 与评分实例</li>
+          <li>未来天气、人员行为和完整物理轨迹</li>
+          <li>窗口选择原因、source ID 与构造标签</li>
+          <li>witness、no-op、oracle 结果和最优动作</li>
+          <li>责任偏差、安全偏差及 normalized gain</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2>03 · Harness 是什么</h2><p>Harness 是把 Agent、统一动作接口、物理后端和私有评分器接成可重复闭环的运行框架。</p></div>
+      <span class="tag">Observe → Act → Step → Score</span>
+    </div>
+    <div class="harness">
+      <article class="node agent">
+        <h3>Agent</h3>
+        <p class="micro">读取 Query 与当前观测，决定操作哪些设备；也可以明确 no-op。</p>
+        <div class="command">{"commands":[
+  {"device_id":"kitchen_hvac_1",
+   "capability":"thermal_control",
+   "operation":"set",
+   "parameters":{"mode":"heat","target_c":22}}
+]}</div>
+      </article>
+      <div class="arrow">⇄</div>
+      <article class="node runtime">
+        <h3>Harness Runtime</h3>
+        <ul>
+          <li>校验动作：无默认值、无越权、原子执行</li>
+          <li>适配动作：翻译到 SimuHome / EnergyPlus / CityLearn / EV2Gym</li>
+          <li>推进时间：按固定 cadence 运行物理过程</li>
+          <li>返回观测：设备状态、环境变化和错误反馈</li>
+          <li>记录轨迹：输入、动作、执行结果和版本哈希</li>
+        </ul>
+      </article>
+      <div class="arrow">→</div>
+      <article class="node eval">
+        <h3>Private Evaluator</h3>
+        <ul>
+          <li>protocol validity</li>
+          <li>safety / responsibility deviation</li>
+          <li>action 与无关干预成本</li>
+          <li>相对 no-op / oracle 的 normalized gain</li>
+          <li>Query 删除与 shuffle 诊断</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2>04 · Episode 准入门</h2><p>不是“模拟器能跑”就进入 benchmark；每条 Episode 必须证明动作和语言都真正有用。</p></div>
+      <span class="tag">Fail closed</span>
+    </div>
+    <div class="gates">
+      <div class="gate"><strong>可观察</strong><span>合理决策所需信息对 Agent 可见</span></div>
+      <div class="gate"><strong>可控制</strong><span>合法动作能够改变责任结果</span></div>
+      <div class="gate"><strong>有机会差</strong><span>oracle 明显优于 no-op</span></div>
+      <div class="gate"><strong>语言敏感</strong><span>删除或打乱 Query 会改变策略</span></div>
+      <div class="gate"><strong>无泄漏</strong><span>输入中没有 Contract、目标或未来答案</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div><h2>05 · 当前项目定位</h2><p>已有资产可以保留，但正式 benchmark 还需要完成责任验证、接口重构与重新发行。</p></div>
+      <span class="tag">Current state</span>
+    </div>
+    <div class="status">
+      <div class="status-card ok"><b>可保留</b><span class="micro">129 条候选池、证据台账、物理轨迹、后端探针与版本化构建记录。</span></div>
+      <div class="status-card warn"><b>需要重构</b><span class="micro">责任 type/variant、自然 Query、Contract 自动生成、统一动作接口和 agent/private 边界。</span></div>
+      <div class="status-card stop"><b>暂不能声称</b><span class="micro">129 个已验证责任、双人人类编码、40 条正式 LLM 结果或强语言推理贡献。</span></div>
+    </div>
+  </section>
+
+  <footer>Responsibility-driven benchmark construction · local design overview</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://responsibility-benchmark.example/schemas/evaluator_and_group_protocol_v2.json",
+  "title": "Harness V2 evaluator, sealed trace, and two-arm counterfactual group",
+  "type": "object",
+  "required": ["protocol_version", "manifest", "trace", "scenario_group", "score", "reference_integrity"],
+  "additionalProperties": false,
+  "properties": {
+    "protocol_version": {"const": "evaluator_and_group_protocol_v2"},
+    "manifest": {"$ref": "#/$defs/evaluatorManifest"},
+    "trace": {"$ref": "#/$defs/sealedTrace"},
+    "scenario_group": {"$ref": "#/$defs/scenarioGroup"},
+    "score": {"$ref": "#/$defs/scoreRecord"},
+    "reference_integrity": {"$ref": "#/$defs/referenceIntegrity"}
+  },
+  "$defs": {
+    "sha256": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+    "timestamp": {"$ref":"shared_types_v2.json#/$defs/timestamp"},
+    "canonicalDecimal": {"$ref":"shared_types_v2.json#/$defs/canonical_decimal"},
+    "nonnegativeCanonicalDecimal": {"type":"string","pattern":"^(?:0|[1-9][0-9]*|(?:[1-9][0-9]*|0)\\.[0-9]*[1-9])$"},
+    "positiveCanonicalDecimal": {"type":"string","pattern":"^(?:[1-9][0-9]*|(?:[1-9][0-9]*|0)\\.[0-9]*[1-9])$"},
+    "nonpositiveCanonicalDecimal": {"type":"string","pattern":"^(?:0|-[1-9][0-9]*|-(?:[1-9][0-9]*|0)\\.[0-9]*[1-9])$"},
+    "unitIntervalCanonicalDecimal": {"type":"string","pattern":"^(?:0|1|0\\.[0-9]*[1-9])$"},
+    "nullableCanonicalDecimal": {"anyOf": [{"$ref": "#/$defs/canonicalDecimal"}, {"type": "null"}]},
+    "nullableNonnegativeCanonicalDecimal": {"anyOf": [{"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, {"type": "null"}]},
+    "traceInputBinding": {
+      "type": "object",
+      "required": ["json_pointer", "value_type", "unit", "allowed_qualities"],
+      "additionalProperties": false,
+      "properties": {
+        "json_pointer": {"type": "string", "pattern": "^/(exogenous_state|public_state|private_evaluator_primitives|device_workflow_state)(/[A-Za-z0-9_.:-]+)+$"},
+        "value_type": {"enum":["number","integer","string","boolean"]},
+        "unit": {"type": "string", "minLength": 1},
+        "allowed_qualities": {"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["fresh","stale","missing"]}}
+      }
+    },
+    "normalizer": {
+      "type": "object",
+      "required": ["method", "source", "source_version", "value", "zero_value_rule"],
+      "additionalProperties": false,
+      "properties": {
+        "method": {"enum": ["divide_by_constant", "divide_by_train_statistic", "identity"]},
+        "source": {"enum": ["preregistered_physical_scale", "training_split_only", "preregistered_constant"]},
+        "source_version": {"type": "string", "minLength": 1},
+        "value": {"$ref":"#/$defs/positiveCanonicalDecimal"},
+        "zero_value_rule": {"const": "manifest_invalid"}
+      }
+    },
+    "missingRule": {
+      "type": "object",
+      "required": ["missing_input", "stale_input", "max_staleness_seconds", "maximum_missing_fraction"],
+      "additionalProperties": false,
+      "properties": {
+        "missing_input": {"enum": ["fail_episode", "exclude_interval_and_report", "impute_preregistered_constant"]},
+        "stale_input": {"enum": ["treat_as_missing", "use_last_value_with_age_report"]},
+        "max_staleness_seconds": {"type": "number", "minimum": 0},
+        "imputation_value": {"type": ["number", "string", "boolean", "null"]},
+        "maximum_missing_fraction": {"type": "number", "minimum": 0, "maximum": 1}
+      },
+      "allOf": [
+        {"if": {"properties": {"missing_input": {"const": "impute_preregistered_constant"}}, "required": ["missing_input"]}, "then": {"required": ["imputation_value"]}},
+        {"if": {"properties": {"missing_input": {"enum": ["fail_episode", "exclude_interval_and_report"]}}, "required": ["missing_input"]}, "then": {"not": {"required": ["imputation_value"]}}}
+      ]
+    },
+    "lossComponent": {
+      "type": "object",
+      "required": ["component_id", "inputs", "loss_operator", "active_selector", "output_unit", "integration", "interval", "missing_rule", "normalizer", "aggregation", "weight"],
+      "additionalProperties": false,
+      "properties": {
+        "component_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "inputs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/traceInputBinding"}},
+        "loss_operator": {"oneOf":[
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"enum":["absolute_error","squared_error"]},"parameters":{"type":"object","required":["target"],"additionalProperties":false,"properties":{"target":{"$ref":"#/$defs/canonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"upper_hinge"},"parameters":{"type":"object","required":["upper"],"additionalProperties":false,"properties":{"upper":{"$ref":"#/$defs/canonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"lower_hinge"},"parameters":{"type":"object","required":["lower"],"additionalProperties":false,"properties":{"lower":{"$ref":"#/$defs/canonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"interval_violation"},"parameters":{"type":"object","required":["lower","upper"],"additionalProperties":false,"properties":{"lower":{"$ref":"#/$defs/canonicalDecimal"},"upper":{"$ref":"#/$defs/canonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"indicator"},"parameters":{"type":"object","required":["expected"],"additionalProperties":false,"properties":{"expected":{"$ref":"#/$defs/canonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"event_cost"},"parameters":{"type":"object","required":["cost"],"additionalProperties":false,"properties":{"cost":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"}}}}},
+          {"type":"object","required":["name","parameters"],"additionalProperties":false,"properties":{"name":{"const":"identity"},"parameters":{"type":"object","maxProperties":0}}}
+        ]},
+        "active_selector": {
+          "type":"object","required":["mode","binding"],"additionalProperties":false,
+          "properties":{"mode":{"enum":["all_intervals","private_boolean_mask","event_selector","terminal"]},"binding":{"type":["string","null"]}}
+        },
+        "output_unit": {"type": "string", "minLength": 1},
+        "integration": {"enum": ["left_endpoint", "right_endpoint", "trapezoidal", "event_sum", "terminal_value"]},
+        "interval": {"const": "episode_start_inclusive_termination_exclusive_except_terminal_value"},
+        "missing_rule": {"$ref": "#/$defs/missingRule"},
+        "normalizer": {"$ref": "#/$defs/normalizer"},
+        "aggregation": {"enum": ["weighted_sum_over_active_mask", "mean_over_active_mask", "max_over_active_mask", "sum_over_events", "terminal"]},
+        "weight": {"$ref":"#/$defs/nonnegativeCanonicalDecimal"}
+      }
+    },
+    "oracleConfig": {
+      "type": "object",
+      "required": ["implementation_id", "implementation_version", "implementation_hash", "solver", "solver_version", "optimality_tolerance", "numeric_tolerance", "information_parity", "api_parity", "budget_parity"],
+      "additionalProperties": false,
+      "properties": {
+        "implementation_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "implementation_version": {"type": "string", "minLength": 1},
+        "implementation_hash": {"$ref": "#/$defs/sha256"},
+        "solver": {"type": "string", "minLength": 1},
+        "solver_version": {"type": "string", "minLength": 1},
+        "optimality_tolerance": {"$ref":"#/$defs/nonnegativeCanonicalDecimal"},
+        "numeric_tolerance": {"$ref":"#/$defs/nonnegativeCanonicalDecimal"},
+        "information_parity": {"const": "same_online_public_information_and_no_future_exogenous_information"},
+        "api_parity": {"const": "same_action_rule_subscription_and_wake_api"},
+        "budget_parity": {"const": "same_callback_interaction_and_action_budgets"}
+      }
+    },
+    "evaluatorManifest": {
+      "type": "object",
+      "required": ["manifest_id", "manifest_version", "family_id", "implementation_hash", "loss_components", "safety_thresholds", "opportunity_gap_threshold", "main_gain_threshold", "policy_separation_threshold", "oracle", "numeric_semantics", "canonical_serialization", "manifest_digest", "serialization"],
+      "additionalProperties": false,
+      "properties": {
+        "manifest_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "manifest_version": {"type": "string", "minLength": 1},
+        "family_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "implementation_hash": {"$ref": "#/$defs/sha256"},
+        "loss_components": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/lossComponent"}},
+        "safety_thresholds": {"type": "array", "minItems": 1, "items": {"type":"object","required":["threshold_id","input_path","comparator","value","unit"],"additionalProperties":false,"properties":{"threshold_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"input_path":{"type":"string","pattern":"^/(exogenous_state|public_state|private_evaluator_primitives|device_workflow_state)(/[A-Za-z0-9_.:-]+)+$"},"comparator":{"enum":["lt","lte","gt","gte","eq"]},"value":{"$ref":"#/$defs/canonicalDecimal"},"unit":{"type":"string","minLength":1}}}},
+        "opportunity_gap_threshold": {"$ref":"#/$defs/positiveCanonicalDecimal"},
+        "main_gain_threshold": {"$ref":"#/$defs/unitIntervalCanonicalDecimal"},
+        "policy_separation_threshold": {"$ref":"#/$defs/nonnegativeCanonicalDecimal"},
+        "oracle": {"$ref": "#/$defs/oracleConfig"},
+        "numeric_semantics": {"type":"object","required":["decimal_library","library_version","precision_digits","rounding"],"additionalProperties":false,"properties":{"decimal_library":{"type":"string","minLength":1},"library_version":{"type":"string","minLength":1},"precision_digits":{"type":"integer","minimum":16},"rounding":{"const":"ROUND_HALF_EVEN"}}},
+        "canonical_serialization": {
+          "type": "object", "required": ["algorithm", "nonfinite_rule", "decimal_rule", "digest"], "additionalProperties": false,
+          "properties": {"algorithm": {"const": "RFC8785_JCS_UTF8"}, "nonfinite_rule": {"const": "reject_before_serialization"}, "decimal_rule": {"const": "canonical_decimal_no_exponent_no_trailing_zero_no_negative_zero"}, "digest": {"const": "sha256"}}
+        },
+        "manifest_digest": {"$ref":"#/$defs/sha256"},
+        "serialization": {"$ref":"#/$defs/canonicalSerializationRecord"}
+      }
+    },
+    "traceDatum": {"oneOf":[
+      {"type":"object","required":["value","unit","quality","observed_at"],"additionalProperties":false,"properties":{"value":{"type":["string","number","integer","boolean"]},"unit":{"type":"string"},"quality":{"enum":["fresh","stale"]},"observed_at":{"$ref":"#/$defs/timestamp"}}},
+      {"type":"object","required":["value","unit","quality","observed_at"],"additionalProperties":false,"properties":{"value":{"type":"null"},"unit":{"type":"string"},"quality":{"const":"missing"},"observed_at":{"$ref":"#/$defs/timestamp"}}}
+    ]},
+    "traceMap": {"type": "object", "additionalProperties": {"$ref": "#/$defs/traceDatum"}},
+    "commandRecord": {
+      "type": "object",
+      "required": ["command_id", "source", "origin", "device_id", "capability", "operation", "parameters", "requested_at", "applied_at", "status", "error_code", "action_cost", "cost_unit"],
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "source": {"enum": ["agent_immediate", "rule_firing", "rule_release"]},
+        "origin": {"oneOf": [
+          {"type":"object","required":["kind","transaction_id"],"additionalProperties":false,"properties":{"kind":{"const":"agent_immediate"},"transaction_id":{"$ref":"shared_types_v2.json#/$defs/identifier"}}},
+          {"type":"object","required":["kind","installation_transaction_id","rule_id","trigger_occurrence_id"],"additionalProperties":false,"properties":{"kind":{"const":"rule_firing"},"installation_transaction_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"trigger_occurrence_id":{"$ref":"shared_types_v2.json#/$defs/identifier"}}},
+          {"type":"object","required":["kind","installation_transaction_id","rule_id","retirement_occurrence_id"],"additionalProperties":false,"properties":{"kind":{"const":"rule_release"},"installation_transaction_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"retirement_occurrence_id":{"$ref":"shared_types_v2.json#/$defs/identifier"}}}
+        ]},
+        "device_id": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "capability": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "parameters": {"type": "object"},
+        "requested_at": {"$ref": "#/$defs/timestamp"},
+        "applied_at": {"anyOf": [{"$ref": "#/$defs/timestamp"}, {"type": "null"}]},
+        "status": {"enum": ["committed", "rejected", "failed", "coalesced"]},
+        "error_code": {"type": ["string", "null"]},
+        "action_cost": {"type": "number", "minimum": 0},
+        "cost_unit": {"type": "string"}
+      },
+      "allOf": [
+        {"if":{"properties":{"status":{"enum":["committed","coalesced"]}},"required":["status"]},"then":{"properties":{"applied_at":{"$ref":"#/$defs/timestamp"},"error_code":{"type":"null"}}}},
+        {"if":{"properties":{"status":{"enum":["rejected","failed"]}},"required":["status"]},"then":{"properties":{"applied_at":{"type":"null"},"error_code":{"type":"string","minLength":1}}}}
+      ]
+    },
+    "ruleEvent": {"oneOf":[
+      {"type":"object","required":["event_id","timestamp","type","rule_id","reason","origin"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"enum":["installed","released","cancelled","expired"]},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"reason":{"type":"string","minLength":1},"origin":{"type":"object","required":["kind","id"],"additionalProperties":false,"properties":{"kind":{"enum":["installation_transaction","retirement_occurrence"]},"id":{"$ref":"shared_types_v2.json#/$defs/identifier"}}}}},
+      {"type":"object","required":["event_id","timestamp","type","rule_id","trigger_occurrence_id","diagnostic"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"enum":["triggered","condition_false","cooldown_suppressed"]},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"trigger_occurrence_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"diagnostic":{"type":"string","minLength":1}}},
+      {"type":"object","required":["event_id","timestamp","type","rule_id","trigger_occurrence_id","command_ids","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"const":"firing_committed"},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"trigger_occurrence_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"command_ids":{"type":"array","minItems":1,"items":{"$ref":"shared_types_v2.json#/$defs/identifier"}},"error_code":{"type":"null"}}},
+      {"type":"object","required":["event_id","timestamp","type","rule_id","trigger_occurrence_id","command_ids","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"enum":["firing_failed","release_failed"]},"rule_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"trigger_occurrence_id":{"oneOf":[{"$ref":"shared_types_v2.json#/$defs/identifier"},{"type":"null"}]},"command_ids":{"type":"array","items":{"$ref":"shared_types_v2.json#/$defs/identifier"}},"error_code":{"type":"string","minLength":1}}}
+    ]},
+    "protocolEvent": {"oneOf":[
+      {"type":"object","required":["event_id","timestamp","type","transaction_id","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"const":"transaction_committed"},"transaction_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"error_code":{"type":"null"}}},
+      {"type":"object","required":["event_id","timestamp","type","transaction_id","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"const":"transaction_rejected"},"transaction_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"error_code":{"type":"string","minLength":1}}},
+      {"type":"object","required":["event_id","timestamp","type","callback_id","reason_count"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"enum":["callback_delivered","callback_suppressed"]},"callback_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"reason_count":{"type":"integer","minimum":1}}},
+      {"type":"object","required":["event_id","timestamp","type","question_id","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"const":"question_answered"},"question_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"error_code":{"type":"null"}}},
+      {"type":"object","required":["event_id","timestamp","type","question_id","error_code"],"additionalProperties":false,"properties":{"event_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"timestamp":{"$ref":"#/$defs/timestamp"},"type":{"const":"question_rejected"},"question_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"error_code":{"type":"string","minLength":1}}}
+    ]},
+    "safetyEvent": {
+      "type": "object", "required": ["event_id", "timestamp", "threshold_id", "value", "unit", "status"], "additionalProperties": false,
+      "properties": {"event_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "timestamp": {"$ref": "#/$defs/timestamp"}, "threshold_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "value": {"type": "number"}, "unit": {"type": "string"}, "status": {"enum": ["within_limit", "violated"]}}
+    },
+    "traceFrame": {
+      "type": "object",
+      "required": ["frame_index", "timestamp", "duration_to_next_seconds", "exogenous_state", "public_state", "private_evaluator_primitives", "device_workflow_state", "applied_commands", "rule_events", "protocol_events", "safety_events"],
+      "additionalProperties": false,
+      "properties": {
+        "frame_index": {"type": "integer", "minimum": 0},
+        "timestamp": {"$ref": "#/$defs/timestamp"},
+        "duration_to_next_seconds": {"type": "number", "minimum": 0},
+        "exogenous_state": {"$ref": "#/$defs/traceMap"},
+        "public_state": {"$ref": "#/$defs/traceMap"},
+        "private_evaluator_primitives": {"$ref": "#/$defs/traceMap"},
+        "device_workflow_state": {"$ref": "#/$defs/traceMap"},
+        "applied_commands": {"type": "array", "items": {"$ref": "#/$defs/commandRecord"}},
+        "rule_events": {"type": "array", "items": {"$ref": "#/$defs/ruleEvent"}},
+        "protocol_events": {"type": "array", "items": {"$ref": "#/$defs/protocolEvent"}},
+        "safety_events": {"type": "array", "items": {"$ref": "#/$defs/safetyEvent"}}
+      }
+    },
+    "sealedTrace": {
+      "type": "object",
+      "required": ["trace_schema_version", "episode_id", "scenario_group_id", "arm_id", "query_digest", "manifest_id", "manifest_version", "start_inclusive", "termination_exclusive", "seed_digest", "exogenous_realization_digest", "frames", "transaction_exchanges", "sealed", "trace_digest", "trace_serialization"],
+      "additionalProperties": false,
+      "properties": {
+        "trace_schema_version": {"const": "sealed_trace_v2"}, "episode_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "scenario_group_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "arm_id": {"enum": ["A", "B"]}, "query_digest": {"$ref": "#/$defs/sha256"}, "manifest_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "manifest_version": {"type": "string", "minLength": 1}, "start_inclusive": {"$ref": "#/$defs/timestamp"}, "termination_exclusive": {"$ref": "#/$defs/timestamp"}, "seed_digest": {"$ref": "#/$defs/sha256"}, "exogenous_realization_digest": {"$ref": "#/$defs/sha256"}, "frames": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/traceFrame"}}, "transaction_exchanges":{"type":"array","items":{"$ref":"interaction_state_machine_v2.json#/$defs/transactionExchange"}}, "sealed": {"const": true}, "trace_digest": {"$ref": "#/$defs/sha256"}, "trace_serialization":{"$ref":"#/$defs/canonicalSerializationRecord"}
+      }
+    },
+    "queryVariant": {
+      "type": "object", "required": ["query_digest", "role"], "additionalProperties": false,
+      "properties": {"query_digest": {"$ref": "#/$defs/sha256"}, "role": {"enum": ["source_near", "faithful_paraphrase"]}}
+    },
+    "contractAxisValue": {"type":"object","required":["canonical_utf8_base64","digest"],"additionalProperties":false,"properties":{"canonical_utf8_base64":{"type":"string","minLength":4,"pattern":"^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"},"digest":{"$ref":"#/$defs/sha256"}}},
+    "canonicalContract": {
+      "type":"object","required":["contract_version","responsibility_id","axes","contract_digest","serialization"],"additionalProperties":false,
+      "properties":{"contract_version":{"type":"string","minLength":1},"responsibility_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"axes":{"type":"object","required":["beneficiary","spatial_scope","activation_condition","suspension_condition","persistence","deadline","release_condition","priority","authorized_action"],"additionalProperties":false,"properties":{"beneficiary":{"$ref":"#/$defs/contractAxisValue"},"spatial_scope":{"$ref":"#/$defs/contractAxisValue"},"activation_condition":{"$ref":"#/$defs/contractAxisValue"},"suspension_condition":{"$ref":"#/$defs/contractAxisValue"},"persistence":{"$ref":"#/$defs/contractAxisValue"},"deadline":{"$ref":"#/$defs/contractAxisValue"},"release_condition":{"$ref":"#/$defs/contractAxisValue"},"priority":{"$ref":"#/$defs/contractAxisValue"},"authorized_action":{"$ref":"#/$defs/contractAxisValue"}}},"contract_digest":{"$ref":"#/$defs/sha256"},"serialization":{"$ref":"#/$defs/canonicalSerializationRecord"}}
+    },
+    "contractArm": {
+      "type": "object",
+      "required": ["arm_id", "canonical_contract", "evaluator_manifest"],
+      "additionalProperties": false,
+      "properties": {
+        "arm_id": {"enum": ["A", "B"]},
+        "canonical_contract": {"$ref":"#/$defs/canonicalContract"},
+        "evaluator_manifest": {"$ref":"#/$defs/evaluatorManifest"}
+      }
+    },
+    "queryAssignment": {"type":"object","required":["arm_id","role"],"additionalProperties":false,"properties":{"arm_id":{"enum":["A","B"]},"role":{"enum":["source_near","faithful_paraphrase"]}}},
+    "scenarioGroup": {
+      "type": "object",
+      "required": ["group_id", "track", "split", "one_factor_pair", "contrast_axis", "contrast_witness", "initial_public_state_digest", "inventory_digest", "simulator_seed_digest", "exogenous_realization_digest", "costs_digest", "budgets_digest", "horizon_policy_digest", "arms", "query_registry", "query_shuffle_protocol", "group_aggregation"],
+      "additionalProperties": false,
+      "properties": {
+        "group_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}, "track": {"enum": ["explicit_profile_control", "interactive_clarification"]}, "split": {"enum": ["train", "validation", "test"]}, "one_factor_pair": {"const": true},
+        "contrast_axis": {"enum": ["beneficiary", "spatial_scope", "activation_condition", "suspension_condition", "persistence", "deadline", "release_condition", "priority", "authorized_action"]},
+        "contrast_witness": {"type": "object", "required": ["arm_a_axis_value_digest", "arm_b_axis_value_digest", "values_differ"], "additionalProperties": false, "properties": {"arm_a_axis_value_digest": {"$ref": "#/$defs/sha256"}, "arm_b_axis_value_digest": {"$ref": "#/$defs/sha256"}, "values_differ": {"const": true}}},
+        "initial_public_state_digest": {"$ref": "#/$defs/sha256"}, "inventory_digest": {"$ref": "#/$defs/sha256"}, "simulator_seed_digest": {"$ref": "#/$defs/sha256"}, "exogenous_realization_digest": {"$ref": "#/$defs/sha256"}, "costs_digest": {"$ref": "#/$defs/sha256"}, "budgets_digest": {"$ref": "#/$defs/sha256"}, "horizon_policy_digest": {"$ref": "#/$defs/sha256"},
+        "arms": {"type": "array", "minItems": 2, "maxItems": 2, "prefixItems": [{"allOf": [{"$ref": "#/$defs/contractArm"}, {"properties": {"arm_id": {"const": "A"}}}]}, {"allOf": [{"$ref": "#/$defs/contractArm"}, {"properties": {"arm_id": {"const": "B"}}}]}], "items": false},
+        "query_registry":{"type":"object","minProperties":2,"propertyNames":{"pattern":"^[a-f0-9]{64}$"},"additionalProperties":{"$ref":"#/$defs/queryAssignment"}},
+        "query_shuffle_protocol": {"const": "rerun_policy_closed_loop_with_same_seed_and_exogenous_realization_never_reuse_backend_or_agent_trace"},
+        "group_aggregation": {"enum": ["mean_bidirectional_cross_application_regret", "minimum_bidirectional_cross_application_regret", "declared_directional_regret"]}
+      }
+    },
+    "canonicalSerializationRecord": {
+      "type": "object", "required": ["algorithm", "canonical_utf8_base64", "digest"], "additionalProperties": false,
+      "properties": {"algorithm": {"const": "RFC8785_JCS_UTF8"}, "canonical_utf8_base64": {"type": "string", "minLength": 4, "contentEncoding": "base64", "pattern": "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"}, "digest": {"$ref": "#/$defs/sha256"}}
+    },
+    "eligibleScore": {
+      "type": "object", "required": ["protocol_status", "safety_status", "oracle_status", "agent_loss", "noop_loss", "oracle_loss", "denominator", "gain_status", "raw_gain", "raw_normalized_regret", "display_clipped_gain", "main_gain_pass", "component_metrics", "serialization"], "additionalProperties": false,
+      "properties": {"protocol_status": {"const": "valid"}, "safety_status": {"const": "safe"}, "oracle_status": {"const": "ok"}, "agent_loss": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, "noop_loss": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, "oracle_loss": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, "denominator": {"$ref": "#/$defs/positiveCanonicalDecimal"}, "gain_status": {"const": "eligible"}, "raw_gain": {"$ref": "#/$defs/canonicalDecimal"}, "raw_normalized_regret": {"$ref": "#/$defs/canonicalDecimal"}, "display_clipped_gain": {"$ref": "#/$defs/unitIntervalCanonicalDecimal"}, "main_gain_pass": {"type": "boolean"}, "component_metrics": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}}, "serialization": {"$ref": "#/$defs/canonicalSerializationRecord"}}
+    },
+    "protocolInvalidScore": {
+      "type": "object", "required": ["protocol_status", "safety_status", "oracle_status", "agent_loss", "noop_loss", "oracle_loss", "denominator", "gain_status", "raw_gain", "raw_normalized_regret", "display_clipped_gain", "main_gain_pass", "component_metrics", "serialization"], "additionalProperties": false,
+      "properties": {"protocol_status": {"const": "invalid"}, "safety_status": {"const": "not_scored_protocol_invalid"}, "oracle_status": {"const": "not_run"}, "agent_loss": {"type": "null"}, "noop_loss": {"type": "null"}, "oracle_loss": {"type": "null"}, "denominator": {"type": "null"}, "gain_status": {"const": "protocol_invalid_excluded"}, "raw_gain": {"type": "null"}, "raw_normalized_regret": {"type": "null"}, "display_clipped_gain": {"type": "null"}, "main_gain_pass": {"type": "null"}, "component_metrics": {"type": "object", "maxProperties": 0}, "serialization": {"$ref": "#/$defs/canonicalSerializationRecord"}}
+    },
+    "unsafeScore": {
+      "type": "object", "required": ["protocol_status", "safety_status", "oracle_status", "agent_loss", "noop_loss", "oracle_loss", "denominator", "gain_status", "raw_gain", "raw_normalized_regret", "display_clipped_gain", "main_gain_pass", "component_metrics", "serialization"], "additionalProperties": false,
+      "properties": {"protocol_status": {"const": "valid"}, "safety_status": {"const": "unsafe"}, "oracle_status": {"enum": ["ok", "not_run"]}, "agent_loss": {"$ref": "#/$defs/nullableNonnegativeCanonicalDecimal"}, "noop_loss": {"$ref": "#/$defs/nullableNonnegativeCanonicalDecimal"}, "oracle_loss": {"$ref": "#/$defs/nullableNonnegativeCanonicalDecimal"}, "denominator": {"type": "null"}, "gain_status": {"const": "unsafe_excluded"}, "raw_gain": {"type": "null"}, "raw_normalized_regret": {"type": "null"}, "display_clipped_gain": {"type": "null"}, "main_gain_pass": {"type": "null"}, "component_metrics": {"type": "object", "additionalProperties": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}}, "serialization": {"$ref": "#/$defs/canonicalSerializationRecord"}}
+    },
+    "oracleFailureScore": {
+      "type": "object", "required": ["protocol_status", "safety_status", "oracle_status", "agent_loss", "noop_loss", "oracle_loss", "denominator", "gain_status", "raw_gain", "raw_normalized_regret", "display_clipped_gain", "main_gain_pass", "component_metrics", "serialization"], "additionalProperties": false,
+      "properties": {"protocol_status": {"const": "valid"}, "safety_status": {"const": "safe"}, "oracle_status": {"enum": ["infeasible", "failed", "nonfinite"]}, "agent_loss": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, "noop_loss": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}, "oracle_loss": {"type": "null"}, "denominator": {"type": "null"}, "gain_status": {"const": "oracle_failure_excluded"}, "raw_gain": {"type": "null"}, "raw_normalized_regret": {"type": "null"}, "display_clipped_gain": {"type": "null"}, "main_gain_pass": {"type": "null"}, "component_metrics": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/nonnegativeCanonicalDecimal"}}, "serialization": {"$ref": "#/$defs/canonicalSerializationRecord"}}
+    },
+    "boundaryScore": {"oneOf":[
+      {"type":"object","required":["protocol_status","safety_status","oracle_status","agent_loss","noop_loss","oracle_loss","denominator","gain_status","raw_gain","raw_normalized_regret","display_clipped_gain","main_gain_pass","component_metrics","serialization"],"additionalProperties":false,"properties":{"protocol_status":{"const":"valid"},"safety_status":{"const":"safe"},"oracle_status":{"const":"ok"},"agent_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"noop_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"oracle_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"denominator":{"$ref":"#/$defs/nonpositiveCanonicalDecimal"},"gain_status":{"const":"nonpositive_denominator_excluded"},"raw_gain":{"type":"null"},"raw_normalized_regret":{"type":"null"},"display_clipped_gain":{"type":"null"},"main_gain_pass":{"const":false},"component_metrics":{"type":"object","minProperties":1,"additionalProperties":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"}},"serialization":{"$ref":"#/$defs/canonicalSerializationRecord"}}},
+      {"type":"object","required":["protocol_status","safety_status","oracle_status","agent_loss","noop_loss","oracle_loss","denominator","gain_status","raw_gain","raw_normalized_regret","display_clipped_gain","main_gain_pass","component_metrics","serialization"],"additionalProperties":false,"properties":{"protocol_status":{"const":"valid"},"safety_status":{"const":"safe"},"oracle_status":{"const":"ok"},"agent_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"noop_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"oracle_loss":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"},"denominator":{"$ref":"#/$defs/positiveCanonicalDecimal"},"gain_status":{"enum":["boundary_equal_threshold_excluded","below_threshold_excluded"]},"raw_gain":{"type":"null"},"raw_normalized_regret":{"type":"null"},"display_clipped_gain":{"type":"null"},"main_gain_pass":{"const":false},"component_metrics":{"type":"object","minProperties":1,"additionalProperties":{"$ref":"#/$defs/nonnegativeCanonicalDecimal"}},"serialization":{"$ref":"#/$defs/canonicalSerializationRecord"}}}
+    ]},
+    "scoreRecord": {"oneOf": [{"$ref": "#/$defs/eligibleScore"}, {"$ref": "#/$defs/protocolInvalidScore"}, {"$ref": "#/$defs/unsafeScore"}, {"$ref": "#/$defs/oracleFailureScore"}, {"$ref": "#/$defs/boundaryScore"}]},
+    "referenceIntegrity": {
+      "type": "object",
+      "required": ["verifier_id", "verifier_version", "verifier_hash", "verified_at", "bundle_digest", "checks"],
+      "additionalProperties": false,
+      "properties": {
+        "verifier_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"verifier_version":{"type":"string","minLength":1},"verifier_hash":{"$ref":"#/$defs/sha256"},"verified_at":{"$ref":"#/$defs/timestamp"},"bundle_digest":{"$ref":"#/$defs/sha256"},
+        "checks":{"type":"object","required":["trace_manifest_match","trace_group_match","trace_arm_and_query_membership","query_registry_exactly_one_source_per_arm","seed_and_exogenous_digest_match","score_serialization_digest_verified","trace_serialization_digest_verified","frame_sequence_verified","transaction_exchanges_verified","manifest_inputs_resolved","one_factor_contrast_verified"],"additionalProperties":false,"properties":{"trace_manifest_match":{"const":true},"trace_group_match":{"const":true},"trace_arm_and_query_membership":{"const":true},"query_registry_exactly_one_source_per_arm":{"const":true},"seed_and_exogenous_digest_match":{"const":true},"score_serialization_digest_verified":{"const":true},"trace_serialization_digest_verified":{"const":true},"frame_sequence_verified":{"const":true},"transaction_exchanges_verified":{"const":true},"manifest_inputs_resolved":{"const":true},"one_factor_contrast_verified":{"const":true}}}
+      }
+    }
+  },
+  "x-evaluation-semantics": {
+    "execution": "offline_only_after_trace_seal_with_no_runtime_mutation_capability",
+    "loss": "weighted_sum_of_manifest_components_after_protocol_and_safety_gates",
+    "raw_gain": "(J_noop-J_agent)/(J_noop-J_oracle)",
+    "raw_normalized_regret": "(J_agent-J_oracle)/(J_noop-J_oracle)",
+    "main_gain_pass": "eligible_and_raw_gain_greater_than_or_equal_to_manifest_main_gain_threshold",
+    "weight_sensitivity_analysis": "required_for_release"
+  },
+  "x-gain-branch-order": ["protocol_invalid", "unsafe", "oracle_failure_or_nonfinite", "denominator_less_than_or_equal_to_zero", "denominator_less_than_threshold", "denominator_equal_threshold", "eligible_with_inclusive_main_gain_threshold"],
+  "x-ranking-order-worst-to-best": ["protocol_invalid", "protocol_valid_unsafe", "protocol_valid_safe_oracle_failure_or_boundary", "protocol_valid_safe_main_eligible_sorted_by_raw_gain"],
+  "x-trace-runtime-validation": [
+    "frame_index_is_zero_based_contiguous_and_unique",
+    "frame_timestamps_are_strictly_increasing_from_start_to_termination",
+    "duration_to_next_matches_adjacent_timestamps_and_final_frame_ends_at_termination",
+    "every_manifest_input_resolves_to_a_trace_field_with_exact_unit_and_allowed_quality",
+    "command_rule_protocol_and_safety_event_ids_are_unique_and_referentially_valid"
+  ],
+  "x-cross-object-runtime-validation": [
+    "ignore_supplied_integrity_claim_until_pinned_verifier_recomputes_every_check_and_bundle_digest",
+    "trace_manifest_id_and_version_equal_top_level_manifest_and_selected_arm_embedded_manifest",
+    "trace_scenario_group_id_equals_scenario_group_group_id",
+    "trace_arm_id_and_query_digest_exist_in_same_group_arm",
+    "trace_seed_and_exogenous_digests_equal_group_common_digests",
+    "RFC8785_reserialization_of_score_without_serialization_field_matches_bytes_and_digest",
+    "eligible_and_boundary_numeric_relations_match_manifest_thresholds_and_formulas",
+    "query_registry_has_exactly_one_source_near_assignment_per_arm_and_each_digest_has_only_one_assignment",
+    "arm_contract_serializations_and_digests_recompute_successfully",
+    "arm_manifest_serializations_and_implementation_hashes_resolve",
+    "contrast_axis_values_match_witness_and_differ_while_all_noncontrast_axis_serializations_are_byte_identical",
+    "every_query_assignment_inherits_exactly_its_arm_contract_and_evaluator"
+  ],
+  "x-counterfactual-invariants": [
+    "arms_share_track_split_initial_public_state_inventory_seed_exogenous_realization_costs_budgets_and_horizon_policy",
+    "endogenous_observations_device_workflow_state_and_events_may_diverge",
+    "query_shuffle_and_deletion_rerun_closed_loop_under_same_exogenous_realization",
+    "fixed_backend_trace_reuse_is_forbidden",
+    "counterfactual_group_never_crosses_track"
+  ],
+  "x-policy-separation": {"procedure": "apply_oracle_policy_A_under_evaluator_B_and_policy_B_under_evaluator_A", "admission": "declared_group_aggregation_meets_manifest_policy_separation_threshold"},
+  "x-required-shortcut-baselines": ["always_noop", "always_22_for_thermal", "same_action_all_devices", "fixed_clock_schedule_without_query", "query_blind_controller"]
+}

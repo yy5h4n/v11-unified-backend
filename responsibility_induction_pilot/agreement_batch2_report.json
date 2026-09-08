@@ -1,0 +1,235 @@
+{
+  "report_version": "pilot-batch2-pre-adjudication-v2",
+  "annotation_kind": "AI schema dry run; not formal human intercoder reliability",
+  "n_evidence_units": 12,
+  "categorical_fields": {
+    "construct_type": {
+      "exact_agreement_count": 4,
+      "total": 12,
+      "exact_agreement_rate": 0.3333333333333333,
+      "cohen_kappa": 0.25,
+      "disagreeing_ids": [
+        "practicaltap_p1",
+        "practicaltap_p2",
+        "practicaltap_p3",
+        "practicaltap_p4",
+        "practicaltap_p5",
+        "practicaltap_p6",
+        "practicaltap_p7",
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "one_shot_task": 5,
+        "goal_without_standing_ownership": 3,
+        "implementation_or_capability": 4
+      },
+      "label_counts_b": {
+        "preference": 8,
+        "implementation_or_capability": 4
+      }
+    },
+    "abstraction_level": {
+      "exact_agreement_count": 4,
+      "total": 12,
+      "exact_agreement_rate": 0.3333333333333333,
+      "cohen_kappa": 0.11111111111111109,
+      "disagreeing_ids": [
+        "practicaltap_p1",
+        "practicaltap_p2",
+        "practicaltap_p3",
+        "practicaltap_p4",
+        "practicaltap_p5",
+        "practicaltap_p6",
+        "practicaltap_p7",
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "L0_action": 9,
+        "L2_contextual_goal": 3
+      },
+      "label_counts_b": {
+        "L1_function": 8,
+        "L0_action": 4
+      }
+    },
+    "relation_to_extracted_construct": {
+      "exact_agreement_count": 12,
+      "total": 12,
+      "exact_agreement_rate": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreeing_ids": [],
+      "label_counts_a": {
+        "entails": 12
+      },
+      "label_counts_b": {
+        "entails": 12
+      }
+    },
+    "standing_responsibility_support": {
+      "exact_agreement_count": 12,
+      "total": 12,
+      "exact_agreement_rate": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreeing_ids": [],
+      "label_counts_a": {
+        "compatible_only": 8,
+        "irrelevant": 4
+      },
+      "label_counts_b": {
+        "compatible_only": 8,
+        "irrelevant": 4
+      }
+    },
+    "confidence": {
+      "exact_agreement_count": 4,
+      "total": 12,
+      "exact_agreement_rate": 0.3333333333333333,
+      "cohen_kappa": 0.0,
+      "disagreeing_ids": [
+        "practicaltap_p1",
+        "practicaltap_p2",
+        "practicaltap_p3",
+        "practicaltap_p4",
+        "practicaltap_p5",
+        "practicaltap_p6",
+        "practicaltap_p7",
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "medium": 8,
+        "high": 4
+      },
+      "label_counts_b": {
+        "high": 12
+      }
+    }
+  },
+  "responsibility_slot_completeness": {
+    "actor": {
+      "exact_agreement_count": 4,
+      "total": 12,
+      "exact_agreement_rate": 0.3333333333333333,
+      "cohen_kappa": 0.0,
+      "disagreeing_ids": [
+        "practicaltap_p1",
+        "practicaltap_p4",
+        "practicaltap_p5",
+        "practicaltap_p8",
+        "smartsense_kr_003",
+        "smartsense_sp_001",
+        "smartsense_us_001",
+        "smartsense_us_007"
+      ],
+      "label_counts_a": {
+        "absent": 12
+      },
+      "label_counts_b": {
+        "present": 4,
+        "absent": 4,
+        "ambiguous": 4
+      }
+    },
+    "beneficiary": {
+      "exact_agreement_count": 11,
+      "total": 12,
+      "exact_agreement_rate": 0.9166666666666666,
+      "cohen_kappa": 0.8666666666666666,
+      "disagreeing_ids": [
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "ambiguous": 4,
+        "present": 2,
+        "absent": 6
+      },
+      "label_counts_b": {
+        "ambiguous": 3,
+        "present": 3,
+        "absent": 6
+      }
+    },
+    "desired_state": {
+      "exact_agreement_count": 12,
+      "total": 12,
+      "exact_agreement_rate": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreeing_ids": [],
+      "label_counts_a": {
+        "present": 8,
+        "absent": 4
+      },
+      "label_counts_b": {
+        "present": 8,
+        "absent": 4
+      }
+    },
+    "persistence_or_recurrence": {
+      "exact_agreement_count": 6,
+      "total": 12,
+      "exact_agreement_rate": 0.5,
+      "cohen_kappa": 0.18181818181818188,
+      "disagreeing_ids": [
+        "practicaltap_p1",
+        "practicaltap_p2",
+        "practicaltap_p4",
+        "practicaltap_p6",
+        "practicaltap_p7",
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "absent": 11,
+        "present": 1
+      },
+      "label_counts_b": {
+        "ambiguous": 6,
+        "absent": 5,
+        "present": 1
+      }
+    },
+    "failure_meaning": {
+      "exact_agreement_count": 12,
+      "total": 12,
+      "exact_agreement_rate": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreeing_ids": [],
+      "label_counts_a": {
+        "absent": 12
+      },
+      "label_counts_b": {
+        "absent": 12
+      }
+    },
+    "override_or_release": {
+      "exact_agreement_count": 11,
+      "total": 12,
+      "exact_agreement_rate": 0.9166666666666666,
+      "cohen_kappa": 0.0,
+      "disagreeing_ids": [
+        "practicaltap_p8"
+      ],
+      "label_counts_a": {
+        "absent": 11,
+        "present": 1
+      },
+      "label_counts_b": {
+        "absent": 12
+      }
+    }
+  },
+  "standing_responsibility_hypothesis_presence": {
+    "exact_agreement_count": 12,
+    "total": 12,
+    "exact_agreement_rate": 1.0,
+    "cohen_kappa": 1.0,
+    "disagreeing_ids": [],
+    "label_counts_a": {
+      "present": 8,
+      "absent": 4
+    },
+    "label_counts_b": {
+      "present": 8,
+      "absent": 4
+    }
+  },
+  "schema_type_issues": []
+}

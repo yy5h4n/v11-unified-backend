@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "evidence_unit.schema.json",
+  "title": "EvidenceUnit",
+  "description": "Smallest traceable human evidence with source span/rule, source type, household/participant, authorship/status and support limits (normative doc sections 2 and 4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["object_type", "id", "schema_version", "version", "created_at", "statuses", "hash", "corpus_card_id", "source", "household_id", "participant_id", "authorship", "verbatim_text", "paper_described_example", "semantics", "device_action", "evidence_limitations", "propositions"],
+  "properties": {
+    "object_type": { "const": "EvidenceUnit" },
+    "id": { "type": "string" },
+    "schema_version": { "type": "string" },
+    "version": { "type": "integer", "minimum": 1 },
+    "created_at": { "type": "string" },
+    "statuses": { "$ref": "#/$defs/statuses" },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "corpus_card_id": { "type": "string" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_type", "stable_locator", "span_or_rule", "collection_unit"],
+      "properties": {
+        "source_type": { "type": "string", "enum": ["direct_interview_diary_quotation", "participant_authored_desired_automation", "naturally_authored_routine", "interaction_log", "caregiver_researcher_authored_rule", "default_copied_synthetic_rule"] },
+        "stable_locator": { "type": "string" },
+        "span_or_rule": { "type": "string" },
+        "collection_unit": { "type": "string" }
+      }
+    },
+    "household_id": { "type": "string" },
+    "participant_id": { "type": "string" },
+    "authorship": { "type": "string", "enum": ["authored", "copied", "suggested", "default", "active", "abandoned", "unknown"] },
+    "verbatim_text": { "type": "string" },
+    "paper_described_example": { "type": "boolean" },
+    "semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["desired_state", "beneficiary", "context", "temporal_scope", "ownership_evidence", "failure_meaning", "constraints", "tradeoffs", "override_release"],
+      "properties": {
+        "desired_state": { "type": "string" },
+        "beneficiary": { "type": "string" },
+        "context": { "type": "string" },
+        "temporal_scope": { "type": "string" },
+        "ownership_evidence": { "type": "string" },
+        "failure_meaning": { "type": "string" },
+        "constraints": { "type": "string" },
+        "tradeoffs": { "type": "string" },
+        "override_release": { "type": "string" }
+      }
+    },
+    "device_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["means", "device", "action"],
+      "properties": {
+        "means": { "type": "string" },
+        "device": { "type": "string" },
+        "action": { "type": "string" }
+      }
+    },
+    "evidence_limitations": { "type": "string" },
+    "propositions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "value", "inference_matrix_row", "matrix_row_source_type"],
+        "properties": {
+          "code": { "type": "string", "enum": ["reported_purpose", "beneficiary", "desired_state", "failure_experience", "failure_meaning", "preference", "refusal", "recurrence", "persistence", "accountability", "ownership", "override_release", "delegation_acceptance", "deployment", "consent", "authorized_action", "configured_mechanism", "context", "trigger", "platform_capability", "test_fixture", "observed_action_recurrence", "override_behavior"] },
+          "value": { "type": "string" },
+          "inference_matrix_row": { "type": "string" },
+          "matrix_row_source_type": { "type": "string", "enum": ["direct_interview_diary_quotation", "participant_authored_desired_automation", "naturally_authored_routine", "interaction_log", "caregiver_researcher_authored_rule", "default_copied_synthetic_rule"] }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "statuses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+      "properties": {
+        "semantic_status": { "type": "string", "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"] },
+        "authorization_status": { "type": "string", "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"] },
+        "physical_status": { "type": "string", "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"] },
+        "release_status": { "type": "string", "enum": ["provisional", "frozen", "invalidated", "released"] },
+        "preview_only": { "type": "boolean" }
+      }
+    }
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "campaign": {
+    "causal": {
+      "branches": [
+        {
+          "action": 0.0,
+          "branch": 0,
+          "native_effect": null,
+          "observation": {
+            "room_b_temperature_c": 19.999733,
+            "room_b_velocity_mps": 0.0045381859,
+            "room_b_visibility_m": 30.0
+          },
+          "prefix_observation": {
+            "room_b_temperature_c": 19.999788,
+            "room_b_velocity_mps": 0.0063914745,
+            "room_b_visibility_m": 30.0
+          },
+          "prefix_time": 1.0,
+          "time": 4.0,
+          "trace": [
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 19.999763,
+                "room_b_velocity_mps": 0.0049415312,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 2.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 19.999746,
+                "room_b_velocity_mps": 0.0046450729,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 3.0
+            },
+            {
+              "action": 0.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 19.999733,
+                "room_b_velocity_mps": 0.0045381859,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 4.0
+            }
+          ]
+        },
+        {
+          "action": 1.0,
+          "branch": 1,
+          "native_effect": null,
+          "observation": {
+            "room_b_temperature_c": 20.012464,
+            "room_b_velocity_mps": 0.023552995,
+            "room_b_visibility_m": 30.0
+          },
+          "prefix_observation": {
+            "room_b_temperature_c": 19.999788,
+            "room_b_velocity_mps": 0.0063914745,
+            "room_b_visibility_m": 30.0
+          },
+          "prefix_time": 1.0,
+          "time": 4.0,
+          "trace": [
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 20.00441,
+                "room_b_velocity_mps": 0.013576417,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 2.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 20.008386,
+                "room_b_velocity_mps": 0.025856984,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 3.0
+            },
+            {
+              "action": 1.0,
+              "effect": null,
+              "observation": {
+                "room_b_temperature_c": 20.012464,
+                "room_b_velocity_mps": 0.023552995,
+                "room_b_visibility_m": 30.0
+              },
+              "time_seconds": 4.0
+            }
+          ]
+        }
+      ],
+      "future_leakage_check": true,
+      "same_prefix_divergence": true
+    },
+    "concurrency": {
+      "distinct_action_controls": true,
+      "episodes": 2,
+      "pairs": [
+        {
+          "concurrent": {
+            "cadence_seconds": 1.0,
+            "declared_horizon_seconds": 4.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 2.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/fds_smoke_fire_sessions/v11_backend_sessions/episode_81yppddz",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "room_b_temperature_c": 19.999788,
+                  "room_b_velocity_mps": 0.0063914745,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "f83f9150ec6aa5f5cd7d8138e90328ecee16cff80e27ce8333db738408365c44",
+                "time_seconds": 1.0
+              },
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "room_b_temperature_c": 19.999763,
+                  "room_b_velocity_mps": 0.0049415312,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "de68f4b2318d52d41882d1d6f516138f2c442c1a8ed88c16b07724452e99c680",
+                "time_seconds": 2.0
+              }
+            ],
+            "wall_seconds": 10.746220000088215,
+            "worker_pid": 41640
+          },
+          "serial": {
+            "cadence_seconds": 1.0,
+            "declared_horizon_seconds": 4.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 2.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "room_b_temperature_c": 19.999788,
+                  "room_b_velocity_mps": 0.0063914745,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "f83f9150ec6aa5f5cd7d8138e90328ecee16cff80e27ce8333db738408365c44",
+                "time_seconds": 1.0
+              },
+              {
+                "action": 0.0,
+                "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "room_b_temperature_c": 19.999763,
+                  "room_b_velocity_mps": 0.0049415312,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "de68f4b2318d52d41882d1d6f516138f2c442c1a8ed88c16b07724452e99c680",
+                "time_seconds": 2.0
+              }
+            ],
+            "wall_seconds": 10.753872291068546,
+            "worker_pid": 37553
+          }
+        },
+        {
+          "concurrent": {
+            "cadence_seconds": 1.0,
+            "declared_horizon_seconds": 4.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 2.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/fds_smoke_fire_sessions/v11_backend_sessions/episode_p_l9qh71",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "room_b_temperature_c": 20.000066,
+                  "room_b_velocity_mps": 0.0037849333,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "57de71fe8c1addda7b6567c292714704380f4eafdda8ee45b5fc4e1c1178b37d",
+                "time_seconds": 1.0
+              },
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "room_b_temperature_c": 20.003702,
+                  "room_b_velocity_mps": 0.013405929,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "6f7b77be23a14324582fde4fa6c6bca15ef4cb81af9d904eb35a718f27bbaa94",
+                "time_seconds": 2.0
+              }
+            ],
+            "wall_seconds": 11.083173707942478,
+            "worker_pid": 41641
+          },
+          "serial": {
+            "cadence_seconds": 1.0,
+            "declared_horizon_seconds": 4.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 2.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "room_b_temperature_c": 20.000066,
+                  "room_b_velocity_mps": 0.0037849333,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "57de71fe8c1addda7b6567c292714704380f4eafdda8ee45b5fc4e1c1178b37d",
+                "time_seconds": 1.0
+              },
+              {
+                "action": 1.0,
+                "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "room_b_temperature_c": 20.003702,
+                  "room_b_velocity_mps": 0.013405929,
+                  "room_b_visibility_m": 30.0
+                },
+                "observation_digest": "6f7b77be23a14324582fde4fa6c6bca15ef4cb81af9d904eb35a718f27bbaa94",
+                "time_seconds": 2.0
+              }
+            ],
+            "wall_seconds": 10.74277641705703,
+            "worker_pid": 37553
+          }
+        }
+      ],
+      "serial_match": true
+    },
+    "cycles": [
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_8qblupmf",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.676898707984947
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_ws43ug15",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.537161499960348
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode__9rlk2ks",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.612099166959524
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_wu1h57d2",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 11.793075624969788
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_s_b0jqr2",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.79734362498857
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_33lbcpro",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.717381833004765
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_tnpyfa0f",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.673060624976642
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_uy3aasvw",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.801375334034674
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_2u8sqj3f",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.702169249998406
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_pgs2ap04",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 10.741120415972546
+      }
+    ],
+    "execution_started_monotonic": 708568.997186541,
+    "metadata": {
+      "accepted_dt_seconds": [
+        1.0
+      ],
+      "cadence_seconds": 1.0,
+      "capability_note": "real FDS prefix replay; synchronous native online continuation is unverified",
+      "continuation": "prefix_replay",
+      "execution_mode": "process_isolated",
+      "horizon_seconds": 4.0,
+      "layer": "D2",
+      "native_time_unit": "seconds",
+      "online_step_supported": false,
+      "route_id": "fds_smoke_fire",
+      "termination": "native_or_4s_truncation"
+    },
+    "reset_close_cycles": 10,
+    "route_id": "fds_smoke_fire",
+    "schema": "v11.backend.episode.campaign.v2",
+    "seed_runs": [
+      {
+        "cadence_seconds": 1.0,
+        "declared_horizon_seconds": 4.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 4.0,
+        "seed": 0,
+        "session_dir": "",
+        "steps": 4,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "room_b_temperature_c": 19.999788,
+              "room_b_velocity_mps": 0.0063914745,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "f83f9150ec6aa5f5cd7d8138e90328ecee16cff80e27ce8333db738408365c44",
+            "time_seconds": 1.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "room_b_temperature_c": 20.00441,
+              "room_b_velocity_mps": 0.013576417,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "d49d75201f6290c508e2f8a25fccced2d4fd1352e5ee95dd9f24fdf5f19da4a9",
+            "time_seconds": 2.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "room_b_temperature_c": 20.001954,
+              "room_b_velocity_mps": 0.0046606299,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "2666824f83328da25cd7443da49b38db8d891c578a6fc18cd7f59b44d0799c97",
+            "time_seconds": 3.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "room_b_temperature_c": 20.007927,
+              "room_b_velocity_mps": 0.018603477,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "5131665e1a908a98d493e1b408a04a4a65cc121a2e0e0c4bd2f3cfc6431d1535",
+            "time_seconds": 4.0
+          }
+        ],
+        "wall_seconds": 29.009060624986887,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 1.0,
+        "declared_horizon_seconds": 4.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 4.0,
+        "seed": 1,
+        "session_dir": "",
+        "steps": 4,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "room_b_temperature_c": 19.999788,
+              "room_b_velocity_mps": 0.0063914745,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "f83f9150ec6aa5f5cd7d8138e90328ecee16cff80e27ce8333db738408365c44",
+            "time_seconds": 1.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "room_b_temperature_c": 20.00441,
+              "room_b_velocity_mps": 0.013576417,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "d49d75201f6290c508e2f8a25fccced2d4fd1352e5ee95dd9f24fdf5f19da4a9",
+            "time_seconds": 2.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "room_b_temperature_c": 20.001954,
+              "room_b_velocity_mps": 0.0046606299,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "2666824f83328da25cd7443da49b38db8d891c578a6fc18cd7f59b44d0799c97",
+            "time_seconds": 3.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "room_b_temperature_c": 20.007927,
+              "room_b_velocity_mps": 0.018603477,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "5131665e1a908a98d493e1b408a04a4a65cc121a2e0e0c4bd2f3cfc6431d1535",
+            "time_seconds": 4.0
+          }
+        ],
+        "wall_seconds": 28.214944416075014,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 1.0,
+        "declared_horizon_seconds": 4.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 4.0,
+        "seed": 2,
+        "session_dir": "",
+        "steps": 4,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "room_b_temperature_c": 19.999788,
+              "room_b_velocity_mps": 0.0063914745,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "f83f9150ec6aa5f5cd7d8138e90328ecee16cff80e27ce8333db738408365c44",
+            "time_seconds": 1.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "room_b_temperature_c": 20.00441,
+              "room_b_velocity_mps": 0.013576417,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "d49d75201f6290c508e2f8a25fccced2d4fd1352e5ee95dd9f24fdf5f19da4a9",
+            "time_seconds": 2.0
+          },
+          {
+            "action": 0.0,
+            "action_digest": "8aed642bf5118b9d3c859bd4be35ecac75b6e873cce34e7b6f554b06f75550d7",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "room_b_temperature_c": 20.001954,
+              "room_b_velocity_mps": 0.0046606299,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "2666824f83328da25cd7443da49b38db8d891c578a6fc18cd7f59b44d0799c97",
+            "time_seconds": 3.0
+          },
+          {
+            "action": 1.0,
+            "action_digest": "d0ff5974b6aa52cf562bea5921840c032a860a91a3512f7fe8f768f6bbe005f6",
+            "done": true,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "room_b_temperature_c": 20.007927,
+              "room_b_velocity_mps": 0.018603477,
+              "room_b_visibility_m": 30.0
+            },
+            "observation_digest": "5131665e1a908a98d493e1b408a04a4a65cc121a2e0e0c4bd2f3cfc6431d1535",
+            "time_seconds": 4.0
+          }
+        ],
+        "wall_seconds": 29.082137749996036,
+        "worker_pid": 37553
+      }
+    ],
+    "source_bindings": {
+      "d2_fds_adapter.py": "fb1c0a8469057004d23f97224055933ec57ddf59873311114bb16a5eec178028",
+      "shared_runtime/fds/bin/fds": "f76a868cba38cdd32b75b2dfc165f44fe24ebc7782806d4589e52ba428be8144",
+      "tools/backend_acceptance_runner.py": "b309d4b53c79fa6fbfc6096a86ff375a26bac841392a17df71a41f71ea67ce78",
+      "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "unified_compiler/route_registry.py": "5aa2ae55f22bbf72db21a0c533f96794be453995365d18773d58c73851ae4792"
+    },
+    "wall_seconds": 283.41018779203296
+  },
+  "checks": {
+    "coupling_supported": true,
+    "episode_ready": true,
+    "full_horizon": true,
+    "future_leakage_check": true,
+    "mechanism_gate": true,
+    "reset_close_loops": 10,
+    "reset_observe_legal_actions": true,
+    "same_prefix_causality": true,
+    "seed_matrix": 3,
+    "two_actions": true
+  },
+  "horizon_seconds": 4.0,
+  "metadata": {
+    "accepted_dt_seconds": [
+      1.0
+    ],
+    "cadence_seconds": 1.0,
+    "capability_note": "real FDS prefix replay; synchronous native online continuation is unverified",
+    "continuation": "prefix_replay",
+    "execution_mode": "process_isolated",
+    "horizon_seconds": 4.0,
+    "layer": "D2",
+    "native_time_unit": "seconds",
+    "online_step_supported": false,
+    "route_id": "fds_smoke_fire",
+    "termination": "native_or_4s_truncation"
+  },
+  "route_id": "fds_smoke_fire",
+  "runner_wall_seconds": 283.41018779203296,
+  "seed": 0,
+  "source_bindings": {
+    "d2_fds_adapter.py": "fb1c0a8469057004d23f97224055933ec57ddf59873311114bb16a5eec178028",
+    "shared_runtime/fds/bin/fds": "f76a868cba38cdd32b75b2dfc165f44fe24ebc7782806d4589e52ba428be8144",
+    "tools/assemble_backend_acceptance.py": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
+    "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+    "tools/run_episode_campaign.py": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+    "tools/run_stability_campaign.py": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+    "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+    "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+  },
+  "status": "passed",
+  "wall_seconds": 283.41018779203296
+}

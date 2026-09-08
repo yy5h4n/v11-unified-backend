@@ -1,0 +1,4066 @@
+{
+  "protocol_version": "Responsibility Catalog Induction Protocol v1",
+  "coder": "gpt-5.6-luna-proxy",
+  "catalog_status": "provisional_ai_validated",
+  "blinding_statement": "Induced only from the protocol, evidence ledger, two unit codings, and schema; no backend, scenario, generated, Episode, or performance files were inspected.",
+  "clusters": [
+    {
+      "canonical_name": "safe_comfortable_household_lighting",
+      "objective": "Maintain safe, comfortable, context-appropriate lighting and shading for household residents.",
+      "beneficiary": "household residents",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "unsafe or uncomfortable illumination",
+      "authorized_action_scope": "explicit or negotiated implicit automation",
+      "evidence_ids": [
+        "tareme_trial1_001",
+        "tareme_trial3_001",
+        "userneeds_u01_r003",
+        "userneeds_u02_r008",
+        "userneeds_u10_r057",
+        "userneeds_u12_r071",
+        "userneeds_u14_r084",
+        "userneeds_u34_r201",
+        "practicaltap_p4",
+        "practicaltap_p8"
+      ],
+      "independence_unit_ids": [
+        "Trial-1",
+        "Trial-3",
+        "mattioli-user-01",
+        "mattioli-user-02",
+        "mattioli-user-10",
+        "mattioli-user-12",
+        "mattioli-user-14",
+        "mattioli-user-34",
+        "unresolved-practicaltap_p4",
+        "unresolved-practicaltap_p8"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme",
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "field_trial_paper_description": 2,
+        "participant_authored_hypothetical_rule": 6,
+        "participant_authored_hypothetical_behavior": 2
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "direct",
+      "admission_rationale": "Evidence spans 10 independent demand owners across 3 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "tareme_trial1_001",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": "support resident lighting and relaxation routines",
+              "kimi": "Maintain adequate lighting for the resident's safety and comfort"
+            }
+          }
+        },
+        {
+          "evidence_id": "tareme_trial3_001",
+          "fields": {
+            "authorized_action_scope": {
+              "luna": "implicit",
+              "kimi": "explicit"
+            },
+            "candidate_responsibility": {
+              "luna": "support resident daily care routines",
+              "kimi": "Support the resident's daily health routines and safe illumination"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u01_r003",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Save lighting energy and secure the kitchen when unoccupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u02_r008",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain comfortable lighting ambiance during music listening"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r057",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain working lighting by replacing failed bulbs"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u12_r071",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "adjust room shading to daylight and occupancy"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r084",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure emergency lighting and an emergency call during fire or power loss"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r201",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "avoid lighting energy waste in empty entrance"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p4",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p8",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "household_thermal_comfort",
+      "objective": "Maintain comfortable indoor temperature and humidity for occupants.",
+      "beneficiary": "household occupants",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "thermal discomfort",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "aagaard_kirsten_003",
+        "userneeds_u02_r011",
+        "userneeds_u03_r015",
+        "userneeds_u05_r028",
+        "userneeds_u06_r033",
+        "userneeds_u06_r036",
+        "userneeds_u07_r040",
+        "userneeds_u10_r059",
+        "userneeds_u12_r069",
+        "userneeds_u13_r076",
+        "userneeds_u15_r088",
+        "userneeds_u15_r090",
+        "userneeds_u17_r102",
+        "userneeds_u18_r106",
+        "userneeds_u18_r108",
+        "userneeds_u22_r129",
+        "userneeds_u28_r168",
+        "userneeds_u29_r173",
+        "userneeds_u34_r203",
+        "practicaltap_p1"
+      ],
+      "independence_unit_ids": [
+        "Kirsten-home",
+        "mattioli-user-02",
+        "mattioli-user-03",
+        "mattioli-user-05",
+        "mattioli-user-06",
+        "mattioli-user-07",
+        "mattioli-user-10",
+        "mattioli-user-12",
+        "mattioli-user-13",
+        "mattioli-user-15",
+        "mattioli-user-17",
+        "mattioli-user-18",
+        "mattioli-user-22",
+        "mattioli-user-28",
+        "mattioli-user-29",
+        "mattioli-user-34",
+        "unresolved-practicaltap_p1"
+      ],
+      "study_cluster_ids": [
+        "aagaard_2023_my_smart_home",
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "autoethnographic_diary": 1,
+        "participant_authored_hypothetical_rule": 18,
+        "participant_authored_hypothetical_behavior": 1
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "convergent",
+      "admission_rationale": "Evidence spans 17 independent demand owners across 3 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "aagaard_kirsten_003",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable indoor temperature"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u02_r011",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain morning shower comfort with heating and news"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u03_r015",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable indoor temperature and humidity"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r028",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain warm bed before nighttime use"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r033",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain safe aquarium water temperature"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r036",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "avoid heating while windows are open"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r040",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable indoor temperature when occupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r059",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain warm indoor temperature when home"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u12_r069",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "restore radiator heating automatically"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r076",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain safe kitchen humidity levels"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r088",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the room is warm after showering"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r090",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the house warm when the fireplace dies down"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r102",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "strongly_implies"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the newborn's room at safe temperature and soothe the baby"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r106",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep evening rooms lit and warm"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r108",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the evening kitchen lit, warm and cooking-ready"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u22_r129",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable indoor temperature"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r168",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep sleeper warm during cold nights"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r173",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure comfortable room temperature before waking"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r203",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "use efficient heating energy source"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p1",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "household_cleanliness",
+      "objective": "Maintain clean floors, rooms, toilets, and routine household sanitation.",
+      "beneficiary": "household",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "inconvenience or hygiene lapse",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u01_r002",
+        "userneeds_u03_r016",
+        "userneeds_u05_r027",
+        "userneeds_u06_r034",
+        "userneeds_u07_r041",
+        "userneeds_u08_r045",
+        "userneeds_u10_r056",
+        "userneeds_u12_r068",
+        "userneeds_u13_r077",
+        "userneeds_u13_r079",
+        "userneeds_u15_r089",
+        "userneeds_u17_r100",
+        "userneeds_u28_r167",
+        "userneeds_u31_r183",
+        "userneeds_u32_r187",
+        "userneeds_u33_r195",
+        "practicaltap_p5"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01",
+        "mattioli-user-03",
+        "mattioli-user-05",
+        "mattioli-user-06",
+        "mattioli-user-07",
+        "mattioli-user-08",
+        "mattioli-user-10",
+        "mattioli-user-12",
+        "mattioli-user-13",
+        "mattioli-user-15",
+        "mattioli-user-17",
+        "mattioli-user-28",
+        "mattioli-user-31",
+        "mattioli-user-32",
+        "mattioli-user-33",
+        "unresolved-practicaltap_p5"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 16,
+        "participant_authored_hypothetical_behavior": 1
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "convergent",
+      "admission_rationale": "Evidence spans 16 independent demand owners across 2 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u01_r002",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the toilet flushed after use"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u03_r016",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain floor cleanliness"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r027",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep garbage container sanitized and bagged"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r034",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "ensure weekly floor cleaning happens"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r041",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "run cleaning and laundry while family away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r045",
+          "fields": {
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "clean home and save energy when unoccupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r056",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "be informed when laundry finishes"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u12_r068",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect drying laundry from rain"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r077",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure a full garbage bin is emptied promptly"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r079",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the house cleaned and laundry done on holidays"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r089",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure toilet paper is restocked before it runs out"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r100",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "waste",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the full bin is put out on collection day"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r167",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep kitchen air safe and clean while cooking"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u31_r183",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep floors clean"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u32_r187",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep floors clean"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r195",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep toilet hygienically clean"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p5",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "companion_animal_care",
+      "objective": "Maintain companion-animal feeding, hydration, protection, and location awareness.",
+      "beneficiary": "companion animals",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "care lapse",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u02_r009",
+        "userneeds_u10_r060",
+        "userneeds_u14_r081",
+        "userneeds_u17_r099",
+        "userneeds_u19_r113",
+        "userneeds_u25_r147",
+        "userneeds_u27_r159",
+        "userneeds_u34_r199",
+        "practicaltap_p2"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-02",
+        "mattioli-user-10",
+        "mattioli-user-14",
+        "mattioli-user-17",
+        "mattioli-user-19",
+        "mattioli-user-25",
+        "mattioli-user-27",
+        "mattioli-user-34",
+        "unresolved-practicaltap_p2"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 8,
+        "participant_authored_hypothetical_behavior": 1
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "convergent",
+      "admission_rationale": "Evidence spans 9 independent demand owners across 2 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u02_r009",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the dog watered and the home monitored when away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r060",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect dog from sprinklers in garden"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r081",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the cat can be located when it leaves detection range"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r099",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the pet fed and assist elderly stair mobility"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r113",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "strongly_implies"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the dog is fed measured portions at set times"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u25_r147",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect pet from cold"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r159",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain pet feeding"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r199",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep track of pet when it leaves property"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p2",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "resident_health_and_wellbeing_support",
+      "objective": "Support recurring medication, hydration, activity, cognitive, mood, and infant-care routines.",
+      "beneficiary": "resident or dependent",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "care lapse",
+      "authorized_action_scope": "explicit or negotiated implicit automation",
+      "evidence_ids": [
+        "tareme_trial3_001",
+        "tareme_trial5_001",
+        "userneeds_u05_r029",
+        "userneeds_u05_r030",
+        "userneeds_u07_r043",
+        "userneeds_u08_r044",
+        "userneeds_u08_r048",
+        "userneeds_u09_r051",
+        "userneeds_u17_r101",
+        "userneeds_u17_r102",
+        "userneeds_u30_r175",
+        "userneeds_u30_r179"
+      ],
+      "independence_unit_ids": [
+        "Trial-3",
+        "Trial-5",
+        "mattioli-user-05",
+        "mattioli-user-07",
+        "mattioli-user-08",
+        "mattioli-user-09",
+        "mattioli-user-17",
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme",
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "field_trial_paper_description": 2,
+        "participant_authored_hypothetical_rule": 10
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "direct",
+      "admission_rationale": "Evidence spans 8 independent demand owners across 2 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "tareme_trial3_001",
+          "fields": {
+            "authorized_action_scope": {
+              "luna": "implicit",
+              "kimi": "explicit"
+            },
+            "candidate_responsibility": {
+              "luna": "support resident daily care routines",
+              "kimi": "Support the resident's daily health routines and safe illumination"
+            }
+          }
+        },
+        {
+          "evidence_id": "tareme_trial5_001",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": "support resident wellbeing and medication routines",
+              "kimi": "Support medication adherence, cognitive training, and emotional comfort"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r029",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain adequate daily hydration"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r030",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent infant falling from crib"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r043",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "care_lapse"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "ensure children stop devices and sleep on time"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r044",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "support timely daily medication intake"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r048",
+          "fields": {
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "soothe and monitor distressed baby"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r051",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "ensure morning medication adherence"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r101",
+          "fields": {
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support fitness when measured health falls below threshold"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r102",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "strongly_implies"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the newborn's room at safe temperature and soothe the baby"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r175",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "strongly_implies"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure infant is soothed back to sleep during night crying"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r179",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "obtain timely treatment and medication when ill"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "morning_wake_and_daily_routine_support",
+      "objective": "Support reliable waking and recurring morning or scheduled daily routines.",
+      "beneficiary": "self or household resident",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "inconvenience or missed routine",
+      "authorized_action_scope": "explicit or negotiated implicit automation",
+      "evidence_ids": [
+        "userneeds_u01_r004",
+        "userneeds_u02_r011",
+        "userneeds_u06_r032",
+        "userneeds_u09_r051",
+        "userneeds_u09_r053",
+        "userneeds_u12_r073",
+        "userneeds_u15_r086",
+        "userneeds_u18_r103",
+        "userneeds_u18_r107",
+        "userneeds_u20_r116",
+        "userneeds_u29_r169",
+        "userneeds_u29_r170",
+        "userneeds_u29_r173",
+        "userneeds_u31_r182",
+        "practicaltap_p3"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01",
+        "mattioli-user-02",
+        "mattioli-user-06",
+        "mattioli-user-09",
+        "mattioli-user-12",
+        "mattioli-user-15",
+        "mattioli-user-18",
+        "mattioli-user-20",
+        "mattioli-user-29",
+        "mattioli-user-31",
+        "unresolved-practicaltap_p3"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 14,
+        "participant_authored_hypothetical_behavior": 1
+      },
+      "admission_status": "admitted_provisional",
+      "admission_path": "convergent",
+      "admission_rationale": "Evidence spans 11 independent demand owners across 2 study clusters; recurring outcomes, accepted automation, authorization, and failure meaning are supported.",
+      "confidence": "medium",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u01_r004",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support waking with morning daylight when oversleeping"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u02_r011",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain morning shower comfort with heating and news"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r032",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "have coffee ready at wake time"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r051",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "ensure morning medication adherence"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r053",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "help user wake up on weekday mornings"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u12_r073",
+          "fields": {
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support a consistent wake-up morning routine"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r086",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Have morning coffee ready at eight"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r103",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure waking at seven each morning"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r107",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support the morning bath routine"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r116",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure waking when the alarm clock is not switched off"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r169",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support waking at the intended time"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r170",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support waking at the intended time"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r173",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure comfortable room temperature before waking"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u31_r182",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "wake up reliably in the morning"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p3",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "home_security_and_access",
+      "objective": "Maintain household security, controlled access, and awareness of suspicious entry events.",
+      "beneficiary": "household",
+      "lifecycle": "persistent/event-conditioned",
+      "meaningful_failure": "security failure",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u01_r003",
+        "userneeds_u03_r017",
+        "userneeds_u06_r037",
+        "userneeds_u11_r062",
+        "userneeds_u12_r072",
+        "userneeds_u13_r078",
+        "userneeds_u14_r082",
+        "userneeds_u16_r096",
+        "userneeds_u20_r116",
+        "userneeds_u21_r122",
+        "userneeds_u22_r128",
+        "userneeds_u23_r134",
+        "userneeds_u25_r149",
+        "userneeds_u27_r158",
+        "userneeds_u32_r192",
+        "userneeds_u34_r200"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-01",
+        "mattioli-user-03",
+        "mattioli-user-06",
+        "mattioli-user-11",
+        "mattioli-user-12",
+        "mattioli-user-13",
+        "mattioli-user-14",
+        "mattioli-user-16",
+        "mattioli-user-20",
+        "mattioli-user-21",
+        "mattioli-user-22",
+        "mattioli-user-23",
+        "mattioli-user-25",
+        "mattioli-user-27",
+        "mattioli-user-32",
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 16
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u01_r003",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Save lighting energy and secure the kitchen when unoccupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u03_r017",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect household against intrusion"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r037",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "secure home when leaving"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r062",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "enable keyless automatic home entry"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u12_r072",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the unoccupied home monitored against unauthorized entry"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r078",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Provide illuminated, monitored entry when arriving home in the evening"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r082",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure house keys are remembered before leaving"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r096",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure expected deliveries trigger gate access and notification"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r116",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure waking when the alarm clock is not switched off"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u21_r122",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home security"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u22_r128",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home security"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u23_r134",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home security"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u25_r149",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "security_failure"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home security"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r158",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home security"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u32_r192",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "security_failure"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "manage visitor gate access remotely"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r200",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "respond to failed alarm code entry attempts"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "energy_and_resource_conservation",
+      "objective": "Reduce avoidable household energy or resource waste during unattended or completed use.",
+      "beneficiary": "household",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "waste",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "aagaard_kirsten_004",
+        "userneeds_u01_r003",
+        "userneeds_u01_r007",
+        "userneeds_u05_r026",
+        "userneeds_u07_r039",
+        "userneeds_u08_r045",
+        "userneeds_u09_r052",
+        "userneeds_u11_r064",
+        "userneeds_u14_r084",
+        "userneeds_u28_r164",
+        "userneeds_u34_r201",
+        "userneeds_u34_r203"
+      ],
+      "independence_unit_ids": [
+        "Kirsten-home",
+        "mattioli-user-01",
+        "mattioli-user-05",
+        "mattioli-user-07",
+        "mattioli-user-08",
+        "mattioli-user-09",
+        "mattioli-user-11",
+        "mattioli-user-14",
+        "mattioli-user-28",
+        "mattioli-user-34"
+      ],
+      "study_cluster_ids": [
+        "aagaard_2023_my_smart_home",
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "autoethnographic_diary": 1,
+        "participant_authored_hypothetical_rule": 11
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "aagaard_kirsten_004",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "temporal_scope": {
+              "luna": "unknown",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "manage household energy cost"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u01_r003",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Save lighting energy and secure the kitchen when unoccupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u01_r007",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Avoid wasting energy in vacated rooms"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r026",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "reduce energy waste from idle devices"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r039",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "reduce energy waste in unused living room"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r045",
+          "fields": {
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "clean home and save energy when unoccupied"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r052",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "avoid energy waste from unwatched TV"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r064",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "stop power draw once devices fully charged"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r084",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure emergency lighting and an emergency call during fire or power loss"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r164",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Avoid energy waste in unoccupied bathroom"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r201",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "avoid lighting energy waste in empty entrance"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r203",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "use efficient heating energy source"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "plant_and_garden_care",
+      "objective": "Maintain adequate watering and protection for household plants and garden areas.",
+      "beneficiary": "plants/household",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "care lapse",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u12_r070",
+        "userneeds_u14_r083",
+        "userneeds_u16_r097",
+        "userneeds_u28_r166"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-12",
+        "mattioli-user-14",
+        "mattioli-user-16",
+        "mattioli-user-28"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 4
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u12_r070",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain adequate soil moisture for plants"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r083",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the veranda plant adequately watered overnight"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r097",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the garden watered on summer nights"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r166",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain adequate soil moisture for plants"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "indoor_air_and_environmental_quality",
+      "objective": "Maintain safe indoor air, humidity, ventilation, and mould conditions.",
+      "beneficiary": "household",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "harm or discomfort",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u03_r015",
+        "userneeds_u04_r023",
+        "userneeds_u13_r076",
+        "userneeds_u20_r115",
+        "userneeds_u20_r119",
+        "userneeds_u21_r124"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-03",
+        "mattioli-user-04",
+        "mattioli-user-13",
+        "mattioli-user-20",
+        "mattioli-user-21"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 6
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u03_r015",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable indoor temperature and humidity"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u04_r023",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "harm"
+            },
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "strongly_implies"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain healthy indoor air quality and address mould"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r076",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain safe kitchen humidity levels"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r115",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure ventilation while cooking"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r119",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain indoor air quality"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u21_r124",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain indoor air quality"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "household_supplies_and_food_readiness",
+      "objective": "Maintain availability of routine food, beverages, consumables, and household supplies.",
+      "beneficiary": "household",
+      "lifecycle": "recurring/event-conditioned",
+      "meaningful_failure": "inconvenience",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u04_r021",
+        "userneeds_u06_r032",
+        "userneeds_u08_r046",
+        "userneeds_u11_r067",
+        "userneeds_u15_r086",
+        "userneeds_u16_r092",
+        "userneeds_u19_r112",
+        "userneeds_u25_r150",
+        "userneeds_u30_r177"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-04",
+        "mattioli-user-06",
+        "mattioli-user-08",
+        "mattioli-user-11",
+        "mattioli-user-15",
+        "mattioli-user-16",
+        "mattioli-user-19",
+        "mattioli-user-25",
+        "mattioli-user-30"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 9
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u04_r021",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep needed fridge items stocked"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r032",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "have coffee ready at wake time"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r046",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent fridge being left open"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r067",
+          "fields": {
+            "temporal_scope": {
+              "luna": "recurring",
+              "kimi": "event_conditioned"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "suggest recipes from available fridge contents"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r086",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Have morning coffee ready at eight"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r092",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the fridge door is not left open"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r112",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep the beer dispenser stocked"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u25_r150",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain household supplies"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r177",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep the household stocked with usual foods"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "home_and_personal_hazard_protection",
+      "objective": "Prevent foreseeable household harm from fire, gas, weather, overflow, and unattended appliances.",
+      "beneficiary": "household",
+      "lifecycle": "persistent/event-conditioned",
+      "meaningful_failure": "harm",
+      "authorized_action_scope": "explicit automation",
+      "evidence_ids": [
+        "userneeds_u05_r030",
+        "userneeds_u08_r049",
+        "userneeds_u14_r084",
+        "userneeds_u15_r087",
+        "userneeds_u23_r133",
+        "userneeds_u27_r162",
+        "userneeds_u28_r165",
+        "userneeds_u30_r176",
+        "userneeds_u33_r193",
+        "userneeds_u33_r197"
+      ],
+      "independence_unit_ids": [
+        "mattioli-user-05",
+        "mattioli-user-08",
+        "mattioli-user-14",
+        "mattioli-user-15",
+        "mattioli-user-23",
+        "mattioli-user-27",
+        "mattioli-user-28",
+        "mattioli-user-30",
+        "mattioli-user-33"
+      ],
+      "study_cluster_ids": [
+        "mattioli_2023_recruitment_pool"
+      ],
+      "source_form_counts": {
+        "participant_authored_hypothetical_rule": 10
+      },
+      "admission_status": "candidate_needs_confirmation",
+      "admission_path": "candidate",
+      "admission_rationale": "At least three independent owners support this maintained outcome, but evidence lacks a direct standing anchor or sufficient confirmation.",
+      "confidence": "low",
+      "boundary_notes": [
+        "Device, trigger, threshold, and action synonyms are merged only when the maintained human outcome matches.",
+        "Nearby responsibilities with different beneficiaries, failure meanings, or unresolved authorization remain separate or excluded."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "userneeds_u05_r030",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent infant falling from crib"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r049",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent gas and carbon monoxide hazard from stove"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r084",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure emergency lighting and an emergency call during fire or power loss"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r087",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure a lit unattended stove is shut off promptly"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u23_r133",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect home from weather damage"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r162",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Prevent bath overflow when left unattended"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r165",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure safe passage on stairs at night"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r176",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Prevent fire hazards from unattended heated appliances"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r193",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "care_lapse"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain safe pool water sanitation"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r197",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent harm from gas leaks when unoccupied"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "mechanism_only_sequences",
+      "objective": "No device-independent maintained outcome is supportable from opaque sequences.",
+      "beneficiary": "unknown",
+      "lifecycle": "unknown",
+      "meaningful_failure": "unknown",
+      "authorized_action_scope": "absent",
+      "evidence_ids": [
+        "smartsense_kr_003",
+        "smartsense_sp_001",
+        "smartsense_us_001",
+        "smartsense_us_007"
+      ],
+      "independence_unit_ids": [
+        "unresolved-smartsense_kr_003",
+        "unresolved-smartsense_sp_001",
+        "unresolved-smartsense_us_001",
+        "unresolved-smartsense_us_007"
+      ],
+      "study_cluster_ids": [
+        "smartsense_2022_routines"
+      ],
+      "source_form_counts": {
+        "routine_device_sequence": 4
+      },
+      "admission_status": "excluded_from_responsibility_catalog",
+      "admission_path": "excluded",
+      "admission_rationale": "Mechanism-only or refused/conflicted evidence cannot establish an accepted standing responsibility.",
+      "confidence": "high",
+      "boundary_notes": [
+        "Preserved as excluded evidence; no backend matching or responsibility inference is performed."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "smartsense_kr_003",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "irrelevant"
+            }
+          }
+        },
+        {
+          "evidence_id": "smartsense_sp_001",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "irrelevant"
+            }
+          }
+        },
+        {
+          "evidence_id": "smartsense_us_001",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "irrelevant"
+            }
+          }
+        },
+        {
+          "evidence_id": "smartsense_us_007",
+          "fields": {
+            "standing_responsibility_support": {
+              "luna": "compatible_only",
+              "kimi": "irrelevant"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "refused_or_unresolved_delegation",
+      "objective": "No accepted standing responsibility is supportable where delegation is refused or authorization conflicts.",
+      "beneficiary": "unknown",
+      "lifecycle": "persistent",
+      "meaningful_failure": "unknown",
+      "authorized_action_scope": "conflicting/refused",
+      "evidence_ids": [
+        "tareme_trial4_001"
+      ],
+      "independence_unit_ids": [
+        "Trial-4"
+      ],
+      "study_cluster_ids": [
+        "manca_2021_tareme"
+      ],
+      "source_form_counts": {
+        "field_trial_interview_and_description": 1
+      },
+      "admission_status": "excluded_from_responsibility_catalog",
+      "admission_path": "excluded",
+      "admission_rationale": "Mechanism-only or refused/conflicted evidence cannot establish an accepted standing responsibility.",
+      "confidence": "high",
+      "boundary_notes": [
+        "Preserved as excluded evidence; no backend matching or responsibility inference is performed."
+      ],
+      "contradictory_evidence_ids": [
+        "tareme_trial4_001"
+      ],
+      "refusal_evidence_ids": [
+        "tareme_trial4_001"
+      ],
+      "coding_disagreements": [
+        {
+          "evidence_id": "tareme_trial4_001",
+          "fields": {
+            "authorized_action_scope": {
+              "luna": "conflicting",
+              "kimi": "absent"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "canonical_name": "isolated_convenience_and_unsupported_outcomes",
+      "objective": "No device-independent standing responsibility is supportable from isolated, one-shot, unsupported, or unresolved requests.",
+      "beneficiary": "unknown",
+      "lifecycle": "unknown",
+      "meaningful_failure": "unknown",
+      "authorized_action_scope": "unknown",
+      "evidence_ids": [
+        "aagaard_kirsten_001",
+        "aagaard_kirsten_002",
+        "practicaltap_p6",
+        "practicaltap_p7",
+        "userneeds_u01_r005",
+        "userneeds_u01_r006",
+        "userneeds_u02_r010",
+        "userneeds_u02_r012",
+        "userneeds_u02_r013",
+        "userneeds_u03_r014",
+        "userneeds_u03_r018",
+        "userneeds_u03_r019",
+        "userneeds_u04_r020",
+        "userneeds_u04_r022",
+        "userneeds_u04_r024",
+        "userneeds_u04_r025",
+        "userneeds_u05_r031",
+        "userneeds_u06_r035",
+        "userneeds_u07_r038",
+        "userneeds_u07_r042",
+        "userneeds_u08_r047",
+        "userneeds_u09_r050",
+        "userneeds_u09_r054",
+        "userneeds_u09_r055",
+        "userneeds_u10_r058",
+        "userneeds_u10_r061",
+        "userneeds_u11_r063",
+        "userneeds_u11_r065",
+        "userneeds_u11_r066",
+        "userneeds_u13_r074",
+        "userneeds_u13_r075",
+        "userneeds_u14_r080",
+        "userneeds_u14_r085",
+        "userneeds_u15_r091",
+        "userneeds_u16_r093",
+        "userneeds_u16_r094",
+        "userneeds_u16_r095",
+        "userneeds_u17_r098",
+        "userneeds_u18_r104",
+        "userneeds_u18_r105",
+        "userneeds_u19_r109",
+        "userneeds_u19_r110",
+        "userneeds_u19_r111",
+        "userneeds_u19_r114",
+        "userneeds_u20_r117",
+        "userneeds_u20_r118",
+        "userneeds_u20_r120",
+        "userneeds_u21_r121",
+        "userneeds_u21_r123",
+        "userneeds_u21_r125",
+        "userneeds_u21_r126",
+        "userneeds_u22_r127",
+        "userneeds_u22_r130",
+        "userneeds_u22_r131",
+        "userneeds_u22_r132",
+        "userneeds_u23_r135",
+        "userneeds_u23_r136",
+        "userneeds_u23_r137",
+        "userneeds_u23_r138",
+        "userneeds_u24_r139",
+        "userneeds_u24_r140",
+        "userneeds_u24_r141",
+        "userneeds_u24_r142",
+        "userneeds_u24_r143",
+        "userneeds_u24_r144",
+        "userneeds_u25_r145",
+        "userneeds_u25_r146",
+        "userneeds_u25_r148",
+        "userneeds_u26_r151",
+        "userneeds_u26_r152",
+        "userneeds_u26_r153",
+        "userneeds_u26_r154",
+        "userneeds_u26_r155",
+        "userneeds_u26_r156",
+        "userneeds_u27_r157",
+        "userneeds_u27_r160",
+        "userneeds_u27_r161",
+        "userneeds_u28_r163",
+        "userneeds_u29_r171",
+        "userneeds_u29_r172",
+        "userneeds_u29_r174",
+        "userneeds_u30_r178",
+        "userneeds_u30_r180",
+        "userneeds_u31_r181",
+        "userneeds_u31_r184",
+        "userneeds_u31_r185",
+        "userneeds_u31_r186",
+        "userneeds_u32_r188",
+        "userneeds_u32_r189",
+        "userneeds_u32_r190",
+        "userneeds_u32_r191",
+        "userneeds_u33_r194",
+        "userneeds_u33_r196",
+        "userneeds_u33_r198",
+        "userneeds_u34_r202",
+        "userneeds_u34_r204"
+      ],
+      "independence_unit_ids": [
+        "Kirsten-home",
+        "mattioli-user-01",
+        "mattioli-user-02",
+        "mattioli-user-03",
+        "mattioli-user-04",
+        "mattioli-user-05",
+        "mattioli-user-06",
+        "mattioli-user-07",
+        "mattioli-user-08",
+        "mattioli-user-09",
+        "mattioli-user-10",
+        "mattioli-user-11",
+        "mattioli-user-13",
+        "mattioli-user-14",
+        "mattioli-user-15",
+        "mattioli-user-16",
+        "mattioli-user-17",
+        "mattioli-user-18",
+        "mattioli-user-19",
+        "mattioli-user-20",
+        "mattioli-user-21",
+        "mattioli-user-22",
+        "mattioli-user-23",
+        "mattioli-user-24",
+        "mattioli-user-25",
+        "mattioli-user-26",
+        "mattioli-user-27",
+        "mattioli-user-28",
+        "mattioli-user-29",
+        "mattioli-user-30",
+        "mattioli-user-31",
+        "mattioli-user-32",
+        "mattioli-user-33",
+        "mattioli-user-34",
+        "unresolved-practicaltap_p6",
+        "unresolved-practicaltap_p7"
+      ],
+      "study_cluster_ids": [
+        "aagaard_2023_my_smart_home",
+        "mattioli_2023_recruitment_pool",
+        "ur_2014_practical_tap"
+      ],
+      "source_form_counts": {
+        "autoethnographic_diary": 2,
+        "participant_authored_hypothetical_behavior": 2,
+        "participant_authored_hypothetical_rule": 92
+      },
+      "admission_status": "excluded_from_responsibility_catalog",
+      "admission_path": "excluded",
+      "admission_rationale": "Evidence remains isolated, unsupported, one-shot, mechanism-adjacent, or lacks sufficient convergence for catalog admission.",
+      "confidence": "high",
+      "boundary_notes": [
+        "Preserved as excluded evidence; no backend matching or responsibility inference is performed."
+      ],
+      "contradictory_evidence_ids": [],
+      "refusal_evidence_ids": [],
+      "coding_disagreements": [
+        {
+          "evidence_id": "aagaard_kirsten_001",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "unknown",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "aagaard_kirsten_002",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            },
+            "authorized_action_scope": {
+              "luna": "implicit",
+              "kimi": "conflicting"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p6",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "practicaltap_p7",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u01_r005",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "one_shot",
+              "kimi": "event_conditioned"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Protect the home from forecast rain and warn the occupant"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u01_r006",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the garage is closed and lit after parking"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u02_r010",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Stay informed of intercom visitors when away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u03_r014",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u03_r018",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "one_shot",
+              "kimi": "event_conditioned"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u04_r020",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u04_r022",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u04_r024",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u04_r025",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u05_r031",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "support undistracted comfortable reading environment"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u06_r035",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect home electronics during storms"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r038",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain daily step-count activity goal"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u07_r042",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "monitor door visitors when family away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u08_r047",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r050",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "protect pool during storms"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r054",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prepare dining environment before scheduled dinner"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u09_r055",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "support distraction-free studying"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r058",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "monitor doorbell visitors remotely when away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u10_r061",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "detect and record nighttime garden intrusions when away"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r063",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "monitor home remotely for suspicious activity"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r065",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "none"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "provide optional music during shower"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u11_r066",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "automate bathroom comfort and occupancy signaling"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r074",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Maintain bedroom warmth in the evening"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u13_r075",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r080",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure occupants are alerted when mail arrives"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u14_r085",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "waste"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the water system is shut off and the owner alerted on leakage"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u15_r091",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure visitors are acknowledged when nobody is home"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r093",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure blinds are closed during the night"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r094",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Keep children away from open windows"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u16_r095",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Enforce an eleven-thirty television curfew"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u17_r098",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure music does not keep playing in an empty house"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r104",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure lights are off and shutters closed when the house is empty"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u18_r105",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Support midday cooking by preheating the oven"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r109",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure the pellet tank is refilled before it runs out"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r110",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Protect the boiler and electrical system during pressure faults"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r111",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Encourage studying before gaming during school study hours"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u19_r114",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "security_failure"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "Ensure only authorised vehicles can open the garage gate"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r117",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep potted plants watered"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r118",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u20_r120",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u21_r121",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u21_r125",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u21_r126",
+          "fields": {
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u22_r127",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u22_r130",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u22_r132",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u23_r136",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u23_r137",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "care_lapse",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u23_r138",
+          "fields": {
+            "temporal_scope": {
+              "luna": "one_shot",
+              "kimi": "event_conditioned"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u24_r139",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u24_r140",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "third_party"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep pets undisturbed"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u24_r142",
+          "fields": {
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u24_r143",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u24_r144",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u25_r146",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u25_r148",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain home cleanliness"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u26_r151",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u26_r152",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u26_r153",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "harm"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u26_r155",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u26_r156",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r157",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r160",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u27_r161",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u28_r163",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "inconvenience"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r171",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r172",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "unknown"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "none"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u29_r174",
+          "fields": {
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "inconvenience"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r178",
+          "fields": {
+            "beneficiary": {
+              "luna": "household",
+              "kimi": "self"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u30_r180",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u31_r181",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "self"
+            },
+            "temporal_scope": {
+              "luna": "event_conditioned",
+              "kimi": "recurring"
+            },
+            "failure_meaning": {
+              "luna": "security_failure",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u31_r184",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "keep the unoccupied home secured"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u31_r186",
+          "fields": {
+            "temporal_scope": {
+              "luna": "one_shot",
+              "kimi": "event_conditioned"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u32_r188",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "harm"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent kitchen fires when unattended"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u32_r189",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "inconvenience"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u32_r191",
+          "fields": {
+            "failure_meaning": {
+              "luna": "discomfort",
+              "kimi": "unknown"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r194",
+          "fields": {
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "security_failure"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "alert occupants to failed door access attempts"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r196",
+          "fields": {
+            "beneficiary": {
+              "luna": "unknown",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "unknown",
+              "kimi": "discomfort"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "prevent indoor mosquito presence"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u33_r198",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "deter garden intrusions when occupants absent or sleeping"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r202",
+          "fields": {
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "maintain comfortable warmth for occupants in cold rooms"
+            }
+          }
+        },
+        {
+          "evidence_id": "userneeds_u34_r204",
+          "fields": {
+            "beneficiary": {
+              "luna": "self",
+              "kimi": "household"
+            },
+            "failure_meaning": {
+              "luna": "inconvenience",
+              "kimi": "care_lapse"
+            },
+            "candidate_responsibility": {
+              "luna": null,
+              "kimi": "schedule garden irrigation and pool cleaning"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "excluded_summary": {
+    "status_counts": {
+      "admitted_provisional": 6,
+      "candidate_needs_confirmation": 6,
+      "excluded_from_responsibility_catalog": 3
+    },
+    "excluded_cluster_count": 3,
+    "excluded_evidence_count": 101,
+    "excluded_evidence_ids": [
+      "smartsense_kr_003",
+      "smartsense_sp_001",
+      "smartsense_us_001",
+      "smartsense_us_007",
+      "tareme_trial4_001",
+      "aagaard_kirsten_001",
+      "aagaard_kirsten_002",
+      "practicaltap_p6",
+      "practicaltap_p7",
+      "userneeds_u01_r005",
+      "userneeds_u01_r006",
+      "userneeds_u02_r010",
+      "userneeds_u02_r012",
+      "userneeds_u02_r013",
+      "userneeds_u03_r014",
+      "userneeds_u03_r018",
+      "userneeds_u03_r019",
+      "userneeds_u04_r020",
+      "userneeds_u04_r022",
+      "userneeds_u04_r024",
+      "userneeds_u04_r025",
+      "userneeds_u05_r031",
+      "userneeds_u06_r035",
+      "userneeds_u07_r038",
+      "userneeds_u07_r042",
+      "userneeds_u08_r047",
+      "userneeds_u09_r050",
+      "userneeds_u09_r054",
+      "userneeds_u09_r055",
+      "userneeds_u10_r058",
+      "userneeds_u10_r061",
+      "userneeds_u11_r063",
+      "userneeds_u11_r065",
+      "userneeds_u11_r066",
+      "userneeds_u13_r074",
+      "userneeds_u13_r075",
+      "userneeds_u14_r080",
+      "userneeds_u14_r085",
+      "userneeds_u15_r091",
+      "userneeds_u16_r093",
+      "userneeds_u16_r094",
+      "userneeds_u16_r095",
+      "userneeds_u17_r098",
+      "userneeds_u18_r104",
+      "userneeds_u18_r105",
+      "userneeds_u19_r109",
+      "userneeds_u19_r110",
+      "userneeds_u19_r111",
+      "userneeds_u19_r114",
+      "userneeds_u20_r117",
+      "userneeds_u20_r118",
+      "userneeds_u20_r120",
+      "userneeds_u21_r121",
+      "userneeds_u21_r123",
+      "userneeds_u21_r125",
+      "userneeds_u21_r126",
+      "userneeds_u22_r127",
+      "userneeds_u22_r130",
+      "userneeds_u22_r131",
+      "userneeds_u22_r132",
+      "userneeds_u23_r135",
+      "userneeds_u23_r136",
+      "userneeds_u23_r137",
+      "userneeds_u23_r138",
+      "userneeds_u24_r139",
+      "userneeds_u24_r140",
+      "userneeds_u24_r141",
+      "userneeds_u24_r142",
+      "userneeds_u24_r143",
+      "userneeds_u24_r144",
+      "userneeds_u25_r145",
+      "userneeds_u25_r146",
+      "userneeds_u25_r148",
+      "userneeds_u26_r151",
+      "userneeds_u26_r152",
+      "userneeds_u26_r153",
+      "userneeds_u26_r154",
+      "userneeds_u26_r155",
+      "userneeds_u26_r156",
+      "userneeds_u27_r157",
+      "userneeds_u27_r160",
+      "userneeds_u27_r161",
+      "userneeds_u28_r163",
+      "userneeds_u29_r171",
+      "userneeds_u29_r172",
+      "userneeds_u29_r174",
+      "userneeds_u30_r178",
+      "userneeds_u30_r180",
+      "userneeds_u31_r181",
+      "userneeds_u31_r184",
+      "userneeds_u31_r185",
+      "userneeds_u31_r186",
+      "userneeds_u32_r188",
+      "userneeds_u32_r189",
+      "userneeds_u32_r190",
+      "userneeds_u32_r191",
+      "userneeds_u33_r194",
+      "userneeds_u33_r196",
+      "userneeds_u33_r198",
+      "userneeds_u34_r202",
+      "userneeds_u34_r204"
+    ],
+    "note": "Excluded evidence remains in EVIDENCE_LEDGER.jsonl; no backend matching or adjudication was performed."
+  }
+}

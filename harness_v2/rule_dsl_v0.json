@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://responsibility-benchmark.example/schemas/rule_dsl_v0.json",
+  "title": "Responsibility Harness Rule DSL V0 rule",
+  "description": "One deterministic standing rule. Episode timezone, horizon, named periods, public fields, event catalog, and capability schemas are external validation context from the public DTO.",
+  "$ref": "#/$defs/rule",
+  "$defs": {
+    "timestamp": {"$ref":"shared_types_v2.json#/$defs/timestamp"},
+    "atTimestampTrigger": {
+      "type": "object", "required": ["type", "at"], "additionalProperties": false,
+      "properties": {"type": {"const": "at_timestamp"}, "at": {"$ref": "#/$defs/timestamp"}}
+    },
+    "namedPeriodEnterTrigger": {
+      "type": "object", "required": ["type", "period_name"], "additionalProperties": false,
+      "properties": {"type": {"const": "named_period_enter"}, "period_name": {"$ref":"shared_types_v2.json#/$defs/public_identifier"}}
+    },
+    "namedPeriodExitTrigger": {
+      "type": "object", "required": ["type", "period_name", "occurrence_binding"], "additionalProperties": false,
+      "properties": {
+        "type": {"const": "named_period_exit"},
+        "period_name": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "occurrence_binding": {"enum": ["current", "next"]}
+      }
+    },
+    "publicEventTrigger": {
+      "type": "object", "required": ["type", "event_type", "filters"], "additionalProperties": false,
+      "properties": {
+        "type": {"const": "public_event_rising_edge"},
+        "event_type": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "filters": {"type": "object", "propertyNames": {"allOf": [{"pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"}, {"not": {"pattern": "(^|[_.:-])(canonical_contract|active_mask|evaluator|oracle|required_rooms|target_scope)([_.:-]|$)"}}]}, "additionalProperties": {"type": ["string", "number", "integer", "boolean", "null"]}}
+      }
+    },
+    "trigger": {
+      "oneOf": [{"$ref": "#/$defs/atTimestampTrigger"}, {"$ref": "#/$defs/namedPeriodEnterTrigger"}, {"$ref": "#/$defs/namedPeriodExitTrigger"}, {"$ref": "#/$defs/publicEventTrigger"}],
+      "x-discriminator": "type"
+    },
+    "trueCondition": {
+      "type": "object", "required": ["op"], "additionalProperties": false,
+      "properties": {"op": {"const": "true"}}
+    },
+    "allCondition": {
+      "type": "object", "required": ["op", "args"], "additionalProperties": false,
+      "properties": {"op": {"const": "all"}, "args": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}
+    },
+    "anyCondition": {
+      "type": "object", "required": ["op", "args"], "additionalProperties": false,
+      "properties": {"op": {"const": "any"}, "args": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}
+    },
+    "notCondition": {
+      "type": "object", "required": ["op", "arg"], "additionalProperties": false,
+      "properties": {"op": {"const": "not"}, "arg": {"$ref": "#/$defs/condition"}}
+    },
+    "comparisonCondition": {
+      "type": "object", "required": ["op", "field", "value", "max_staleness_seconds"], "additionalProperties": false,
+      "properties": {
+        "op": {"enum": ["eq", "lt", "lte", "gt", "gte"]},
+        "field": {"allOf": [{"type": "string", "minLength": 1, "pattern": "^(rooms|devices|context)\\.[A-Za-z0-9_.:-]+$"}, {"not": {"pattern": "(^|[_.:-])(canonical_contract|active_mask|evaluator|oracle|required_rooms|target_scope)([_.:-]|$)"}}]},
+        "value": {"type": ["string", "number", "integer", "boolean", "null"]},
+        "max_staleness_seconds": {"type": "number", "minimum": 0}
+      }
+    },
+    "condition": {
+      "oneOf": [{"$ref": "#/$defs/trueCondition"}, {"$ref": "#/$defs/allCondition"}, {"$ref": "#/$defs/anyCondition"}, {"$ref": "#/$defs/notCondition"}, {"$ref": "#/$defs/comparisonCondition"}],
+      "x-discriminator": "op"
+    },
+    "command": {
+      "type": "object", "required": ["command_id", "device_id", "capability", "operation", "parameters"], "additionalProperties": false,
+      "properties": {
+        "command_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "device_id": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "capability": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "operation": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "parameters": {"type": "object"}
+      }
+    },
+    "onceLifecycle": {
+      "type": "object", "required": ["type"], "additionalProperties": false,
+      "properties": {"type": {"const": "once"}}
+    },
+    "untilTimestampLifecycle": {
+      "type": "object", "required": ["type", "until"], "additionalProperties": false,
+      "properties": {"type": {"const": "until_timestamp"}, "until": {"$ref": "#/$defs/timestamp"}}
+    },
+    "untilNamedPeriodExitLifecycle": {
+      "type": "object", "required": ["type", "period_name", "occurrence_binding"], "additionalProperties": false,
+      "properties": {
+        "type": {"const": "until_named_period_exit"},
+        "period_name": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "occurrence_binding": {"enum": ["current", "next"]}
+      }
+    },
+    "maxFiresLifecycle": {
+      "type": "object", "required": ["type", "max_fires"], "additionalProperties": false,
+      "properties": {"type": {"const": "max_fires"}, "max_fires": {"type": "integer", "minimum": 1}}
+    },
+    "manualCancelLifecycle": {
+      "type": "object", "required": ["type"], "additionalProperties": false,
+      "properties": {"type": {"const": "manual_cancel"}}
+    },
+    "lifecycle": {
+      "oneOf": [{"$ref": "#/$defs/onceLifecycle"}, {"$ref": "#/$defs/untilTimestampLifecycle"}, {"$ref": "#/$defs/untilNamedPeriodExitLifecycle"}, {"$ref": "#/$defs/maxFiresLifecycle"}, {"$ref": "#/$defs/manualCancelLifecycle"}],
+      "x-discriminator": "type"
+    },
+    "onReleasePolicy": {
+      "type": "object", "required": ["execute_on", "exactly_once", "failure"], "additionalProperties": false,
+      "properties": {
+        "execute_on": {"const": "every_normal_retirement_and_committed_manual_cancel"},
+        "exactly_once": {"const": true},
+        "failure": {"const": "record_failure_retire_no_retry"}
+      }
+    },
+    "rule": {
+      "type": "object",
+      "required": ["rule_id", "trigger", "condition", "commands", "lifecycle", "on_release_commands", "on_release_policy", "cooldown_seconds", "priority"],
+      "additionalProperties": false,
+      "properties": {
+        "rule_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "trigger": {"$ref": "#/$defs/trigger"},
+        "condition": {"$ref": "#/$defs/condition"},
+        "commands": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/command"}},
+        "lifecycle": {"$ref": "#/$defs/lifecycle"},
+        "on_release_commands": {"type": "array", "items": {"$ref": "#/$defs/command"}},
+        "on_release_policy": {"$ref": "#/$defs/onReleasePolicy"},
+        "cooldown_seconds": {"type": "number", "minimum": 0},
+        "priority": {"type": "integer", "minimum": 0, "maximum": 100}
+      }
+    }
+  },
+  "x-external-validation-context": {
+    "source": "public_agent_view",
+    "required": ["virtual_clock", "episode_timezone", "horizon", "named_periods", "public_observation_catalog", "public_event_catalog", "complete_inventory_and_capability_schemas"],
+    "rules": [
+      "every_period_name_reference_exists_in_named_periods",
+      "every_event_type_and_filter_exists_in_public_event_catalog",
+      "every_condition_field_exists_in_public_observation_catalog",
+      "every_command_matches_one_available_device_capability_operation_and_parameter_schema",
+      "all_RFC3339_timestamps_use_explicit_offset_and_resolve_to_episode_timezone_and_horizon",
+      "at_timestamp_and_until_timestamp_must_be_strictly_after_transaction_commit_time"
+    ]
+  },
+  "x-named-period-semantics": {
+    "interval": "half_open_start_inclusive_end_exclusive",
+    "representation": "episode_resolved_RFC3339_start_and_end_instants_from_public_named_period_catalog",
+    "cross_midnight": "represented_by_end_date_after_start_date",
+    "repetition": "each concrete occurrence_is_a_separate_catalog_entry_or_expansion_with_same_public_name",
+    "repeated_name": "allowed_only_for_nonoverlapping_concrete_occurrences_sorted_by_start_instant",
+    "overlapping_periods": "allowed_and_each_edge_is_independent",
+    "same_timestamp_exit_and_enter": "exit_edges_sort_before_enter_edges_then_period_name_lexical"
+  },
+  "x-trigger-and-condition-semantics": {
+    "at_timestamp_scheduler_semantics": "the_trigger_timestamp_is_itself_a_scheduler_instant",
+    "new_rule_effective_time": "eligible_only_at_scheduler_instants_strictly_after_commit_timestamp",
+    "past_or_present_trigger_at_install": "reject_transaction",
+    "event_order": ["event_time_ascending", "event_id_lexical"],
+    "late_event": "evaluate_once_at_the_scheduler_instant_where_the_event_is_first_recorded",
+    "duplicate_event_id": "ignore_after_first_record",
+    "until_named_period_exit_binding": "bind at installation to the current containing concrete occurrence or the next concrete occurrence as requested; reject the transaction when no such occurrence exists",
+    "evaluation_state": "post_exogenous_post_device_update_public_state",
+    "missing_or_stale_field": "condition_false_and_trace_diagnostic_without_rule_failure",
+    "comparison_type_mismatch": "condition_false_and_trace_diagnostic_without_rule_failure"
+  },
+  "x-lifecycle-and-cooldown-semantics": {
+    "cooldown_begins": "timestamp_of_successful_atomic_firing_commit",
+    "during_cooldown": "trigger_is_recorded_suppressed_and_does_not_increment_fire_count",
+    "backend_failed_firing": "does_not_increment_fire_count_does_not_start_cooldown_no_retry_for_same_occurrence",
+    "once": "retire_after_first_successful_firing_and_enqueue_one_release_batch_if_nonempty",
+    "max_fires": "count_successful_firings_only_and_retire_on_reaching_limit_then_enqueue_one_release_batch_if_nonempty",
+    "expiry_boundary": "evaluate_expiry_before_trigger_occurrences_at_same_timestamp",
+    "manual_cancel": "committed_cancellation_prevents_all_later_firings_and_atomically_enqueues_release_exactly_once_without_a_later_same_timestamp_rule_phase",
+    "release_failure": "record_failure_retire_rule_no_retry"
+  },
+  "x-release-semantics": {
+    "normal_retirement_paths": ["once_success", "max_fires_limit", "until_timestamp_expiry", "until_named_period_exit", "committed_manual_cancel"],
+    "on_release_execution": "for every normal retirement path, execute on_release_commands exactly once when nonempty; an empty list is a no-op still recorded as released",
+    "release_failure": "record the failed release outcome, keep the rule retired, and never retry",
+    "manual_cancel_commit": "release is part of the atomic cancellation commit; no subsequent rule phase may fire the cancelled rule at that timestamp"
+  },
+  "x-same-timestamp-total-order": [
+    "integrate_physics_from_prior_instant_using_prior_committed_inputs",
+    "apply_exogenous_updates_then_device_and_workflow_completions",
+    "materialize_observations_and_events_with_stable_ids",
+    "retire_expired_rules_and_collect_release_batches",
+    "collect_trigger_occurrences_and_evaluate_conditions_on_post_update_public_state",
+    "sort_firings_by_priority_desc_creation_sequence_asc_rule_id_lexical_then_occurrence_id_lexical",
+    "resolve_conflicts_and_atomically_attempt_firing_batches",
+    "only_after_success_update_cooldown_and_fire_count_then_retire_completed_rules_and_collect_release_batches",
+    "resolve_conflicts_and_atomically_attempt_release_batches",
+    "record_all_results_and_post_phase_state_digest",
+    "apply_horizon_precedence_else_coalesce_public_callback_reasons",
+    "deliver_at_most_one_callback_and_process_exactly_one_terminal_choice",
+    "make_new_rules_subscriptions_and_wakes_effective_strictly_after_commit"
+  ],
+  "x-conflict-and-failure-semantics": {
+    "conflict_key": ["device_id", "capability"],
+    "identical_commands": "coalesce",
+    "different_commands_within_one_firing": "reject_that_entire_firing_batch",
+    "different_commands_across_firings": "higher_ordered_firing_wins_and_loser_emits_public_workflow_failed",
+    "release_conflict_with_firing": "firing_wins_release_fails_and_rule_is_still_retired",
+    "release_vs_release_identical": "coalesce_identical_commands_in_canonical_release_order",
+    "release_vs_release_conflict": "earlier_release_batch_in_canonical_retirement_order_wins_loser_is_recorded_failed_and_never_retried",
+    "backend_command_failure": "rollback_entire_firing_batch_requires_certified_atomic_adapter",
+    "automatic_retry": false
+  },
+  "x-forbidden": ["deadline_compatible_schedule_planner", "private_evaluator_field", "future_trace_field", "responsibility_specific_opcode", "implicit_hysteresis", "implicit_target", "implicit_release_action"]
+}

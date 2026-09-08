@@ -1,0 +1,22 @@
+{
+  "schema_version":"responsibility-contract-v1",
+  "contract_id":"simuhome_multiroom_evening_warmth_v1",
+  "version":1,
+  "frozen_at":"2026-08-31T00:00:00+08:00",
+  "responsibility_id":"rd_split_b8457e559b4d",
+  "query_id":"si_split_b8457e559b4d",
+  "natural_query":"Keep the rooms comfortably warm in the evening.",
+  "lifecycle":"MAINTAIN",
+  "scope":{"zone":"all_selected_explicit_controllable_thermal_rooms","zone_must_be_explicit":true,"time_basis":"virtual_clock","evening_window":{"start_local_hour":17,"end_local_hour":23,"end_inclusive":false}},
+  "profile":{"target_c":22.0,"temperature_band_c":{"lower":20.0,"upper":24.0},"provenance":"construction_parameter_for_episode_generation; not query semantics"},
+  "active_scope":"evening_window",
+  "hard_clauses":["trajectory_complete","all selected room temperatures observed at every step","all selected room temperatures remain within the profile-defined construction band","fixed_witness_must_satisfy_all_hard_clauses"],
+  "soft_metric":"worst-room mean(abs(temperature_c - target_c)) over active evening steps; lower_is_better; report aggregate degree-hours outside band",
+  "legal_action_schema":{"type":"multiroom_thermal_command","allowed_families":["thermostat_setpoint","heat_pump_or_hvac_mode"],"target_zone":"all_selected_explicit_controllable_thermal_rooms"},
+  "opportunity_predicate":{"same_prefix_and_runtime_lineage":true,"same_virtual_clock_and_profile":true,"minimum_worst_room_mae_delta_c":0.1,"fixed_witness_must_satisfy_all_hard_clauses":true,"noop_must_be_replayed":true,"contrast_must_be_replayed":true,"exact_replicates_per_certification_policy":2,"aggregate_degree_hours_must_not_increase":true},
+  "terminal_semantics":"continues_beyond_window",
+  "episode_identity":"one_physical_window_has_one_primary_responsibility",
+  "lineage_requirements":["backend_model_and_weather_or_seed_are_pinned","adapter_version_is_pinned","source_window_virtual_clock_and_home_are_recorded"],
+  "replay_requirements":["arbitrary_multiroom_policy_replay_is_supported","witness_contrast_and_noop_replays_are_complete","deterministic_replay_matches_within_declared_tolerance","no_gold_actions_are_exposed_to_policy"],
+  "semantic_status":"provisional_ai_pilot","authorization_status":"unknown","release_status":"provisional","execution_scope":"benchmark_sandbox_only"
+}

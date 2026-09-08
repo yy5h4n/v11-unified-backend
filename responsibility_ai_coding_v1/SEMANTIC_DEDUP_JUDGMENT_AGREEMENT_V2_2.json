@@ -1,0 +1,22 @@
+{
+  "pairs": 51,
+  "luna_decisions": {
+    "KEEP_SEPARATE": 35,
+    "MERGE": 16
+  },
+  "kimi_decisions": {
+    "MERGE": 36,
+    "KEEP_SEPARATE": 15
+  },
+  "decision_agreement": 31,
+  "decision_agreement_rate": 0.607843,
+  "joint_merge": 16,
+  "joint_keep_separate": 15,
+  "disagreements": 20,
+  "validation": {
+    "valid": true,
+    "pair_ids_aligned": true,
+    "blind_kimi": true
+  },
+  "adjudication_packet": "SEMANTIC_DEDUP_ADJUDICATION_PACKET_V2_2.jsonl"
+}

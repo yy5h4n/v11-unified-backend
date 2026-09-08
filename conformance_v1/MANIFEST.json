@@ -1,0 +1,295 @@
+{
+  "spec_version": "1.0",
+  "package_version": "conformance_v1",
+  "status": "frozen",
+  "normative_document": {
+    "path": "../DATASET_CONSTRUCTION_PIPELINE_V1.md",
+    "full_sha256": "bd5559e8b9e1bc9df9014bff7cd7ff60177577742b369d447536428c21ff7546",
+    "normative_sha256_excluding_section_15": "1c4da995e163ca772ac8f5edbff0cc56298ea597715a69f4269078b47292d67e"
+  },
+  "artifacts": {
+    "MANIFEST.json": {
+      "tier": "public_reproducible",
+      "description": "Release manifest with artifact tiers and normative document hash."
+    },
+    "release_config.json": {
+      "tier": "public_reproducible",
+      "description": "Frozen machine-readable release configuration: thresholds, seeds, quotas, ordering, tie rules, acceptable policy sets, dedup rules."
+    },
+    "failure_codes.json": {
+      "tier": "public_reproducible",
+      "description": "Machine-readable reason-code catalog for every transition, exclusion and adjudication."
+    },
+    "schemas/statuses.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Four independent statuses enum schema."
+    },
+    "schemas/corpus_card.schema.json": {
+      "tier": "public_reproducible",
+      "description": "CorpusCard JSON Schema."
+    },
+    "schemas/evidence_unit.schema.json": {
+      "tier": "public_reproducible",
+      "description": "EvidenceUnit JSON Schema with inference-matrix row recording."
+    },
+    "schemas/evidence_bundle.schema.json": {
+      "tier": "public_reproducible",
+      "description": "EvidenceBundle JSON Schema with independent support counts."
+    },
+    "schemas/canonical_responsibility.schema.json": {
+      "tier": "public_reproducible",
+      "description": "CanonicalResponsibility JSON Schema."
+    },
+    "schemas/query.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Query JSON Schema with equivalence verdict."
+    },
+    "schemas/contract.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Contract JSON Schema with clause provenance/coverage matrix."
+    },
+    "schemas/opportunity_predicate.schema.json": {
+      "tier": "public_reproducible",
+      "description": "OpportunityPredicate JSON Schema."
+    },
+    "schemas/physical_process.schema.json": {
+      "tier": "public_reproducible",
+      "description": "PhysicalProcess JSON Schema."
+    },
+    "schemas/episode.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Episode JSON Schema with public/private record separation."
+    },
+    "schemas/temporal_contract_dsl.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Temporal Contract DSL v1 grammar (single source of truth for clause formulas)."
+    },
+    "schemas/release_config.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Release configuration JSON Schema."
+    },
+    "schemas/failure_codes.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Failure-code catalog JSON Schema."
+    },
+    "schemas/manifest.schema.json": {
+      "tier": "public_reproducible",
+      "description": "Manifest JSON Schema."
+    },
+    "fixtures/hashing_vectors.json": {
+      "tier": "public_reproducible",
+      "description": "RFC 8785 canonicalization vectors (including examples from the RFC) and frozen SHA-256 values."
+    },
+    "fixtures/inference_matrix.json": {
+      "tier": "public_reproducible",
+      "description": "Evidence inference matrix (spec section 2.1) in machine-readable form."
+    },
+    "fixtures/annotation_codebook.json": {
+      "tier": "public_reproducible",
+      "description": "Annotation codebook for admission-critical fields."
+    },
+    "fixtures/golden/golden_positive.json": {
+      "tier": "public_reproducible",
+      "description": "Positive-opportunity golden fixture with expected labels and verdicts."
+    },
+    "fixtures/golden/golden_boundary.json": {
+      "tier": "public_reproducible",
+      "description": "Boundary-opportunity golden fixture."
+    },
+    "fixtures/golden/golden_certified_noop.json": {
+      "tier": "public_reproducible",
+      "description": "Certified-no-opportunity golden fixture."
+    },
+    "fixtures/golden/golden_unsupported.json": {
+      "tier": "public_reproducible",
+      "description": "Unsupported golden fixture (capability absent)."
+    },
+    "fixtures/golden/golden_semantic_unknown.json": {
+      "tier": "public_reproducible",
+      "description": "Semantic-unknown golden fixture (evidence does not justify a responsibility)."
+    },
+    "fixtures/golden/golden_failure_closed.json": {
+      "tier": "public_reproducible",
+      "description": "Failure-closed golden fixture (release QA fails closed)."
+    },
+    "fixtures/negative/negative_post_freeze_mutation.json": {
+      "tier": "public_reproducible",
+      "description": "Negative fixture: post-freeze mutation is rejected."
+    },
+    "fixtures/negative/negative_seed_leakage.json": {
+      "tier": "public_reproducible",
+      "description": "Negative fixture: search/certification seed leakage is rejected."
+    },
+    "fixtures/e2e/corpus_to_episode.json": {
+      "tier": "restricted_audit",
+      "description": "Tiny end-to-end corpus-to-Episode fixture with expected hashes, labels, assignment, split, replay digest and terminal verdict."
+    },
+    "hashing.py": {
+      "tier": "public_reproducible",
+      "description": "RFC 8785 + SHA-256 reference implementation."
+    },
+    "enums.py": {
+      "tier": "public_reproducible",
+      "description": "Frozen enum constants."
+    },
+    "schemas.py": {
+      "tier": "public_reproducible",
+      "description": "Minimal JSON Schema validator and registry."
+    },
+    "config.py": {
+      "tier": "public_reproducible",
+      "description": "Config loaders and ConformanceError."
+    },
+    "state_machine.py": {
+      "tier": "public_reproducible",
+      "description": "Immutable-object state machine."
+    },
+    "validator.py": {
+      "tier": "public_reproducible",
+      "description": "Reference cross-object validator."
+    },
+    "evaluator.py": {
+      "tier": "public_reproducible",
+      "description": "Reference temporal evaluator and DSL interpreter."
+    },
+    "sandbox.py": {
+      "tier": "public_reproducible",
+      "description": "Policy sandbox checks."
+    },
+    "graphs.py": {
+      "tier": "public_reproducible",
+      "description": "Semantic/physical provenance graphs and reference splitter."
+    },
+    "opportunity.py": {
+      "tier": "public_reproducible",
+      "description": "Construction-utility opportunity classifier and primary assignment."
+    },
+    "pipeline.py": {
+      "tier": "public_reproducible",
+      "description": "Tiny corpus-to-Episode pipeline for the e2e fixture; refuses non-synthetic processes."
+    },
+    "build_release_manifest.py": {
+      "tier": "public_reproducible",
+      "description": "Rebuilds the hash-bound release tuple from the normative document and every package artifact."
+    },
+    "tests/run_all.py": {
+      "tier": "public_reproducible",
+      "description": "Test runner entry point."
+    },
+    "tests/test_*.py": {
+      "tier": "public_reproducible",
+      "description": "Conformance tests."
+    }
+  },
+  "tiers": {
+    "public_reproducible": [
+      "MANIFEST.json",
+      "release_config.json",
+      "failure_codes.json",
+      "schemas/*",
+      "fixtures/hashing_vectors.json",
+      "fixtures/inference_matrix.json",
+      "fixtures/annotation_codebook.json",
+      "fixtures/golden/*",
+      "fixtures/negative/*",
+      "hashing.py",
+      "enums.py",
+      "schemas.py",
+      "config.py",
+      "state_machine.py",
+      "validator.py",
+      "evaluator.py",
+      "sandbox.py",
+      "graphs.py",
+      "opportunity.py",
+      "pipeline.py",
+      "build_release_manifest.py",
+      "tests/*"
+    ],
+    "restricted_audit": [
+      "fixtures/e2e/corpus_to_episode.json"
+    ],
+    "operator_private": []
+  },
+  "conformance_claims": [
+    "All core object schemas and status enums are machine-readable and validated.",
+    "Content hashes use RFC 8785 canonicalization followed by SHA-256 with schema version included.",
+    "Four statuses are stored and validated independently; collapsed status is a conformance failure.",
+    "Frozen objects are append-only; post-freeze mutation is rejected with a machine-readable reason code.",
+    "Opportunity classification honors 0 <= delta_noop < delta_positive <= 1 and Pi_cert/Pi_auth_pub separation.",
+    "Search and certification seed isolation is enforced; leakage and certification optimization are negative fixtures.",
+    "Replay, terminal verdicts, primary assignment and splits are deterministic and golden-fixture-bound.",
+    "Public/private Episode records are separated; gold_actions is enforced empty.",
+    "The e2e fixture fixes expected hashes, labels, assignment, split, replay digest and terminal verdict.",
+    "The package does not scan real backends or construct real Episodes; only embedded synthetic fixture processes are consumed."
+  ],
+  "test_command": "python3 tests/run_all.py",
+  "known_limitations": [
+    "Golden hashes were produced by this reference implementation and frozen in the package; canonicalization is independently anchored to RFC 8785 vectors.",
+    "Semantic entailment (Query/Contract) is represented by frozen two-annotator verdicts and structural consistency checks, not by automated NLU.",
+    "The tiny corpus in the e2e fixture cannot meet the real admission frequency gates; admission fields are synthetic fixture values, not benchmark claims.",
+    "Physical processes in fixtures are embedded synthetic traces, not real backend scans.",
+    "RFC 8785 number formatting is frozen by RFC examples plus explicit ECMAScript 1e-6 and 1e21 boundary fixtures.",
+    "The content hash excludes the mutable statuses lifecycle block so freeze/release transitions never change a version's content address; statuses are validated independently.",
+    "The machine-readable inference matrix extends the prose may_support column of spec section 2.1 with directly-stated semantic fields; cannot_establish_alone is binding and faithful."
+  ],
+  "hash_algorithm": "SHA-256(raw artifact bytes); RFC 8785 for release tuple",
+  "artifact_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "build_release_manifest.py": "1e5fc4b7fc0bfd61a53f6f6ee7a1df0b205fade985a0ac8e26bb559620787d75",
+    "config.py": "1e33d12106d45c4ff9859aaa642159de4c48b1f47e56d025215dc65f380a3901",
+    "enums.py": "7b1a4cee35bc51c70c1eb457ab3bab42ebd5931d0be498934ca6f0dd0fc2f052",
+    "evaluator.py": "c565f9d3345c87bbf1cb8d32991a27a32928dda5a51d33b11acd9953457a40f6",
+    "failure_codes.json": "c7d241c6e33d39ba49083d1ecae959e9af083973657542c8b5c23a9a1fa4baf6",
+    "fixtures/annotation_codebook.json": "f99ad22a251fe752b5ca0df7371bfc4b97da875b8c5a496acbad89669136e280",
+    "fixtures/e2e/corpus_to_episode.json": "459c7df8fdf73cddb0f8afb72b011c719930c4c09882ffc143451323db39ec85",
+    "fixtures/golden/golden_boundary.json": "99934d19ae9b67bf150c2cee88ca1b4cda864f50bcdec8da67212f387ed40737",
+    "fixtures/golden/golden_certified_noop.json": "f83ea3fbfe66d3477ca3b456232aa5780891241a3429027ca291f1710aeffe2b",
+    "fixtures/golden/golden_failure_closed.json": "05c93fd698e1be8ed99d2cd4b24f35c7c9087fd135c2be8cc5d4c8b9a544c10f",
+    "fixtures/golden/golden_positive.json": "e20bc30ceff1c7d6a25c084f102ab612fbd61fb1ca8faa3e383bd4ebb0b42305",
+    "fixtures/golden/golden_semantic_unknown.json": "baa0c709ae50cae135d3a3c41e2b49aee7ecfbebee31041eaec9a20ad0984118",
+    "fixtures/golden/golden_unsupported.json": "0cc09f43c239c52b59430a186e08274913ff1f54f91d6cbab6a0acc76ab1d8db",
+    "fixtures/hashing_vectors.json": "9da1f5766fed5e96277a3088a308ca441d0b38ad272fd3f8a8b6bca9923c3268",
+    "fixtures/inference_matrix.json": "025b7870c3f520112ee7e7eaaaddbb1f9ee36a237b891127b5b46531cb05959d",
+    "fixtures/negative/negative_post_freeze_mutation.json": "2e7d34878b799fc0d762055e66e40bcbc642acd4ae73496cb3928a3f8ff9486f",
+    "fixtures/negative/negative_seed_leakage.json": "0a1d69acea572a45597ba1555d198405e6c1181e31d2d1a21a1c62b08dd3b06c",
+    "graphs.py": "64bdcd60b68740d6d12bd1d093d008dca9d895fa9f154305ca724b7bc8e54b93",
+    "hashing.py": "ff5b6dae1548d02dc5e3ec32cffbb131ab6fdcc5c46aca177aa67145b7cdb2a5",
+    "opportunity.py": "be7ae1a460fa1c6027bf9eb37440345310c613362b19c14b5a0f7e4cf1ec80f8",
+    "pipeline.py": "5f92c05ec218d7111245aaf69b446d04020955168fe6b5a039427e4638f91d2b",
+    "release_config.json": "42e08fe99f8295327d44c6c0ebfb33c5bd91579d8dd12e983d36d192f0e84dfe",
+    "sandbox.py": "3ab0c4e52be955cfe345b68f506ae56486180b6b233afeae878af0df7ca1e18b",
+    "schemas.py": "1fb50cfaf50e1c333d1a1d1b94a7d71b10aadac4415749382e0c095e4c2b3439",
+    "schemas/canonical_responsibility.schema.json": "fb29f97969d5512c3d87905ce45d4f1dac10a572b27528da061604051128e341",
+    "schemas/contract.schema.json": "d809ecb593a2e31c0eef76e90cfcce61544e9118c7fa36618260ed4eca7622e8",
+    "schemas/corpus_card.schema.json": "69f97971fd69633ff99b786afcb49ff57a3dfc7dde5ee8e32013165cf0a3080b",
+    "schemas/episode.schema.json": "9d9a2d1df651e792615b61dc6e46df753e4f7be19981c7763cc809ec73759cf0",
+    "schemas/evidence_bundle.schema.json": "e8fce6f0e80f8c3dfc43018d66d8ada62f4d6e802773e78b75b1ac10ec157fc7",
+    "schemas/evidence_unit.schema.json": "210ab591d6e30a856494b98ce2dab6f12604fefeb8a1de199a5875c0ed88d649",
+    "schemas/failure_codes.schema.json": "19ae153399fe49053e782ce77b0d31ace69c7f0694eef24293d787d67a34211b",
+    "schemas/manifest.schema.json": "532513615382e48207f6c485b41f69e90f0784ae1dd422553a2979d4ebc549de",
+    "schemas/opportunity_predicate.schema.json": "8c320363e4a9cdafa0cf40b6523c884b9e850c895420ed7a966143e2c10f57ce",
+    "schemas/physical_process.schema.json": "b8ea0a76eafa3e890e8212dfd3fe213f81156aa1517c5b06c9f51593b7c9e003",
+    "schemas/query.schema.json": "70764a9143190372446d0a9a39bdfd6cd9cf58b5867d6244c87822377347be44",
+    "schemas/release_config.schema.json": "a2368a5415d401789cd997380daaefca42a4e34dccc4b8bf3f775fd09ce59e42",
+    "schemas/statuses.schema.json": "2799b2b59c34b2e60eb04348087a4679651db1f71131b09ff294c042514971d3",
+    "schemas/temporal_contract_dsl.schema.json": "000feac32bc6f353d1979258f109d57e01a26145c8812e995543536384567d2e",
+    "state_machine.py": "28d9486661a91a95e661d8b0893622984a4456839dce6d2fdd819737c4450142",
+    "tests/__init__.py": "2dd2d85db89a20b7685ed157dc205e48f04631717706c29b6706aa07f9117eef",
+    "tests/run_all.py": "c6a0a26711d24be43c0a9e43621d3b1f4d79969d9e78fc7518c6006d8d17ccde",
+    "tests/test_e2e.py": "2aa717672e04184adcc7d9d06277affb9eb2f7fbc7f085c056c154c70e84fd37",
+    "tests/test_evaluator.py": "286cf9339009ac20a99af0c0155663e6c155c2a83da7b5357c46a1eb0d678bdf",
+    "tests/test_failure_codes.py": "8ccf34f7cff6f4b1104bc51b0345926c5e6ba3702fc6640e5cc7fe6a8ec67a6e",
+    "tests/test_golden.py": "7c12dd7283f2e47e5e37b529e71c37cd2f522d45131c29fa5223ddc599d695d5",
+    "tests/test_graphs_split.py": "51d715fee8357f0c506a383b58f656c5af628cfc7541e01a74eeafe46d595ddf",
+    "tests/test_hashing.py": "44e5473d9f9e1f0788045ee143d702d3eae9d8c9330220883cbaa99e47e7003b",
+    "tests/test_negative.py": "2dece68a99b6f28e51b0f038243c03bd3ec6e92b6a643356e940b7150b0bba70",
+    "tests/test_opportunity.py": "d18f3e8d6b4157cdc10c1061b358e69f2602c5c5f6958aec6ac96a728b713e79",
+    "tests/test_sandbox.py": "f91c29260054cc9c6a02f263095ad5ce00965d5f4d32ec8d089e4b75624492ee",
+    "tests/test_schemas.py": "1cd33d4d0d70f475e25b3e8f7cf454099297edf8be0f55c16155f17836077ec8",
+    "tests/test_state_machine.py": "6e5a91a11ddd01a04e2ac6022b31997c4a6c4601441a29cc0b50de981ba88735",
+    "tests/test_validator.py": "d267815d9cde8ca5bfca888e4502a5c78ed36c4a2d6adf22ca8e5c89be458f37",
+    "validator.py": "2c9a8a2e82445e05b99314ed5c0a288bc3e7acc81372a72975b6c39b118a77da"
+  },
+  "release_tuple_sha256": "9281b2930d40ab8d2998527e315e885ceddb6f27888ca3faff744bbc568cfb7f"
+}

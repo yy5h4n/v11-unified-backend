@@ -1,0 +1,2416 @@
+{
+  "campaign": {
+    "causal": {
+      "branches": [
+        {
+          "action": {
+            "zone_a_airflow_request": 0.0,
+            "zone_b_airflow_request": 0.0
+          },
+          "branch": 0,
+          "native_effect": null,
+          "observation": {
+            "zone_a_actual_airflow_m3_s": 0.0,
+            "zone_a_co2_ppm": 2140.71113375979,
+            "zone_a_relative_humidity_pct": 100.0,
+            "zone_a_temperature_c": 17.227465423610113,
+            "zone_b_actual_airflow_m3_s": 0.0,
+            "zone_b_co2_ppm": 2140.711133759773,
+            "zone_b_relative_humidity_pct": 100.0,
+            "zone_b_temperature_c": 17.22746542736064
+          },
+          "prefix_observation": {
+            "zone_a_actual_airflow_m3_s": 0.0,
+            "zone_a_co2_ppm": 2112.365486066746,
+            "zone_a_relative_humidity_pct": 100.0,
+            "zone_a_temperature_c": 17.24530206341635,
+            "zone_b_actual_airflow_m3_s": 0.0,
+            "zone_b_co2_ppm": 2112.3654860667266,
+            "zone_b_relative_humidity_pct": 100.0,
+            "zone_b_temperature_c": 17.245302067202775
+          },
+          "prefix_time": 900.0,
+          "time": 7200.0,
+          "trace": [
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2116.4148643086132,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.239294545683972,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2116.414864308594,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.239294549464432
+              },
+              "time_seconds": 1800.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2120.4642425504767,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.236196263724445,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2120.464242550459,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.236196267499096
+              },
+              "time_seconds": 2700.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2124.5136207923388,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.23423646480521,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2124.513620792322,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.23423646859615
+              },
+              "time_seconds": 3600.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2128.5629990342013,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.232475422576314,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2128.5629990341845,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.232475426385
+              },
+              "time_seconds": 4500.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2132.6123772760643,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.230730055469504,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2132.6123772760475,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.23073005926118
+              },
+              "time_seconds": 5400.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2136.6617555179273,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.229050112152937,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2136.6617555179105,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.229050115919716
+              },
+              "time_seconds": 6300.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 0.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.0,
+                "zone_a_co2_ppm": 2140.71113375979,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.227465423610113,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2140.711133759773,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.22746542736064
+              },
+              "time_seconds": 7200.0
+            }
+          ]
+        },
+        {
+          "action": {
+            "zone_a_airflow_request": 1.0,
+            "zone_b_airflow_request": 0.0
+          },
+          "branch": 1,
+          "native_effect": null,
+          "observation": {
+            "zone_a_actual_airflow_m3_s": 0.6745152958826144,
+            "zone_a_co2_ppm": 1124.9934855091549,
+            "zone_a_relative_humidity_pct": 99.93775541825187,
+            "zone_a_temperature_c": 17.209406171056212,
+            "zone_b_actual_airflow_m3_s": 0.0,
+            "zone_b_co2_ppm": 2140.7111337597726,
+            "zone_b_relative_humidity_pct": 100.0,
+            "zone_b_temperature_c": 17.227231586995657
+          },
+          "prefix_observation": {
+            "zone_a_actual_airflow_m3_s": 0.0,
+            "zone_a_co2_ppm": 2112.365486066746,
+            "zone_a_relative_humidity_pct": 100.0,
+            "zone_a_temperature_c": 17.24530206341635,
+            "zone_b_actual_airflow_m3_s": 0.0,
+            "zone_b_co2_ppm": 2112.3654860667266,
+            "zone_b_relative_humidity_pct": 100.0,
+            "zone_b_temperature_c": 17.245302067202775
+          },
+          "prefix_time": 900.0,
+          "time": 7200.0,
+          "trace": [
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6755922979958303,
+                "zone_a_co2_ppm": 1997.5324751604585,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.233303836291647,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2116.414864308594,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.239294549464432
+              },
+              "time_seconds": 1800.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6752124467652895,
+                "zone_a_co2_ppm": 1820.4119727721743,
+                "zone_a_relative_humidity_pct": 100.0,
+                "zone_a_temperature_c": 17.223656955390577,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2120.464242550459,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.236196267499096
+              },
+              "time_seconds": 2700.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6749126054352368,
+                "zone_a_co2_ppm": 1638.9349439399407,
+                "zone_a_relative_humidity_pct": 99.99144318188678,
+                "zone_a_temperature_c": 17.21800974963874,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2124.513620792322,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.23423646859615
+              },
+              "time_seconds": 3600.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6747367308083999,
+                "zone_a_co2_ppm": 1478.1012960563137,
+                "zone_a_relative_humidity_pct": 99.97664568062487,
+                "zone_a_temperature_c": 17.215003143936258,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2128.5629990341845,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.232475426385
+              },
+              "time_seconds": 4500.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6746408134084965,
+                "zone_a_co2_ppm": 1341.4581740230508,
+                "zone_a_relative_humidity_pct": 99.96122604434099,
+                "zone_a_temperature_c": 17.212999723032237,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2132.612377276047,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.23067251800568
+              },
+              "time_seconds": 5400.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6745750218559173,
+                "zone_a_co2_ppm": 1225.1840088940628,
+                "zone_a_relative_humidity_pct": 99.9481498573263,
+                "zone_a_temperature_c": 17.211189404029486,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2136.6617555179096,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.22890328974031
+              },
+              "time_seconds": 6300.0
+            },
+            {
+              "action": {
+                "zone_a_airflow_request": 1.0,
+                "zone_b_airflow_request": 0.0
+              },
+              "effect": null,
+              "observation": {
+                "zone_a_actual_airflow_m3_s": 0.6745152958826144,
+                "zone_a_co2_ppm": 1124.9934855091549,
+                "zone_a_relative_humidity_pct": 99.93775541825187,
+                "zone_a_temperature_c": 17.209406171056212,
+                "zone_b_actual_airflow_m3_s": 0.0,
+                "zone_b_co2_ppm": 2140.7111337597726,
+                "zone_b_relative_humidity_pct": 100.0,
+                "zone_b_temperature_c": 17.227231586995657
+              },
+              "time_seconds": 7200.0
+            }
+          ]
+        }
+      ],
+      "future_leakage_check": true,
+      "same_prefix_divergence": true
+    },
+    "concurrency": {
+      "distinct_action_controls": true,
+      "episodes": 2,
+      "pairs": [
+        {
+          "concurrent": {
+            "cadence_seconds": 900.0,
+            "declared_horizon_seconds": 20700.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 1800.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d3_energyplus_shared_ventilation_sessions/v11_backend_sessions/episode_eo__o6kn",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "zone_a_airflow_request": 0.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.0,
+                  "zone_a_co2_ppm": 2112.365486066746,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.24530206341635,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2112.3654860667266,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.245302067202775
+                },
+                "observation_digest": "7b2e939295f4c958c6e3d5d8fe9a257673822f45fd8db2d7d6ad6be760e9cd66",
+                "time_seconds": 900.0
+              },
+              {
+                "action": {
+                  "zone_a_airflow_request": 0.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.0,
+                  "zone_a_co2_ppm": 2116.4148643086132,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.239294545683972,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2116.414864308594,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.239294549464432
+                },
+                "observation_digest": "99a2bc619157179bd1a6370c1a6ee5f745880c60698240c1fe01b74524183920",
+                "time_seconds": 1800.0
+              }
+            ],
+            "wall_seconds": 0.1410649169702083,
+            "worker_pid": 43039
+          },
+          "serial": {
+            "cadence_seconds": 900.0,
+            "declared_horizon_seconds": 20700.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 1800.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "zone_a_airflow_request": 0.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.0,
+                  "zone_a_co2_ppm": 2112.365486066746,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.24530206341635,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2112.3654860667266,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.245302067202775
+                },
+                "observation_digest": "7b2e939295f4c958c6e3d5d8fe9a257673822f45fd8db2d7d6ad6be760e9cd66",
+                "time_seconds": 900.0
+              },
+              {
+                "action": {
+                  "zone_a_airflow_request": 0.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.0,
+                  "zone_a_co2_ppm": 2116.4148643086132,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.239294545683972,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2116.414864308594,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.239294549464432
+                },
+                "observation_digest": "99a2bc619157179bd1a6370c1a6ee5f745880c60698240c1fe01b74524183920",
+                "time_seconds": 1800.0
+              }
+            ],
+            "wall_seconds": 0.11599604203365743,
+            "worker_pid": 37553
+          }
+        },
+        {
+          "concurrent": {
+            "cadence_seconds": 900.0,
+            "declared_horizon_seconds": 20700.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 1800.0,
+            "seed": 0,
+            "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/episode_campaign_round9_final/d3_energyplus_shared_ventilation_sessions/v11_backend_sessions/episode_xi23zh6o",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "zone_a_airflow_request": 1.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.675890562112485,
+                  "zone_a_co2_ppm": 1993.7173378719087,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.23905039488907,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2112.3654860667266,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.245302067202775
+                },
+                "observation_digest": "44bc7f8a9fe997bd08cc5d6e44ce63f069089c8c09fbe042c025e0b9698043e5",
+                "time_seconds": 900.0
+              },
+              {
+                "action": {
+                  "zone_a_airflow_request": 1.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.6753884041548045,
+                  "zone_a_co2_ppm": 1816.9764078102914,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.226396479020952,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2116.414864308594,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.239294549464432
+                },
+                "observation_digest": "8262a76ad8256c12d134a19c9ae3f1505583a3b7a4baaf626000bca8685300e5",
+                "time_seconds": 1800.0
+              }
+            ],
+            "wall_seconds": 0.13915079203434289,
+            "worker_pid": 43040
+          },
+          "serial": {
+            "cadence_seconds": 900.0,
+            "declared_horizon_seconds": 20700.0,
+            "full_horizon": false,
+            "native_time_origin_seconds": 0.0,
+            "native_time_seconds": 1800.0,
+            "seed": 0,
+            "session_dir": "",
+            "steps": 2,
+            "termination_reason": "horizon_not_reached",
+            "transition_digests": [
+              {
+                "action": {
+                  "zone_a_airflow_request": 1.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+                "done": false,
+                "effect": null,
+                "index": 0,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.675890562112485,
+                  "zone_a_co2_ppm": 1993.7173378719087,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.23905039488907,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2112.3654860667266,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.245302067202775
+                },
+                "observation_digest": "44bc7f8a9fe997bd08cc5d6e44ce63f069089c8c09fbe042c025e0b9698043e5",
+                "time_seconds": 900.0
+              },
+              {
+                "action": {
+                  "zone_a_airflow_request": 1.0,
+                  "zone_b_airflow_request": 0.0
+                },
+                "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+                "done": false,
+                "effect": null,
+                "index": 1,
+                "observation": {
+                  "zone_a_actual_airflow_m3_s": 0.6753884041548045,
+                  "zone_a_co2_ppm": 1816.9764078102914,
+                  "zone_a_relative_humidity_pct": 100.0,
+                  "zone_a_temperature_c": 17.226396479020952,
+                  "zone_b_actual_airflow_m3_s": 0.0,
+                  "zone_b_co2_ppm": 2116.414864308594,
+                  "zone_b_relative_humidity_pct": 100.0,
+                  "zone_b_temperature_c": 17.239294549464432
+                },
+                "observation_digest": "8262a76ad8256c12d134a19c9ae3f1505583a3b7a4baaf626000bca8685300e5",
+                "time_seconds": 1800.0
+              }
+            ],
+            "wall_seconds": 0.09984612499829382,
+            "worker_pid": 37553
+          }
+        }
+      ],
+      "serial_match": true
+    },
+    "cycles": [
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_kygj0bpz",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.12593345902860165
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_wj51jxio",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.12373741599731147
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_rrngo7_0",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11859887500759214
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_vbm_y58s",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.12853966606780887
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_n9uazg7r",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11585925007238984
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_bp337qa7",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11950445896945894
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_defsnn14",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11639895802363753
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_so796ju7",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11870316707063466
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode_mv7e_qt7",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.11738754098769277
+      },
+      {
+        "cleanup": {
+          "cleanup_failed": false,
+          "owned_children_remaining": 0,
+          "route_closed": true,
+          "session_dir": "/private/tmp/v11-production-repair/prototypes/v11_unified_process_compiler/generated/cycle_sessions/v11_backend_sessions/episode__yxzck93",
+          "verification": "owned worker process-group reap and disappearance check"
+        },
+        "full_horizon": false,
+        "resource_after": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "resource_before": {
+          "pid": 37553,
+          "rss_bytes": 935739392,
+          "thread_count": 1
+        },
+        "wall_seconds": 0.12052354100160301
+      }
+    ],
+    "execution_started_monotonic": 708974.900507583,
+    "metadata": {
+      "accepted_dt_seconds": [
+        900.0
+      ],
+      "cadence_seconds": 900.0,
+      "execution_mode": "process_isolated",
+      "horizon_policy": "native_elapsed_window_measured",
+      "horizon_seconds": 20700.0,
+      "layer": "D3",
+      "native_time_unit": "seconds",
+      "route_id": "d3_energyplus_shared_ventilation",
+      "termination": "native_or_20700s_elapsed_window"
+    },
+    "reset_close_cycles": 10,
+    "route_id": "d3_energyplus_shared_ventilation",
+    "schema": "v11.backend.episode.campaign.v2",
+    "seed_runs": [
+      {
+        "cadence_seconds": 900.0,
+        "declared_horizon_seconds": 20700.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 20700.0,
+        "seed": 0,
+        "session_dir": "",
+        "steps": 23,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 2112.365486066746,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.24530206341635,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2112.3654860667266,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.245302067202775
+            },
+            "observation_digest": "7b2e939295f4c958c6e3d5d8fe9a257673822f45fd8db2d7d6ad6be760e9cd66",
+            "time_seconds": 900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6755922979958303,
+              "zone_a_co2_ppm": 1997.5324751604585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.233303836291647,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2116.414864308594,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.239294549464432
+            },
+            "observation_digest": "e5b5b3d049ab5231518008d4faeb3cd60948df3537eca70cf723b4ec0cca4a2c",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1925.9294239444062,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22965640744957,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2120.464242550459,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.236196267499096
+            },
+            "observation_digest": "8030d933f2f51e206aa7ac7e60fdb83ee49af5e2e8669ad4a3883591ed8dffca",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6751080452100966,
+              "zone_a_co2_ppm": 1799.5186090156328,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224213593686883,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2124.513620792322,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23423646859615
+            },
+            "observation_digest": "6abc0fa265bb1b7e566c185cc2d629600af7b6689864cecfa8c3fc8645dfe7b1",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1734.3028515048939,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224216666940823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2128.5629990341845,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.232475426385
+            },
+            "observation_digest": "4573ac3b6a23b6a80ab9a25299baca0a74025c9c28919bb93ad1de7a03d4d52d",
+            "time_seconds": 4500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6749370218779738,
+              "zone_a_co2_ppm": 1627.0328989773557,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22021194060367,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2132.612377276047,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23067251800568
+            },
+            "observation_digest": "6ac372f7698b185a3bbc8f93713d5f6804971707bb96c8b3d6c479fa7ffc130c",
+            "time_seconds": 5400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1572.836364139164,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22049913132221,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2136.6617555179096,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22890328974031
+            },
+            "observation_digest": "da73ab6666de141d70b942ae9ad7dd2aaad60496b90853b2e23eaf426cc56bca",
+            "time_seconds": 6300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674817717900759,
+              "zone_a_co2_ppm": 1480.1369727924534,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21671042600135,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2140.7111337597726,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.227231586995657
+            },
+            "observation_digest": "0c87a2c7c78b0628578cb562f3ea6059c66a5201096f3587840b61303ae8ff62",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1433.2091182197792,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.217130380618148,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2144.760512001635,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.225653610045015
+            },
+            "observation_digest": "7bcef0d0d24e55197255b595171de18db646d32d72aa0cbb1e54dbb3e4136e55",
+            "time_seconds": 8100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6747099456753941,
+              "zone_a_co2_ppm": 1352.1042823381606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21364314705214,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2148.8098902434976,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22419080148182
+            },
+            "observation_digest": "050a8df15d8250c9c470bd3b3c8bedf3a8adba4160bf6673439293b6b8ae718e",
+            "time_seconds": 9000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1311.2332030131788,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.214258864553823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2152.85926848536,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.222799758476608
+            },
+            "observation_digest": "94573efef08c43bea1c7f5dad84d7f0cbfd982c9c62d4e2775c9dd10edbc41a9",
+            "time_seconds": 9900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6746178864339429,
+              "zone_a_co2_ppm": 1240.2729996254284,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.210966578269556,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2156.9086467272227,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22144192836858
+            },
+            "observation_digest": "bc8b642f5c832fb5ebc33285effde34b0911cb65afdca7d41ef9706915e3b577",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1204.7563636606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.211608173541958,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2160.9580249690857,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.220102384170456
+            },
+            "observation_digest": "f97f4f94b2f8ca502d9ebd951d6f12df409a1676c51af301f5bbef931e5a608b",
+            "time_seconds": 11700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674532618155886,
+              "zone_a_co2_ppm": 1142.6862542565916,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.208403926339916,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2165.0074032109483,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21878124521449
+            },
+            "observation_digest": "fe80d72d04e5f1c2e90c033c0944ef6b6d40a27e67d5b79e074812d1e0e6882f",
+            "time_seconds": 12600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1111.8534156704802,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.209039556593336,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2169.0567814528113,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21748063192841
+            },
+            "observation_digest": "f458764282c5047cae9a3c39b773202deaa344eda04e9f6d4685fb8d146e6236",
+            "time_seconds": 13500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6744499916272607,
+              "zone_a_co2_ppm": 1057.5397379345488,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.205920454216777,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2173.106159694674,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.216201386786736
+            },
+            "observation_digest": "60844f644d98eb8faaacdf43d7a718f2b2afbddb77cbbed1c243571d5326f750",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1030.791210886538,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.206553657119343,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2177.1555379365363,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.214942480454013
+            },
+            "observation_digest": "e942b4421d6ce6bb6142559a31ff038f731659dcf9d95b64165f5b2564d0c802",
+            "time_seconds": 15300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674370025510555,
+              "zone_a_co2_ppm": 983.243266548595,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.203516220393237,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2181.2049161783993,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.213703024225737
+            },
+            "observation_digest": "646a560eab5c3683f56ed1319b9330bf5ad065a6ddd968329af85f3c2e24d819",
+            "time_seconds": 16200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 960.0576041105585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.2041439934411,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2185.254294420262,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21248206369814
+            },
+            "observation_digest": "c964e603d7f9aeeecfd8933f1ac39a0fd8c4898537d5d6ceb8261f6bd706a96d",
+            "time_seconds": 17100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742925044850993,
+              "zone_a_co2_ppm": 918.4125221340519,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.20118294159164,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2189.303672662125,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21127913729766
+            },
+            "observation_digest": "1725081456dd515d7c71650a7a685d8151b15a43bafc75c49095a9627f8a5661",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 898.3354330878432,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.201803512576713,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2193.353050903988,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.210093656965498
+            },
+            "observation_digest": "6e9c0eaf5d178985c0bc9d50328cc72ec88c317039106150d559b910e188cf3e",
+            "time_seconds": 18900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742174572809253,
+              "zone_a_co2_ppm": 861.8406120191142,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.198994420480098,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2197.4024291458504,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.208925200273523
+            },
+            "observation_digest": "d3ddcc587d501dedc32c8a54daa5bd2ded2f0f2451d0c135db1fcbe774b0543d",
+            "time_seconds": 19800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": true,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 844.4757665702498,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.199615469500294,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2201.4518073877134,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.207773243531975
+            },
+            "observation_digest": "974f804c2e788712873a148f8f5097697ecd48823b9fcf722bd5ed915fcd2790",
+            "time_seconds": 20700.0
+          }
+        ],
+        "wall_seconds": 0.12018708395771682,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 900.0,
+        "declared_horizon_seconds": 20700.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 20700.0,
+        "seed": 1,
+        "session_dir": "",
+        "steps": 23,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 2112.365486066746,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.24530206341635,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2112.3654860667266,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.245302067202775
+            },
+            "observation_digest": "7b2e939295f4c958c6e3d5d8fe9a257673822f45fd8db2d7d6ad6be760e9cd66",
+            "time_seconds": 900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6755922979958303,
+              "zone_a_co2_ppm": 1997.5324751604585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.233303836291647,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2116.414864308594,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.239294549464432
+            },
+            "observation_digest": "e5b5b3d049ab5231518008d4faeb3cd60948df3537eca70cf723b4ec0cca4a2c",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1925.9294239444062,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22965640744957,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2120.464242550459,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.236196267499096
+            },
+            "observation_digest": "8030d933f2f51e206aa7ac7e60fdb83ee49af5e2e8669ad4a3883591ed8dffca",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6751080452100966,
+              "zone_a_co2_ppm": 1799.5186090156328,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224213593686883,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2124.513620792322,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23423646859615
+            },
+            "observation_digest": "6abc0fa265bb1b7e566c185cc2d629600af7b6689864cecfa8c3fc8645dfe7b1",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1734.3028515048939,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224216666940823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2128.5629990341845,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.232475426385
+            },
+            "observation_digest": "4573ac3b6a23b6a80ab9a25299baca0a74025c9c28919bb93ad1de7a03d4d52d",
+            "time_seconds": 4500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6749370218779738,
+              "zone_a_co2_ppm": 1627.0328989773557,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22021194060367,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2132.612377276047,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23067251800568
+            },
+            "observation_digest": "6ac372f7698b185a3bbc8f93713d5f6804971707bb96c8b3d6c479fa7ffc130c",
+            "time_seconds": 5400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1572.836364139164,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22049913132221,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2136.6617555179096,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22890328974031
+            },
+            "observation_digest": "da73ab6666de141d70b942ae9ad7dd2aaad60496b90853b2e23eaf426cc56bca",
+            "time_seconds": 6300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674817717900759,
+              "zone_a_co2_ppm": 1480.1369727924534,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21671042600135,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2140.7111337597726,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.227231586995657
+            },
+            "observation_digest": "0c87a2c7c78b0628578cb562f3ea6059c66a5201096f3587840b61303ae8ff62",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1433.2091182197792,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.217130380618148,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2144.760512001635,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.225653610045015
+            },
+            "observation_digest": "7bcef0d0d24e55197255b595171de18db646d32d72aa0cbb1e54dbb3e4136e55",
+            "time_seconds": 8100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6747099456753941,
+              "zone_a_co2_ppm": 1352.1042823381606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21364314705214,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2148.8098902434976,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22419080148182
+            },
+            "observation_digest": "050a8df15d8250c9c470bd3b3c8bedf3a8adba4160bf6673439293b6b8ae718e",
+            "time_seconds": 9000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1311.2332030131788,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.214258864553823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2152.85926848536,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.222799758476608
+            },
+            "observation_digest": "94573efef08c43bea1c7f5dad84d7f0cbfd982c9c62d4e2775c9dd10edbc41a9",
+            "time_seconds": 9900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6746178864339429,
+              "zone_a_co2_ppm": 1240.2729996254284,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.210966578269556,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2156.9086467272227,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22144192836858
+            },
+            "observation_digest": "bc8b642f5c832fb5ebc33285effde34b0911cb65afdca7d41ef9706915e3b577",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1204.7563636606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.211608173541958,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2160.9580249690857,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.220102384170456
+            },
+            "observation_digest": "f97f4f94b2f8ca502d9ebd951d6f12df409a1676c51af301f5bbef931e5a608b",
+            "time_seconds": 11700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674532618155886,
+              "zone_a_co2_ppm": 1142.6862542565916,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.208403926339916,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2165.0074032109483,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21878124521449
+            },
+            "observation_digest": "fe80d72d04e5f1c2e90c033c0944ef6b6d40a27e67d5b79e074812d1e0e6882f",
+            "time_seconds": 12600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1111.8534156704802,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.209039556593336,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2169.0567814528113,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21748063192841
+            },
+            "observation_digest": "f458764282c5047cae9a3c39b773202deaa344eda04e9f6d4685fb8d146e6236",
+            "time_seconds": 13500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6744499916272607,
+              "zone_a_co2_ppm": 1057.5397379345488,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.205920454216777,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2173.106159694674,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.216201386786736
+            },
+            "observation_digest": "60844f644d98eb8faaacdf43d7a718f2b2afbddb77cbbed1c243571d5326f750",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1030.791210886538,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.206553657119343,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2177.1555379365363,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.214942480454013
+            },
+            "observation_digest": "e942b4421d6ce6bb6142559a31ff038f731659dcf9d95b64165f5b2564d0c802",
+            "time_seconds": 15300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674370025510555,
+              "zone_a_co2_ppm": 983.243266548595,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.203516220393237,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2181.2049161783993,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.213703024225737
+            },
+            "observation_digest": "646a560eab5c3683f56ed1319b9330bf5ad065a6ddd968329af85f3c2e24d819",
+            "time_seconds": 16200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 960.0576041105585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.2041439934411,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2185.254294420262,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21248206369814
+            },
+            "observation_digest": "c964e603d7f9aeeecfd8933f1ac39a0fd8c4898537d5d6ceb8261f6bd706a96d",
+            "time_seconds": 17100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742925044850993,
+              "zone_a_co2_ppm": 918.4125221340519,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.20118294159164,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2189.303672662125,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21127913729766
+            },
+            "observation_digest": "1725081456dd515d7c71650a7a685d8151b15a43bafc75c49095a9627f8a5661",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 898.3354330878432,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.201803512576713,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2193.353050903988,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.210093656965498
+            },
+            "observation_digest": "6e9c0eaf5d178985c0bc9d50328cc72ec88c317039106150d559b910e188cf3e",
+            "time_seconds": 18900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742174572809253,
+              "zone_a_co2_ppm": 861.8406120191142,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.198994420480098,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2197.4024291458504,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.208925200273523
+            },
+            "observation_digest": "d3ddcc587d501dedc32c8a54daa5bd2ded2f0f2451d0c135db1fcbe774b0543d",
+            "time_seconds": 19800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": true,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 844.4757665702498,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.199615469500294,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2201.4518073877134,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.207773243531975
+            },
+            "observation_digest": "974f804c2e788712873a148f8f5097697ecd48823b9fcf722bd5ed915fcd2790",
+            "time_seconds": 20700.0
+          }
+        ],
+        "wall_seconds": 0.1060885830083862,
+        "worker_pid": 37553
+      },
+      {
+        "cadence_seconds": 900.0,
+        "declared_horizon_seconds": 20700.0,
+        "full_horizon": true,
+        "native_time_origin_seconds": 0.0,
+        "native_time_seconds": 20700.0,
+        "seed": 2,
+        "session_dir": "",
+        "steps": 23,
+        "termination_reason": "declared_horizon",
+        "transition_digests": [
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 0,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 2112.365486066746,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.24530206341635,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2112.3654860667266,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.245302067202775
+            },
+            "observation_digest": "7b2e939295f4c958c6e3d5d8fe9a257673822f45fd8db2d7d6ad6be760e9cd66",
+            "time_seconds": 900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 1,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6755922979958303,
+              "zone_a_co2_ppm": 1997.5324751604585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.233303836291647,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2116.414864308594,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.239294549464432
+            },
+            "observation_digest": "e5b5b3d049ab5231518008d4faeb3cd60948df3537eca70cf723b4ec0cca4a2c",
+            "time_seconds": 1800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 2,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1925.9294239444062,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22965640744957,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2120.464242550459,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.236196267499096
+            },
+            "observation_digest": "8030d933f2f51e206aa7ac7e60fdb83ee49af5e2e8669ad4a3883591ed8dffca",
+            "time_seconds": 2700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 3,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6751080452100966,
+              "zone_a_co2_ppm": 1799.5186090156328,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224213593686883,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2124.513620792322,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23423646859615
+            },
+            "observation_digest": "6abc0fa265bb1b7e566c185cc2d629600af7b6689864cecfa8c3fc8645dfe7b1",
+            "time_seconds": 3600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 4,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1734.3028515048939,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.224216666940823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2128.5629990341845,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.232475426385
+            },
+            "observation_digest": "4573ac3b6a23b6a80ab9a25299baca0a74025c9c28919bb93ad1de7a03d4d52d",
+            "time_seconds": 4500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 5,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6749370218779738,
+              "zone_a_co2_ppm": 1627.0328989773557,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22021194060367,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2132.612377276047,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.23067251800568
+            },
+            "observation_digest": "6ac372f7698b185a3bbc8f93713d5f6804971707bb96c8b3d6c479fa7ffc130c",
+            "time_seconds": 5400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 6,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1572.836364139164,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.22049913132221,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2136.6617555179096,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22890328974031
+            },
+            "observation_digest": "da73ab6666de141d70b942ae9ad7dd2aaad60496b90853b2e23eaf426cc56bca",
+            "time_seconds": 6300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 7,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674817717900759,
+              "zone_a_co2_ppm": 1480.1369727924534,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21671042600135,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2140.7111337597726,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.227231586995657
+            },
+            "observation_digest": "0c87a2c7c78b0628578cb562f3ea6059c66a5201096f3587840b61303ae8ff62",
+            "time_seconds": 7200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 8,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1433.2091182197792,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.217130380618148,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2144.760512001635,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.225653610045015
+            },
+            "observation_digest": "7bcef0d0d24e55197255b595171de18db646d32d72aa0cbb1e54dbb3e4136e55",
+            "time_seconds": 8100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 9,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6747099456753941,
+              "zone_a_co2_ppm": 1352.1042823381606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.21364314705214,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2148.8098902434976,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22419080148182
+            },
+            "observation_digest": "050a8df15d8250c9c470bd3b3c8bedf3a8adba4160bf6673439293b6b8ae718e",
+            "time_seconds": 9000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 10,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1311.2332030131788,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.214258864553823,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2152.85926848536,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.222799758476608
+            },
+            "observation_digest": "94573efef08c43bea1c7f5dad84d7f0cbfd982c9c62d4e2775c9dd10edbc41a9",
+            "time_seconds": 9900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 11,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6746178864339429,
+              "zone_a_co2_ppm": 1240.2729996254284,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.210966578269556,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2156.9086467272227,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.22144192836858
+            },
+            "observation_digest": "bc8b642f5c832fb5ebc33285effde34b0911cb65afdca7d41ef9706915e3b577",
+            "time_seconds": 10800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 12,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1204.7563636606,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.211608173541958,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2160.9580249690857,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.220102384170456
+            },
+            "observation_digest": "f97f4f94b2f8ca502d9ebd951d6f12df409a1676c51af301f5bbef931e5a608b",
+            "time_seconds": 11700.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 13,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674532618155886,
+              "zone_a_co2_ppm": 1142.6862542565916,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.208403926339916,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2165.0074032109483,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21878124521449
+            },
+            "observation_digest": "fe80d72d04e5f1c2e90c033c0944ef6b6d40a27e67d5b79e074812d1e0e6882f",
+            "time_seconds": 12600.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 14,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1111.8534156704802,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.209039556593336,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2169.0567814528113,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21748063192841
+            },
+            "observation_digest": "f458764282c5047cae9a3c39b773202deaa344eda04e9f6d4685fb8d146e6236",
+            "time_seconds": 13500.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 15,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6744499916272607,
+              "zone_a_co2_ppm": 1057.5397379345488,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.205920454216777,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2173.106159694674,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.216201386786736
+            },
+            "observation_digest": "60844f644d98eb8faaacdf43d7a718f2b2afbddb77cbbed1c243571d5326f750",
+            "time_seconds": 14400.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 16,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 1030.791210886538,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.206553657119343,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2177.1555379365363,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.214942480454013
+            },
+            "observation_digest": "e942b4421d6ce6bb6142559a31ff038f731659dcf9d95b64165f5b2564d0c802",
+            "time_seconds": 15300.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 17,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.674370025510555,
+              "zone_a_co2_ppm": 983.243266548595,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.203516220393237,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2181.2049161783993,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.213703024225737
+            },
+            "observation_digest": "646a560eab5c3683f56ed1319b9330bf5ad065a6ddd968329af85f3c2e24d819",
+            "time_seconds": 16200.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 18,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 960.0576041105585,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.2041439934411,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2185.254294420262,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21248206369814
+            },
+            "observation_digest": "c964e603d7f9aeeecfd8933f1ac39a0fd8c4898537d5d6ceb8261f6bd706a96d",
+            "time_seconds": 17100.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 19,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742925044850993,
+              "zone_a_co2_ppm": 918.4125221340519,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.20118294159164,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2189.303672662125,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.21127913729766
+            },
+            "observation_digest": "1725081456dd515d7c71650a7a685d8151b15a43bafc75c49095a9627f8a5661",
+            "time_seconds": 18000.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": false,
+            "effect": null,
+            "index": 20,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 898.3354330878432,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.201803512576713,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2193.353050903988,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.210093656965498
+            },
+            "observation_digest": "6e9c0eaf5d178985c0bc9d50328cc72ec88c317039106150d559b910e188cf3e",
+            "time_seconds": 18900.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 1.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "fe7b03e203e763c44531e6cb086762566928abebb79335d4114431134a079d20",
+            "done": false,
+            "effect": null,
+            "index": 21,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.6742174572809253,
+              "zone_a_co2_ppm": 861.8406120191142,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.198994420480098,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2197.4024291458504,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.208925200273523
+            },
+            "observation_digest": "d3ddcc587d501dedc32c8a54daa5bd2ded2f0f2451d0c135db1fcbe774b0543d",
+            "time_seconds": 19800.0
+          },
+          {
+            "action": {
+              "zone_a_airflow_request": 0.0,
+              "zone_b_airflow_request": 0.0
+            },
+            "action_digest": "a6ac97cbbe41a7fbdb7e793d17273766729624390479536ee69f466c07b30428",
+            "done": true,
+            "effect": null,
+            "index": 22,
+            "observation": {
+              "zone_a_actual_airflow_m3_s": 0.0,
+              "zone_a_co2_ppm": 844.4757665702498,
+              "zone_a_relative_humidity_pct": 100.0,
+              "zone_a_temperature_c": 17.199615469500294,
+              "zone_b_actual_airflow_m3_s": 0.0,
+              "zone_b_co2_ppm": 2201.4518073877134,
+              "zone_b_relative_humidity_pct": 100.0,
+              "zone_b_temperature_c": 17.207773243531975
+            },
+            "observation_digest": "974f804c2e788712873a148f8f5097697ecd48823b9fcf722bd5ed915fcd2790",
+            "time_seconds": 20700.0
+          }
+        ],
+        "wall_seconds": 0.10454241593834013,
+        "worker_pid": 37553
+      }
+    ],
+    "source_bindings": {
+      "d3_energyplus_shared_ventilation_adapter.py": "ae85a6b4e6b02c2eed53bad7c994fb312e7a38c6eb926fbe47847c93fb9fac58",
+      "shared_assets/energyplus_v26.1.0/EnergyPlus-26.1.0-6f2e40d102-Darwin-macOS13-arm64/energyplus": "187a4a2a4e4c99cae7406ce4844bdb2d59877600bbb554a9320062c5d5546d6e",
+      "tools/backend_acceptance_runner.py": "b309d4b53c79fa6fbfc6096a86ff375a26bac841392a17df71a41f71ea67ce78",
+      "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+      "unified_compiler/route_registry.py": "5aa2ae55f22bbf72db21a0c533f96794be453995365d18773d58c73851ae4792"
+    },
+    "wall_seconds": 2.4914987079100683
+  },
+  "checks": {
+    "coupling_supported": true,
+    "episode_ready": true,
+    "full_horizon": true,
+    "future_leakage_check": true,
+    "mechanism_gate": true,
+    "reset_close_loops": 10,
+    "reset_observe_legal_actions": true,
+    "same_prefix_causality": true,
+    "seed_matrix": 3,
+    "two_actions": true
+  },
+  "horizon_seconds": 20700.0,
+  "metadata": {
+    "accepted_dt_seconds": [
+      900.0
+    ],
+    "cadence_seconds": 900.0,
+    "execution_mode": "process_isolated",
+    "horizon_policy": "native_elapsed_window_measured",
+    "horizon_seconds": 20700.0,
+    "layer": "D3",
+    "native_time_unit": "seconds",
+    "route_id": "d3_energyplus_shared_ventilation",
+    "termination": "native_or_20700s_elapsed_window"
+  },
+  "route_id": "d3_energyplus_shared_ventilation",
+  "runner_wall_seconds": 2.4914987079100683,
+  "seed": 0,
+  "source_bindings": {
+    "d3_energyplus_shared_ventilation_adapter.py": "ae85a6b4e6b02c2eed53bad7c994fb312e7a38c6eb926fbe47847c93fb9fac58",
+    "shared_assets/energyplus_v26.1.0/EnergyPlus-26.1.0-6f2e40d102-Darwin-macOS13-arm64/energyplus": "187a4a2a4e4c99cae7406ce4844bdb2d59877600bbb554a9320062c5d5546d6e",
+    "tools/assemble_backend_acceptance.py": "8063981edf761f8c4f405b844c367be2479a7d1cf06262d952d99c77e54f6692",
+    "tools/backend_acceptance_runner.py": "070bdd429d5b455ad7332ee5b2dcba09a95482d8cc0395d7e63a58f4f2a00830",
+    "tools/run_episode_campaign.py": "318b6f30dded6adc3dac2d9d7c901b70be4348631231f7fec98a06e9268f80ab",
+    "tools/run_stability_campaign.py": "02e5b1be827e7796e4ed6d219b06921b2280723f314dee03b207678018bf840b",
+    "unified_compiler/agent_interface.py": "a11c03946895eba2fc0c589a30ee6b183f6e2c028a04a960452e96328cfc8a59",
+    "unified_compiler/route_registry.py": "8483f77d49263d999a54b3fb24f6f88294d647285babae13462a4bde4ffa62c3"
+  },
+  "status": "passed",
+  "wall_seconds": 2.4914987079100683
+}

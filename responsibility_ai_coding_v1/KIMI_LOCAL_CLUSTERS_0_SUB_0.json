@@ -1,0 +1,149 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_0_SUB_0",
+  "clusters": [
+    {
+      "canonical_name": "Maintain comfortable indoor temperature where and when the home is occupied",
+      "objective": "Keep indoor temperature within the occupant's comfortable range according to presence, time of day, and room use, without manual intervention.",
+      "beneficiary": "household occupants (self and cohabitants)",
+      "lifecycle": "recurring, event- and schedule-conditioned (daily wake times, weekday occupancy patterns, bathroom use)",
+      "meaningful_failure": "occupant discomfort from a cold or otherwise uncomfortable indoor space (e.g., waking to a cold house, unheated bathroom)",
+      "authorized_action_scope": "explicit authorization to adjust heating/cooling automatically on schedule, occupancy, or temperature conditions",
+      "evidence_ids": ["aagaard_kirsten_003", "userneeds_u11_r066", "userneeds_u29_r173"],
+      "independence_unit_ids": ["Kirsten-home", "mattioli-user-11", "mattioli-user-29"],
+      "study_cluster_ids": ["aagaard_2023_my_smart_home", "mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"autoethnographic_diary": 1, "participant_authored_hypothetical_rule": 2},
+      "proposed_status": "admitted_provisional",
+      "proposed_path": "convergent",
+      "rationale": "Direct path unavailable packet-wide: no unit is rated strongly_implies or entails by both coders (all compatible_only). Convergent path met: three independent demand owners (Kirsten-home, mattioli-user-11, mattioli-user-29) across two study clusters express the same maintained outcome of occupied-space thermal comfort; aggregate evidence supports an identifiable beneficiary (self/household), recurring event/schedule-conditioned scope, accepted delegation to automation, explicit action authorization, and a meaningful failure of discomfort. All three demand owners are human-authored records (diary or participant rule), not mechanism-only/default/vendor records. Only the heating facet of the compound rule userneeds_u11_r066 and the temperature facet of the jointly managed wake rule userneeds_u29_r173 count toward this cluster; each unit counts once toward the threshold.",
+      "confidence": "moderate",
+      "boundary_notes": "userneeds_u29_r173 is jointly managed with the single-owner wake-up routine (excluded group E1, userneeds_u29_r169-r174), whose abort rules r172/r174 couple the air conditioner to wake state; the waking-escalation outcome itself is not merged here. Not merged with shower-music ambiance (userneeds_u11_r065) despite shared bathroom context. Zone instances (whole home, bathroom, bedroom) are unified by maintained outcome, not by room or device. Pre-wake conditioning is treated as thermal comfort delivered at wake time, not as part of the waking-escalation objective.",
+      "coding_disagreements": [
+        "userneeds_u29_r173: luna failure_meaning=security_failure vs kimi=discomfort; luna beneficiary=self vs kimi=unknown; only kimi proposed a candidate responsibility.",
+        "userneeds_u11_r066: luna beneficiary=self vs kimi=household; kimi's compound candidate ('automate bathroom comfort and occupancy signaling') is split here; only the heating facet is admitted to this cluster.",
+        "aagaard_kirsten_003: luna proposed no candidate responsibility vs kimi 'maintain comfortable indoor temperature'; luna beneficiary=household vs kimi=self."
+      ]
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_name": "E1_wake_up_routine_escalation_and_abort",
+      "exclusion_code": "below_threshold_single_demand_owner",
+      "evidence_ids": ["userneeds_u29_r169", "userneeds_u29_r170", "userneeds_u29_r171", "userneeds_u29_r172", "userneeds_u29_r173", "userneeds_u29_r174"],
+      "independence_unit_ids": ["mattioli-user-29"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Six interlocking hypothetical rules from one participant jointly manage alarm escalation, bed raising/vibration, pre-wake air conditioning, and abort/reset logic toward the outcome of waking the sleeper at the intended time. Compound objective preserved because the rules share state and abort conditions. Excluded: single demand owner, hypothetical-only, both coders rate every unit compatible_only, so neither the direct anchor nor the convergent threshold (>=3 owners across >=2 study clusters) is met. userneeds_u29_r173 is also assigned to the admitted thermal-comfort cluster for its temperature facet.",
+      "boundary_notes": "Nearest admitted cluster is thermal comfort via r173 only; the waking-escalation outcome remains unmerged and unadmitted.",
+      "coding_disagreements": [
+        "luna codes failure_meaning=security_failure for r169, r170, r172, r174 where kimi codes inconvenience or none.",
+        "kimi proposes 'Support waking at the intended time' for r169 and r170; luna proposes no candidate for any unit in this group."
+      ]
+    },
+    {
+      "group_name": "E2_keyless_automatic_entry",
+      "exclusion_code": "below_threshold_single_demand_owner",
+      "evidence_ids": ["userneeds_u11_r062"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Hypothetical desired automation for phone-recognized keyless door opening. Single demand owner, not deployed, compatible_only from both coders; below both admission thresholds.",
+      "boundary_notes": "Distinct maintained outcome (convenient authorized entry) from E3 intrusion surveillance; not merged.",
+      "coding_disagreements": ["luna failure_meaning=security_failure and beneficiary=household vs kimi failure_meaning=inconvenience and beneficiary=self; only kimi proposed a candidate."]
+    },
+    {
+      "group_name": "E3_away_mode_intrusion_surveillance_with_mobile_alerts",
+      "exclusion_code": "below_threshold_single_demand_owner",
+      "evidence_ids": ["userneeds_u11_r063"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Hypothetical desired automation to activate cameras when away and send video alerts on suspicious movement. Single demand owner, not deployed, compatible_only from both coders; below both admission thresholds.",
+      "boundary_notes": "aagaard_kirsten_002 deliberately not merged: it is manual, guilt-laden retrospective checking of a known household worker's presence (E10), a different outcome with refused delegation, whereas this group is delegated detection of unauthorized activity.",
+      "coding_disagreements": ["luna beneficiary=household vs kimi=self; both coders agree failure_meaning=security_failure; only kimi proposed a candidate."]
+    },
+    {
+      "group_name": "E4_charge_cutoff_at_full_battery",
+      "exclusion_code": "below_threshold_single_demand_owner",
+      "evidence_ids": ["userneeds_u11_r064"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Hypothetical desired automation to cut outlet power once devices reach full charge to avoid energy waste. Single demand owner, not deployed, compatible_only from both coders; below both admission thresholds.",
+      "boundary_notes": "Not merged with aagaard_kirsten_004 (E5): different maintained outcome (charge cutoff vs price/consumption tracking) and kirsten_004 shows non-adoption with absent authorization.",
+      "coding_disagreements": ["luna proposed no candidate vs kimi 'stop power draw once devices fully charged'; coders agree on beneficiary=self, failure_meaning=waste, explicit scope."]
+    },
+    {
+      "group_name": "E5_energy_price_and_consumption_tracking_interest_non_adopted",
+      "exclusion_code": "unsupported_purpose_non_adoption_absent_authorization",
+      "evidence_ids": ["aagaard_kirsten_004"],
+      "independence_unit_ids": ["Kirsten-home"],
+      "study_cluster_ids": ["aagaard_2023_my_smart_home"],
+      "rationale": "Diary author reports in-principle interest in a consumption/price tracking app but never downloaded it. No practiced or requested automation, authorized_action_scope=absent from both coders, delegation unknown or manual_only; purpose unsupported by any delegated use.",
+      "boundary_notes": "Nearest energy-themed group is E4 charge cutoff; kept separate due to different outcome and non-adoption.",
+      "coding_disagreements": ["luna failure_meaning=unknown and delegation=unknown vs kimi failure_meaning=waste and delegation=manual_only; only kimi proposed a candidate ('manage household energy cost')."]
+    },
+    {
+      "group_name": "E6_shower_occupancy_music_ambiance",
+      "exclusion_code": "below_threshold_convenience_weak_failure_meaning",
+      "evidence_ids": ["userneeds_u11_r065"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Hypothetical optional shower music with an explicit stop command. Single demand owner, compatible_only from both coders, and failure meaning is weak (kimi=none); a convenience/ambiance outcome below admission thresholds.",
+      "boundary_notes": "Shares bathroom context with the admitted thermal cluster and E7 but has a distinct ambiance outcome; not merged.",
+      "coding_disagreements": ["luna failure_meaning=discomfort and beneficiary=household vs kimi failure_meaning=none and beneficiary=self; only kimi proposed a candidate."]
+    },
+    {
+      "group_name": "E7_bathroom_occupancy_signaling_entry_light_and_door_automation_non_thermal_facets",
+      "exclusion_code": "below_threshold_single_demand_owner_conjunction_split",
+      "evidence_ids": ["userneeds_u11_r066"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Non-thermal facets of the compound rule userneeds_u11_r066 (light on entry, door closing, occupied-signaling outside) are split off per the conjunction-splitting rule. These facets come from a single hypothetical demand owner with no established failure meaning beyond the discomfort already counted via the heating facet; below admission thresholds.",
+      "boundary_notes": "The heating facet of the same unit is admitted to the thermal-comfort cluster; the unit counts once in each place it informs.",
+      "coding_disagreements": ["kimi authored the compound candidate that this split decomposes; luna proposed no candidate and coded beneficiary=self vs kimi=household."]
+    },
+    {
+      "group_name": "E8_fridge_inventory_recipe_suggestions",
+      "exclusion_code": "below_threshold_convenience_weak_failure_meaning",
+      "evidence_ids": ["userneeds_u11_r067"],
+      "independence_unit_ids": ["mattioli-user-11"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Hypothetical fridge-inventory recipe suggestion messages. Single demand owner, compatible_only from both coders, failure meaning unknown (luna) or none (kimi); a convenience outcome below admission thresholds.",
+      "boundary_notes": "No nearby cluster; distinct from all comfort, security, and energy outcomes.",
+      "coding_disagreements": ["luna temporal_scope=recurring and failure_meaning=unknown vs kimi temporal_scope=event_conditioned and failure_meaning=none; only kimi proposed a candidate."]
+    },
+    {
+      "group_name": "E9_persistent_scheduled_lighting_automation_lived",
+      "exclusion_code": "below_threshold_single_demand_owner",
+      "evidence_ids": ["aagaard_kirsten_001"],
+      "independence_unit_ids": ["Kirsten-home"],
+      "study_cluster_ids": ["aagaard_2023_my_smart_home"],
+      "rationale": "Lived-use diary evidence that silently expiring smart lighting rules forced manual restoration; delegation to automation accepted and failure is meaningful inconvenience, but only one demand owner and compatible_only ratings from both coders, so neither admission path is met.",
+      "boundary_notes": "Nearest outcome is general scheduled-lighting maintenance; no convergent partner exists in this packet.",
+      "coding_disagreements": ["luna temporal_scope=unknown and beneficiary=household vs kimi temporal_scope=recurring and beneficiary=self; neither coder proposed a candidate responsibility."]
+    },
+    {
+      "group_name": "E10_household_cleaner_presence_checking_manual_guilt_laden",
+      "exclusion_code": "refused_delegation_unresolved_authorization_conflict",
+      "evidence_ids": ["aagaard_kirsten_002"],
+      "independence_unit_ids": ["Kirsten-home"],
+      "study_cluster_ids": ["aagaard_2023_my_smart_home"],
+      "rationale": "Diary author manually checked cleaner arrival/departure and felt a bad conscience. Delegation is manual_only from both coders, authorization is implicit (luna) or conflicting (kimi), and the practice carries discomfort; this records refused delegation/unresolved authorization conflict rather than a delegated standing responsibility.",
+      "boundary_notes": "Not merged with E3 intrusion surveillance: different outcome (checking a known worker's presence vs delegated detection of unauthorized activity) and opposite delegation stance.",
+      "coding_disagreements": ["luna failure_meaning=discomfort and authorized_action_scope=implicit vs kimi failure_meaning=none and authorized_action_scope=conflicting; luna beneficiary=household vs kimi=self; neither coder proposed a candidate."]
+    }
+  ],
+  "coverage_check": {
+    "packet_evidence_count": 16,
+    "packet_evidence_ids": ["aagaard_kirsten_001", "aagaard_kirsten_002", "aagaard_kirsten_003", "aagaard_kirsten_004", "userneeds_u11_r062", "userneeds_u11_r063", "userneeds_u11_r064", "userneeds_u11_r065", "userneeds_u11_r066", "userneeds_u11_r067", "userneeds_u29_r169", "userneeds_u29_r170", "userneeds_u29_r171", "userneeds_u29_r172", "userneeds_u29_r173", "userneeds_u29_r174"],
+    "packet_independence_unit_ids": ["Kirsten-home", "mattioli-user-11", "mattioli-user-29"],
+    "packet_study_cluster_ids": ["aagaard_2023_my_smart_home", "mattioli_2023_recruitment_pool"],
+    "assigned_union_ids": ["aagaard_kirsten_001", "aagaard_kirsten_002", "aagaard_kirsten_003", "aagaard_kirsten_004", "userneeds_u11_r062", "userneeds_u11_r063", "userneeds_u11_r064", "userneeds_u11_r065", "userneeds_u11_r066", "userneeds_u11_r067", "userneeds_u29_r169", "userneeds_u29_r170", "userneeds_u29_r171", "userneeds_u29_r172", "userneeds_u29_r173", "userneeds_u29_r174"],
+    "union_equals_packet": true,
+    "missing_ids": [],
+    "extra_ids": [],
+    "multiply_assigned_ids": ["userneeds_u11_r066", "userneeds_u29_r173"],
+    "direct_path_available": false,
+    "direct_path_note": "No unit in this packet is rated strongly_implies or entails by both coders; all 16 units are compatible_only from both coders.",
+    "admitted_cluster_count": 1,
+    "excluded_group_count": 10,
+    "blinding_note": "Admission reasoning uses only packet evidence and unit codings; no backend, scenario, Episode, or performance information was consulted."
+  }
+}

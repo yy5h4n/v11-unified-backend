@@ -1,0 +1,54 @@
+{
+  "schema_version": "responsibility-induction-pilot-v2",
+  "changes_from_v1": [
+    "constraints and tradeoffs are arrays of evidence-supported statements",
+    "relation to the extracted construct is separated from support for a standing responsibility",
+    "responsibility-slot completeness is explicit",
+    "candidate statement and standing-responsibility hypothesis are separate fields"
+  ],
+  "construct_types": [
+    "standing_responsibility",
+    "one_shot_task",
+    "goal_without_standing_ownership",
+    "preference",
+    "implementation_or_capability",
+    "ambiguous_or_insufficient"
+  ],
+  "required_fields": {
+    "evidence_id": "stable evidence-unit identifier",
+    "construct_type": "one value from construct_types",
+    "actor_or_accountable_party": "string or null",
+    "beneficiary": "string or null",
+    "desired_state": "human-relevant outcome or null",
+    "activation_context": "string or null",
+    "temporal_persistence": "string or null",
+    "failure_or_harm": "string or null",
+    "constraints": "array of evidence-supported strings",
+    "tradeoffs": "array of evidence-supported strings",
+    "override_or_release": "string or null",
+    "means_or_device": "array of implementation strings",
+    "abstraction_level": "L0_action | L1_function | L2_contextual_goal | L3_responsibility | L4_value",
+    "extracted_construct_statement": "statement matching construct_type, or null",
+    "relation_to_extracted_construct": "entails | strongly_implies | compatible_only | contradicts | irrelevant",
+    "standing_responsibility_hypothesis": "device-independent L2-L3 hypothesis, or null",
+    "standing_responsibility_support": "entails | strongly_implies | compatible_only | contradicts | irrelevant",
+    "responsibility_slot_completeness": {
+      "actor": "present | absent | ambiguous",
+      "beneficiary": "present | absent | ambiguous",
+      "desired_state": "present | absent | ambiguous",
+      "persistence_or_recurrence": "present | absent | ambiguous",
+      "failure_meaning": "present | absent | ambiguous",
+      "override_or_release": "present | absent | ambiguous"
+    },
+    "confidence": "high | medium | low",
+    "rationale": "short source-grounded explanation"
+  },
+  "decision_rules": [
+    "Entailment of a task, preference, or goal is not entailment of a standing responsibility.",
+    "A routine with an unknown purpose is at most compatible_only support for a standing-responsibility hypothesis.",
+    "Do not fill missing responsibility slots from common sense or backend capability.",
+    "A single evidence unit may generate a hypothesis but cannot satisfy the cross-household admission gate.",
+    "Preserve explicit refusals, conflicts, and manual-only preferences as negative or boundary evidence.",
+    "Device replacement should preserve an admitted L2-L3 responsibility statement."
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_2",
+  "clusters": [
+    {
+      "cluster_id": "c1_secure_unoccupied_home",
+      "canonical_name": "Keep the unoccupied home secured",
+      "objective": "Maintain the home in a secured state whenever it is unoccupied by arming intrusion protection and closing shutters/windows.",
+      "beneficiary": "household",
+      "lifecycle": "recurring event_conditioned episodes triggered by household absence",
+      "meaningful_failure": "security_failure (unoccupied home left unalarmed with openings unsecured)",
+      "authorized_action_scope": "explicit: activate/arm alarm system, close shutters and windows",
+      "evidence_ids": ["userneeds_u22_r128", "userneeds_u31_r184"],
+      "independence_unit_ids": ["mattioli-user-22", "mattioli-user-31"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none_below_threshold",
+      "rationale": "Two independent demand owners (user-22, user-31) converge on the same maintained outcome with both coders agreeing on household beneficiary, security_failure meaning, automation delegation, and explicit scope. Falls short of the candidate path (needs >=3 owners in one study cluster) and no unit is strongly_implies/entails by both coders, so below admission thresholds locally; retained for cross-packet convergence check.",
+      "confidence": "high",
+      "boundary_notes": "Not merged with evening entry lighting (u13_r078), alarm-clock escalation (u31_r182, wake-up outcome), or pet-escape notification (practicaltap_p2, care/containment outcome). Both source rules are hypothetical and not deployed.",
+      "coding_disagreements": "None material; luna and kimi ratings coincide on all fields; both rate standing_responsibility_support=compatible_only."
+    },
+    {
+      "cluster_id": "c2_clean_floors_when_unoccupied",
+      "canonical_name": "Keep floors cleaned while the home is empty",
+      "objective": "Maintain floor cleanliness by running the cleaning robot during unoccupied or idle periods.",
+      "beneficiary": "household",
+      "lifecycle": "recurring event_conditioned episodes tied to absence or holiday mornings",
+      "meaningful_failure": "inconvenience (floors left uncleaned over time)",
+      "authorized_action_scope": "explicit: activate cleaning robot / robot vacuum",
+      "evidence_ids": ["userneeds_u31_r183", "userneeds_u13_r079"],
+      "independence_unit_ids": ["mattioli-user-31", "mattioli-user-13"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none_below_threshold",
+      "rationale": "Two independent demand owners converge on robot floor cleaning when nobody is home; u13_r079 additionally conjuncts laundry (washing machine), an unrelated objective that is not merged and counts as a singleton laundry convenience. Only 2 owners in one study cluster and no dual strong ratings, so below thresholds.",
+      "confidence": "medium",
+      "boundary_notes": "Laundry half of u13_r079 not carried into any cluster (single-owner, no second laundry unit in packet).",
+      "coding_disagreements": "luna rates u13_r079 event_conditioned; kimi rates it recurring. luna assigns failure_meaning=inconvenience to r183; both mark r079 failure unknown. Both compatible_only."
+    },
+    {
+      "cluster_id": "c3_indoor_thermal_comfort",
+      "canonical_name": "Maintain comfortable indoor temperature when occupied",
+      "objective": "Keep occupied living spaces warm by scheduling/conditioning heating on time or temperature.",
+      "beneficiary": "household_or_self (disputed)",
+      "lifecycle": "recurring event_conditioned heating episodes (evening schedule, low-temperature condition)",
+      "meaningful_failure": "discomfort (cold occupied rooms)",
+      "authorized_action_scope": "explicit: activate heating / bedroom heater",
+      "evidence_ids": ["userneeds_u22_r129", "userneeds_u13_r074"],
+      "independence_unit_ids": ["mattioli-user-22", "mattioli-user-13"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none_below_threshold",
+      "rationale": "Two independent demand owners converge on heating-for-comfort with explicit authorization; beneficiary and failure meaning are only partially specified (several unknowns). 2 owners in one study cluster, both coders compatible_only, so below thresholds.",
+      "confidence": "medium",
+      "boundary_notes": "u31_r181 (7am bath water temperature) not merged: bathing-water comfort is a distinct outcome. u04_r025 fireplace is ambiance within an evening relaxation scene, not thermal maintenance.",
+      "coding_disagreements": "r129: luna beneficiary=household, failure=discomfort; kimi beneficiary=self, failure=unknown. r074: luna temporal_scope=event_conditioned; kimi=recurring with candidate 'Maintain bedroom warmth in the evening'."
+    },
+    {
+      "cluster_id": "c4_humidity_and_mould_management",
+      "canonical_name": "Manage indoor humidity and mould",
+      "objective": "Keep indoor humidity within safe limits and remediate mould traces via air purification/ventilation, escalating to a technician when needed.",
+      "beneficiary": "household (kimi, r023) / unknown elsewhere",
+      "lifecycle": "recurring hourly purification plus event_conditioned humidity response",
+      "meaningful_failure": "harm (mould exposure, kimi r023) / discomfort-inconvenience (luna); disputed",
+      "authorized_action_scope": "explicit: purify air hourly, message technician, activate kitchen ventilation/whirlpool",
+      "evidence_ids": ["userneeds_u04_r023", "userneeds_u13_r076"],
+      "independence_unit_ids": ["mattioli-user-04", "mattioli-user-13"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none_below_threshold",
+      "rationale": "Two independent demand owners converge on humidity/air-quality maintenance with a shared sensor-driven, repeated action pattern. Direct path unavailable: only kimi rates r023 strongly_implies while luna rates it compatible_only. 2 owners in one study cluster, so below candidate threshold.",
+      "confidence": "medium",
+      "boundary_notes": "Not merged with u13_r077 (bin odor, waste-disposal prompt) or u04_r020; r023's technician-notification escalation facet noted but not split into its own cluster.",
+      "coding_disagreements": "r023: kimi=strongly_implies/harm/household; luna=compatible_only/inconvenience/unknown. r076: luna failure=discomfort; kimi failure=unknown."
+    },
+    {
+      "cluster_id": "c5_reliable_weekday_wakeup",
+      "canonical_name": "Wake reliably on weekday mornings",
+      "objective": "Ensure the user gets up on schedule on workday mornings using alarm escalation, lights, shutters, and the day's schedule.",
+      "beneficiary": "self",
+      "lifecycle": "recurring weekday-morning episodes",
+      "meaningful_failure": "oversleeping/missed schedule (luna codes security_failure; kimi codes inconvenience/unknown)",
+      "authorized_action_scope": "explicit: sound alarm, raise lights/shutters gradually, send schedule message",
+      "evidence_ids": ["userneeds_u22_r132", "userneeds_u31_r182"],
+      "independence_unit_ids": ["mattioli-user-22", "mattioli-user-31"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "proposed_status": "excluded_from_responsibility_catalog",
+      "proposed_path": "none_below_threshold",
+      "rationale": "Two independent demand owners converge on dependable morning wake-up with escalating stimuli and schedule delivery. Both coders compatible_only, 2 owners in one study cluster: below thresholds.",
+      "confidence": "medium",
+      "boundary_notes": "u31_r181 (same user's 7am bath-temperature rule) not merged: different maintained outcome (bathing comfort) and it would not add an independence unit anyway. u31_r186 (morning bathroom news/weather) is a briefing convenience, not wake reliability.",
+      "coding_disagreements": "luna codes both units failure_meaning=security_failure and temporal_scope=event_conditioned; kimi codes failure=unknown (r132) / inconvenience (r182) and temporal_scope=recurring for both."
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_id": "x1_mechanism_only_unknown_purpose",
+      "exclusion_basis": "mechanism_only_record_and_unsupported_purpose",
+      "evidence_ids": ["smartsense_us_001"],
+      "independence_unit_ids": ["unresolved-smartsense_us_001"],
+      "study_cluster_ids": ["smartsense_2022_routines"],
+      "notes": "Device-sequence token string with unknown authorship, purpose, beneficiary, active status; authorization absent; kimi rates irrelevant. Record preserved in ledger."
+    },
+    {
+      "group_id": "x2_one_shot_comfort_or_ambiance_convenience",
+      "exclusion_basis": "one_shot_convenience",
+      "evidence_ids": ["userneeds_u04_r020", "userneeds_u04_r024", "userneeds_u04_r025", "userneeds_u13_r078", "userneeds_u22_r130", "userneeds_u31_r185", "userneeds_u31_r186"],
+      "independence_unit_ids": ["mattioli-user-04", "mattioli-user-13", "mattioli-user-22", "mattioli-user-31"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "notes": "Event-conditioned comfort/entertainment/briefing conveniences (shower playlist, intercom presence replay, evening sofa scene, evening entry lighting, weekly TV series channel, TV brightness + do-not-disturb, morning bathroom ventilation+news). Failure meaning none/discomfort/unknown; no maintained outcome beyond momentary preference; each a single owner for its outcome. r186 luna one_shot vs kimi event_conditioned; r130/r025 failure disagreements (unknown vs discomfort) recorded."
+    },
+    {
+      "group_id": "x3_single_owner_maintained_outcome_below_threshold",
+      "exclusion_basis": "below_evidence_thresholds",
+      "evidence_ids": ["practicaltap_p2", "userneeds_u04_r021", "userneeds_u04_r022", "userneeds_u13_r075", "userneeds_u13_r077", "userneeds_u22_r127", "userneeds_u22_r131", "userneeds_u31_r181"],
+      "independence_unit_ids": ["unresolved-practicaltap_p2", "mattioli-user-04", "mattioli-user-13", "mattioli-user-22", "mattioli-user-31"],
+      "study_cluster_ids": ["ur_2014_practical_tap", "mattioli_2023_recruitment_pool"],
+      "notes": "Each expresses a plausibly recurring care/maintenance outcome (pet containment notification, fridge restocking, protecting drying laundry via pergola, garden watering, full-bin disposal prompt, closing pool in rain, boiling-pasta stove oversight, morning bath preparation) but has only one demand owner in this packet and is hypothetical/not deployed; below the >=3-owner candidate threshold. Retained for possible cross-packet convergence. practicaltap_p2: luna beneficiary=household vs kimi=self; both compatible_only."
+    }
+  ],
+  "coverage_check": {
+    "input_evidence_count": 26,
+    "assignments": {
+      "in_clusters": 10,
+      "in_excluded_groups": 16,
+      "total_assigned": 26
+    },
+    "input_evidence_ids": ["practicaltap_p2", "smartsense_us_001", "userneeds_u04_r020", "userneeds_u04_r021", "userneeds_u04_r022", "userneeds_u04_r023", "userneeds_u04_r024", "userneeds_u04_r025", "userneeds_u13_r074", "userneeds_u13_r075", "userneeds_u13_r076", "userneeds_u13_r077", "userneeds_u13_r078", "userneeds_u13_r079", "userneeds_u22_r127", "userneeds_u22_r128", "userneeds_u22_r129", "userneeds_u22_r130", "userneeds_u22_r131", "userneeds_u22_r132", "userneeds_u31_r181", "userneeds_u31_r182", "userneeds_u31_r183", "userneeds_u31_r184", "userneeds_u31_r185", "userneeds_u31_r186"],
+    "missing_evidence_ids": [],
+    "extra_evidence_ids": [],
+    "duplicate_assignments": [],
+    "union_covers_all_inputs": true
+  }
+}

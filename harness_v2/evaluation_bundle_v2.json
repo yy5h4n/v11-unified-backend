@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://responsibility-benchmark.example/schemas/evaluation_bundle_v2.json",
+  "title": "Harness V2 recomputable evaluation and language diagnostics bundle",
+  "$defs": {
+    "frozenControls": {
+      "type": "object",
+      "required": ["initial_public_state", "inventory", "simulator_seed", "exogenous_realization", "costs", "budgets", "horizon", "track"],
+      "additionalProperties": false,
+      "properties": {
+        "initial_public_state": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "inventory": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "simulator_seed": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "exogenous_realization": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "costs": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "budgets": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "horizon": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "track": {"enum":["explicit_profile_control","interactive_clarification"]}
+      }
+    },
+    "runReceipt": {
+      "type": "object",
+      "required": ["run_id", "role", "policy_build_digest", "policy_config_digest", "controls", "sealed_session", "reset_receipt", "policy_execution_receipt", "sealed_trace", "replay_receipt", "loss", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "role": {"enum":["agent","noop","public_information_oracle","query_blind","query_aware","diagnostic"]},
+        "policy_build_digest": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "policy_config_digest": {"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "controls": {"$ref":"#/$defs/frozenControls"},
+        "sealed_session": {"$ref":"session_protocol_v2.json#/$defs/sealedSession"},
+        "reset_receipt": {"$ref":"#/$defs/resetReceipt"},
+        "policy_execution_receipt": {"$ref":"#/$defs/policyExecutionReceipt"},
+        "sealed_trace": {"$ref":"evaluator_and_group_protocol_v2.json#/$defs/sealedTrace"},
+        "replay_receipt": {"$ref":"#/$defs/replayReceipt"},
+        "loss": {"$ref":"evaluator_and_group_protocol_v2.json#/$defs/nullableCanonicalDecimal"},
+        "status": {"enum":["eligible","protocol_invalid","unsafe","policy_failed","oracle_failed","nonfinite"]}
+      }
+    },
+    "resetReceipt": {
+      "type":"object","required":["runtime_id","runtime_version","registry_entry_digest","runtime_package_digest","backend_package_digest","adapter_package_digest","seed_digest","exogenous_realization_digest","native_snapshot","public_projection","receipt_digest"],"additionalProperties":false,
+      "properties":{"runtime_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"runtime_version":{"type":"string","minLength":1},"registry_entry_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"runtime_package_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"backend_package_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"adapter_package_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"seed_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"exogenous_realization_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"native_snapshot":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/canonicalSerializationRecord"},"public_projection":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/canonicalSerializationRecord"},"receipt_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"}}
+    },
+    "policyExecutionReceipt": {
+      "type":"object","required":["runtime_id","registry_entry_digest","policy_id","policy_package_digest","policy_config_digest","agent_view_digest","callback_stream_digest","terminal_choices_digest","receipt_digest"],"additionalProperties":false,
+      "properties":{"runtime_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"registry_entry_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"policy_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},"policy_package_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"policy_config_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"agent_view_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"callback_stream_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"terminal_choices_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},"receipt_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"}}
+    },
+    "replayReceipt": {
+      "type":"object",
+      "required":["verifier_id","verifier_version","verifier_hash","backend_build_digest","adapter_build_digest","initial_public_state_digest","session_transcript_digest","primary_trace_digest","replay_trace_digest","deterministic","replay_trace"],
+      "additionalProperties":false,
+      "properties":{
+        "verifier_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "verifier_version":{"type":"string","minLength":1},
+        "verifier_hash":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "backend_build_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "adapter_build_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "initial_public_state_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "session_transcript_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "primary_trace_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "replay_trace_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "deterministic":{"const":true},
+        "replay_trace":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/sealedTrace"}
+      }
+    },
+    "mainEvaluation": {
+      "type": "object",
+      "required": ["agent", "noop", "oracle", "score", "parity_verified"],
+      "additionalProperties": false,
+      "properties": {
+        "agent": {"allOf":[{"$ref":"#/$defs/runReceipt"},{"properties":{"role":{"const":"agent"}}}]},
+        "noop": {"allOf":[{"$ref":"#/$defs/runReceipt"},{"properties":{"role":{"const":"noop"}}}]},
+        "oracle": {"allOf":[{"$ref":"#/$defs/runReceipt"},{"properties":{"role":{"const":"public_information_oracle"}}}]},
+        "score": {"$ref":"evaluator_and_group_protocol_v2.json#/$defs/scoreRecord"},
+        "parity_verified": {"const": true}
+      }
+    },
+    "diagnosticRun": {
+      "type":"object",
+      "required":["arm_id","query_role","query_digest","assignment","run"],
+      "additionalProperties":false,
+      "properties":{
+        "arm_id":{"enum":["A","B"]},
+        "query_role":{"enum":["source_near","faithful_paraphrase","deletion","cross_arm_shuffle"]},
+        "query_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"},
+        "assignment":{"enum":["own_arm","arm_A_query_on_B","arm_B_query_on_A","deleted"]},
+        "run":{"$ref":"#/$defs/runReceipt"}
+      }
+    },
+    "diagnosticBundle": {
+      "type":"object",
+      "required":["runs","one_factor_verified","closed_loop_reruns_verified","policy_separation"],
+      "additionalProperties":false,
+      "properties":{
+        "runs":{"type":"array","minItems":6,"items":{"$ref":"#/$defs/diagnosticRun"}},
+        "one_factor_verified":{"const":true},
+        "closed_loop_reruns_verified":{"const":true},
+        "policy_separation": {
+          "type":"object",
+          "required":["normalization","threshold","arm_margins","aggregate_min_margin","pass"],
+          "additionalProperties":false,
+          "properties":{
+            "normalization":{"const":"noop_minus_oracle"},
+            "threshold":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/nonnegativeCanonicalDecimal"},
+            "arm_margins":{"type":"object","required":["A","B"],"additionalProperties":false,"properties":{"A":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/canonicalDecimal"},"B":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/canonicalDecimal"}}},
+            "aggregate_min_margin":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/canonicalDecimal"},
+            "pass":{"const":true}
+          }
+        }
+      }
+    }
+  },
+  "type":"object",
+  "required":["protocol_version","runtime_id","evaluator_manifest","scenario_group","main_evaluation","diagnostics","semantic_verifier_digest"],
+  "additionalProperties":false,
+  "properties":{
+    "protocol_version":{"const":"evaluation_bundle_v2"},
+    "runtime_id":{"$ref":"shared_types_v2.json#/$defs/identifier"},
+    "evaluator_manifest":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/evaluatorManifest"},
+    "scenario_group":{"$ref":"evaluator_and_group_protocol_v2.json#/$defs/scenarioGroup"},
+    "main_evaluation":{"$ref":"#/$defs/mainEvaluation"},
+    "diagnostics":{"$ref":"#/$defs/diagnosticBundle"},
+    "semantic_verifier_digest":{"$ref":"shared_types_v2.json#/$defs/sha256"}
+  }
+}

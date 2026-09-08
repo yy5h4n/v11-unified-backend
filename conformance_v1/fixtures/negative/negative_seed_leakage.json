@@ -1,0 +1,47 @@
+{
+  "id": "negative_seed_leakage",
+  "kind": "seed_leakage",
+  "description": "Negative fixture: search and certification seeds are disjoint and the search phase must never touch a certification seed; the certification bound must cover Pi_auth_pub. Each case must raise the listed failure code (spec section 7).",
+  "cases": [
+    {
+      "case_id": "overlap",
+      "search_seeds": [101, 202, 303],
+      "certification_seeds": [303, 404, 505],
+      "search_log": [],
+      "expected_failure_code": "SEED_LEAKAGE"
+    },
+    {
+      "case_id": "search_touched_certification",
+      "search_seeds": [101, 202, 303],
+      "certification_seeds": [404, 505, 606],
+      "search_log": [{ "phase": "search", "seed_id": 505 }],
+      "expected_failure_code": "SEED_LEAKAGE"
+    },
+    {
+      "case_id": "certification_optimization",
+      "search_seeds": [101, 202, 303],
+      "certification_seeds": [404, 505, 606],
+      "search_log": [],
+      "selection_log": [{ "policy_id": "pi_lc_1", "evaluated_on": "certification_seeds" }],
+      "expected_failure_code": "CERTIFICATION_OPTIMIZATION"
+    },
+    {
+      "case_id": "bound_covers_only_pi_cert",
+      "search_seeds": [101, 202, 303],
+      "certification_seeds": [404, 505, 606],
+      "search_log": [],
+      "certified_ub": 0.01,
+      "certified_covers_pi_auth_pub": false,
+      "expected_failure_code": "BOUND_NOT_COVERING_PI_AUTH"
+    },
+    {
+      "case_id": "pi0_missing_from_pi_cert",
+      "search_seeds": [101, 202, 303],
+      "certification_seeds": [404, 505, 606],
+      "search_log": [],
+      "pi_cert_entries": [{ "id": "pi_rule_1", "policy_type": "rule_based" }],
+      "pi_0": { "id": "pi_0", "inputs": [], "action": "none" },
+      "expected_failure_code": "SEED_LEAKAGE"
+    }
+  ]
+}

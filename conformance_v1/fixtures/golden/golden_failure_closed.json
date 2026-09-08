@@ -1,0 +1,16 @@
+{
+  "id": "golden_failure_closed",
+  "class": "failure_closed",
+  "description": "Failure-closed golden fixture: two Episodes bind processes that are one physical connected component but are assigned to different splits. The split audit fails and release QA fails closed (spec sections 10 and 12).",
+  "scenario": {
+    "episodes": [
+      { "id": "E-A", "physical_process_id": "PP-A", "split": "train" },
+      { "id": "E-B", "physical_process_id": "PP-B", "split": "test" }
+    ],
+    "physical_component_of": { "E-A": "C0", "E-B": "C0" }
+  },
+  "expected": {
+    "release_verdict": "FAILED_CLOSED",
+    "failure_codes": ["SPLIT_LEAKAGE"]
+  }
+}

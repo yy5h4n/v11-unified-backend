@@ -1,0 +1,101 @@
+{
+  "version": "1.0.0",
+  "opportunity_thresholds": {
+    "delta_noop": 0.02,
+    "delta_positive": 0.10
+  },
+  "seeds": {
+    "search_seeds": [101, 202, 303],
+    "certification_seeds": [404, 505, 606]
+  },
+  "certification": {
+    "mode": "sampling",
+    "seed_counts": { "search": 3, "certification": 3 },
+    "power_analysis": { "target_power": 0.9, "paired_effect": 0.1, "alpha": 0.05 },
+    "confidence_method": "paired_t_lower_bound",
+    "family_wise_correction": "holm"
+  },
+  "policy": {
+    "policy_types": ["stateful_lc", "rule_based", "noop"],
+    "noop_is_acceptable": true
+  },
+  "assignment": {
+    "order": ["normalized_certificate_margin_desc", "lexical_responsibility_id"],
+    "quota_failure": "preview_only",
+    "runs_once_over": "lexical_process_id"
+  },
+  "quotas": {
+    "per_split_min_episodes": { "train": 1, "dev": 1, "test": 1 },
+    "per_stratum_min_episodes": {
+      "positive_opportunity": 1,
+      "boundary_opportunity": 0,
+      "certified_no_opportunity": 0,
+      "unsupported": 0
+    }
+  },
+  "anti_gaming": {
+    "available_rules": ["terminal_guard_band", "terminal_viability"],
+    "default_rule": "terminal_guard_band",
+    "terminal_guard_band": { "band_intervals": 1 },
+    "terminal_viability": { "extension_intervals": 4, "safe_continuation_policy": "noop" }
+  },
+  "dedup": [
+    {
+      "level": 1,
+      "canonical_key": "textual_semantic_evidence",
+      "distance_function": "normalized_edit_distance",
+      "threshold": 0.95,
+      "interval_overlap_rule": "none",
+      "transitive_closure": "union_find"
+    },
+    {
+      "level": 2,
+      "canonical_key": "household_source_genealogy",
+      "distance_function": "shared_ancestor",
+      "threshold": 0.0,
+      "interval_overlap_rule": "none",
+      "transitive_closure": "union_find"
+    },
+    {
+      "level": 3,
+      "canonical_key": "physical_trajectory_topology",
+      "distance_function": "event_topology_distance",
+      "threshold": 0.9,
+      "interval_overlap_rule": "max_overlap_ratio",
+      "transitive_closure": "union_find"
+    },
+    {
+      "level": 4,
+      "canonical_key": "modeled_config_weather_generator",
+      "distance_function": "lineage_shared_seed",
+      "threshold": 0.0,
+      "interval_overlap_rule": "same_interval",
+      "transitive_closure": "union_find"
+    }
+  ],
+  "threshold_sensitivity": [
+    { "household_support": 2, "agreement": 0.67 },
+    { "household_support": 2, "agreement": 0.8 },
+    { "household_support": 3, "agreement": 0.67 },
+    { "household_support": 3, "agreement": 0.8 },
+    { "household_support": 4, "agreement": 0.67 },
+    { "household_support": 4, "agreement": 0.8 }
+  ],
+  "tie_rule": "lexical_id",
+  "authorization_acceptable_policies": {
+    "authorized_agent_control": ["stateful_lc", "rule_based", "noop"],
+    "authorized_automation_only": ["rule_based", "noop"],
+    "manual_only": ["noop"],
+    "refused": [],
+    "unknown": []
+  },
+  "pi_cert": {
+    "enumerated": true,
+    "entries": [
+      { "id": "pi_0", "policy_type": "noop" },
+      { "id": "pi_rule_1", "policy_type": "rule_based" },
+      { "id": "pi_lc_1", "policy_type": "stateful_lc" }
+    ]
+  },
+  "pi_0": { "id": "pi_0", "inputs": [], "action": "none" }
+}

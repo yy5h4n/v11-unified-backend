@@ -1,0 +1,16 @@
+{
+  "id": "golden_semantic_unknown",
+  "class": "semantic_unknown",
+  "description": "Semantic-unknown golden fixture: evidence supports only a desire/practice/device use without purpose, beneficiary or delegation, so the construct is semantic_unknown/out_of_scope and must not be promoted into Query/Contract/Episode (spec section 5).",
+  "evidence_insufficiency": {
+    "purpose_supported": false,
+    "beneficiary_supported": false,
+    "delegation_supported": false,
+    "recurrence_corroborated": false
+  },
+  "expected": {
+    "semantic_status": "out_of_scope",
+    "promotable": false,
+    "promotion_failure_code": "INVALID_TRANSITION"
+  }
+}

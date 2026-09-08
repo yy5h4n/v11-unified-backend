@@ -1,0 +1,400 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://responsibility-benchmark.example/schemas/interaction_state_machine_v2.json",
+  "title": "Responsibility Harness V2 interaction episode configuration",
+  "description": "Executable schema for one episode's clocks, budgets, callback policy, clarification policy, and transaction interface.",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "episode_id",
+    "track",
+    "clocks",
+    "budgets",
+    "callback_policy",
+    "clarification_policy",
+    "termination_policy"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "protocol_version": {"const": "interaction_state_machine_v2"},
+    "episode_id": {"$ref": "shared_types_v2.json#/$defs/identifier"},
+    "track": {"enum": ["explicit_profile_control", "interactive_clarification"]},
+    "clocks": {"$ref": "#/$defs/clocks"},
+    "budgets": {"$ref": "#/$defs/budgets"},
+    "callback_policy": {"$ref": "#/$defs/callbackPolicy"},
+    "clarification_policy": {"$ref": "#/$defs/clarificationPolicy"},
+    "termination_policy": {"$ref": "#/$defs/terminationPolicy"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"track": {"const": "explicit_profile_control"}}, "required": ["track"]},
+      "then": {
+        "properties": {
+          "budgets": {"properties": {"clarification_questions": {"const": 0}}},
+          "clarification_policy": {"properties": {"enabled": {"const": false}}}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"track": {"const": "interactive_clarification"}}, "required": ["track"]},
+      "then": {
+        "properties": {
+          "clarification_policy": {"properties": {"enabled": {"const": true}}}
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "timestamp": {"$ref": "shared_types_v2.json#/$defs/timestamp"},
+    "clocks": {
+      "type": "object",
+      "required": ["physics_tick_seconds", "episode_timezone", "episode_start", "episode_termination"],
+      "additionalProperties": false,
+      "properties": {
+        "physics_tick_seconds": {"type": "number", "exclusiveMinimum": 0},
+        "episode_timezone": {"type": "string", "minLength": 1},
+        "episode_start": {"$ref": "#/$defs/timestamp"},
+        "episode_termination": {"$ref": "#/$defs/timestamp"}
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "required": [
+        "agent_callbacks",
+        "inspect_calls",
+        "mutation_transactions",
+        "clarification_questions",
+        "minimum_callback_interval_seconds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "agent_callbacks": {"type": "integer", "minimum": 1},
+        "inspect_calls": {"type": "integer", "minimum": 0},
+        "mutation_transactions": {"type": "integer", "minimum": 0},
+        "clarification_questions": {"type": "integer", "minimum": 0},
+        "minimum_callback_interval_seconds": {"type": "integer", "minimum": 1}
+      }
+    },
+    "accountingLedger": {
+      "type": "object",
+      "required": ["callbacks_delivered", "inspect_calls_used", "mutation_transactions_attempted", "clarification_questions_attempted", "protocol_errors"],
+      "additionalProperties": false,
+      "properties": {
+        "callbacks_delivered": {"type": "integer", "minimum": 0},
+        "inspect_calls_used": {"type": "integer", "minimum": 0},
+        "mutation_transactions_attempted": {"type": "integer", "minimum": 0},
+        "clarification_questions_attempted": {"type": "integer", "minimum": 0},
+        "protocol_errors": {"type": "integer", "minimum": 0}
+      }
+    },
+    "capabilityCommand": {
+      "type": "object",
+      "required": ["command_id", "device_id", "capability", "operation", "parameters"],
+      "additionalProperties": false,
+      "properties": {
+        "command_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "device_id": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "capability": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "operation": {"$ref":"shared_types_v2.json#/$defs/public_identifier"},
+        "parameters": {"type": "object"}
+      }
+    },
+    "actNow": {
+      "type": "object",
+      "required": ["commands"],
+      "additionalProperties": false,
+      "properties": {
+        "commands": {"type": "array", "items": {"$ref": "#/$defs/capabilityCommand"}}
+      }
+    },
+    "ruleCreation": {
+      "type": "object",
+      "required": ["rule"],
+      "additionalProperties": false,
+      "properties": {
+        "rule": {"$ref": "rule_dsl_v0.json"}
+      }
+    },
+    "ruleCancellation": {
+      "type": "object",
+      "required": ["rule_id"],
+      "additionalProperties": false,
+      "properties": {"rule_id": {"$ref":"shared_types_v2.json#/$defs/identifier"}}
+    },
+    "subscriptionMutation": {
+      "type": "object",
+      "required": ["subscription_id", "operation", "event_type"],
+      "additionalProperties": false,
+      "properties": {
+        "subscription_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "operation": {"enum": ["subscribe", "unsubscribe"]},
+        "event_type": {"type": "string", "minLength": 1},
+        "filters": {"type": "object", "propertyNames": {"pattern": "^[A-Za-z][A-Za-z0-9_.:-]*$"}, "additionalProperties": {"type": ["string", "number", "integer", "boolean", "null"]}}
+      }
+    },
+    "wakeRequest": {
+      "type": "object",
+      "required": ["wake_id", "at"],
+      "additionalProperties": false,
+      "properties": {
+        "wake_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "at": {"$ref": "#/$defs/timestamp"}
+      }
+    },
+    "mutationTransaction": {
+      "type": "object",
+      "required": ["transaction_id", "pre_turn_backend_state_digest", "act_now", "create_rules", "cancel_rules", "subscriptions", "wake_requests"],
+      "additionalProperties": false,
+      "properties": {
+        "transaction_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "pre_turn_backend_state_digest": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "act_now": {"$ref": "#/$defs/actNow"},
+        "create_rules": {"type": "array", "items": {"$ref": "#/$defs/ruleCreation"}},
+        "cancel_rules": {"type": "array", "items": {"$ref": "#/$defs/ruleCancellation"}},
+        "subscriptions": {"type": "array", "items": {"$ref": "#/$defs/subscriptionMutation"}},
+        "wake_requests": {"type": "array", "items": {"$ref": "#/$defs/wakeRequest"}}
+      }
+    },
+    "mutationOutcomeItem": {
+      "type": "object",
+      "required": ["mutation_kind", "mutation_id", "status", "error_code"],
+      "additionalProperties": false,
+      "properties": {
+        "mutation_kind": {"enum": ["command", "create_rule", "cancel_rule", "subscription", "wake_request"]},
+        "mutation_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "status": {"enum": ["committed", "not_applied", "rejected"]},
+        "error_code": {"type": ["string", "null"]}
+      }
+    },
+    "ledgerDelta": {
+      "type": "object",
+      "required": ["mutation_transactions_attempted", "protocol_errors"],
+      "additionalProperties": false,
+      "properties": {
+        "mutation_transactions_attempted": {"const": 1},
+        "protocol_errors": {"enum": [0, 1]}
+      }
+    },
+    "rejectedTransactionOutcome": {
+      "type": "object",
+      "required": ["transaction_id", "status", "unchanged_backend_state_digest", "ledger_delta", "mutation_outcomes", "transaction_error_code"],
+      "additionalProperties": false,
+      "properties": {
+        "transaction_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "status": {"const": "rejected"},
+        "unchanged_backend_state_digest": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "ledger_delta": {"type": "object", "required": ["mutation_transactions_attempted", "protocol_errors"], "additionalProperties": false, "properties": {"mutation_transactions_attempted": {"const": 1}, "protocol_errors": {"const": 1}}},
+        "mutation_outcomes": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/mutationOutcomeItem"}, {"properties": {"status": {"const": "not_applied"}}}]}},
+        "transaction_error_code": {"type": "string", "minLength": 1}
+      }
+    },
+    "committedTransactionOutcome": {
+      "type": "object",
+      "required": ["transaction_id", "status", "pre_backend_state_digest", "post_backend_state_digest", "ledger_delta", "mutation_outcomes", "transaction_error_code"],
+      "additionalProperties": false,
+      "properties": {
+        "transaction_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "status": {"const": "committed"},
+        "pre_backend_state_digest": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "post_backend_state_digest": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "ledger_delta": {"type": "object", "required": ["mutation_transactions_attempted", "protocol_errors"], "additionalProperties": false, "properties": {"mutation_transactions_attempted": {"const": 1}, "protocol_errors": {"const": 0}}},
+        "mutation_outcomes": {"type": "array", "items": {"allOf": [{"$ref": "#/$defs/mutationOutcomeItem"}, {"properties": {"status": {"const": "committed"}, "error_code": {"type": "null"}}}]}},
+        "transaction_error_code": {"type": "null"}
+      }
+    },
+    "transactionOutcome": {"oneOf": [{"$ref": "#/$defs/rejectedTransactionOutcome"}, {"$ref": "#/$defs/committedTransactionOutcome"}]},
+    "stateSnapshot": {
+      "type": "object",
+      "required": ["backend_state_digest", "accounting_ledger"],
+      "additionalProperties": false,
+      "properties": {
+        "backend_state_digest": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "accounting_ledger": {"$ref": "#/$defs/accountingLedger"}
+      }
+    },
+    "verifierRecord": {
+      "type": "object",
+      "required": ["verifier_id", "verifier_version", "verifier_hash", "verified", "checks"],
+      "additionalProperties": false,
+      "properties": {
+        "verifier_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "verifier_version": {"type": "string", "minLength": 1},
+        "verifier_hash": {"$ref": "shared_types_v2.json#/$defs/sha256"},
+        "verified": {"const": true},
+        "checks": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["check_id", "passed"], "additionalProperties": false, "properties": {"check_id": {"type": "string", "minLength": 1}, "passed": {"const": true}, "detail": {"type": "string"}}}}
+      }
+    },
+    "transactionExchange": {
+      "type": "object",
+      "required": ["request", "pre_state", "strict_outcome", "post_state", "verifier_record"],
+      "additionalProperties": false,
+      "properties": {
+        "request": {"$ref": "#/$defs/mutationTransaction"},
+        "pre_state": {"$ref": "#/$defs/stateSnapshot"},
+        "strict_outcome": {"$ref": "#/$defs/transactionOutcome"},
+        "post_state": {"$ref": "#/$defs/stateSnapshot"},
+        "verifier_record": {"$ref": "#/$defs/verifierRecord"}
+      }
+    },
+    "askUser": {
+      "type": "object",
+      "required": ["question_id", "slots", "question_text"],
+      "additionalProperties": false,
+      "properties": {
+        "question_id": {"$ref":"shared_types_v2.json#/$defs/identifier"},
+        "slots": {"type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": {"enum": ["beneficiary", "spatial_scope", "activation_condition", "suspension_condition", "deadline", "release_condition", "priority", "authorized_action", "numeric_preference"]}},
+        "question_text": {"type": "string", "minLength": 1}
+      }
+    },
+    "terminalChoice": {
+      "oneOf": [
+        {"type": "object", "required": ["kind", "transaction"], "additionalProperties": false, "properties": {"kind": {"const": "commit_transaction"}, "transaction": {"$ref": "#/$defs/mutationTransaction"}}},
+        {"type": "object", "required": ["kind", "question"], "additionalProperties": false, "properties": {"kind": {"const": "ask_user"}, "question": {"$ref": "#/$defs/askUser"}}},
+        {"type": "object", "required": ["kind"], "additionalProperties": false, "properties": {"kind": {"const": "yield_without_mutation"}}}
+      ]
+    },
+    "callbackPolicy": {
+      "type": "object",
+      "required": ["allowed_reasons", "coalesce_same_timestamp", "delivery_order", "workflow_requires_subscription", "at_most_once_per_event_id"],
+      "additionalProperties": false,
+      "properties": {
+        "allowed_reasons": {"const": ["episode_reset", "subscribed_public_event", "requested_wake_time", "subscribed_workflow_result", "user_reply", "episode_termination"]},
+        "coalesce_same_timestamp": {"const": true},
+        "delivery_order": {"const": ["episode_termination", "subscribed_workflow_result", "subscribed_public_event", "requested_wake_time", "user_reply"]},
+        "workflow_requires_subscription": {"const": true},
+        "at_most_once_per_event_id": {"const": true}
+      }
+    },
+    "clarificationPolicy": {
+      "type": "object",
+      "required": ["enabled", "max_slots_per_question", "allowed_slots", "duplicate_slot_question", "invalid_question", "answer_source", "answer_delivery"],
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "max_slots_per_question": {"const": 1},
+        "allowed_slots": {"const": ["beneficiary", "spatial_scope", "activation_condition", "suspension_condition", "deadline", "release_condition", "priority", "authorized_action", "numeric_preference"]},
+        "duplicate_slot_question": {"const": "reject_and_consume_attempt"},
+        "invalid_question": {"const": "reject_and_consume_attempt"},
+        "answer_source": {"const": "pre_existing_grounded_record_or_unknown"},
+        "answer_delivery": {"const": "single_coalesced_callback_after_question_turn"}
+      }
+    },
+    "terminationPolicy": {
+      "type": "object",
+      "required": ["callback_budget_exhaustion", "installed_rules_after_callback_exhaustion", "pending_events_at_horizon", "notification_is_read_only", "trace_seal_is_one_way"],
+      "additionalProperties": false,
+      "properties": {
+        "callback_budget_exhaustion": {"const": "suppress_further_nontermination_callbacks"},
+        "installed_rules_after_callback_exhaustion": {"const": "continue_until_termination"},
+        "pending_events_at_horizon": {"const": "termination_wins_and_pending_results_are_trace_only"},
+        "notification_is_read_only": {"const": true},
+        "trace_seal_is_one_way": {"const": true}
+      }
+    }
+  },
+  "x-state-machine": {
+    "states": ["RESET", "AGENT_READ_PHASE", "TRANSACTION_PENDING", "ADVANCING", "CALLBACK_READY", "TERMINATED", "TRACE_SEALED", "SCORED"],
+    "agent_turn": "zero_or_more_inspect_calls_then_exactly_one_terminal_choice",
+    "inspect_is_read_only": true
+  },
+  "x-schema-entrypoints": {
+    "episode_configuration": "#",
+    "terminal_choice": "#/$defs/terminalChoice",
+    "mutation_transaction": "#/$defs/mutationTransaction",
+    "transaction_outcome": "#/$defs/transactionOutcome",
+    "accounting_ledger": "#/$defs/accountingLedger",
+    "transaction_exchange": "#/$defs/transactionExchange"
+  },
+  "x-agent-turn-time-semantics": {
+    "callback_delivery": "after_all_simulator_phases_at_callback_timestamp",
+    "termination_callback": "read_only_no_agent_turn_no_mutation",
+    "nontermination_transaction_commit": "at_callback_timestamp_after_simulator_phases_before_advance",
+    "new_rule_or_subscription_effective": "strictly_after_commit_timestamp",
+    "wake_or_rule_timestamp_at_or_before_commit": "reject_entire_transaction",
+    "same_timestamp_pending_termination": "termination_wins_and_transaction_is_not_requested"
+  },
+  "x-same-timestamp-phase-order": [
+    "integrate_physics_from_prior_instant_using_prior_committed_inputs",
+    "apply_exogenous_updates_then_device_and_workflow_completions",
+    "materialize_observations_and_events_with_stable_ids",
+    "retire_expired_rules_and_collect_release_batches",
+    "collect_trigger_occurrences_and_evaluate_conditions_on_post_update_public_state",
+    "resolve_conflicts_and_atomically_attempt_firing_batches",
+    "only_after_success_update_cooldown_and_fire_count_then_retire_completed_rules_and_collect_release_batches",
+    "resolve_conflicts_and_atomically_attempt_release_batches",
+    "record_all_results_and_post_phase_state_digest",
+    "apply_horizon_precedence_else_coalesce_public_callback_reasons",
+    "deliver_at_most_one_callback_and_process_exactly_one_terminal_choice",
+    "make_new_rules_subscriptions_and_wakes_effective_strictly_after_commit"
+  ],
+  "x-transaction-validation-order": [
+    "schema_and_unknown_fields",
+    "budget_and_track",
+    "unique_ids_within_transaction",
+    "cross_field_and_existing_id_references",
+    "inventory_capability_and_authorization",
+    "parameter_ranges",
+    "wake_time_and_callback_density",
+    "backend_preflight"
+  ],
+  "x-transaction-atomicity": {
+    "validation_snapshot": "immutable_pre_turn_backend_snapshot",
+    "success": "all_mutations_commit_as_one_unit",
+    "failure": "no_backend_rule_subscription_or_wake_state_changes",
+    "rollback_scope": ["backend", "rules", "subscriptions", "wake_queue"],
+    "backend_state_digest_on_failure": "equal_to_pre_turn_backend_state_digest",
+    "snapshot_digest_excludes": ["accounting_ledger"],
+    "allowed_failure_accounting_effects": {"mutation_transactions_attempted": 1, "protocol_errors": 1},
+    "duplicate_ids": "reject_entire_transaction",
+    "id_namespace_rules": [
+      "command_ids_unique_across_immediate_and_all_created_rule_commands",
+      "rule_ids_unique_across_created_rules",
+      "same_rule_id_cannot_be_created_and_cancelled_in_one_transaction",
+      "subscription_ids_unique_within_transaction",
+      "wake_ids_unique_within_transaction"
+    ],
+    "outcome_runtime_checks": [
+      "rejected_outcome_exposes_only_one_unchanged_backend_state_digest",
+      "rejected_ledger_delta_is_exactly_attempted_plus_one_and_protocol_error_plus_one",
+      "committed_ledger_delta_is_exactly_attempted_plus_one_and_protocol_error_plus_zero",
+      "mutation_outcomes_have_one_item_for_every_submitted_mutation_in_canonical_transaction_order",
+      "transaction_exchange_request_is_byte_identical_to_the_verified_request",
+      "transaction_exchange_pre_state_is_captured_before_validation_and_post_state_after_outcome",
+      "transaction_exchange_strict_outcome_is_verified_against_request_and_pre_state",
+      "transaction_exchange_post_state_digest_and_ledger_are_recomputed_from_runtime_state",
+      "transaction_exchange_mutation_outcomes_are_one_to_one_with_request_mutations_in_canonical_order"
+    ]
+  },
+  "x-transaction-exchange-runtime": {
+    "entrypoint": "transaction_exchange",
+    "exchange_order": ["capture_pre_state", "validate_request", "apply_or_reject_atomically", "recompute_post_state", "verify_strict_outcome", "emit_exchange"],
+    "digest": "SHA-256 canonical serialization of backend state only; never trust a client-provided post digest",
+    "ledger": "recomputed from runtime counters after outcome; includes permitted attempted/protocol-error increments",
+    "outcome_matching": "strict outcome status, digests, ledger delta, and one mutation outcome per request mutation are all checked; mismatch is verifier failure"
+  },
+  "x-wake-validation": {
+    "past_or_present": "reject_transaction",
+    "before_minimum_interval": "reject_transaction",
+    "after_horizon": "reject_transaction",
+    "multiple_reasons_same_timestamp": "one_coalesced_callback_with_sorted_reasons"
+  },
+  "x-runtime-invariants": [
+    "physics_tick_never_implies_agent_callback",
+    "scheduler_instant_never_implies_agent_callback_without_an_eligible_public_reason",
+    "unsubscribed_event_is_trace_only",
+    "workflow_result_requires_active_subscription",
+    "private_evaluator_event_is_never_public",
+    "evaluator_runs_only_after_trace_seal",
+    "all_runtime_RFC3339_timestamps_have_explicit_offsets_and_are_compared_as_instants_then_rendered_in_episode_timezone"
+  ],
+  "x-golden-transaction-outcomes": [
+    {
+      "case": "second_mutation_invalid_rolls_back_everything",
+      "expected": {"status": "rejected", "one_unchanged_backend_state_digest_field": true, "ledger_delta": {"mutation_transactions_attempted": 1, "protocol_errors": 1}, "all_mutation_statuses": "not_applied"}
+    },
+    {
+      "case": "all_mutations_valid_commit_once",
+      "expected": {"status": "committed", "ledger_delta": {"mutation_transactions_attempted": 1, "protocol_errors": 0}, "all_mutation_statuses": "committed"}
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "semantic-dedup-judgment-v2.2",
+  "status": "ai_proxy_review",
+  "decisions": [
+    "MERGE",
+    "KEEP_SEPARATE",
+    "UNCERTAIN"
+  ],
+  "identity_dimensions": [
+    "beneficiary_class",
+    "lifecycle",
+    "outcome_key",
+    "failure_mode",
+    "context_key"
+  ],
+  "merge_rule": "MERGE only when the human responsibilities are mutually substitutable across all five identity dimensions.",
+  "configuration_variants_not_identity": [
+    "device",
+    "actuator",
+    "threshold value",
+    "exact schedule",
+    "notification channel",
+    "implementation action"
+  ],
+  "required_output_fields": [
+    "pair_id",
+    "decision",
+    "mutually_substitutable",
+    "distinguishing_dimensions",
+    "preferred_responsibility_id",
+    "confidence",
+    "rationale"
+  ],
+  "constraints": {
+    "preferred_responsibility_id": "For MERGE choose responsibility_id_a or responsibility_id_b; otherwise null.",
+    "do_not_generate_new_responsibility": true,
+    "do_not_use_backend": true
+  }
+}

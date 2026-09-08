@@ -1,0 +1,209 @@
+{
+  "coder": "kimi",
+  "packet": "CLUSTERING_PACKET_PART_4_SUB_0",
+  "packet_metadata": {
+    "evidence_count": 13,
+    "partitions": {"semantic_development": 1, "semantic_discovery": 12},
+    "study_cluster_ids": ["mattioli_2023_recruitment_pool", "ur_2014_practical_tap"],
+    "independence_unit_ids": ["mattioli-user-06", "mattioli-user-24", "unresolved-practicaltap_p4"],
+    "all_records_hypothetical_not_deployed": true,
+    "max_coder_support_rating": "compatible_only"
+  },
+  "clusters": [
+    {
+      "canonical_name": "morning_wake_routine_support",
+      "objective": "Ensure household members are woken on schedule with coordinated supporting actions (coffee ready at alarm; child's music and shutters at weekday 07:00).",
+      "beneficiary": "household",
+      "lifecycle": "recurring_scheduled",
+      "meaningful_failure": "inconvenience (missed or unprepared wake-up); disputed on r032",
+      "authorized_action_scope": "explicit: start coffee machine; play wake music and raise shutters",
+      "evidence_ids": ["userneeds_u06_r032", "userneeds_u24_r142"],
+      "independence_unit_ids": ["mattioli-user-06", "mattioli-user-24"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 2},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Two independent owners in one study cluster converge on a scheduled wake-up outcome with accepted automation and explicit actions; below the 3-owner candidate threshold locally and no direct-path ratings (all compatible_only), so cross-packet confirmation is required.",
+      "confidence": "low",
+      "boundary_notes": "Not merged with veranda party scene (u24_r144): user-invoked one-shot scene, not a maintained routine. Not merged with safe_late_return (u24_r143): different lifecycle and failure meaning.",
+      "coding_disagreements": [
+        "u06_r032 failure_meaning: luna=security_failure vs kimi=inconvenience",
+        "u06_r032 beneficiary: luna=unknown vs kimi=self",
+        "u06_r032 candidate_responsibility: luna=null vs kimi='have coffee ready at wake time'",
+        "u24_r142 temporal_scope: luna=event_conditioned vs kimi=recurring"
+      ]
+    },
+    {
+      "canonical_name": "dependent_animal_welfare_protection",
+      "objective": "Protect dependent animals' wellbeing through automated environmental control: keep aquarium water at safe temperature and keep the home quiet for dogs when inhabitants are away.",
+      "beneficiary": "third_party (dependent animals)",
+      "lifecycle": "persistent_monitoring plus event_conditioned_absence",
+      "meaningful_failure": "harm or distress to animals (aquarium harm per kimi; dog distress as discomfort)",
+      "authorized_action_scope": "explicit: activate heater and notify owner; silence intercom and telephone during absence",
+      "evidence_ids": ["userneeds_u06_r033", "userneeds_u24_r140"],
+      "independence_unit_ids": ["mattioli-user-06", "mattioli-user-24"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 2},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Two independent owners converge on animal welfare as the maintained outcome with explicit delegation; mechanisms and lifecycles differ but beneficiary (dependent animals) and failure (harm/distress) align. Below local thresholds; needs cross-packet owners.",
+      "confidence": "low",
+      "boundary_notes": "Merged only at outcome level (animal welfare); singleton split into 'aquarium temperature safety' and 'undisturbed pets during absence' is defensible if later evidence shows divergent lifecycles matter.",
+      "coding_disagreements": [
+        "u06_r033 beneficiary: luna=household vs kimi=third_party",
+        "u06_r033 failure_meaning: luna=discomfort vs kimi=harm",
+        "u24_r140 beneficiary: luna=household vs kimi=third_party",
+        "u24_r140 failure_meaning: luna=unknown vs kimi=discomfort"
+      ]
+    },
+    {
+      "canonical_name": "secure_home_on_departure",
+      "objective": "When the occupant leaves, ensure the home is secured by arming the alarm once lights are off and windows closed, with confirmation.",
+      "beneficiary": "household",
+      "lifecycle": "recurring_event_conditioned (each departure)",
+      "meaningful_failure": "security_failure (both coders agree)",
+      "authorized_action_scope": "explicit: arm the alarm and notify the occupant",
+      "evidence_ids": ["userneeds_u06_r037"],
+      "independence_unit_ids": ["mattioli-user-06"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner, but facets are unusually complete: agreed beneficiary and failure meaning, recurring departures, accepted delegation, explicit authorized action. Needs additional owners cross-packet.",
+      "confidence": "low",
+      "boundary_notes": "Not merged with safe_late_return (u24_r143): departure arming vs arrival safety/notification are opposite transitions with different failure meanings. Not merged with storm shutdown (u06_r035).",
+      "coding_disagreements": []
+    },
+    {
+      "canonical_name": "safe_low_disturbance_late_arrival",
+      "objective": "Enable a safe late-night return (dim pathway lighting) without disturbing other tenants, and notify a family member of the arrival.",
+      "beneficiary": "self and household (disputed)",
+      "lifecycle": "recurring_event_conditioned (late-night entries)",
+      "meaningful_failure": "harm during unsafe return (kimi) vs security_failure (luna)",
+      "authorized_action_scope": "explicit: dim living-room lights and send arrival message to a predefined contact",
+      "evidence_ids": ["userneeds_u24_r143"],
+      "independence_unit_ids": ["mattioli-user-24"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner. Compound of lighting plus notification is preserved because the text ties both to one managed outcome (safe, low-disturbance return). Needs cross-packet owners.",
+      "confidence": "low",
+      "boundary_notes": "Not merged with secure_home_on_departure (u06_r037) despite shared door-trigger: arrival vs departure are distinct maintained outcomes.",
+      "coding_disagreements": [
+        "beneficiary: luna=household vs kimi=self",
+        "failure_meaning: luna=security_failure vs kimi=harm"
+      ]
+    },
+    {
+      "canonical_name": "avoid_heating_waste_with_open_windows",
+      "objective": "Prevent heating from running while windows are open, with occupant notification.",
+      "beneficiary": "household",
+      "lifecycle": "persistent_event_conditioned",
+      "meaningful_failure": "waste (kimi) vs discomfort (luna)",
+      "authorized_action_scope": "explicit: turn off heating system and notify occupant",
+      "evidence_ids": ["userneeds_u06_r036"],
+      "independence_unit_ids": ["mattioli-user-06"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner with a clear maintained outcome (no simultaneous heating and ventilation) and explicit delegated action; failure meaning disputed between waste and discomfort. Needs cross-packet owners.",
+      "confidence": "low",
+      "boundary_notes": "Not merged with storm shutdown (u06_r035): waste avoidance vs event protection have different triggers and failures.",
+      "coding_disagreements": [
+        "failure_meaning: luna=discomfort vs kimi=waste"
+      ]
+    },
+    {
+      "canonical_name": "ensure_periodic_floor_cleaning",
+      "objective": "Guarantee the weekly floor cleaning actually happens by triggering the robot vacuum if it was missed.",
+      "beneficiary": "household (kimi) vs unknown (luna)",
+      "lifecycle": "recurring (weekly with missed-run fallback)",
+      "meaningful_failure": "inconvenience (kimi) vs unknown (luna)",
+      "authorized_action_scope": "explicit: activate the robot vacuum",
+      "evidence_ids": ["userneeds_u06_r034"],
+      "independence_unit_ids": ["mattioli-user-06"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner, but the missed-run fallback shows a maintained recurring outcome rather than one-shot convenience. Needs cross-packet owners.",
+      "confidence": "low",
+      "boundary_notes": "Distinct from morning_wake_routine: different outcome (cleaning guarantee vs wake-up support).",
+      "coding_disagreements": [
+        "temporal_scope: luna=event_conditioned vs kimi=recurring",
+        "beneficiary: luna=unknown vs kimi=household",
+        "failure_meaning: luna=unknown vs kimi=inconvenience"
+      ]
+    },
+    {
+      "canonical_name": "protect_home_during_storms",
+      "objective": "Reduce storm-related risk to the home by shutting down the TV and all lights when a storm occurs.",
+      "beneficiary": "household",
+      "lifecycle": "recurring_event_conditioned (storm events)",
+      "meaningful_failure": "unknown in both codings; protection inferred",
+      "authorized_action_scope": "explicit: turn off TV and all lights",
+      "evidence_ids": ["userneeds_u06_r035"],
+      "independence_unit_ids": ["mattioli-user-06"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner and purpose is unstated (both coders mark failure unknown); retained as a weak cluster rather than excluded because the coordinated shutdown implies asset protection, but exclusion as unsupported purpose is plausible.",
+      "confidence": "very_low",
+      "boundary_notes": "Exclusion as unsupported_purpose is a defensible alternative; flagged for adjudication.",
+      "coding_disagreements": []
+    },
+    {
+      "canonical_name": "household_consumable_supply_alerting",
+      "objective": "Alert the household before the refrigerator water dispenser runs out.",
+      "beneficiary": "household (kimi) vs unknown (luna)",
+      "lifecycle": "persistent_monitoring (continuous weighing with threshold alert)",
+      "meaningful_failure": "unknown in both codings; running out unawares inferred as inconvenience",
+      "authorized_action_scope": "explicit: display 'Water running out' message (notification-only)",
+      "evidence_ids": ["userneeds_u24_r139"],
+      "independence_unit_ids": ["mattioli-user-24"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "source_form_counts": {"participant_authored_hypothetical_rule": 1},
+      "proposed_status": "candidate_needs_confirmation",
+      "proposed_path": "convergent",
+      "rationale": "Single local owner with notification-only action; the maintained outcome (supply awareness) is plausible but thin. Retained as weak cluster; mechanism-only exclusion is a defensible alternative.",
+      "confidence": "very_low",
+      "boundary_notes": "Notification-only scope; may be reclassified as mechanism-only on adjudication.",
+      "coding_disagreements": [
+        "beneficiary: luna=unknown vs kimi=household"
+      ]
+    }
+  ],
+  "excluded_groups": [
+    {
+      "group_id": "excluded_on_demand_convenience",
+      "reason_category": "one_shot_convenience",
+      "evidence_ids": ["userneeds_u24_r141", "userneeds_u24_r144"],
+      "independence_unit_ids": ["mattioli-user-24"],
+      "study_cluster_ids": ["mattioli_2023_recruitment_pool"],
+      "rationale": "Both are user-invoked, on-demand services (locate remote on spoken request; activate party scene on spoken command) with no maintained outcome, no recurrence guarantee, and no meaningful failure if never triggered. Both coders left candidate_responsibility null."
+    },
+    {
+      "group_id": "excluded_unsupported_purpose_unresolved_ownership",
+      "reason_category": "unsupported_purpose",
+      "evidence_ids": ["practicaltap_p4"],
+      "independence_unit_ids": ["unresolved-practicaltap_p4"],
+      "study_cluster_ids": ["ur_2014_practical_tap"],
+      "rationale": "Daylight-tracking dimming states no purpose; beneficiary unknown; failure meaning disputed (luna=discomfort vs kimi=none); the independence unit itself is unresolved; both coders left candidate_responsibility null. Single owner in a separate study cluster with no local convergence."
+    }
+  ],
+  "coverage_check": {
+    "input_evidence_count": 13,
+    "clustered_evidence_count": 10,
+    "excluded_evidence_count": 3,
+    "union_count": 13,
+    "multi_assignment_count": 0,
+    "clustered_ids": ["userneeds_u06_r032", "userneeds_u24_r142", "userneeds_u06_r033", "userneeds_u24_r140", "userneeds_u06_r037", "userneeds_u24_r143", "userneeds_u06_r036", "userneeds_u06_r034", "userneeds_u06_r035", "userneeds_u24_r139"],
+    "excluded_ids": ["userneeds_u24_r141", "userneeds_u24_r144", "practicaltap_p4"],
+    "input_ids": ["practicaltap_p4", "userneeds_u06_r032", "userneeds_u06_r033", "userneeds_u06_r034", "userneeds_u06_r035", "userneeds_u06_r036", "userneeds_u06_r037", "userneeds_u24_r139", "userneeds_u24_r140", "userneeds_u24_r141", "userneeds_u24_r142", "userneeds_u24_r143", "userneeds_u24_r144"],
+    "exact_union_coverage": true,
+    "metadata_verified_against_packet": true
+  }
+}

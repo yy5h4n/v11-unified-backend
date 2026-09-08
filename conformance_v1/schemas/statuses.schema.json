@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "statuses.schema.json",
+  "title": "Four independent statuses",
+  "description": "Semantic, authorization, physical and release statuses are stored independently and must never be collapsed into one field (normative doc section 2).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["semantic_status", "authorization_status", "physical_status", "release_status"],
+  "properties": {
+    "semantic_status": {
+      "type": "string",
+      "enum": ["provisional_ai_pilot", "human_validated", "critical_case_validated", "rejected_or_unresolved", "semantic_unknown", "out_of_scope"]
+    },
+    "authorization_status": {
+      "type": "string",
+      "enum": ["authorized_agent_control", "authorized_automation_only", "manual_only", "refused", "unknown"]
+    },
+    "physical_status": {
+      "type": "string",
+      "enum": ["unassigned", "candidate_binding", "positive_opportunity", "boundary_opportunity", "certified_no_opportunity", "unsupported"]
+    },
+    "release_status": {
+      "type": "string",
+      "enum": ["provisional", "frozen", "invalidated", "released"]
+    },
+    "preview_only": {
+      "type": "boolean"
+    }
+  }
+}

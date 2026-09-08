@@ -1,0 +1,85 @@
+[
+  {
+    "batch": 0,
+    "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_pair_judgment_v2_2/batch_00",
+    "rows": 15,
+    "pair_ids": [
+      "sdp22_6f7e958cf144",
+      "sdp22_badf42ab59c8",
+      "sdp22_1abbb4f11296",
+      "sdp22_226e44299840",
+      "sdp22_c2e21f225f88",
+      "sdp22_b7f328acab1f",
+      "sdp22_8237cf0711e6",
+      "sdp22_5cdf186ef58c",
+      "sdp22_6327a250ee4b",
+      "sdp22_bdbf0e648dcf",
+      "sdp22_50a291f59359",
+      "sdp22_c7111234a6c8",
+      "sdp22_d80f6924b577",
+      "sdp22_abb4838658c2",
+      "sdp22_b49f084f878f"
+    ],
+    "output": "OUTPUT.jsonl"
+  },
+  {
+    "batch": 1,
+    "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_pair_judgment_v2_2/batch_01",
+    "rows": 15,
+    "pair_ids": [
+      "sdp22_fdfb6700c34d",
+      "sdp22_1f4253938a50",
+      "sdp22_451ceb16a068",
+      "sdp22_6a8cec89a595",
+      "sdp22_5206f1bcfe63",
+      "sdp22_359f301d037b",
+      "sdp22_62da57685411",
+      "sdp22_47298f1eea9c",
+      "sdp22_f5f8ad3f50cd",
+      "sdp22_110f8eecf720",
+      "sdp22_abc954662375",
+      "sdp22_896b55271e8e",
+      "sdp22_38fa2fe20aec",
+      "sdp22_7c09ef8c5b4f",
+      "sdp22_e7b2dd5a8571"
+    ],
+    "output": "OUTPUT.jsonl"
+  },
+  {
+    "batch": 2,
+    "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_pair_judgment_v2_2/batch_02",
+    "rows": 15,
+    "pair_ids": [
+      "sdp22_96b80f8d2882",
+      "sdp22_c8b348c42fae",
+      "sdp22_0b4a6dd63c0e",
+      "sdp22_37cb5f090e26",
+      "sdp22_b84730306e94",
+      "sdp22_2967e1cbe0d5",
+      "sdp22_ab39b2ede22c",
+      "sdp22_6edbfb4ddb06",
+      "sdp22_ac104cc49b45",
+      "sdp22_1f42c0ddb62f",
+      "sdp22_58828d6af417",
+      "sdp22_858488fcdca1",
+      "sdp22_a746c9f3419d",
+      "sdp22_17c9530ad920",
+      "sdp22_054ac72818cc"
+    ],
+    "output": "OUTPUT.jsonl"
+  },
+  {
+    "batch": 3,
+    "directory": "/Users/shanyingyu/DRPIE/home-design/ideas/implicit-temporal-intent/data-pipeline/prototypes/v11_unified_process_compiler/responsibility_ai_coding_v1/kimi_isolated_pair_judgment_v2_2/batch_03",
+    "rows": 6,
+    "pair_ids": [
+      "sdp22_b8d61e94d108",
+      "sdp22_adb4d4d5073f",
+      "sdp22_f0bdafce7f1b",
+      "sdp22_44dc2e0971cd",
+      "sdp22_4b0ab68c821a",
+      "sdp22_17285ba40a93"
+    ],
+    "output": "OUTPUT.jsonl"
+  }
+]

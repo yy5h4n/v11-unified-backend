@@ -1,0 +1,18 @@
+{
+  "id": "golden_certified_noop",
+  "class": "certified_no_opportunity",
+  "description": "Certified-no-opportunity golden fixture: a released analytic bound over Pi_auth_pub shows improvement is at most delta_noop and pi_0 is acceptable, so intervention cannot improve the frozen construction utility (spec section 7).",
+  "opportunity_inputs": {
+    "delta_lcb": null,
+    "certified_ub": 0.01,
+    "certified_covers_pi_auth": true,
+    "pi_hat_acceptable": true,
+    "pi_0_acceptable": true,
+    "capability_supported": true,
+    "information_supported": true
+  },
+  "expected": {
+    "physical_label": "certified_no_opportunity",
+    "failure_codes": []
+  }
+}

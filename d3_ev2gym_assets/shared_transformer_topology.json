@@ -1,0 +1,30 @@
+{
+  "transformer_1": {
+    "id": 0,
+    "max_power": 15,
+    "charging_stations": {
+      "charger_1": {
+        "id": 0,
+        "min_charge_current": 0,
+        "max_charge_current": 32,
+        "min_discharge_current": 0,
+        "max_discharge_current": 0,
+        "voltage": 230,
+        "n_ports": 1,
+        "charger_type": "AC",
+        "phases": 3
+      },
+      "charger_2": {
+        "id": 1,
+        "min_charge_current": 0,
+        "max_charge_current": 32,
+        "min_discharge_current": 0,
+        "max_discharge_current": 0,
+        "voltage": 230,
+        "n_ports": 1,
+        "charger_type": "AC",
+        "phases": 3
+      }
+    }
+  }
+}

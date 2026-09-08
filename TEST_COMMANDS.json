@@ -1,0 +1,181 @@
+{
+  "schema": "v11.backend.test_commands.v1",
+  "commands": [
+    {
+      "category": "unit",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -m pytest -q tests/test_process_pool.py tests/test_agent_interface.py tests/test_d2_closed_loop_protocol.py tests/test_d2_fds.py tests/test_d2_fds_interactive.py tests/test_d2_humidity_air_quality.py",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 54.97,
+      "result": "30 passed; FDS online refusal and replay provenance assertions included"
+    },
+    {
+      "category": "native_acceptance",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --all --output-dir generated/backend_acceptance_v3 --timeout 180 --loops 10; then --single-route repaired d1_ev2gym_fault,d1_discrete_device_fault,modelica_buildings_aixlib --output-dir generated/backend_acceptance_final3 --loops 3",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python plus v10 runtime for EV2Gym",
+      "exit_code": 1,
+      "result": "BLOCKED; assembled final package records 15/15 basic lifecycle probes, with full-horizon and mechanism gates false; required fresh-close WNTR campaign exceeded bounded execution"
+    },
+    {
+      "category": "read_only_check",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_v1",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 1,
+      "result": "correctly rejected BLOCKED package and gate claims"
+    },
+    {
+      "category": "executor_negative",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/probe_executor_limits.py",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 0.4,
+      "result": "worker timeout was terminated/reaped; max_workers=1 started one worker and queued two pending jobs"
+    },
+    {
+      "category": "native_fds",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --single-route --route fds_smoke_fire --output-dir generated/backend_acceptance_round4_fds --timeout 180 --loops 1",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 51.95,
+      "result": "real FDS prefix replay completed; online_step_supported=false; full_horizon/mechanism gates remain false"
+    },
+    {
+      "category": "campaign",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign_round5 --timeout 900",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 1,
+      "duration_seconds": 900.0,
+      "result": "15 route artifacts generated: three seeds/full horizons, ten reset-close cycles and two-episode concurrency controls; route process terminated after native campaign artifacts were complete"
+    },
+    {
+      "category": "campaign_causal",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_causal_campaign.py --campaign-dir generated/episode_campaign_round5",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 95.0,
+      "result": "same-prefix native divergence passed for 11/15 routes; four routes remain mechanism-gate pending"
+    },
+    {
+      "category": "stability",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_stability_campaign.py --output generated/episode_campaign_round5/stability_measurement.json --active-seconds 600 --queue-tasks 30",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 600.0,
+      "result": "30/30 mixed queue jobs completed, zero failures, max concurrent episodes=2; active native work measured 600.0 seconds"
+    },
+    {
+      "category": "assembly_check",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round5 --output-dir generated/backend_acceptance_round5 && PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round5",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 1,
+      "result": "fresh package assembled; checker correctly rejects BLOCKED package because four same-prefix mechanism gates remain false"
+    },
+    {
+      "category": "catalog_rebuild",
+      "command": "/opt/anaconda3/bin/python probe_agent_interface_d0_d1.py --output generated/agent_interface_d0_d1_v1.json && /opt/anaconda3/bin/python probe_d2_closed_loop.py --route all && /opt/anaconda3/bin/python probe_d2_modelica_buildings_aixlib.py && /opt/anaconda3/bin/python probe_d3_agent_interface.py && /opt/anaconda3/bin/python probe_d2_fds.py && /opt/anaconda3/bin/python build_dynamic_mechanism_catalog.py --output generated/dynamic_mechanism_catalog_v1.json && /opt/anaconda3/bin/python build_claim_backend_catalog.py",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "result": "fresh probes and catalogs rebuilt; FDS interactive status remains EVIDENCE_PENDING"
+    },
+    {
+      "category": "round7_regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -m pytest -q tests/test_d3_energyplus_shared_ventilation.py tests/test_process_pool.py",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 1.36,
+      "result": "15 passed; D3 EnergyPlus origin and executor cleanup regressions"
+    },
+    {
+      "category": "round7_stability",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_stability_campaign.py --output generated/episode_campaign_round7/stability_measurement.json --active-seconds 600 --queue-tasks 30",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 600.16,
+      "result": "3063 raw events; 30 queue; active_soak_seconds=600.162805; seed mismatches=0; errors=0; RSS bytes and FD/thread/children samples"
+    },
+    {
+      "category": "round7_campaign",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign_round7_final --timeout 900; PYTHONDONTWRITEBYTECODE=1 ../v10_diversity_aware_compiler/.runtime/venv/bin/python tools/run_episode_campaign.py --route d3_ev2gym_electric_competition --output-dir generated/episode_campaign_round7_final --timeout 900",
+      "cwd": ".",
+      "interpreter": "anaconda plus pinned v10 EV2Gym interpreter",
+      "exit_code": 1,
+      "result": "15 route artifacts complete; aggregate exits 1 only because anaconda cannot run EV2Gym; pinned v10 rerun completed successfully"
+    },
+    {
+      "category": "round7_assembly_check",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round7_final --output-dir generated/backend_acceptance_round7_final && PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round7_final",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "result": "READY_FOR_ASTRA; 15/15 routes; checker passed"
+    },
+    {
+      "category": "round7_negative_check",
+      "command": "empty event stream and wrong seed mutations against copies of generated/backend_acceptance_round7_final",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "result": "both targeted invalid packages rejected with exit 1"
+    },
+    {
+      "category": "round8_final",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign_round8_final --timeout 900; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round8_final --output-dir generated/backend_acceptance_round8_final; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round8_final",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python plus verified v10 EV runtime",
+      "exit_code": 0,
+      "result": "15/15 READY_FOR_ASTRA; checker passed; malformed t0 trace negative package rejected"
+    },
+    {
+      "category": "round8_final_stability",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_stability_campaign.py --output generated/episode_campaign_round8_final/stability_measurement.json --active-seconds 600 --queue-tasks 30",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python",
+      "exit_code": 0,
+      "duration_seconds": 600.23,
+      "result": "3063 raw events; 30 queue; active_soak_seconds=600.226533; 0 failures; seed attribution consistent"
+    },
+    {
+      "category": "round9_final",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route all --output-dir generated/episode_campaign_round9_final --timeout 900; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round9_final --output-dir generated/backend_acceptance_round9_final; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round9_final",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3/bin/python plus verified v10 EV runtime",
+      "exit_code": 0,
+      "result": "15/15 passed; per-cycle owned process-group cleanup and resources verified; malformed trace rejected"
+    },
+    {
+      "category": "round9_b2_b3_final",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route d3_citylearn_multi_system --output-dir generated/episode_campaign_round10_final --timeout 900; PYTHONDONTWRITEBYTECODE=1 ../v10_diversity_aware_compiler/.runtime/venv/bin/python tools/run_episode_campaign.py --route d3_ev2gym_electric_competition --output-dir generated/episode_campaign_round10_final --timeout 900; cp -cR generated/episode_campaign_round9_final generated/episode_campaign_round10_final_all; cp generated/episode_campaign_round10_final/d3_citylearn_multi_system.json generated/episode_campaign_round10_final_all/; cp generated/episode_campaign_round10_final/d3_ev2gym_electric_competition.json generated/episode_campaign_round10_final_all/; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round10_final_all --output-dir generated/backend_acceptance_round10_final; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round10_final",
+      "cwd": ".",
+      "interpreter": "/opt/anaconda3 plus pinned v10 EV runtime",
+      "exit_code": 0,
+      "result": "15/15 READY_FOR_ASTRA; CityLearn/EV cross-channel probes present; shortened valid-first-tick horizon negative exits 1"
+    },
+    {
+      "category": "round11_citylearn_boundary",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route d3_citylearn_multi_system --output-dir generated/episode_campaign_round11_city --timeout 900; cp -cR generated/episode_campaign_round9_final generated/episode_campaign_round11_all; cp generated/episode_campaign_round11_city/d3_citylearn_multi_system.json generated/episode_campaign_round11_all/; cp generated/episode_campaign_round10_final_all/d3_ev2gym_electric_competition.json generated/episode_campaign_round11_all/; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round11_all --output-dir generated/backend_acceptance_round11_final; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round11_final",
+      "cwd": ".",
+      "exit_code": 0,
+      "result": "15/15 Episode-ready; CityLearn coupling_supported=false; empty raw probe negative exits 1"
+    },
+    {
+      "category": "round11_final_b2",
+      "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python build_dynamic_mechanism_catalog.py --output generated/dynamic_mechanism_catalog_v1.json; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_episode_campaign.py --route d3_citylearn_multi_system --output-dir generated/episode_campaign_round11_city --timeout 900; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/assemble_backend_acceptance.py --campaign-dir generated/episode_campaign_round11_all --output-dir generated/backend_acceptance_round11_final; PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir generated/backend_acceptance_round11_final",
+      "cwd": ".",
+      "exit_code": 0,
+      "result": "active catalog rebuilt; CityLearn coupling pending/unsupported; package checker 0; empty-runs and unequal-prefix negatives 1"
+    }
+  ],
+  "skip_count": 0
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "release_config.schema.json",
+  "title": "Release configuration v1",
+  "description": "Machine-readable frozen release configuration: opportunity thresholds, search/certification seeds, quotas, ordering, tie rules, acceptable policy sets and dedup configuration (normative doc sections 7, 9, 11).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "opportunity_thresholds", "seeds", "certification", "policy", "assignment", "quotas", "anti_gaming", "dedup", "threshold_sensitivity", "tie_rule", "authorization_acceptable_policies", "pi_cert", "pi_0"],
+  "properties": {
+    "version": { "type": "string" },
+    "opportunity_thresholds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delta_noop", "delta_positive"],
+      "properties": {
+        "delta_noop": { "type": "number", "minimum": 0 },
+        "delta_positive": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "seeds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["search_seeds", "certification_seeds"],
+      "properties": {
+        "search_seeds": { "type": "array", "items": { "type": "integer" } },
+        "certification_seeds": { "type": "array", "items": { "type": "integer" } }
+      }
+    },
+    "certification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "seed_counts", "power_analysis", "confidence_method", "family_wise_correction"],
+      "properties": {
+        "mode": { "type": "string", "enum": ["sampling", "exact_complete_population"] },
+        "seed_counts": { "type": ["integer", "object"], "minimum": 1 },
+        "power_analysis": { "type": "object" },
+        "confidence_method": { "type": "string" },
+        "family_wise_correction": { "type": "string" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policy_types", "noop_is_acceptable"],
+      "properties": {
+        "policy_types": { "type": "array", "items": { "type": "string" } },
+        "noop_is_acceptable": { "type": "boolean" }
+      }
+    },
+    "assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["order", "quota_failure", "runs_once_over"],
+      "properties": {
+        "order": { "type": "array", "items": { "type": "string" } },
+        "quota_failure": { "type": "string", "enum": ["preview_only"] },
+        "runs_once_over": { "type": "string" }
+      }
+    },
+    "quotas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["per_split_min_episodes", "per_stratum_min_episodes"],
+      "properties": {
+        "per_split_min_episodes": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "per_stratum_min_episodes": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      }
+    },
+    "anti_gaming": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["available_rules", "default_rule", "terminal_guard_band", "terminal_viability"],
+      "properties": {
+        "available_rules": { "type": "array", "items": { "type": "string", "enum": ["terminal_guard_band", "terminal_viability"] } },
+        "default_rule": { "type": "string", "enum": ["terminal_guard_band", "terminal_viability"] },
+        "terminal_guard_band": { "type": "object", "properties": { "band_intervals": { "type": "integer" } } },
+        "terminal_viability": { "type": "object", "properties": { "extension_intervals": { "type": "integer" }, "safe_continuation_policy": { "type": "string" } } }
+      }
+    },
+    "dedup": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["level", "canonical_key", "distance_function", "threshold", "interval_overlap_rule", "transitive_closure"],
+        "properties": {
+          "level": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "canonical_key": { "type": "string" },
+          "distance_function": { "type": "string" },
+          "threshold": { "type": "number" },
+          "interval_overlap_rule": { "type": "string" },
+          "transitive_closure": { "type": "string" }
+        }
+      }
+    },
+    "threshold_sensitivity": { "type": "array", "items": { "type": "object" } },
+    "tie_rule": { "type": "string" },
+    "authorization_acceptable_policies": { "type": "object", "additionalProperties": { "type": "array", "items": { "type": "string" } } },
+    "pi_cert": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enumerated", "entries"],
+      "properties": {
+        "enumerated": { "type": "boolean" },
+        "entries": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "pi_0": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "inputs", "action"],
+      "properties": {
+        "id": { "type": "string" },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "action": { "type": "string" }
+      }
+    }
+  }
+}

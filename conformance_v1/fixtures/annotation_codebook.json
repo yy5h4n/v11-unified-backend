@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "note": "Minimal annotation codebook for admission-critical nominal/ordinal fields (normative doc section 5). Two trained annotators must reach Krippendorff alpha >= 0.80 pre-adjudication on each field.",
+  "fields": [
+    { "field": "desired_state", "type": "nominal", "values": ["positive", "negative", "unknown"] },
+    { "field": "beneficiary", "type": "nominal", "values": ["self", "household", "third_party", "unknown"] },
+    { "field": "accountable_party", "type": "nominal", "values": ["self", "other", "shared", "unknown"] },
+    { "field": "persistence", "type": "ordinal", "values": ["episodic", "recurring", "persistent"] },
+    { "field": "failure_meaning", "type": "nominal", "values": ["harm", "discomfort", "waste", "none", "unknown"] },
+    { "field": "override_release", "type": "nominal", "values": ["present", "absent", "unknown"] },
+    { "field": "delegation_acceptance", "type": "ordinal", "values": ["refused", "manual_only", "automation", "agent_control", "unknown"] }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "standing_intents": 142,
+    "natural_primary_queries": 142,
+    "ready": 98,
+    "needs_review": 44,
+    "inherited_flag_corrections": 6,
+    "inherited_status_corrections": 5,
+    "rejected_artifact": "four_surface_variants_draft_rejected_as_formulaic_and_ungrammatical",
+    "curator_query_overrides": 11
+  },
+  "validation": {
+    "valid": true,
+    "coverage_exact": true,
+    "standing_intent_ids_unique": true,
+    "query_texts_unique": true,
+    "forbidden_wrapper_hits": {},
+    "action_recipe_hits": [],
+    "hidden_evaluator_hits": [],
+    "length_gate_hits": [],
+    "punctuation_gate_hits": [],
+    "max_opening_trigram": [
+      "make",
+      "sure",
+      "the"
+    ],
+    "max_opening_trigram_count": 4,
+    "max_opening_trigram_fraction": 0.0282,
+    "ready_status_never_promoted": true,
+    "backend_inputs_used": false,
+    "human_validated": false
+  },
+  "output_file": "NATURAL_STANDING_INTENT_QUERY_CATALOG_V2_4.json",
+  "output_sha256": "815fd252178835aaa0fca7b50a680aa5541d4d59e6a5a103c7134de33cf49191"
+}
