@@ -57,6 +57,24 @@ are in `docs/`.
 - `tools/backend_acceptance_runner.py`: fail-closed acceptance checker.
 - `tests/`: protocol and regression tests.
 
+## Python file layout
+
+The repository contains prototype history as well as the production boundary;
+the top-level Python files are not 89 independent backends. Treat them as
+follows:
+
+- Production boundary: `unified_compiler/`, the top-level `d2_*_adapter.py` and
+  `d3_*_adapter.py` files, and the current tools in `tools/`.
+- Current acceptance/campaign tools: `tools/backend_acceptance_runner.py`,
+  `tools/run_episode_campaign.py`, `tools/run_causal_campaign.py`,
+  `tools/run_stability_campaign.py`, and
+  `tools/assemble_backend_acceptance.py`.
+- Historical research pipeline: top-level `build_*`, `compile_*`,
+  `evaluate_*`, `probe_*`, `validate_*`, migration, pilot, dashboard, and
+  responsibility scripts. They remain for reproducibility and because some
+  regression tests import them; they are not runtime services and should not be
+  treated as separate production implementations.
+
 ## Reproduction
 
 With the external runtimes mounted, run:
