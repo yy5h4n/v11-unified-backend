@@ -5,6 +5,11 @@ accepted repair package. It contains the public backend boundary, route
 adapters, bounded executor, acceptance tools, tests, protocol documents, and
 the Round 11 acceptance evidence under `acceptance/`.
 
+The root keeps only the documents needed for operating and reviewing the
+backend. Earlier prototype audits, Harness iterations, pilot reports, and
+route notes are preserved under `docs/archive/`; dashboards and old catalog
+artifacts are under `docs/artifacts/`.
+
 The backend passed the agreed local Episode-generation acceptance for all 15
 route records. The following capability boundaries are intentional:
 
@@ -24,4 +29,3 @@ PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python \
   tools/backend_acceptance_runner.py --check \
   --output-dir acceptance/backend_acceptance_round11_final
 ```
-

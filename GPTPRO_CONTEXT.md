@@ -16,6 +16,11 @@ The final evidence package is under
 `acceptance/backend_acceptance_round11_final/`. It is provenance evidence, not
 a substitute for installing native runtimes on another host.
 
+The repository is intentionally layered: current operating and acceptance
+documents stay at the root, the final review material is under `docs/`, and
+older prototype/audit material is preserved under `docs/archive/`. The archive
+is historical context, not a second implementation.
+
 ## What passed
 
 The local Astra acceptance passed the agreed Episode-generation gate for all 15
@@ -88,4 +93,3 @@ evidence, not the Agent's gold answer.
 documents are historical/frozen review material. Do not silently rewrite their
 semantics or hashes when changing implementation. Record any new capability
 as a dated supplement and rerun the acceptance package.
-
