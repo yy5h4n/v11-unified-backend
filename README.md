@@ -36,3 +36,9 @@ PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python \
   tools/backend_acceptance_runner.py --check \
   --output-dir acceptance/backend_acceptance_local_final
 ```
+
+For LLM multi-turn calls, use `unified_compiler.llm_conversation`. It keeps
+the backend's full observations as the source of truth, sends the initial
+observation once, and sends lossless V10 `observation_delta` messages on later
+turns. It is a provider-neutral message formatter; it does not make model API
+calls.

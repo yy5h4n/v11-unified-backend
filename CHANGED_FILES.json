@@ -8,10 +8,10 @@
       "purpose": "third-round backend repair and evidence provenance"
     },
     {
-      "new_sha256": "1c710d9293aeaedde201304bba38d398f82c45bda5dfc77ae94e1032a495b686",
+      "new_sha256": "ffdb6d3c59e16d10c93eed5723fe0efadf3e8488da10910816b440e66592cd63",
       "old_sha256": null,
       "path": "BACKEND_PUBLIC_PROTOCOL.md",
-      "purpose": "third-round backend repair and evidence provenance"
+      "purpose": "LLM conversation protocol migration"
     },
     {
       "new_sha256": "0358a002db5d0e8dd1d2059c99f4956ee466c2cb9ecba08ec263290bfda7d328",
@@ -20,10 +20,10 @@
       "purpose": "user-approved non-frozen FDS replay target supplement"
     },
     {
-      "new_sha256": "ce1e28a236a77a795584025938446af457ad56f4329b4d2ed5e447fb3122b567",
+      "new_sha256": "163feb412c541b85c2673b28d37f42ecca62fac34c42ed0bf1a3aaeaf1a71302",
       "old_sha256": null,
       "path": "TEST_COMMANDS.json",
-      "purpose": "third-round backend repair and evidence provenance"
+      "purpose": "LLM conversation protocol migration"
     },
     {
       "new_sha256": "10c710597948392b69930729a06a85c762ea5326edd9e8e6853f75407993fa48",
@@ -174,6 +174,36 @@
       "old_sha256": null,
       "path": "unified_compiler/route_registry.py",
       "purpose": "third-round backend repair and evidence provenance"
+    },
+    {
+      "new_sha256": "621e8b85c76d10fc60d6bc2d9c622b46ce19a8219132851521032b17ca312b5a",
+      "old_sha256": null,
+      "path": "README.md",
+      "purpose": "LLM conversation protocol migration"
+    },
+    {
+      "new_sha256": "91487a84a19c442bdbc5fecbde8861553dd6ed2c34d63ee445519d47a53f232f",
+      "old_sha256": null,
+      "path": "GPTPRO_CONTEXT.md",
+      "purpose": "LLM conversation protocol migration"
+    },
+    {
+      "new_sha256": "3882f620931475d6ce40e210c5ce2646b78fa0110a92ce293d5af6313b4295b4",
+      "old_sha256": null,
+      "path": "unified_compiler/__init__.py",
+      "purpose": "LLM conversation protocol migration"
+    },
+    {
+      "new_sha256": "76ec8bc464c295d20e8517d4e556bfdee9567cc3d8c82fd8a1540e0fc9db0d35",
+      "old_sha256": null,
+      "path": "unified_compiler/llm_conversation.py",
+      "purpose": "LLM conversation protocol migration"
+    },
+    {
+      "new_sha256": "a930b913f5fa66e5ebdb8429c171dd44f3ddc154fc13898159d1032e230b5596",
+      "old_sha256": null,
+      "path": "tests/test_llm_conversation.py",
+      "purpose": "LLM conversation protocol migration"
     }
   ],
   "evidence_directory": "acceptance/backend_acceptance_local_final",

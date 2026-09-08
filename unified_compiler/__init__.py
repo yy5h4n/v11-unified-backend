@@ -42,6 +42,19 @@ from .agent_interface import (
     HarnessD1AgentBackend,
     make_agent_backend,
 )
+from .llm_conversation import (
+    CompactObservationConversation,
+    ConversationProtocolError,
+    apply_observation_delta,
+    build_environment_delta_message,
+    build_initial_user_message,
+    canonical_assistant_action,
+    extend_system_content,
+    observation_delta,
+    public_action_result_from_receipt,
+    prompt_template_sha256,
+    validate_canonical_conversation,
+)
 
 __all__ = [
     "AdapterRegistry",
@@ -80,4 +93,15 @@ __all__ = [
     "AgentReceiptAdapter",
     "HarnessD1AgentBackend",
     "make_agent_backend",
+    "CompactObservationConversation",
+    "ConversationProtocolError",
+    "apply_observation_delta",
+    "build_environment_delta_message",
+    "build_initial_user_message",
+    "canonical_assistant_action",
+    "extend_system_content",
+    "observation_delta",
+    "public_action_result_from_receipt",
+    "prompt_template_sha256",
+    "validate_canonical_conversation",
 ]

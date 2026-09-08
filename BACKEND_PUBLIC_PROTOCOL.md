@@ -15,3 +15,21 @@ EnergyPlus accepts its registered cadence values of 600, 1200, and 1800 seconds.
 ## CityLearn capability boundary
 
 CityLearn multi-system Episode generation remains available from its native route, but the configured route is not a verified D3 cross-channel coupling capability: `d3_coupling_supported=false`. Independent battery and HVAC responses remain usable Episode evidence. Coupling-required selection must exclude this route until raw fixed-peer native evidence establishes that capability.
+
+## LLM conversation boundary
+
+The backend returns complete public observations. The LLM-facing conversation
+layer in `unified_compiler.llm_conversation` sends the complete initial
+observation once and then appends one canonical assistant action followed by
+one `environment_observation` user message containing `action_result` and a
+lossless `observation_delta`. The latest full observation is retained only in
+the caller's process memory to compute the next delta. `validate_canonical_conversation`
+replays the initial observation plus the delta chain and rejects tampered,
+ambiguous, duplicate-key, or non-finite JSON payloads.
+
+This layer is independent of the LLM provider. It does not make API calls or
+choose a model. A provider runner should pass `CompactObservationConversation.messages()`
+to the model, append the returned action with `append_action`, then append the
+native receipt's `public_action_result_from_receipt(receipt)` and observation
+with `append_environment`. The receipt projection intentionally excludes the
+full observation and the echoed action from `action_result`.

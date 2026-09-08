@@ -48,6 +48,10 @@ earlier defects are in `docs/`.
 
 - `unified_compiler/agent_interface.py`: canonical public reset/observe/
   legal_actions/step/close boundary and receipt validation.
+- `unified_compiler/llm_conversation.py`: provider-neutral V10 conversation
+  assembly. It sends the initial full public observation once, then exact
+  lossless observation deltas; the backend itself continues to return full
+  observations.
 - `unified_compiler/route_registry.py`: authoritative route metadata,
   cadence, horizon, execution mode, and capability declarations.
 - `unified_compiler/executor.py`: bounded queue, process isolation, deadlines,
