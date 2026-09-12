@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Backend Casebook · Core Claim Review</title>
+  <style>
+    :root{--bg:#f5f4ef;--paper:#fffefa;--ink:#17201d;--muted:#66716c;--line:#d9ddd8;--green:#0a6c58;--blue:#3867d6;--amber:#b46600;--cyan:#087d8b;--purple:#6e50b4;--red:#b73838;--shadow:0 10px 26px rgba(25,35,31,.08)}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.58 Inter,ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+    button,input,textarea{font:inherit} button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:330px minmax(0,1fr)}
+    aside{position:sticky;top:0;height:100vh;border-right:1px solid var(--line);background:#eeeee8;display:flex;flex-direction:column;overflow:hidden}
+    .brand{padding:22px 20px 15px;border-bottom:1px solid var(--line)}.eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:800}.brand h1{font:700 25px/1.15 Georgia,serif;margin:6px 0}.brand p{margin:0;color:var(--muted);font-size:13px}
+    .filters{padding:14px 16px;border-bottom:1px solid var(--line);display:grid;gap:10px}.search{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:9px 11px}.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid var(--line);background:transparent;border-radius:99px;padding:5px 10px;font-size:12px;color:var(--muted)}.chip.active{background:var(--ink);color:white;border-color:var(--ink)}
+    .nav{overflow:auto;padding:10px}.nav-item{width:100%;border:0;border-left:4px solid transparent;border-radius:7px;background:transparent;text-align:left;padding:10px 11px;margin:2px 0;display:grid;grid-template-columns:37px 1fr;gap:8px;color:var(--ink)}.nav-item:hover{background:#fff9}.nav-item.active{background:var(--paper);box-shadow:0 2px 10px #0000000d}.nav-layer{font-size:11px;font-weight:900;padding-top:2px}.nav-title{font-weight:700;line-height:1.3}.nav-route{display:block;color:var(--muted);font:11px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:3px;overflow:hidden;text-overflow:ellipsis}.D0{color:var(--blue)}.D1{color:var(--amber)}.D2{color:var(--cyan)}.D3{color:var(--purple)}.BLOCKED{color:var(--red)}
+    main{min-width:0}.topbar{padding:20px clamp(22px,4vw,58px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:18px;background:rgba(245,244,239,.9);backdrop-filter:blur(8px);position:sticky;top:0;z-index:5}.topbar strong{font-size:14px}.counter{color:var(--muted);font-size:13px}.summary{display:flex;gap:8px;flex-wrap:wrap}.metric{border:1px solid var(--line);border-radius:7px;padding:4px 8px;background:var(--paper);font-size:12px}
+    .content{max-width:1080px;margin:0 auto;padding:34px clamp(22px,4vw,58px) 80px}.notice{background:#fff7da;border:1px solid #ead28a;border-radius:10px;padding:14px 16px;margin-bottom:24px;color:#5c4b16}.notice strong{display:block;color:#332b14}
+    .case-head{border-bottom:2px solid var(--ink);padding-bottom:22px}.kicker{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{display:inline-flex;align-items:center;border-radius:99px;padding:4px 9px;font-size:11px;font-weight:800;background:#eceeea}.pill.ready{background:#dff2e9;color:#075c47}.pill.qualified{background:#fff0cc;color:#765000}.pill.not_d3{background:#f1e7ff;color:#654097}.pill.blocked{background:#ffe2e0;color:#8b2828}.route{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--muted)}
+    h2{font:700 clamp(30px,4vw,46px)/1.08 Georgia,"Noto Serif SC",serif;margin:13px 0 10px;letter-spacing:-.02em}.sim{color:var(--muted)}
+    .query-card{margin:24px 0;background:var(--ink);color:white;border-radius:12px;padding:22px 24px;box-shadow:var(--shadow)}.query-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9ccbbb;font-weight:800}.query-en{font:600 23px/1.4 Georgia,serif;margin:7px 0}.query-zh{color:#d5dedb;font-size:14px}.claim-note{margin-top:15px;border-top:1px solid #ffffff26;padding-top:13px;color:#bde6d6}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:20px 0}.panel{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:19px;box-shadow:0 3px 12px rgba(25,35,31,.035)}.panel.wide{grid-column:1/-1}.panel h3{font-size:14px;margin:0 0 13px;display:flex;align-items:center;gap:8px}.num{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:white;font-size:11px}
+    .contract{display:grid;grid-template-columns:92px 1fr;gap:8px 12px}.contract dt{font-weight:800;color:var(--muted)}.contract dd{margin:0}.subhead{font-size:12px;color:var(--muted);font-weight:800;margin:14px 0 6px;text-transform:uppercase;letter-spacing:.06em}ul{margin:7px 0;padding-left:20px}li+li{margin-top:5px}
+    .actions{display:flex;gap:7px;flex-wrap:wrap}.action{background:#edf3f0;border:1px solid #d4e3dc;border-radius:6px;padding:5px 8px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .timeline{display:grid;gap:0}.event{display:grid;grid-template-columns:72px 1fr 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line)}.event:first-child{border-top:0}.event time{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--green)}.event .act{color:var(--green);font-weight:650}.event small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.06em}
+    .why{border-left:4px solid var(--amber);background:#fff9ec;padding:12px 14px;margin-top:13px}.review{margin-top:24px;border-top:1px solid var(--line);padding-top:20px}.review-row{display:flex;gap:8px;flex-wrap:wrap}.review button{border:1px solid var(--line);background:var(--paper);border-radius:7px;padding:8px 12px}.review button.selected{border-color:var(--green);background:#dff2e9;color:#075c47;font-weight:700}.review textarea{width:100%;min-height:88px;margin-top:10px;border:1px solid var(--line);border-radius:8px;padding:10px;background:var(--paper);resize:vertical}.save-note{font-size:12px;color:var(--muted);margin-top:5px}
+    .empty{padding:40px;color:var(--muted);text-align:center}
+    @media(max-width:850px){.app{grid-template-columns:1fr}aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}.nav{max-height:300px}.topbar{position:relative}.grid{grid-template-columns:1fr}.panel.wide{grid-column:auto}.event{grid-template-columns:60px 1fr}.event .act{grid-column:2}}
+  </style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand"><div class="eyebrow">V0 · Mechanism-first review</div><h1>Backend Casebook</h1><p>每个正式后端一个自编 case；先看机制与 claim 是否真的对上。</p></div>
+    <div class="filters"><input id="search" class="search" placeholder="搜 query、route、模拟器…" /><div id="chips" class="chips"></div></div>
+    <nav id="nav" class="nav"></nav>
+  </aside>
+  <main>
+    <div class="topbar"><div><strong>核心关系：自然长期 Query × 后端动态 × 轨迹级 evaluator</strong><div class="counter" id="counter"></div></div><div class="summary"><span class="metric">15 正式 routes</span><span class="metric">+ 1 BOPTEST 缺口</span></div></div>
+    <div class="content" id="content"></div>
+  </main>
+</div>
+<script src="cases.js"></script>
+<script src="claim_designs.js"></script>
+<script>
+const cases=window.BACKEND_CASES||[]; let layer='ALL', current=cases[0]?.id;
+const labels={ALL:'全部',D0:'D0 外生',D1:'D1 失效',D2:'D2 连续',D3:'D3 竞争',BLOCKED:'未准入'};
+const status={design_pending:['需求设计 · 数据与评测待验收','qualified'],claim_ready:['可支撑 claim','ready'],qualified:['有边界地支撑','qualified'],not_d3_yet:['暂不能算强 D3','not_d3'],blocked:['未准入','blocked']};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function filtered(){const q=document.querySelector('#search').value.trim().toLowerCase();return cases.filter(c=>(layer==='ALL'||c.layer===layer)&&(!q||JSON.stringify(c).toLowerCase().includes(q)))}
+function renderChips(){document.querySelector('#chips').innerHTML=Object.keys(labels).map(k=>`<button class="chip ${k===layer?'active':''}" data-layer="${k}">${labels[k]}</button>`).join('');document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{layer=b.dataset.layer;const f=filtered();if(!f.some(x=>x.id===current))current=f[0]?.id;render()})}
+function renderNav(){const f=filtered();document.querySelector('#counter').textContent=`当前显示 ${f.length} / ${cases.length} 个 case`;document.querySelector('#nav').innerHTML=f.length?f.map(c=>`<button class="nav-item ${c.id===current?'active':''}" data-id="${c.id}"><span class="nav-layer ${c.layer}">${c.layer}</span><span><span class="nav-title">${esc(c.title)}</span><span class="nav-route">${esc(c.route)}</span></span></button>`).join(''):'<div class="empty">没有匹配项</div>';document.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{current=b.dataset.id;renderNav();renderCase()})}
+function list(xs){return `<ul>${xs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`}
+function renderCase(){const c=cases.find(x=>x.id===current);const root=document.querySelector('#content');if(!c){root.innerHTML='<div class="empty">请选择一个 case</div>';return}const st=status[c.status];const key=`casebook:${c.id}`;const saved=JSON.parse(localStorage.getItem(key)||'{}');root.innerHTML=`
+<div class="notice"><strong>先别把这些当成最终数据。</strong>Query、责任合同和示例轨迹由我们为机制审阅而编写；它们不是开源语料中的真实用户原句，也不是已经跑出的 gold trajectory。正式入集还要补“人类需求来源映射”并实际执行验证。</div>
+<header class="case-head"><div class="kicker"><span class="pill ${st[1]}">${st[0]}</span><span class="route">${esc(c.route)}</span></div><h2>${esc(c.title)}</h2><div class="sim">${esc(c.simulator)}</div></header>
+<section class="query-card"><div class="query-label">01 · Natural, standing query</div><div class="query-en">“${esc(c.query)}”</div><div class="query-zh">${esc(c.queryZh)}</div><div class="claim-note"><strong>这条 route 与 claim 的关系：</strong> ${esc(c.support)}</div></section>
+<div class="grid">
+  <section class="panel wide"><h3>逐 case 核对 · ${esc(c.caseReview.status)}</h3><div class="subhead">用户到底要什么</div><p>${esc(c.caseReview.user_need)}</p><div class="subhead">正确性应该看什么</div><p>${esc(c.caseReview.judge)}</p><div class="subhead">还不能放行的原因</div><p>${esc(c.caseReview.unresolved)}</p><div class="why">${esc(c.caseReview.runtime ? `当前单次环境时域 ${c.caseReview.runtime.horizon_seconds} 秒；原生采样间隔 ${c.caseReview.runtime.cadence_seconds} 秒。这不是模型必须调用的频率，也不代表已经测试了整个长期生活。` : '候选后端：尚无可执行正式路线。')}<br>来源：授权自编诊断案例，尚未回接开源人类需求；当前不生成任务成功标签。</div></section>
+  <section class="panel wide"><h3>这条题怎样验证我们的 claim</h3><div class="subhead">机制怎样影响长期责任</div><p>${esc(c.claimDesign.bind)}</p><div class="subhead">必须做的机制对照</div><p>${esc(c.claimDesign.contrast)}</p><div class="subhead">目前已有证据</div><p>${esc(c.claimDesign.evidence)}</p><div class="subhead">还没完成的验证 / 后端缺口</div><p>${esc(c.claimDesign.missing)}</p></section>
+  <section class="panel"><h3><span class="num">02</span>长期责任合同</h3><dl class="contract"><dt>何时生效</dt><dd>${esc(c.responsibility.activate)}</dd><dt>持续满足</dt><dd>${esc(c.responsibility.maintain)}</dd><dt>何时解除</dt><dd>${esc(c.responsibility.release)}</dd><dt>禁止捷径</dt><dd>${esc(c.responsibility.forbidden)}</dd></dl></section>
+  <section class="panel"><h3><span class="num">03</span>原设计的接口摘要</h3><p>以下为设计摘要；完整合法动作及公开字段以当前运行时 schema 为准，不能据此虚构占用传感器或动作能力。</p><div class="subhead">观测摘要</div>${list(c.backend.observes)}<div class="subhead">动作摘要</div><div class="actions">${c.backend.actions.map(a=>`<span class="action">${esc(a)}</span>`).join('')}</div><div class="subhead">后端动态</div><div>${esc(c.backend.dynamics)}</div></section>
+  <section class="panel wide"><h3><span class="num">04</span>一条示意 Episode（设计稿，不是运行日志）</h3><div class="timeline">${c.timeline.map(e=>`<div class="event"><time>${esc(e[0])}</time><div><small>Observation / external change</small>${esc(e[1])}</div><div class="act"><small>Agent response</small>${esc(e[2])}</div></div>`).join('')}</div></section>
+  <section class="panel wide"><h3><span class="num">05</span>轨迹级 evaluator 应该怎么判</h3><div class="grid" style="margin:0"><div><div class="subhead">硬门槛</div>${list(c.evaluator.hard)}</div><div><div class="subhead">软指标 / 排序</div>${list(c.evaluator.soft)}</div></div><div class="why"><strong>为什么一次 workflow / no-op 不够：</strong> ${esc(c.evaluator.failure)}</div></section>
+</div>
+<section class="review"><h3>你的审阅结论</h3><div class="review-row">${['可以继续','Query 要改','后端不匹配','Evaluator 要改'].map(x=>`<button data-review="${x}" class="${saved.verdict===x?'selected':''}">${x}</button>`).join('')}</div><textarea id="note" placeholder="记录你对这个 case 的疑问或修改建议…">${esc(saved.note||'')}</textarea><div class="save-note">结论和备注只保存在当前浏览器 localStorage，不会写回数据集。</div></section>`;
+document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>{const d=JSON.parse(localStorage.getItem(key)||'{}');d.verdict=b.dataset.review;d.note=document.querySelector('#note').value;localStorage.setItem(key,JSON.stringify(d));renderCase()});document.querySelector('#note').oninput=e=>{const d=JSON.parse(localStorage.getItem(key)||'{}');d.note=e.target.value;localStorage.setItem(key,JSON.stringify(d))};window.scrollTo({top:0,behavior:'smooth'});
+}
+function render(){renderChips();renderNav();renderCase()}document.querySelector('#search').addEventListener('input',()=>{const f=filtered();if(!f.some(x=>x.id===current))current=f[0]?.id;renderNav();renderCase()});render();
+</script>
+</body>
+</html>

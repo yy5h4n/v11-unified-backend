@@ -27,10 +27,10 @@ from d2_modelica_buildings_aixlib_adapter import (
 
 ROOT = Path(__file__).resolve().parent
 D3_ROOT = ROOT / "shared_assets" / "modelica_d3_shared_heat_v1"
-MODEL_SOURCE = D3_ROOT / "D3SharedHeat.mo"
-FMU_ROOT = ROOT / "generated" / "d3_modelica_shared_heat_v1" / "fmu" / "D3SharedHeat.fmutmp"
+MODEL_SOURCE = ROOT / "environment_repairs_v1/models/D3SharedHeat.mo"
+FMU_ROOT = ROOT / "environment_repairs_v1/build/d3/active"
 MODEL_NAME = "D3SharedHeat.SharedHeatPumpTwoService"
-COMPILE_SCRIPT = ROOT / "compile_d3_modelica_shared_heat_fmu.py"
+COMPILE_SCRIPT = ROOT / "tools/compile_repaired_modelica.py"
 ADAPTER_SCRIPT = Path(__file__).resolve()
 DEFAULT_DT_SECONDS = 60.0
 DEFAULT_HORIZON_SECONDS = 3600.0
@@ -174,7 +174,7 @@ class _Session:
         if int(status) > 1:
             raise D3ModelicaError(f"{operation} returned FMI status {int(status)}")
 
-    def start(self) -> None:
+    def start(self, horizon_seconds: float = DEFAULT_HORIZON_SECONDS) -> None:
         resource = self.root.resolve().as_uri().encode()
         self.component = self.instantiate(b"d3_shared_heat_agent", 1, self.guid.encode(), resource, ctypes.byref(self._callbacks), 0, 0)
         if not self.component:
@@ -182,7 +182,7 @@ class _Session:
         try:
             # Stop time is the FMI experiment boundary, not the Agent tick;
             # keeping it beyond the public horizon allows multiple doStep calls.
-            self._check(self.setup(self.component, 0, 0.0, 0.0, 1, DEFAULT_HORIZON_SECONDS), "fmi2SetupExperiment")
+            self._check(self.setup(self.component, 0, 0.0, 0.0, 1, horizon_seconds), "fmi2SetupExperiment")
             self._check(self.enter(self.component), "fmi2EnterInitializationMode")
             self.set_actions(0.0, 0.0)
             self._check(self.exit(self.component), "fmi2ExitInitializationMode")
@@ -212,8 +212,11 @@ class _Session:
         if self.component is None:
             raise D3ModelicaError("FMI session is not initialized")
         self.set_actions(space, dhw)
-        self._check(self.do_step(self.component, self.time, dt, 1), "fmi2DoStep")
-        self.time += dt
+        end = self.time + dt
+        while self.time < end - 1e-9:
+            substep = min(1.0, end-self.time)
+            self._check(self.do_step(self.component, self.time, substep, 1), "fmi2DoStep")
+            self.time += substep
 
     def close(self) -> None:
         if self.component is not None:
@@ -251,8 +254,8 @@ def probe_runtime_d3() -> dict[str, Any]:
 class D3ModelicaSharedHeatRoute:
     """One real FMI session with independent space/DHW actions and shared capacity."""
     def __init__(self, *, horizon_seconds: float = DEFAULT_HORIZON_SECONDS) -> None:
-        if not math.isfinite(float(horizon_seconds)) or float(horizon_seconds) <= 0:
-            raise D3ModelicaActionError("horizon_seconds must be finite and positive")
+        if isinstance(horizon_seconds, bool) or not isinstance(horizon_seconds, (int, float)) or not math.isfinite(horizon_seconds) or horizon_seconds <= 0 or horizon_seconds % DEFAULT_DT_SECONDS:
+            raise D3ModelicaActionError("horizon_seconds must be a positive multiple of the 60 second tick")
         self.horizon_seconds = float(horizon_seconds)
         self._session: _Session | None = None
         self._latest: dict[str, float] | None = None
@@ -269,7 +272,7 @@ class D3ModelicaSharedHeatRoute:
             raise D3ModelicaActionError("seed must be an integer")
         self.close()
         self._session = _Session()
-        self._session.start()
+        self._session.start(self.horizon_seconds)
         self._latest = self._session.observation()
         self._done = False
         return deepcopy(self._latest)
@@ -280,7 +283,10 @@ class D3ModelicaSharedHeatRoute:
         return deepcopy(self._latest)
 
     def legal_actions(self) -> dict[str, Any]:
-        return {"native": True, "type": "fmi2_real", "channels": {name: {"range": [0.0, 1.0], "unit": "1"} for name in ACTION_NAMES}}
+        return {"native": True, "type": "fmi2_real", "channels": {name: {"range": [0.0, 1.0], "unit": "1"} for name in ACTION_NAMES},
+                "shared_capacity_w": 1500.0,
+                "request_full_scale_w": {"space_heating_request":1800.0,"dhw_request":1200.0},
+                "allocation": "proportional when total requested heat exceeds shared capacity"}
 
     def step(self, action: Any, dt_seconds: float = DEFAULT_DT_SECONDS) -> dict[str, Any]:
         if self._latest is None:

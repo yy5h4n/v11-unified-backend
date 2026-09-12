@@ -258,6 +258,7 @@ class CityLearnBatteryFaultEpisode:
         self._last_effective_action = 0.0
         self._nominal_capacity = 0.0
         self._capacity_factor = 1.0
+        self._last_completed_native_index: int | None = None
 
     def reset(self, *, seed: int = 0) -> dict[str, Any]:
         if isinstance(seed, bool) or not isinstance(seed, int):
@@ -271,6 +272,7 @@ class CityLearnBatteryFaultEpisode:
         self._step_index = 0
         self._done = False
         self._last_effective_action = 0.0
+        self._last_completed_native_index = None
         return self._observation(self.schedule.state_at(0))
 
     def legal_actions(self) -> dict[str, Any]:
@@ -320,6 +322,7 @@ class CityLearnBatteryFaultEpisode:
             degraded_capacity = float(self.battery.degraded_capacity)
         except Exception as exc:
             raise CityLearnBatteryFaultError(f"native Battery transition failed: {exc}") from exc
+        self._last_completed_native_index = index
         source_row = self.source_start + self._step_index
         load = float(self.load[source_row])
         solar = float(self.solar[source_row])
@@ -357,9 +360,15 @@ class CityLearnBatteryFaultEpisode:
 
     def _observation(self, health: BatteryHealthState) -> dict[str, Any]:
         source_row = min(self.source_start + self._step_index, len(self.load) - 1)
+        # next_time_step selects an unwritten native buffer slot. The public
+        # decision state retains the last completed transition's SOC, while
+        # exogenous load/health advance to the upcoming interval.
+        soc_index = self._last_completed_native_index
+        if soc_index is None:
+            soc_index = getattr(self.battery, "time_step", None)
         return {
             "source_row": source_row,
-            "battery_soc": float(self.battery.soc[self.battery.time_step]) if getattr(self.battery, "time_step", None) is not None else float(self.battery.initial_soc),
+            "battery_soc": float(self.battery.soc[soc_index]) if soc_index is not None else float(self.battery.initial_soc),
             "non_shiftable_load_kwh": float(self.load[source_row]),
             "solar_generation_kwh": float(self.solar[source_row]),
             "battery_health": health.as_dict(),

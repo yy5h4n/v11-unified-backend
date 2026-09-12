@@ -167,11 +167,18 @@ class D0ContextTrajectory:
         self._require_active()
         return {
             "type": "context_device_command",
+            "action_schema": {
+                "act": {"kind": "act", "command": {
+                    "target": "one key from commands",
+                    "operation": "one operation listed for that target"}},
+                "wait": {"kind": "wait"},
+            },
             "commands": {
                 "front_door": {"operations": ["open", "close"]},
                 "interior_lights": {"operations": ["on", "off"]},
             },
             "schedule_agent_modifiable": False,
+            "wait_action": {"kind": "wait"},
         }
 
     def close(self) -> None:
@@ -216,6 +223,8 @@ class D0ContextTrajectory:
         }
 
     def _validate_action(self, action: Mapping[str, Any]) -> dict[str, Any]:
+        if isinstance(action, Mapping) and dict(action) == {"kind": "wait"}:
+            return {"kind": "wait"}
         if not isinstance(action, Mapping) or action.get("kind") != "act":
             raise D0ActionError("D0 action must be {kind: 'act', command: {...}}")
         if set(action) != {"kind", "command"} or not isinstance(action.get("command"), Mapping):
@@ -233,6 +242,8 @@ class D0ContextTrajectory:
         return {"kind": "act", "command": {"target": target, "operation": operation}}
 
     def _apply_action(self, action: Mapping[str, Any]) -> None:
+        if action['kind'] == 'wait':
+            return
         command = action["command"]
         target, operation = command["target"], command["operation"]
         value = {"front_door": {"open": "open", "close": "closed"}, "interior_lights": {"on": "on", "off": "off"}}[target][operation]

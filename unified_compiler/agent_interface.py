@@ -98,14 +98,9 @@ def _call_reset(route: Any, seed: int) -> Any:
         signature = None
     if signature is not None and "seed" not in signature.parameters:
         return route.reset()
-    try:
-        return route.reset(seed=seed)
-    except TypeError as exc:
-        # Some verified legacy runtimes expose reset() only.  Do not swallow
-        # other errors from the native runtime.
-        if "seed" not in str(exc):
-            raise
-        return route.reset()
+    # Never retry after entering native reset: a TypeError mentioning "seed"
+    # can originate after hidden state mutation, not just argument binding.
+    return route.reset(seed=seed)
 
 
 def _route_observation(raw: Any) -> dict[str, Any]:
@@ -204,6 +199,7 @@ class AgentReceiptAdapter:
     route: Any
     tick_seconds: float = 1.0
     accepted_dt_seconds: tuple[float, ...] | None = None
+    action_validator: Any = None
 
     def __post_init__(self) -> None:
         if not isinstance(self.tick_seconds, (int, float)) or isinstance(self.tick_seconds, bool) or not math.isfinite(float(self.tick_seconds)) or self.tick_seconds <= 0:
@@ -266,6 +262,11 @@ class AgentReceiptAdapter:
     def observe(self) -> dict[str, Any]:
         if self._closed or self._poisoned or not self._started:
             raise AgentLifecycleError("reset(seed) must be called before observe()")
+        if self._terminal:
+            # A terminal receipt is the authoritative last native snapshot.
+            # Some native APIs forbid querying after done; reading this copy
+            # must neither restart the simulator nor lose the final result.
+            return deepcopy(self._last_observation)
         observation = _route_observation(self.route.observe())
         self._last_observation = observation
         return deepcopy(observation)
@@ -293,7 +294,11 @@ class AgentReceiptAdapter:
             accepted = ", ".join(f"{value:g}" for value in self.accepted_dt_seconds)
             raise AgentActionError(f"route requires dt_seconds in {{{accepted}}}")
         _validate_action_payload(action)
-        before_digest = _state_digest(self.route)
+        if self.action_validator is not None:
+            try:
+                self.action_validator(deepcopy(action))
+            except (ValueError, TypeError, KeyError, AttributeError) as exc:
+                raise AgentActionError(str(exc)) from exc
         try:
             raw = _native_step(self.route, action, float(effective_dt))
             if not isinstance(raw, Mapping):
@@ -306,8 +311,9 @@ class AgentReceiptAdapter:
             # native entry point poisons this episode.
             self._poisoned = True
             self._terminal = True
-            if isinstance(exc, (ValueError, TypeError)):
-                raise AgentActionError(str(exc)) from exc
+            # Once native execution has started, a ValueError/TypeError may
+            # come from solver internals after mutation. It is not evidence
+            # that the model submitted an invalid action.
             raise AgentRuntimeError(f"native route step or receipt failed: {exc}") from exc
         try:
             result = _normalize_step_receipt(raw, observation, action, self._time_seconds, float(self._native_time_origin or 0.0), self.tick_seconds)
@@ -350,7 +356,16 @@ class HarnessD1AgentBackend(AgentReceiptAdapter):
         spec = self.episode_spec
         if isinstance(spec, EpisodeSpec):
             spec = EpisodeSpec(spec.episode_id, deepcopy(spec.public_bootstrap), seed, spec.max_decisions)
-        raw = self.route.reset(spec)
+        self._started = False
+        self._terminal = True
+        self._last_view = None
+        try:
+            raw = self.route.reset(spec)
+        except Exception as exc:
+            self._poisoned = True
+            raise AgentRuntimeError(f"native workflow reset failed: {exc}") from exc
+        self._closed = False
+        self._poisoned = False
         self._last_view = raw
         observation = _copy_observation(raw.public_observation)
         self._time_seconds = 0.0
@@ -374,6 +389,46 @@ class HarnessD1AgentBackend(AgentReceiptAdapter):
         from harness_v2.workflow_backend import ALLOWED_COMMANDS, PARAMETER_SCHEMAS
         return {"type": "harness_agent_action", "commands": {device: {capability: {operation: deepcopy(PARAMETER_SCHEMAS.get((capability, operation), {"type": "object", "maxProperties": 0})) for operation in ops} for capability, ops in caps.items()} for device, caps in ALLOWED_COMMANDS.items()}, "wait": {"modes": ["for", "until", "until_event"]}, "verified": True}
 
+    def _preflight(self, action: Any) -> None:
+        """Pure protocol validation. Device availability is an execution result."""
+        from harness_v2.core import validate_agent_action
+        from harness_v2.workflow_backend import WorkflowBackend, MAX_ACTIONS_PER_TICK
+        from datetime import datetime
+        try:
+            _validate_action_payload(action)
+            validate_agent_action(action)
+            if action['kind'] == 'act':
+                commands = action['commands']
+                if len(commands) > MAX_ACTIONS_PER_TICK:
+                    raise ValueError('TOO_MANY_COMMANDS')
+                devices = []
+                for command in commands:
+                    if not isinstance(command, dict) or set(command) != {'device_id','capability','operation','parameters'}:
+                        raise ValueError('command fields must be device_id, capability, operation, parameters')
+                    if not all(isinstance(command[k], str) for k in ('device_id','capability','operation')):
+                        raise ValueError('device_id, capability and operation must be strings')
+                    devices.append(command['device_id'])
+                    # Call the static command checks, not the fault wrapper's
+                    # availability checks. A jam is not malformed JSON.
+                    error = WorkflowBackend._validate_command(self.route, command, check_state=False)
+                    if error:
+                        raise ValueError(error)
+                if len(devices) != len(set(devices)):
+                    raise ValueError('DUPLICATE_DEVICE_COMMAND')
+            if action['kind'] == 'install_rule':
+                error = self.route._validate_rule(action['rule'])
+                if error:
+                    raise ValueError(error)
+            if action['kind'] == 'cancel_rule' and action['rule_id'] not in self.route._rules:
+                raise ValueError('UNKNOWN_RULE')
+            if action['kind'] == 'wait' and action['mode'] == 'until':
+                target = datetime.fromisoformat(action['timestamp'].replace('Z','+00:00'))
+                now = self.route._now()
+                if target.tzinfo is None or target <= now:
+                    raise ValueError('INVALID_WAIT_TIMESTAMP')
+        except (ValueError, TypeError, KeyError, AttributeError) as exc:
+            raise AgentActionError(str(exc)) from exc
+
     def step(self, action: Any, dt_seconds: float | None = None) -> dict[str, Any]:
         if self._poisoned or self._closed or not self._started:
             raise AgentInterfaceError("reset(seed) must be called before step()")
@@ -384,12 +439,17 @@ class HarnessD1AgentBackend(AgentReceiptAdapter):
                 raise AgentActionError("dt_seconds must be a positive finite number")
             if abs(float(dt_seconds) - self.tick_seconds) > 1e-9:
                 raise AgentActionError(f"route requires dt_seconds={self.tick_seconds:g}")
+        self._preflight(action)
         try:
-            from harness_v2.core import validate_agent_action
-            validate_agent_action(action)
             outcome = self.route.execute_atomic(action)
-            if not outcome.accepted:
+            recoverable = outcome.error_code in {
+                'FAULT_DEVICE_OFFLINE', 'FAULT_DEVICE_STUCK', 'FAULT_DEVICE_JAMMED',
+                'INVALID_STATE', 'BATTERY_TOO_LOW',
+            }
+            if not outcome.accepted and not recoverable:
                 raise AgentActionError(outcome.error_code or "workflow action rejected")
+            # No replacement command or automatic retry: advance the native
+            # world after this attempted action and return its real outcome.
             view = self.route.advance(action)
         except (ValueError, TypeError) as exc:
             self._poisoned = True; self._terminal = True
@@ -415,12 +475,12 @@ class HarnessD1AgentBackend(AgentReceiptAdapter):
         self._last_observation = observation
         self._terminal = done
         previous_time = self._time_seconds
-        result = {"time_seconds": time_seconds, "observation": observation, "action": deepcopy(action), "done": done, "terminated": done, "truncated": False, "info": {"accepted": outcome.accepted, "error_code": outcome.error_code}, "delta_t_seconds": time_seconds - previous_time}
+        result = {"time_seconds": time_seconds, "observation": observation, "action": deepcopy(action), "done": done, "terminated": done, "truncated": False, "info": {"accepted": outcome.accepted, "error_code": outcome.error_code, "execution_status": "accepted" if outcome.accepted else "device_rejected", "feedback": deepcopy(outcome.public_feedback)}, "delta_t_seconds": time_seconds - previous_time}
         self._time_seconds = time_seconds
         return result
 
 
-def make_agent_backend(route_id: str, **kwargs: Any) -> AgentReceiptAdapter:
+def _make_agent_backend(route_id: str, **kwargs: Any) -> AgentReceiptAdapter:
     """Construct an Agent facade from a stable route identifier."""
     from .route_registry import canonical_route_id
     route_id = canonical_route_id(route_id)
@@ -489,12 +549,19 @@ def make_agent_backend(route_id: str, **kwargs: Any) -> AgentReceiptAdapter:
         accepted = tuple(metadata.get("accepted_dt_seconds", [metadata["cadence_seconds"]]))
         return AgentReceiptAdapter(d2, tick_seconds=metadata["cadence_seconds"], accepted_dt_seconds=accepted)
     if route_id == "d0_exogenous_context":
-        reject_unknown({"schedule", "horizon_seconds"})
+        reject_unknown({"schedule", "horizon_steps", "horizon_seconds"})
+        if "horizon_seconds" in kwargs:
+            seconds = kwargs.pop("horizon_seconds")
+            if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not math.isfinite(seconds) or seconds <= 0 or seconds % 60:
+                raise AgentActionError("D0 horizon_seconds must be a positive multiple of 60")
+            if "horizon_steps" in kwargs:
+                raise AgentActionError("specify only one D0 horizon")
+            kwargs["horizon_steps"] = int(seconds / 60)
         from .adapters.d0_exogenous_context import D0ExogenousContextAdapter
         route = D0ExogenousContextAdapter(**kwargs).open_trajectory()
         return AgentReceiptAdapter(route, tick_seconds=60.0)
     if route_id == "d1_sustaingym_fault":
-        reject_unknown({"fault_profile", "config_path", "seed", "t_initial"})
+        reject_unknown({"base_adapter", "schedule", "replay_gate_path"})
         from .adapters.d1_fault_mechanism import D1SustainGymFaultAdapter
         route = D1SustainGymFaultAdapter(**kwargs)
         return AgentReceiptAdapter(route, tick_seconds=300.0)
@@ -525,6 +592,65 @@ def make_agent_backend(route_id: str, **kwargs: Any) -> AgentReceiptAdapter:
         spec = kwargs.get("episode_spec") or EpisodeSpec("agent-d1-discrete", {"horizon_seconds": 600}, 0)
         return HarnessD1AgentBackend(adapter.open_backend(), spec)
     raise KeyError(f"unknown Agent route: {route_id}")
+
+
+def make_agent_backend(route_id: str, **kwargs: Any) -> AgentReceiptAdapter:
+    """Bind audited, side-effect-free validation before entering native code."""
+    from importlib import import_module
+    from .route_registry import canonical_route_id
+    route_id = canonical_route_id(route_id)
+    facade = _make_agent_backend(route_id, **kwargs)
+    modules = {
+        "energyplus_iaq": ("d2_humidity_air_quality_adapter", "validate_action"),
+        "wntr_residential_water": ("unified_compiler.adapters.d2_wntr", "validate_action"),
+        "fds_smoke_fire": ("d2_fds_adapter", "validate_action"),
+        "modelica_buildings_aixlib": ("d2_modelica_buildings_aixlib_adapter", "validate_action"),
+        "d3_modelica_shared_heat": ("d3_modelica_shared_heat_adapter", "validate_action"),
+        "d3_energyplus_shared_ventilation": ("d3_energyplus_shared_ventilation_adapter", "validate_action"),
+        "d3_wntr_water_competition": ("d3_wntr_water_competition_adapter", "_validate_action"),
+    }
+    if route_id in modules:
+        module, name = modules[route_id]
+        facade.action_validator = getattr(import_module(module), name)
+        if route_id in {"energyplus_iaq", "wntr_residential_water", "fds_smoke_fire", "modelica_buildings_aixlib"}:
+            native_validator = facade.action_validator
+            def validate_scalar(action: Any) -> None:
+                if isinstance(action, bool) or not isinstance(action, (int, float)):
+                    raise ValueError("action must be a JSON number, not a string or boolean")
+                native_validator(action)
+            facade.action_validator = validate_scalar
+    elif route_id == "d0_exogenous_context":
+        facade.action_validator = facade.route._validate_action
+    elif route_id in {"d3_citylearn_multi_system", "d3_citylearn_multibuilding_competition"}:
+        facade.action_validator = facade.route._native_action
+    elif route_id == "d3_ev2gym_electric_competition":
+        facade.action_validator = facade.route._action
+    elif route_id == "d1_ev2gym_fault":
+        def validate_charge(action: Any) -> None:
+            if not isinstance(action, Mapping):
+                raise ValueError("EV action must be an object")
+            if action.get("type") == "SET_CHARGE_POWER":
+                if set(action) != {"type", "kw"} or isinstance(action.get("kw"), bool) or not isinstance(action.get("kw"), (int, float)):
+                    raise ValueError("SET_CHARGE_POWER requires exactly type and numeric kw")
+            elif action.get("type") == "WAIT" and set(action) != {"type"}:
+                raise ValueError("WAIT requires exactly type")
+            facade.route._requested_power(action)
+        facade.action_validator = validate_charge
+    elif route_id == "d1_sustaingym_fault":
+        def validate_cooling(action: Any) -> None:
+            if not isinstance(action, (list, tuple)) or any(isinstance(v, bool) or not isinstance(v, (int, float)) for v in action):
+                raise ValueError("cooling action must be a numeric sequence")
+            facade.route._episode._validate_action(action)
+            # The D1 wrapper's coarse bounds do not cover native zero-HVAC
+            # zones. Check the base's pure mask/Box validator before stepping.
+            facade.route._episode.base._validate_action(action)
+        facade.action_validator = validate_cooling
+    elif route_id == "d1_citylearn_battery_fault":
+        def validate_battery(action: Any) -> None:
+            if isinstance(action, bool) or not isinstance(action, (int, float)) or not math.isfinite(action) or not -1 <= action <= 1:
+                raise ValueError("battery action must be finite and in [-1, 1]")
+        facade.action_validator = validate_battery
+    return facade
 
 
 __all__ = ["AgentActionError", "AgentClosedLoopBackend", "AgentInterfaceError", "AgentReceiptAdapter", "HarnessD1AgentBackend", "D3_AGENT_ROUTE_IDS", "D3_AGENT_ROUTE_ALIASES", "make_agent_backend"]

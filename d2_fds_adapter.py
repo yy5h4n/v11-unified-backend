@@ -23,7 +23,7 @@ from typing import Any, Iterable
 
 ROOT = Path(__file__).resolve().parent
 RUN_ROOT = ROOT / "generated/d2_fds_v1/runtime_runs"
-MODEL_TEMPLATE = ROOT / "d2_fds_assets/d2_fds_two_room_template.fds"
+MODEL_TEMPLATE = ROOT / "environment_repairs_v1/models/two_room_growing_fire.fds"
 
 
 class FDSRuntimeUnavailable(RuntimeError):
@@ -217,12 +217,20 @@ def _interactive_model_text(schedule: list[tuple[float, float]], horizon_s: floa
         previous = time_s
         normalized[time_s] = action
     ordered_schedule = sorted(normalized.items())
+    previous_control = None
     for time_s, action in ordered_schedule:
         # For an OBST, FDS interprets a true controller (positive RAMP value)
         # as "obstruction exists".  Therefore agent action 0 (closed) maps to
         # +1 and action 1 (open) maps to -1.  All propagation remains in FDS.
         control_value = -1.0 if action == 1.0 else 1.0
+        if previous_control is not None and control_value != previous_control:
+            # FDS linearly interpolates RAMP points. Hold the old command up
+            # to the decision time: a later action must not start changing
+            # the door halfway through an already-observed interval.
+            ramp_rows.append(f"&RAMP ID='DOOR_RAMP', T={time_s:.9f}, F={previous_control:.1f} /")
+            time_s += 1.0e-6  # finite native control transition, never anticipatory
         ramp_rows.append(f"&RAMP ID='DOOR_RAMP', T={time_s:.9f}, F={control_value:.1f} /")
+        previous_control = control_value
     if len(ramp_rows) == 1:
         # FDS rejects a one-point RAMP.  The epsilon endpoint is only a
         # definition of the constant control and does not advance physics.
@@ -259,10 +267,13 @@ class FDSSmokePropagationAdapter:
             "online_step_supported": False,
     }
 
-    def __init__(self, run_root: Path = RUN_ROOT, runtime: str | Path | None = None, timeout_s: float = 300.0) -> None:
+    def __init__(self, run_root: Path = RUN_ROOT, runtime: str | Path | None = None, timeout_s: float = 300.0, horizon_seconds: float = 60.0) -> None:
         self.run_root = Path(run_root)
         self.runtime_override = runtime
         self.timeout_s = float(timeout_s)
+        if isinstance(horizon_seconds, bool) or not math.isfinite(horizon_seconds) or horizon_seconds <= 0:
+            raise ValueError('FDS horizon_seconds must be finite and positive')
+        self.horizon_seconds = float(horizon_seconds)
         self._last_trace_digest: str | None = None
         self._interactive_time_s = 0.0
         self._interactive_schedule: list[tuple[float, float]] = []
@@ -320,8 +331,8 @@ class FDSSmokePropagationAdapter:
         if not self._interactive_schedule:
             self.observe()
         next_time = self._interactive_time_s + dt
-        if next_time > 4.0 + 1e-9:
-            raise ValueError("FDS interactive horizon is limited to 4.0 seconds for this model")
+        if next_time > self.horizon_seconds + 1e-9:
+            raise ValueError(f"FDS step exceeds configured horizon {self.horizon_seconds} seconds")
         # The new command takes effect at the beginning of this interval.
         schedule = [*self._interactive_schedule, (self._interactive_time_s, action)]
         result = self._ensure_interactive_run(schedule, next_time)
@@ -333,8 +344,8 @@ class FDSSmokePropagationAdapter:
             "time_seconds": next_time,
             "observation": dict(result["observation"]),
             "action": action,
-            "done": math.isclose(next_time, 4.0, abs_tol=1e-9),
-            "terminal": math.isclose(next_time, 4.0, abs_tol=1e-9),
+            "done": math.isclose(next_time, self.horizon_seconds, abs_tol=1e-9),
+            "terminal": math.isclose(next_time, self.horizon_seconds, abs_tol=1e-9),
             "trace_digest": result["trace_digest"],
             "provenance": result["provenance"],
         }

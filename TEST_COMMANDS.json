@@ -2,6 +2,10 @@
   "schema": "v11.backend.test_commands.v2",
   "purpose": "Current backend and Episode-generation checks only; historical pipeline commands were removed.",
   "commands": [
+    {"name": "current_autonomous_preflight", "scope": "Current local LLM interaction dependencies and complete recorded evidence; not legacy Episode release certification", "command": "/opt/anaconda3/bin/python tools/local_preflight.py --strict --profile autonomous-interaction"},
+    {"name": "autonomous_interaction_regressions", "scope": "Current production interaction; local tests, no paid model calls", "command": "/opt/anaconda3/bin/python -m pytest -q tests/test_backend_delivery.py tests/test_backend_casebook_llm_pilot.py tests/test_llm_backend_session.py tests/test_autonomous_wait.py tests/test_real_session_audit.py tests/test_trusted_session_interpreter.py tests/test_native_action_conversation.py tests/test_observation_contracts.py tests/test_public_receipt_budget.py tests/test_trusted_action_preflight.py tests/test_trusted_workflow_boundary.py tests/test_semantic_boundary.py"},
+    {"name": "recorded_delivery_evidence", "scope": "Offline recorded interaction and sampled source checks; not task success", "command": "/opt/anaconda3/bin/python tools/check_backend_delivery.py"},
+    {"name": "recorded_delivery_and_native_wait", "scope": "Also requires all 15 completed scripted native long-wait reports; fails while run is incomplete", "command": "/opt/anaconda3/bin/python tools/check_backend_delivery.py --native-dir generated/autonomous_wait_delivery_native_v5"},
     {"name": "compile", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -m compileall -q unified_compiler tools tests"},
     {"name": "protocol_regressions", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -m pytest -q -p no:cacheprovider tests/test_agent_interface.py tests/test_audit_regressions.py tests/test_d2_closed_loop_protocol.py tests/test_d2_fds.py tests/test_d2_fds_interactive.py tests/test_d2_humidity_air_quality.py tests/test_evaluator.py tests/test_process_pool.py"},
     {"name": "llm_conversation_protocol", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python -m pytest -q -p no:cacheprovider tests/test_llm_conversation.py"},
@@ -10,7 +14,7 @@
     {"name": "causal_campaign", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_causal_campaign.py --campaign-dir generated/episode_campaign"},
     {"name": "stability_campaign", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/run_stability_campaign.py --output generated/episode_campaign/stability_measurement.json --active-seconds 600 --queue-tasks 30"},
     {"name": "local_preflight", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/local_preflight.py --strict"},
-    {"name": "acceptance_check", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir acceptance/backend_acceptance_local_final"}
+    {"name": "acceptance_check", "scope": "Historical release package; currently stale against repaired sources; intentionally remains fail-closed", "command": "PYTHONDONTWRITEBYTECODE=1 /opt/anaconda3/bin/python tools/backend_acceptance_runner.py --check --output-dir acceptance/backend_acceptance_local_final"}
   ],
   "external_runtime_note": "Native simulator binaries and the pinned EV2Gym runtime are documented in RUNTIME_DEPENDENCIES.md and are not vendored."
 }

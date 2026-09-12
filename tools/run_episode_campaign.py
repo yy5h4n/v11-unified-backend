@@ -56,6 +56,22 @@ def _cycle(route_id: str) -> dict:
 
 
 def _causal(route_id: str) -> dict:
+    if route_id.startswith("d3_"):
+        from tools.probe_fixed_peer_mechanisms import probe
+        evidence = probe(route_id)
+        comparisons = evidence["comparisons"]
+        physical = evidence["physical_delivery_coupling"]
+        budget = evidence["shared_budget_effect"]
+        return {
+            "same_prefix_divergence": physical or budget,
+            "future_leakage_check": all(c["same_prefix"] for c in comparisons),
+            "scope": "fixed-peer interventions; same prefix does not certify all information leakage conditions",
+            "branches": comparisons[0]["runs"],
+            "cross_channel": {"probes": comparisons, "gate": physical or budget,
+                              "native_cross_effect_observed": physical, "shared_budget_effect": budget,
+                              "constraint_semantics": evidence.get("margin_semantics"), "status": evidence["status"]},
+            "mechanism_gate": physical or budget, "episode_ready": False,
+        }
     branches=[]
     for second in (0,1):
         route=make_agent_backend(route_id)
@@ -94,58 +110,10 @@ def _causal(route_id: str) -> dict:
     outcome = lambda item: item.get("native_effect") if item.get("native_effect") is not None else item["observation"]
     result = {"same_prefix_divergence": _digest(outcome(branches[0])) != _digest(outcome(branches[1])), "future_leakage_check": branches[0]["prefix_observation"] == branches[1]["prefix_observation"], "branches": branches}
 
-    # D3 evidence must exercise both channels from the same native prefix.
-    # Keep the raw receipts so the gate cannot be satisfied by a summary bit.
-    if route_id == "d3_citylearn_multi_system":
-        probes = []
-        for fixed, varying in (("hvac_rate", "battery_rate"), ("battery_rate", "hvac_rate")):
-            runs = []
-            for value in (-1.0, 1.0):
-                route = make_agent_backend(route_id)
-                try:
-                    route.reset(seed=0)
-                    route.step({"battery_rate": 0.0, "hvac_rate": 0.0})
-                    prefix_observation = route.observe()
-                    action = {"battery_rate": 0.0, "hvac_rate": 0.0}
-                    action[varying] = value
-                    receipt = route.step(action)
-                    runs.append({"action": action, "prefix_observation": prefix_observation, "time_seconds": receipt["time_seconds"], "observation": receipt["observation"], "effect": receipt.get("info", {}).get("effect")})
-                finally: route.close()
-            probes.append({"fixed_channel": fixed, "varied_channel": varying, "runs": runs,
-                           "effect_digest_changed": _digest(runs[0]["effect"]) != _digest(runs[1]["effect"]),
-                           "same_prefix": runs[0]["time_seconds"] == runs[1]["time_seconds"] and runs[0]["prefix_observation"] == runs[1]["prefix_observation"]})
-        result["cross_channel"] = {"probes": probes, "native_cross_effect_observed": False,
-                                    "constraint_semantics": "native CityLearn exposes independent battery/HVAC effects; no native cross-channel clipping is claimed",
-                                    "gate": False, "coupling_supported": False,
-                                    "capability_boundary": "episode_generation_supported; native D3 cross-channel coupling unsupported/unproven"}
-    elif route_id == "d3_ev2gym_electric_competition":
-        # Seed 3 has both native ports connected at this schedule point.  Vary
-        # one request while holding the other at 1.0 and then reverse it.
-        probes = []
-        for varied, fixed in (("charger_1_rate", "charger_0_rate"), ("charger_0_rate", "charger_1_rate")):
-            runs = []
-            for value in (0.0, 1.0):
-                route = make_agent_backend(route_id)
-                try:
-                    route.reset(seed=3)
-                    for _ in range(26):
-                        prefix = route.step({"charger_0_rate": 0.0, "charger_1_rate": 0.0})
-                    if sum(bool(p.get("connected")) for p in prefix["observation"].get("ports", [])) < 2:
-                        raise RuntimeError("pinned EV counterfactual prefix lost dual connection")
-                    action = {"charger_0_rate": 1.0, "charger_1_rate": 1.0}
-                    action[varied] = value
-                    receipt = route.step(action)
-                    runs.append({"action": action, "prefix_observation": prefix["observation"], "time_seconds": receipt["time_seconds"], "observation": receipt["observation"], "effect": receipt.get("info", {}).get("effect")})
-                finally: route.close()
-            probes.append({"fixed_channel": fixed, "varied_channel": varied, "runs": runs,
-                           "native_constraint_fields": ["native_info.action_mask", "transformer.remaining_capacity_kw", "port_power_kw"],
-                           "effect_digest_changed": _digest(runs[0]["effect"]) != _digest(runs[1]["effect"]),
-                           "same_prefix": runs[0]["prefix_observation"] == runs[1]["prefix_observation"]})
-        result["cross_channel"] = {"probes": probes, "native_cross_effect_observed": True,
-                                    "constraint_semantics": "native shared transformer with dual-connected counterfactuals",
-                                    "gate": all(p["effect_digest_changed"] and p["same_prefix"] for p in probes)}
-    result["mechanism_gate"] = bool(result.get("cross_channel", {}).get("gate", result["same_prefix_divergence"]))
-    result["episode_ready"] = True
+    # Whole-state divergence is action sensitivity, not a D0/D1/D2 mechanism proof.
+    result["mechanism_gate"] = False
+    result["mechanism_status"] = "targeted_mechanism_check_required"
+    result["episode_ready"] = False
     return result
 
 

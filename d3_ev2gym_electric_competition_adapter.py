@@ -144,7 +144,7 @@ class EV2GymElectricCompetition:
             config.unlink(missing_ok=True)
         self._started = True
         self._steps = 0
-        return self._receipt(observation, action=None, effect=None, done=False)
+        return self._receipt(self._state(), action=None, effect=None, done=False)
 
     def observe(self) -> dict[str, Any]:
         if not self._started:
@@ -194,8 +194,11 @@ class EV2GymElectricCompetition:
                 "soc": None if ev is None else float(ev.get_soc()),
                 "power_kw": float(charger.current_power_output),
                 "max_power_kw": float(charger.get_max_power()),
+                "scheduled_departure_step": None if ev is None else int(ev.time_of_departure),
+                "battery_capacity_kwh": None if ev is None else float(ev.battery_capacity),
+                "required_departure_kwh": None if ev is None else float(ev.desired_capacity),
             })
-        max_power = float(transformer.max_power[transformer.current_step])
+        max_power = float(transformer.max_power[min(transformer.current_step, len(transformer.max_power)-1)])
         current_power = float(transformer.current_power)
         return {
             "time_step": int(env.current_step),
@@ -209,14 +212,14 @@ class EV2GymElectricCompetition:
                 "overloaded": bool(transformer.is_overloaded()),
                 "overload_kw": float(transformer.get_how_overloaded()),
             },
-            "native_action_mask": [float(x) for x in getattr(env, "observation_mask", [])],
+            "native_observation_mask": [float(x) for x in getattr(env, "observation_mask", [])],
         }
 
     def _receipt(self, observation: Any, *, action: Any, effect: Any, done: bool) -> dict[str, Any]:
         return {
             "time_seconds": float(self._steps * TICK_SECONDS),
             "action": deepcopy(action),
-            "observation": self._state(),
+            "observation": deepcopy(observation),
             "effect": _jsonable(effect) if effect is not None else None,
             "done": bool(done),
             "backend_terminated": bool(done),
@@ -232,19 +235,30 @@ class EV2GymElectricCompetition:
             raise EV2GymCompetitionActionError(f"dt_seconds must equal {TICK_SECONDS:g}")
         values = self._action(action)
         before = self._state()
+        connected_before = [c.evs_connected[0] if c.evs_connected else None for c in self.env.charging_stations[:2]]
         try:
             _, reward, terminated, truncated, info = self.env.step(values)
         except (AssertionError, ValueError, TypeError) as exc:
             raise EV2GymCompetitionActionError(str(exc)) from exc
         self._steps += 1
         done = bool(terminated or truncated)
-        after = self._state() if not done else before
+        after = self._state()
+        departures = []
+        for port, ev in enumerate(connected_before):
+            charger = self.env.charging_stations[port]
+            current = charger.evs_connected[0] if charger.evs_connected else None
+            if ev is not None and current is not ev:
+                departures.append({'port':port,'observed_at_step':int(self.env.current_step),
+                                   'final_soc':float(ev.get_soc()),
+                                   'final_energy_kwh':float(ev.get_soc()*ev.battery_capacity),
+                                   'required_departure_kwh':float(ev.desired_capacity)})
         effect = {
             "transformer_power_kw": after["transformer"]["power_kw"],
             "remaining_capacity_kw": after["transformer"]["remaining_capacity_kw"],
             "overloaded": after["transformer"]["overloaded"],
             "overload_kw": after["transformer"]["overload_kw"],
             "port_power_kw": [port["power_kw"] for port in after["ports"]],
+            "departures": departures,
             "native_reward": _jsonable(reward),
             "native_info": _jsonable(info),
             "before": before["transformer"],

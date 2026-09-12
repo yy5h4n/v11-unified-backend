@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import shutil
 import sys
+import subprocess
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -130,8 +131,15 @@ def test_hvac_windows_reuse_shared_bundles_without_envs(
         assert process.provided_capabilities == HVAC_CAPS
         assert "dynamics_model" in process.manifest["assets"]
     # scanning never touches a simulator runtime
-    assert V10_RUNTIME_MODULE_NAME not in sys.modules
-    assert "citylearn" not in sys.modules
+    # Other tests legitimately import the native simulator. Check this
+    # adapter's no-runtime contract in a fresh interpreter, not test order.
+    checked = subprocess.run([sys.executable, "-c", (
+        "import sys; from unified_compiler.adapters import CityLearnSharedAdapter; "
+        "CityLearnSharedAdapter().processes(); "
+        f"assert {V10_RUNTIME_MODULE_NAME!r} not in sys.modules; "
+        "assert 'citylearn' not in sys.modules"
+    )], cwd=Path(__file__).resolve().parents[1], capture_output=True, text=True, timeout=60)
+    assert checked.returncode == 0, checked.stderr
 
 
 def test_battery_pv_source_candidates_share_all_hvac_bundles(

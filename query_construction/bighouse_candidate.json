@@ -1,0 +1,14 @@
+{
+  "name": "The Big House Dataset: Desired Applications and Interactions",
+  "status": "metadata_candidate_not_imported",
+  "author_page": "https://meghanclark.com/publication/17abstractions/",
+  "associated_study_doi": "10.1145/3132031",
+  "dataset_paper": "https://meghanclark.com/uploads/papers/clark18bighouse.pdf",
+  "collection": "Four questionnaires about a hypothetical smart home; Mechanical Turk participant responses. Interface framing affects expressed needs.",
+  "artifact_location_evidence": "Author dissertation Appendix A identifies database, schema Markdown and Python access scripts as ACM supplemental material for DOI 10.1145/3132031.",
+  "artifact_downloaded": false,
+  "license_status": "Dataset-specific reuse permission not verified; website footer must not be treated as dataset license",
+  "exposure": "Public paper examples and metadata encountered; raw dataset not read",
+  "next_action": "Resolve public ACM supplemental attachment and its dataset-specific license; preserve questionnaire framing and participant grouping before extraction.",
+  "admitted": false
+}

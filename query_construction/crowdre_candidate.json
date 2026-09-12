@@ -1,0 +1,22 @@
+{
+  "record_id": "3550721",
+  "doi": "10.5281/zenodo.3550721",
+  "title": "A Dataset of Crowdsourced Smarthome Requirements with Creativity Ratings",
+  "version": "1.0.0",
+  "metadata_url": "https://zenodo.org/api/records/3550721",
+  "landing_page": "https://zenodo.org/records/3550721",
+  "license": "CC BY 4.0",
+  "license_evidence": "official API metadata.license.id = cc-by-4.0",
+  "download_url": "https://zenodo.org/api/records/3550721/files/CrowdRE-Data.zip/content",
+  "archive_bytes": 201963,
+  "archive_md5": "08120d07996b999509394ff56fa511b1",
+  "collection_kind": "crowd-worker-elicited smart-home user stories; solo and interacting teams",
+  "authors": ["Pradeep K. Murukannaiah", "Nirav Ajmeri", "Muhammad Fazalul Rahman", "Munindar P. Singh"],
+  "status": "candidate_metadata_verified_not_admitted",
+  "pending": [
+    "Inspect schema and anonymization without displaying held-out requirement content.",
+    "Use participant AND interacting-team grouping to prevent train/validation leakage.",
+    "Exclude demographics/personality from LLM input; preserve collection context.",
+    "Freeze complete inventory/split before semantic processing; no outcome-based holdout selection."
+  ]
+}

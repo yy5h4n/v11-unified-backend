@@ -313,6 +313,14 @@ class D3CityLearnMultiBuildingAgentRoute:
         result["district_peak_kwh"] = float(self._district_peak)
         result["shared_meter_headroom_kwh"] = self.shared_meter_capacity_kwh - district_net
         for building_id in self.building_ids:
+            # Meter budget and building state must refer to the same completed
+            # transition, not a mixture with next-row uninitialized buffers.
+            for observed, measured in (
+                ("electrical_storage_soc", "battery_soc"),
+                ("indoor_dry_bulb_temperature", "indoor_temperature_c"),
+                ("net_electricity_consumption", "net_electricity_kwh"),
+            ):
+                result[f"{building_id}.{observed}"] = float(effects[building_id][measured])
             result[f"{building_id}.feasible_headroom_kwh"] = self.shared_meter_capacity_kwh - sum(
                 value for other, value in nets.items() if other != building_id
             )
@@ -343,7 +351,9 @@ class D3CityLearnMultiBuildingAgentRoute:
         self._steps = 0
         self._done = False
         self._district_peak = 0.0
-        index = env.time_step
+        # Last warm-up output is the actual state at the public reset
+        # boundary; the next row is only upcoming exogenous input.
+        index = env.time_step - 1 if self.warmup_steps else env.time_step
         self._latest_effects = {building.name: _native_effect(building, index) for building in env.buildings}
         self._latest_observation = self._observation(observation, self._latest_effects)
         return deepcopy(self._latest_observation)

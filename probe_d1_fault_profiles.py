@@ -184,8 +184,12 @@ def main() -> None:
     parser.add_argument("--output", type=Path, default=OUTPUT)
     parser.add_argument("--profile", choices=D1_PROFILE_NAMES)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument("--refresh-default-gate", action="store_true", help="Regenerate the default route gate from a fresh native failed-profile probe")
     args = parser.parse_args()
-    args.output.mkdir(parents=True, exist_ok=True)
+    if args.refresh_default_gate and (args.check or args.profile not in (None, 'failed')):
+        parser.error('default gate refresh requires failed profile or all profiles, and is not a read-only check')
+    if not args.check:
+        args.output.mkdir(parents=True, exist_ok=True)
     names = [args.profile] if args.profile else list(D1_PROFILE_NAMES)
     manifest = {
         "schema_version": "d1-fault-profiles-manifest-v1",
@@ -195,7 +199,18 @@ def main() -> None:
     for name in names:
         report = probe_profile(name)
         path = args.output / f"{name}.json"
-        path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        if args.check:
+            if not path.is_file() or json.loads(path.read_text()) != report:
+                raise SystemExit(f'profile evidence missing or stale: {name}')
+        else:
+            path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        if args.refresh_default_gate and name == 'failed':
+            from unified_compiler.adapters.d1_fault_mechanism import DEFAULT_SCHEDULE, DEFAULT_REPLAY_GATE
+            if not report['verified'] or report['actuator_schedule_id'] != DEFAULT_SCHEDULE.schedule_id:
+                raise SystemExit('fresh native default schedule probe did not pass')
+            gate = dict(report, schema_version='d1-fault-replay-gate-v1', schedule_id=DEFAULT_SCHEDULE.schedule_id,
+                        evidence_scope='fresh 8-step native fault/recovery contrast; not full-horizon or task certification')
+            DEFAULT_REPLAY_GATE.write_text(json.dumps(gate, indent=2, sort_keys=True)+'\n')
         manifest["profiles"][name] = {
             "path": str(path.relative_to(ROOT)),
             "verified": report["verified"],
@@ -203,9 +218,10 @@ def main() -> None:
         }
     if not args.profile:
         manifest["all_verified"] = all(x["verified"] for x in manifest["profiles"].values())
-        (args.output / "manifest.json").write_text(
-            json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-        )
+        if not args.check:
+            (args.output / "manifest.json").write_text(
+                json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+            )
     if args.check:
         assert all(x["verified"] for x in manifest["profiles"].values())
     print(json.dumps(manifest, sort_keys=True))

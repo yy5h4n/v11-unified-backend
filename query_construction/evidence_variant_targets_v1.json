@@ -1,0 +1,18 @@
+{
+  "schema": "evidence-query-variant-targets.v1",
+  "frozen_before_generation": true,
+  "variants_per_item": 3,
+  "targets": [
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-garage-recovery-01"},
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-room-comfort-01"},
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-shared-heat-water-01"},
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-ev-cheapest-departure-01"},
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-garage-presence-01"},
+    {"batch": "generated/query_construction_v2/development_batch_v1.json", "item_id": "dev-lighting-complaint-01"},
+    {"batch": "generated/query_construction_v2/validation_batch_v1.json", "item_id": "validation-garage-daily-check-01"},
+    {"batch": "generated/query_construction_v2/validation_batch_v1.json", "item_id": "validation-three-zone-heating-01"},
+    {"batch": "generated/query_construction_v2/validation_batch_v1.json", "item_id": "validation-ev-product-inference-01"},
+    {"batch": "generated/query_construction_v2/validation_batch_v1.json", "item_id": "validation-co2-feedback-01"}
+  ],
+  "claim_boundary": "Surface-form augmentation only. Variants share an evidence and semantic cluster with their anchor and are not independent demand observations."
+}

@@ -114,6 +114,27 @@ def test_slowdown_washer_changes_real_cycle_duration_and_same_action_diverges():
     assert fault_step.public_observation["active_device_faults"]["laundry.washer"]["slowdown_factor"] == 2.0
 
 
+def test_non_faultable_workflow_command_passes_through():
+    backend = DiscreteDeviceFaultBackend(DiscreteFaultSchedule([
+        DiscreteFaultWindow("laundry.washer", 0, 4, "slowdown", slowdown_factor=2),
+    ]))
+    backend.reset(_episode("laundry_completion_notification"))
+    command = {
+        "kind": "act",
+        "commands": [{
+            "device_id": "notification.service",
+            "capability": "notification.send",
+            "operation": "send",
+            "parameters": {
+                "message": "Laundry is finished.",
+                "channel": "app",
+                "recipients": ["resident.primary"],
+            },
+        }],
+    }
+    assert backend.execute_atomic(command).accepted
+
+
 def test_future_schedule_not_leaked_and_replay_is_deterministic():
     schedule = DiscreteFaultSchedule([
         DiscreteFaultWindow("dishwasher.main", 2, 5, "offline"),

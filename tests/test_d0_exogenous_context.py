@@ -24,6 +24,20 @@ def _action(target: str = "interior_lights", operation: str = "on") -> dict:
     return {"kind": "act", "command": {"target": target, "operation": operation}}
 
 
+def test_public_action_envelope_can_be_instantiated():
+    trajectory = D0ContextTrajectory(DEFAULT_SCHEDULE)
+    trajectory.reset(seed=0)
+    try:
+        schema = trajectory.legal_actions()['action_schema']
+        action = json.loads(json.dumps(schema['act']))
+        action['command'].update(target='interior_lights', operation='on')
+        trajectory.step(action)
+        assert trajectory.observe()['devices']['interior_lights'] == 'on'
+        trajectory.step(schema['wait'])
+    finally:
+        trajectory.close()
+
+
 def test_external_schedule_is_canonical_and_agent_independent() -> None:
     schedule = ExogenousContextSchedule(
         (ExternalContextEvent(4, "context_update", {"key": "weather", "value": "rain"}), ExternalContextEvent(2, "occupancy_change", {"status": "away", "count": 0}))
@@ -76,10 +90,14 @@ def test_reset_replay_is_exact() -> None:
 def test_action_validation_is_fail_closed() -> None:
     trajectory = D0ContextTrajectory(DEFAULT_SCHEDULE, DEFAULT_HORIZON_STEPS)
     trajectory.reset()
+    before = trajectory.observe()
     with pytest.raises(D0ActionError):
-        trajectory.step({"kind": "wait"})
+        trajectory.step({"kind": "wait", "command": {}})
     with pytest.raises(D0ActionError):
         trajectory.step(_action("front_door", "on"))
+    assert trajectory.observe() == before
+    # A true no-command native tick is now explicitly part of the schema.
+    assert trajectory.step({'kind': 'wait'})['observation']['step'] == 1
 
 
 def test_probe_gate_has_backend_only_boundary() -> None:

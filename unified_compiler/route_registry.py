@@ -10,14 +10,14 @@ from __future__ import annotations
 from copy import deepcopy
 
 ROUTE_METADATA = {
-    "d0_exogenous_context": {"layer": "D0", "cadence_seconds": 60.0, "horizon_seconds": 600.0, "native_time_unit": "seconds", "execution_mode": "in_process"},
-    "d1_sustaingym_fault": {"layer": "D1", "cadence_seconds": 300.0, "horizon_seconds": 3600.0, "native_time_unit": "hours", "execution_mode": "process_isolated"},
+    "d0_exogenous_context": {"layer": "D0", "cadence_seconds": 60.0, "horizon_seconds": 720.0, "native_time_unit": "seconds", "execution_mode": "in_process"},
+    "d1_sustaingym_fault": {"layer": "D1", "cadence_seconds": 300.0, "horizon_seconds": 86400.0, "horizon_policy": "native_288_steps", "native_time_unit": "hours", "execution_mode": "process_isolated"},
     "d1_citylearn_battery_fault": {"layer": "D1", "cadence_seconds": 3600.0, "horizon_seconds": 28800.0, "horizon_policy": "native_supported_horizon_measured", "native_time_unit": "hours", "execution_mode": "process_isolated"},
     "d1_ev2gym_fault": {"layer": "D1", "cadence_seconds": 900.0, "horizon_seconds": 38700.0, "horizon_policy": "native_supported_horizon_measured", "native_time_unit": "seconds", "execution_mode": "process_isolated"},
     "d1_discrete_device_fault": {"layer": "D1", "cadence_seconds": 60.0, "horizon_seconds": 600.0, "native_time_unit": "seconds", "execution_mode": "process_isolated"},
     "energyplus_iaq": {"layer": "D2", "cadence_seconds": 600.0, "accepted_dt_seconds": [600.0, 1200.0, 1800.0], "horizon_seconds": 172200.0, "horizon_policy": "native_supported_horizon_measured", "native_time_unit": "seconds", "termination": "native_or_172200s_truncation", "execution_mode": "process_isolated"},
     "wntr_residential_water": {"layer": "D2", "cadence_seconds": 3600.0, "accepted_dt_seconds": [3600.0], "horizon_seconds": 21600.0, "native_time_unit": "seconds", "termination": "native_or_21600s_truncation", "execution_mode": "process_isolated"},
-    "fds_smoke_fire": {"layer": "D2", "cadence_seconds": 1.0, "accepted_dt_seconds": [1.0], "horizon_seconds": 4.0, "native_time_unit": "seconds", "termination": "native_or_4s_truncation", "execution_mode": "process_isolated", "continuation": "prefix_replay", "online_step_supported": False, "capability_note": "real FDS prefix replay; synchronous native online continuation is unverified"},
+    "fds_smoke_fire": {"layer": "D2", "cadence_seconds": 10.0, "accepted_dt_seconds": [1.0, 10.0], "horizon_seconds": 60.0, "native_time_unit": "seconds", "termination": "native_or_60s_truncation", "execution_mode": "process_isolated", "continuation": "prefix_replay", "online_step_supported": False, "capability_note": "real FDS prefix replay; synchronous native online continuation is unverified"},
     "modelica_buildings_aixlib": {"layer": "D2", "cadence_seconds": 60.0, "accepted_dt_seconds": [60.0], "horizon_seconds": 3600.0, "native_time_unit": "seconds", "termination": "native_or_3600s_truncation", "execution_mode": "process_isolated"},
     "d3_citylearn_multi_system": {"layer": "D3", "cadence_seconds": 3600.0, "horizon_seconds": 86400.0, "native_time_unit": "hours", "execution_mode": "process_isolated", "episode_generation_supported": True, "d3_coupling_supported": False, "capability_note": "independent native battery/HVAC responses; cross-channel coupling unproven"},
     "d3_citylearn_multibuilding_competition": {"layer": "D3", "cadence_seconds": 3600.0, "horizon_seconds": 86400.0, "native_time_unit": "hours", "execution_mode": "process_isolated"},

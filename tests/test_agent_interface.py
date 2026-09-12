@@ -40,8 +40,9 @@ def test_d0_agent_closed_loop_and_exogenous_schedule_boundary() -> None:
     transition = route.step({"kind": "act", "command": {"target": "interior_lights", "operation": "on"}})
     assert transition["time_seconds"] == 60.0
     assert route.observe() == transition["observation"]
-    with pytest.raises(AgentActionError):
-        route.step({"kind": "wait"})
+    waited = route.step({"kind": "wait"})
+    assert waited["time_seconds"] == 120.0
+    assert waited["observation"]["devices"]["interior_lights"] == "on"
 
 
 def test_harness_d1_agent_uses_public_view_and_real_workflow_backend() -> None:

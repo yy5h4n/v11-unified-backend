@@ -1,0 +1,20 @@
+{
+  "schema": "evidence-query-variant-semantic-audit.v1",
+  "reviewer": "Codex manual comparison against each anchor query",
+  "reviewer_kind": "AI_assistant_not_human_annotation",
+  "reviewed_after_generation": true,
+  "groups": [
+    {"item_id": "dev-garage-recovery-01", "status": "passed"},
+    {"item_id": "dev-room-comfort-01", "status": "passed"},
+    {"item_id": "dev-shared-heat-water-01", "status": "passed"},
+    {"item_id": "dev-ev-cheapest-departure-01", "status": "passed"},
+    {"item_id": "dev-garage-presence-01", "status": "passed"},
+    {"item_id": "dev-lighting-complaint-01", "status": "passed"},
+    {"item_id": "validation-garage-daily-check-01", "status": "passed"},
+    {"item_id": "validation-three-zone-heating-01", "status": "passed"},
+    {"item_id": "validation-ev-product-inference-01", "status": "passed"},
+    {"item_id": "validation-co2-feedback-01", "status": "passed"}
+  ],
+  "criteria": "Each variant retains the anchor's conditions, entities, outcomes, priorities and temporal scope, and adds no device, threshold, failure, notification, backend mechanism or implementation request.",
+  "claim_boundary": "This is a second-model audit signal, not human validation and not evidence of a new independent user need. Parent admission status is never upgraded."
+}

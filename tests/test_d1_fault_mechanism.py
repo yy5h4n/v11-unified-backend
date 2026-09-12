@@ -212,6 +212,10 @@ def test_sensor_fault_changes_public_observation_not_latent_state(mode):
     else:
         deltas = [f["observation"]["zone_temperatures_c"][0] - h["observation"]["zone_temperatures_c"][0] for f, h in zip(faulty_trace[1:5], healthy_trace[1:5])]
         assert deltas == sorted(deltas) and len(set(deltas)) == 4
+    for f, h in zip(faulty_trace, healthy_trace):
+        if f['observation']['sensor_health']['active']:
+            actual_offset = f['observation']['zone_temperatures_c'][0] - h['observation']['zone_temperatures_c'][0]
+            assert f['observation']['sensor_health']['correction'] == pytest.approx(actual_offset)
 
 
 def test_episode_and_action_surface_fail_closed():

@@ -1,0 +1,162 @@
+{
+  "initial": {
+    "time_seconds": 0.0,
+    "action": null,
+    "observation": {
+      "time_step": 0,
+      "time_seconds": 0.0,
+      "ports": [
+        {
+          "connected": false,
+          "soc": null,
+          "power_kw": 0.0,
+          "max_power_kw": 12.747893943706936,
+          "scheduled_departure_step": null,
+          "battery_capacity_kwh": null,
+          "required_departure_kwh": null
+        },
+        {
+          "connected": false,
+          "soc": null,
+          "power_kw": 0.0,
+          "max_power_kw": 12.747893943706936,
+          "scheduled_departure_step": null,
+          "battery_capacity_kwh": null,
+          "required_departure_kwh": null
+        }
+      ],
+      "transformer": {
+        "id": 0,
+        "power_kw": 0.0,
+        "capacity_kw": 15.0,
+        "remaining_capacity_kw": 15.0,
+        "overloaded": false,
+        "overload_kw": 0.0
+      },
+      "native_observation_mask": [
+        0.0,
+        0.0
+      ]
+    },
+    "effect": null,
+    "done": false,
+    "backend_terminated": false,
+    "runtime": "official_ev2gym_native"
+  },
+  "departures": [
+    {
+      "port": 0,
+      "observed_at_step": 43,
+      "final_soc": 1.0,
+      "final_energy_kwh": 50.0,
+      "required_departure_kwh": 50.0
+    },
+    {
+      "port": 1,
+      "observed_at_step": 48,
+      "final_soc": 1.0,
+      "final_energy_kwh": 50.0,
+      "required_departure_kwh": 50.0
+    },
+    {
+      "port": 1,
+      "observed_at_step": 89,
+      "final_soc": 1.0,
+      "final_energy_kwh": 50.0,
+      "required_departure_kwh": 50.0
+    }
+  ],
+  "terminal": {
+    "time_seconds": 86400.0,
+    "action": {
+      "charger_0_rate": 0.5,
+      "charger_1_rate": 0.5
+    },
+    "observation": {
+      "time_step": 96,
+      "time_seconds": 86400.0,
+      "ports": [
+        {
+          "connected": false,
+          "soc": null,
+          "power_kw": 0.0,
+          "max_power_kw": 12.747893943706936,
+          "scheduled_departure_step": null,
+          "battery_capacity_kwh": null,
+          "required_departure_kwh": null
+        },
+        {
+          "connected": false,
+          "soc": null,
+          "power_kw": 0.0,
+          "max_power_kw": 12.747893943706936,
+          "scheduled_departure_step": null,
+          "battery_capacity_kwh": null,
+          "required_departure_kwh": null
+        }
+      ],
+      "transformer": {
+        "id": 0,
+        "power_kw": 0.0,
+        "capacity_kw": 15.0,
+        "remaining_capacity_kw": 15.0,
+        "overloaded": false,
+        "overload_kw": 0.0
+      },
+      "native_observation_mask": [
+        0.0,
+        0.0
+      ]
+    },
+    "effect": {
+      "transformer_power_kw": 0.0,
+      "remaining_capacity_kw": 15.0,
+      "overloaded": false,
+      "overload_kw": 0.0,
+      "port_power_kw": [
+        0.0,
+        0.0
+      ],
+      "departures": [],
+      "native_reward": -0.0,
+      "native_info": {
+        "total_ev_served": 3,
+        "total_profits": -8.929681098582314,
+        "total_energy_charged": 45.38414206001093,
+        "total_energy_discharged": 0,
+        "average_user_satisfaction": 1.0,
+        "power_tracker_violation": 181.53656824004386,
+        "tracking_error": 1617.708206084762,
+        "energy_tracking_error": 45.384142060010966,
+        "energy_user_satisfaction": 100.0,
+        "std_energy_user_satisfaction": 0.0,
+        "min_energy_user_satisfaction": 100.0,
+        "total_steps_min_emergency_battery_capacity_violation": 0,
+        "total_transformer_overload": 0.0,
+        "battery_degradation": 0.00011072976353544383,
+        "battery_degradation_calendar": 5.5102260640761986e-05,
+        "battery_degradation_cycling": 5.562750289468186e-05,
+        "total_reward": -1617.708206084762,
+        "saved_grid_energy": 0,
+        "voltage_violation": 0,
+        "voltage_violation_counter": 0,
+        "voltage_violation_counter_per_step": 0,
+        "action_mask": [
+          0.0,
+          0.0
+        ]
+      },
+      "before": {
+        "id": 0,
+        "power_kw": 0.0,
+        "capacity_kw": 15.0,
+        "remaining_capacity_kw": 15.0,
+        "overloaded": false,
+        "overload_kw": 0.0
+      }
+    },
+    "done": true,
+    "backend_terminated": true,
+    "runtime": "official_ev2gym_native"
+  }
+}

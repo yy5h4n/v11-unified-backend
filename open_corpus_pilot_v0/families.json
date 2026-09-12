@@ -1,0 +1,197 @@
+{
+  "schema": "open_corpus_workflow_families_v0",
+  "dataset_id": "hiis_workflow_pilot_v0",
+  "release_status": "internal_executable_pilot",
+  "semantic_status": "open_corpus_human_grounded",
+  "source": {
+    "name": "andrematt/trigger_action_rules user study dataset",
+    "repository": "https://github.com/andrematt/trigger_action_rules",
+    "commit": "eb2f3ee5cdde01f6163c16e9052ae92c3d3884ff",
+    "file": "user study dataset/rules_nl_en.csv",
+    "file_sha256": "62ccfb6e93ad0bdaf1f19499bfcfbf35a43322262ce25460840051729d9ae40b",
+    "license_status": "pending_no_license_file_in_source_repository",
+    "collection_status": "participant_authored_user_study_rules"
+  },
+  "families": [
+    {
+      "family_id": "hiis_u01_post_use_toilet_flush",
+      "source_record": {
+        "csv_record_number": 1,
+        "user_id": "1",
+        "rule_name": "Auto-flush",
+        "original_text": "A person gets up from the toilet, the sensor detects movement and flushes."
+      },
+      "query": "After a person finishes using the toilet, flush it automatically.",
+      "transformation": {
+        "status": "source_near_event_normalization",
+        "changes": ["Normalize the observed get-up/movement sequence to the backend's toilet-use-finished event."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "post_use_toilet_flush",
+      "horizon_seconds": 3600,
+      "public_profile": {},
+      "variants": [
+        {"variant_id": "timing_a", "backend_route": "workflow", "seed": 17},
+        {"variant_id": "timing_b", "backend_route": "workflow", "seed": 29},
+        {"variant_id": "timing_c", "backend_route": "workflow", "seed": 43}
+      ]
+    },
+    {
+      "family_id": "hiis_u02_away_intercom_notification",
+      "source_record": {
+        "csv_record_number": 9,
+        "user_id": "2",
+        "rule_name": "visit notification",
+        "original_text": "If the intercom rings and no one is at home, SEND a message to the user's cell phone"
+      },
+      "query": "If the intercom rings while no one is home, send a message to the resident's phone.",
+      "transformation": {
+        "status": "source_near_language_cleanup",
+        "changes": ["Grammar and capitalization cleanup only."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "away_intercom_notification",
+      "horizon_seconds": 3600,
+      "public_profile": {"notification_channel": "app"},
+      "variants": [
+        {"variant_id": "timing_a", "backend_route": "workflow", "seed": 17},
+        {"variant_id": "timing_b", "backend_route": "workflow", "seed": 29},
+        {"variant_id": "timing_c", "backend_route": "workflow", "seed": 43}
+      ]
+    },
+    {
+      "family_id": "hiis_u04_shower_music",
+      "source_record": {
+        "csv_record_number": 19,
+        "user_id": "4",
+        "rule_name": "Music during the shower ",
+        "original_text": "When I'm in the shower, turn on my favorite playlist."
+      },
+      "query": "When I am in the shower, play my configured shower music.",
+      "transformation": {
+        "status": "source_near_profile_binding",
+        "changes": ["Bind favorite playlist to the public shower-music profile; the backend exposes the content class music rather than a playlist identifier."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "shower_music_availability",
+      "horizon_seconds": 3600,
+      "public_profile": {"shower_music_opt_in": true, "shower_music_content": "music"},
+      "variants": [
+        {"variant_id": "timing_a", "backend_route": "workflow", "seed": 17},
+        {"variant_id": "timing_b", "backend_route": "workflow", "seed": 29},
+        {"variant_id": "timing_c", "backend_route": "workflow", "seed": 43}
+      ]
+    },
+    {
+      "family_id": "hiis_u06_weekly_floor_cleaning",
+      "source_record": {
+        "csv_record_number": 33,
+        "user_id": "6",
+        "rule_name": "floor cleaning",
+        "original_text": "If it's Sunday and Rumba hasn't been fired, activate it"
+      },
+      "query": "On Sunday, if the robot vacuum has not run, start it.",
+      "transformation": {
+        "status": "source_near_entity_normalization",
+        "changes": ["Normalize the apparent Roomba mistranslation 'Rumba' to robot vacuum."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "weekly_floor_cleaning",
+      "horizon_seconds": 604800,
+      "public_profile": {
+        "weekly_cleaning_due_at": "2026-01-04T09:00:00Z",
+        "local_timezone": "UTC"
+      },
+      "variants": [
+        {"variant_id": "sunday_due", "backend_route": "workflow", "seed": 17}
+      ]
+    },
+    {
+      "family_id": "hiis_u10_laundry_completion_notification",
+      "source_record": {
+        "csv_record_number": 55,
+        "user_id": "10",
+        "rule_name": "Wash finished",
+        "original_text": "WHEN washing machine finishes washing, SEND notification to user's phone."
+      },
+      "query": "When the washing machine finishes, send a notification to the resident's phone.",
+      "transformation": {
+        "status": "source_near_language_cleanup",
+        "changes": ["Grammar and role-name cleanup only."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "laundry_completion_notification",
+      "horizon_seconds": 3600,
+      "public_profile": {"notification_channel": "app"},
+      "variants": [
+        {"variant_id": "healthy", "backend_route": "workflow", "seed": 17},
+        {
+          "variant_id": "recoverable_slowdown",
+          "backend_route": "d1_discrete_device_fault",
+          "seed": 17,
+          "fault": {"device_id": "laundry.washer", "start_step": 0, "end_step": 4, "mode": "slowdown", "slowdown_factor": 2.0}
+        },
+        {
+          "variant_id": "recoverable_offline_window",
+          "backend_route": "d1_discrete_device_fault",
+          "seed": 17,
+          "fault": {"device_id": "laundry.washer", "start_step": 0, "end_step": 4, "mode": "offline"}
+        }
+      ]
+    },
+    {
+      "family_id": "hiis_u18_scheduled_wake_alarm",
+      "source_record": {
+        "csv_record_number": 102,
+        "user_id": "18",
+        "rule_name": "Wake up",
+        "original_text": "If it is 7:00, the alarm goes off."
+      },
+      "query": "At 7:00, sound the alarm.",
+      "transformation": {
+        "status": "source_near_language_cleanup",
+        "changes": ["Convert the conditional wording to an equivalent imperative."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "intended_wake_alarm",
+      "horizon_seconds": 50400,
+      "public_profile": {
+        "intended_wake_at": "2026-01-02T07:00:00Z",
+        "local_timezone": "UTC"
+      },
+      "variants": [
+        {"variant_id": "scheduled_0700", "backend_route": "workflow", "seed": 17}
+      ]
+    },
+    {
+      "family_id": "hiis_u17_full_bin_collection_notice",
+      "source_record": {
+        "csv_record_number": 99,
+        "user_id": "17",
+        "rule_name": "Throw away waste",
+        "original_text": "If the bin is full and if it is waste collection day then the system will send an SMS to my mobile phone with a sound notification"
+      },
+      "query": "If the bin is full on waste collection day, notify me on my phone.",
+      "transformation": {
+        "status": "source_near_channel_abstraction",
+        "changes": ["Abstract SMS-with-sound to the backend's public app notification channel."],
+        "added_obligations": []
+      },
+      "backend": "harness_v2_workflow",
+      "scenario_type": "full_bin_collection_notice",
+      "horizon_seconds": 3600,
+      "public_profile": {"notification_channel": "app"},
+      "variants": [
+        {"variant_id": "timing_a", "backend_route": "workflow", "seed": 17},
+        {"variant_id": "timing_b", "backend_route": "workflow", "seed": 29},
+        {"variant_id": "timing_c", "backend_route": "workflow", "seed": 43}
+      ]
+    }
+  ]
+}

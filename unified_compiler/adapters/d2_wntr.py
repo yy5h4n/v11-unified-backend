@@ -287,11 +287,23 @@ def _session_worker_main() -> None:
         from wntr.sim import WNTRSimulator  # type: ignore
         wn = _build_network(0.0)
         sim = WNTRSimulator(wn)
+        result = None
         print(json.dumps({"type": "ready", "provenance": _dependency_worker()}, separators=(",", ":")), flush=True)
         for line in sys.stdin:
             payload = json.loads(line)
             if payload.get("command") == "close":
                 break
+            if payload.get('command') == 'inspect_native':
+                # Private verifier channel: no action, no run_sim, no time
+                # advance. Never included in the agent action schema/info.
+                if result is None:
+                    raise RuntimeError('no native hydraulic result to inspect')
+                t = int(result.time[-1])
+                snapshot = {key: {str(k): float(v) for k, v in result.node[key].loc[t].items()}
+                            for key in ('pressure', 'head', 'leak_demand')}
+                snapshot['flowrate'] = {str(k): float(v) for k, v in result.link['flowrate'].loc[t].items()}
+                print(json.dumps({'native_time_seconds': t, 'native': snapshot}), flush=True)
+                continue
             if payload.get("command") != "step":
                 raise ValueError("unknown WNTR session command")
             action = validate_action(payload["action"])

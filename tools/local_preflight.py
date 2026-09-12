@@ -55,6 +55,8 @@ def _check_dir(label: str, path: Path) -> tuple[bool, str]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--strict", action="store_true", help="require all native runtime roots and caches")
+    parser.add_argument("--profile", choices=("legacy-release", "autonomous-interaction"),
+                        default="legacy-release", help="Explicit evidence scope; legacy certification is never silently replaced")
     args = parser.parse_args()
     failures: list[str] = []
     warnings: list[str] = []
@@ -121,13 +123,20 @@ def main() -> int:
     # Verify the provenance package itself, including source hashes and the
     # 15-route acceptance matrix.  This is intentionally read-only.
     acceptance_dir = ROOT / "acceptance/backend_acceptance_local_final"
+    command = ([sys.executable, "tools/check_backend_delivery.py", "--native-dir",
+                str(ROOT / "generated/autonomous_wait_delivery_native_v5")]
+               if args.profile == "autonomous-interaction" else
+               [sys.executable, "tools/backend_acceptance_runner.py", "--check", "--output-dir", str(acceptance_dir)])
     ok, detail = _run(
-        "acceptance evidence",
-        [sys.executable, "tools/backend_acceptance_runner.py", "--check", "--output-dir", str(acceptance_dir)],
+        f"{args.profile} evidence",
+        command,
     )
     (checks if ok else failures).append(detail)
 
-    report = {"schema": "v11.local_preflight.v1", "root": str(ROOT), "strict": args.strict, "checks": checks, "warnings": warnings, "failures": failures}
+    report = {"schema": "v11.local_preflight.v1", "root": str(ROOT), "strict": args.strict,
+              "profile": args.profile, "scope": ("local dependencies plus recorded autonomous interaction and native long-wait evidence; not task evaluation or legacy release certification"
+              if args.profile == "autonomous-interaction" else "legacy Episode release certification"),
+              "checks": checks, "warnings": warnings, "failures": failures}
     print(json.dumps(report, indent=2, ensure_ascii=False, sort_keys=True))
     return 1 if failures else 0
 

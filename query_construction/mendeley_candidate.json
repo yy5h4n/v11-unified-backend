@@ -1,0 +1,34 @@
+{
+  "dataset_id": "sd47rzc4nz",
+  "version": 1,
+  "doi": "10.17632/sd47rzc4nz.1",
+  "title": "User-Centered Design of Smart Home Voice System for Chinese Older Adult",
+  "metadata_url": "https://data.mendeley.com/datasets/sd47rzc4nz/1",
+  "file_inventory_url": "https://data.mendeley.com/public-api/datasets/sd47rzc4nz/files?folder_id=root&version=1",
+  "inventory_accept_header": "application/vnd.mendeley-public-dataset.1+json",
+  "license_on_dataset_page": "CC BY 4.0",
+  "checked_date": "2026-09-10",
+  "status": "metadata_only_candidate_not_frozen_holdout",
+  "interview_files": [
+    {
+      "filename": "Original transcript of the interview.docx",
+      "id": "02cbcd3c-54f9-412e-877d-a9821d343cd4",
+      "size": 15590,
+      "sha256": "33cbe52dbdd151bda44245f6a8c3e0643b6ab10722fefb0708e5c84ce34bef7a",
+      "url": "https://data.mendeley.com/public-files/datasets/sd47rzc4nz/files/02cbcd3c-54f9-412e-877d-a9821d343cd4/file_downloaded"
+    },
+    {
+      "filename": "Raw data from interviews after user testing..docx",
+      "id": "7aa1de30-9d1d-4143-b8a7-c7ff5ef51565",
+      "size": 15633,
+      "sha256": "8bf251795f74d85fb3556d76a9ffea3117a0d5ae381dd5988024e34ef5561f4d",
+      "url": "https://data.mendeley.com/public-files/datasets/sd47rzc4nz/files/7aa1de30-9d1d-4143-b8a7-c7ff5ef51565/file_downloaded"
+    }
+  ],
+  "pending_checks": [
+    "Inspect document structure and anonymization locally before external model transfer.",
+    "Determine whether responses contain household responsibilities rather than only interface preferences.",
+    "Preserve interviewer versus participant attribution and original collection context.",
+    "Freeze complete eligible inventory and construction rules before held-out semantic processing."
+  ]
+}

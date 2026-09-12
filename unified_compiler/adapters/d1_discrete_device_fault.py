@@ -206,9 +206,16 @@ class DiscreteDeviceFaultBackend(WorkflowBackend):
         if error is not None:
             return error
         device_id = command.get("device_id")
-        # A future rule is validated against the present health only.  At the
-        # firing tick _apply_rule_commands calls this path again and fail-closes
-        # a command that is currently offline/stuck/jammed.
+        # The wrapped workflow exposes more devices than this fault adapter can
+        # perturb (for example, the notification service).  Those commands
+        # must pass through unchanged; only the four explicitly faultable
+        # devices participate in the health schedule.
+        if device_id not in SUPPORTED_DEVICE_IDS:
+            return None
+        # Installing a future rule checks syntax, not current availability.
+        # Its command is health-checked again at the actual firing tick.
+        if not check_state:
+            return None
         window = self.schedule.active(device_id, self._step)
         if window is not None and window.mode in _ERROR_CODES:
             return _ERROR_CODES[window.mode]

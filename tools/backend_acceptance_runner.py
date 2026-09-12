@@ -110,6 +110,17 @@ def run_one(route_id: str, *, loops: int = 10) -> dict:
         obs0 = deepcopy(first["observation"])
         legal = backend.legal_actions()
         a0, a1 = _action(route_id, legal, 0), _action(route_id, legal, 1)
+        from unified_compiler.agent_interface import AgentActionError
+        for malformed in (None, {}, "invalid-action", float("nan")):
+            before_invalid = deepcopy(backend.observe())
+            try:
+                backend.step(malformed)
+            except AgentActionError:
+                pass
+            else:
+                raise AssertionError(f"malformed action accepted: {malformed!r}")
+            if backend.observe() != before_invalid:
+                raise AssertionError("malformed action changed state")
         t1 = backend.step(a0)
         t2 = backend.step(a1)
         if t1["delta_t_seconds"] <= 0 or t2["delta_t_seconds"] <= 0:
@@ -153,6 +164,10 @@ def run_one(route_id: str, *, loops: int = 10) -> dict:
             pass
         else:
             raise AssertionError("observe accepted after close")
+        reopened = backend.reset(seed=0)
+        if reopened["time_seconds"] != 0 or backend.observe() != reopened["observation"]:
+            raise AssertionError("reset after close did not start a clean episode")
+        backend.step(a0)
         record["status"] = "passed"
         record["checks"] = {"reset_observe_legal_actions": True, "two_actions": True, "invalid_preflight": True, "seed_matrix": 3, "reset_close_loops": loops, "close_idempotent": True, "deep_copy": True, "full_horizon": False, "same_prefix_causality": False, "mechanism_gate": False}
     except (ImportError, ModuleNotFoundError, FileNotFoundError) as exc:
@@ -168,8 +183,48 @@ def run_one(route_id: str, *, loops: int = 10) -> dict:
     return record
 
 
-def _child(route_id: str, output: Path, loops: int) -> int:
-    result = run_one(route_id, loops=loops)
+def run_horizon(route_id: str) -> dict:
+    """Native terminal conformance, not task success or mechanism evidence."""
+    from unified_compiler.agent_interface import make_agent_backend, AgentInterfaceError
+    started = time.monotonic()
+    record = {"route_id": route_id, "status": "failed", "checks": {}, "errors": [], "source_bindings": _source_bindings(route_id), "trace": []}
+    backend = None
+    try:
+        backend = make_agent_backend(route_id)
+        initial = backend.reset(seed=0)
+        horizon = route_metadata(route_id)["horizon_seconds"]
+        cadence = route_metadata(route_id)["cadence_seconds"]
+        previous = 0.0
+        for i in range(int(horizon / cadence) + 1):
+            receipt = backend.step(_action(route_id, backend.legal_actions(), i % 2))
+            assert receipt["time_seconds"] > previous
+            assert abs(receipt["delta_t_seconds"] - cadence) < 1e-6
+            assert backend.observe() == receipt["observation"]
+            record["trace"].append(receipt)
+            previous = receipt["time_seconds"]
+            if receipt["done"]:
+                break
+        assert receipt["done"], "native episode did not terminate at declared horizon"
+        assert abs(previous - horizon) < 1e-6, f"native terminal {previous} != declared {horizon}"
+        try:
+            backend.step(receipt["action"])
+        except AgentInterfaceError:
+            pass
+        else:
+            raise AssertionError("step accepted after terminal")
+        record["status"] = "passed"
+        record["checks"] = {"full_horizon": True, "terminal_observation": True, "terminal_step_rejected": True, "cadence": True, "mechanism_gate": False}
+    except Exception as exc:
+        record["errors"].append({"category": "native_horizon", "error": repr(exc)})
+    finally:
+        if backend is not None:
+            backend.close()
+    record["wall_seconds"] = time.monotonic() - started
+    return record
+
+
+def _child(route_id: str, output: Path, loops: int, full_horizon_only: bool = False) -> int:
+    result = run_horizon(route_id) if full_horizon_only else run_one(route_id, loops=loops)
     output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     print(json.dumps(result, sort_keys=True))
     return 0 if result["status"] == "passed" else 1
@@ -184,6 +239,7 @@ def main() -> int:
     parser.add_argument("--output-dir", type=Path, default=ROOT / "generated/backend_acceptance_v1")
     parser.add_argument("--timeout", type=float, default=45.0)
     parser.add_argument("--loops", type=int, default=10)
+    parser.add_argument("--full-horizon-only", action="store_true")
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     if args.check:
@@ -218,7 +274,9 @@ def main() -> int:
                 if not isinstance(route.get("source_bindings"), dict) or not route["source_bindings"]: return 1
                 for rel, expected in route["source_bindings"].items():
                     source = ROOT / rel
-                    if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != expected: return 1
+                    if not source.is_file() or hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+                        print(f"Acceptance evidence is not current: route={route_id}, source={rel}. Run fresh acceptance; do not rewrite historical evidence.", file=sys.stderr)
+                        return 1
                 if float(route.get("wall_seconds", 0)) <= 0 or float(route.get("runner_wall_seconds", 0)) <= 0: return 1
                 if int(route.get("seed", -1)) != 0 or route.get("horizon_seconds") != route_metadata(route_id).get("horizon_seconds"): return 1
                 campaign = route.get("campaign")
@@ -292,7 +350,7 @@ def main() -> int:
     if args.single_route:
         if not args.route: return 2
         args.output_dir.mkdir(parents=True, exist_ok=True)
-        return _child(args.route, args.output_dir / f"{args.route}.json", args.loops)
+        return _child(args.route, args.output_dir / f"{args.route}.json", args.loops, args.full_horizon_only)
     routes = [args.route] if args.route else list(PUBLIC_ROUTE_IDS)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     results = []
@@ -300,6 +358,8 @@ def main() -> int:
         target = args.output_dir / f"{route_id}.json"
         interpreter = interpreter_for(route_id)
         cmd = [interpreter, __file__, "--single-route", "--route", route_id, "--output-dir", str(args.output_dir), "--loops", str(args.loops)]
+        if args.full_horizon_only:
+            cmd.append("--full-horizon-only")
         started = time.monotonic()
         child = None
         try:

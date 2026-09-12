@@ -362,7 +362,7 @@ class D1FaultEpisode:
             "requested_action": requested,
             "effective_action": effective,
             "fault": fault.as_dict(),
-            "sensor_fault": self._sensor_fault_dict(self.sensors.state_at(self._step_index - 1)),
+            "sensor_fault": self._sensor_fault_dict(self.sensors.state_at(self._step_index - 1), self._step_index - 1),
         }
         result["observation"] = self._decorate_observation(
             observation, self.schedule.state_at(self._step_index), self._step_index
@@ -432,19 +432,19 @@ class D1FaultEpisode:
                 raise D1FaultError(f"public observation lacks sensor variable {sensor.variable!r}")
             correction = sensor.correction(step_index)
             result[sensor.variable] = [float(value) + correction for value in values]
-        result["sensor_health"] = self._sensor_fault_dict(sensor)
+        result["sensor_health"] = self._sensor_fault_dict(sensor, step_index)
         result["actuator_health"] = fault.as_dict()
         return result
 
     @staticmethod
-    def _sensor_fault_dict(sensor: SensorFaultWindow | None) -> dict[str, Any]:
+    def _sensor_fault_dict(sensor: SensorFaultWindow | None, step_index: int) -> dict[str, Any]:
         if sensor is None:
             return {"active": False, "mode": "healthy"}
         return {
             "active": True,
             "mode": sensor.mode,
             "variable": sensor.variable,
-            "correction": sensor.correction(sensor.start_step),
+            "correction": sensor.correction(step_index),
         }
 
 

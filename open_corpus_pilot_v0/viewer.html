@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HIIS open-corpus workflow pilot dataset viewer">
+  <title>HomeBench · Pilot Data Inspector</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #06101c;
+      --panel: #0b1929;
+      --panel-2: #102238;
+      --line: #203750;
+      --text: #edf7ff;
+      --muted: #94abc1;
+      --cyan: #55decf;
+      --lime: #b6ef64;
+      --amber: #ffcc66;
+      --red: #ff7c86;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .28);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; background: var(--bg); color: var(--text); }
+    body {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      background:
+        radial-gradient(circle at 18% -10%, rgba(85, 222, 207, .12), transparent 32rem),
+        radial-gradient(circle at 92% 0%, rgba(182, 239, 100, .08), transparent 28rem),
+        var(--bg);
+    }
+    button, input, select { font: inherit; }
+    button { color: inherit; }
+    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+    .shell { width: min(1580px, 100%); margin: 0 auto; padding: 24px; }
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+    .eyebrow { color: var(--cyan); font: 700 .78rem/1.2 "SFMono-Regular", monospace; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 7px 0 3px; font-size: clamp(1.65rem, 3vw, 2.65rem); line-height: 1.06; letter-spacing: -.04em; }
+    .subtitle { margin: 0; color: var(--muted); }
+    .review-hint { margin-top: 10px; color: #c9d9e8; font-size: .86rem; line-height: 1.5; }
+    .metrics { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .metric {
+      min-width: 112px;
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(11, 25, 41, .82);
+      box-shadow: var(--shadow);
+    }
+    .metric strong { display: block; color: var(--lime); font-size: 1.2rem; }
+    .metric span { color: var(--muted); font-size: .75rem; }
+    .notice {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 13px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(255, 204, 102, .34);
+      border-radius: 10px;
+      color: #ffe1a1;
+      background: rgba(255, 204, 102, .07);
+      font-size: .88rem;
+    }
+    .notice::before { content: "LICENSE"; font: 800 .68rem/1 monospace; letter-spacing: .08em; color: var(--amber); }
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) repeat(2, minmax(165px, 230px));
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px 14px 0 0;
+      background: rgba(11, 25, 41, .94);
+    }
+    .control { position: relative; }
+    .control label { position: absolute; left: 12px; top: 7px; color: var(--muted); font-size: .69rem; letter-spacing: .05em; text-transform: uppercase; }
+    input, select {
+      width: 100%; height: 54px; padding: 22px 12px 7px;
+      border: 1px solid var(--line); border-radius: 9px;
+      color: var(--text); background: var(--panel-2); outline: none;
+    }
+    input:focus, select:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(85, 222, 207, .12); }
+    .workspace {
+      display: grid;
+      grid-template-columns: minmax(330px, 39%) minmax(0, 1fr);
+      min-height: 670px;
+      border: 1px solid var(--line); border-top: 0;
+      border-radius: 0 0 14px 14px; overflow: hidden;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    .list-pane { border-right: 1px solid var(--line); min-width: 0; }
+    .list-head { display: flex; justify-content: space-between; padding: 13px 15px; color: var(--muted); font-size: .78rem; border-bottom: 1px solid var(--line); }
+    .episode-list { max-height: 760px; overflow: auto; }
+    .episode {
+      display: block; width: 100%; padding: 15px; text-align: left; cursor: pointer;
+      border: 0; border-bottom: 1px solid rgba(32, 55, 80, .72); background: transparent;
+    }
+    .episode:hover { background: rgba(85, 222, 207, .045); }
+    .episode.active { background: linear-gradient(90deg, rgba(85, 222, 207, .13), rgba(85, 222, 207, .025)); box-shadow: inset 3px 0 var(--cyan); }
+    .episode-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .episode-id { color: var(--cyan); font-size: .74rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .episode-query { color: var(--text); line-height: 1.42; font-size: .94rem; }
+    .episode-meta { display: flex; gap: 7px; margin-top: 10px; flex-wrap: wrap; }
+    .chip { display: inline-flex; align-items: center; padding: 4px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(16, 34, 56, .7); font-size: .7rem; }
+    .chip.good { border-color: rgba(182, 239, 100, .32); color: var(--lime); }
+    .chip.fault { border-color: rgba(255, 204, 102, .4); color: var(--amber); }
+    .detail-pane { min-width: 0; padding: clamp(20px, 3vw, 34px); overflow: auto; }
+    .detail-kicker { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px rgba(182, 239, 100, .8); }
+    .detail-pane h2 { margin: 12px 0 22px; font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.25; letter-spacing: -.025em; }
+    .section { margin-top: 24px; }
+    .section h3 { margin: 0 0 9px; color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .11em; }
+    .source-quote { margin: 0; padding: 16px 18px; border-left: 3px solid var(--cyan); border-radius: 0 9px 9px 0; background: var(--panel-2); color: #d7e6f3; line-height: 1.55; }
+    .priority-card { padding: 18px; border: 1px solid rgba(85, 222, 207, .34); border-radius: 11px; background: linear-gradient(135deg, rgba(85, 222, 207, .09), rgba(16, 34, 56, .7)); }
+    .priority-card + .priority-card { margin-top: 10px; }
+    .priority-card h3 { color: var(--cyan); margin-bottom: 11px; }
+    .query-main { margin: 0; font-size: 1.16rem; line-height: 1.55; font-weight: 700; }
+    .rule-list { margin: 0; padding-left: 21px; color: #d7e6f3; line-height: 1.6; }
+    .rule-list li + li { margin-top: 6px; }
+    .rule-list code { color: var(--lime); font-size: .78rem; }
+    .backend-box { display: grid; grid-template-columns: minmax(170px, .7fr) 1fr; gap: 13px; }
+    .backend-name { padding: 14px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel-2); }
+    .backend-name span { display: block; color: var(--muted); font-size: .72rem; margin-bottom: 6px; text-transform: uppercase; }
+    .backend-name b { display: block; overflow-wrap: anywhere; }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+    .spec-table th, .spec-table td { padding: 10px 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .spec-table th { width: 130px; color: var(--muted); font-weight: 600; }
+    .spec-table td { color: #dce9f5; }
+    .spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom: 0; }
+    .gate-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .gate { padding: 10px 11px; border: 1px solid var(--line); border-radius: 8px; background: rgba(16, 34, 56, .62); }
+    .gate b { display: block; color: var(--lime); font-size: .76rem; margin-bottom: 3px; }
+    .gate span { color: var(--muted); font-size: .75rem; overflow-wrap: anywhere; }
+    .tier-banner { display: flex; gap: 13px; align-items: flex-start; padding: 15px; border-radius: 10px; background: rgba(85, 222, 207, .07); border: 1px solid rgba(85, 222, 207, .28); }
+    .tier-mark { flex: 0 0 auto; min-width: 50px; padding: 8px 9px; border-radius: 8px; background: var(--cyan); color: #052520; font: 900 1rem/1 "SFMono-Regular", monospace; text-align: center; }
+    .tier-banner h4 { margin: 0 0 5px; font-size: .96rem; }
+    .tier-banner p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.5; }
+    .coverage { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-top: 11px; }
+    .coverage-item { padding: 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); }
+    .coverage-item b { display: block; margin-bottom: 4px; font-size: .8rem; }
+    .coverage-item.yes b { color: var(--lime); }
+    .coverage-item.no b { color: var(--muted); }
+    .coverage-item small { color: var(--muted); }
+    .provenance-warning { margin-top: 10px; padding: 10px 12px; border: 1px solid rgba(255, 204, 102, .35); border-radius: 8px; background: rgba(255, 204, 102, .07); color: #ffe1a1; font-size: .82rem; line-height: 1.45; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .datum { min-width: 0; padding: 12px 13px; border: 1px solid var(--line); border-radius: 9px; background: rgba(16, 34, 56, .62); }
+    .datum span { display: block; color: var(--muted); font-size: .69rem; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 5px; }
+    .datum strong { display: block; overflow-wrap: anywhere; font-size: .9rem; font-weight: 600; }
+    .checks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+    .check { padding: 11px; border: 1px solid rgba(182, 239, 100, .26); border-radius: 9px; background: rgba(182, 239, 100, .055); }
+    .check b { display: block; color: var(--lime); font-size: .76rem; margin-bottom: 4px; }
+    .check small { color: var(--muted); }
+    .timeline { display: flex; align-items: center; gap: 0; min-height: 54px; overflow-x: auto; padding: 10px 0; }
+    .time-node { min-width: 130px; }
+    .time-node b { display: block; color: var(--cyan); font-size: .84rem; }
+    .time-node small { color: var(--muted); }
+    .time-line { height: 1px; min-width: 52px; flex: 1; background: linear-gradient(90deg, var(--cyan), var(--line)); }
+    details { border: 1px solid var(--line); border-radius: 9px; background: rgba(6, 16, 28, .48); }
+    summary { cursor: pointer; padding: 12px; color: var(--muted); }
+    pre { margin: 0; padding: 0 14px 14px; color: #bcd2e6; font: .76rem/1.55 "SFMono-Regular", monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .empty { padding: 44px 20px; text-align: center; color: var(--muted); }
+    .loading { min-height: 560px; display: grid; place-items: center; color: var(--muted); }
+    @media (max-width: 900px) {
+      .topbar { grid-template-columns: 1fr; align-items: start; }
+      .metrics { justify-content: flex-start; }
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .toolbar .search { grid-column: 1 / -1; }
+      .workspace { grid-template-columns: 1fr; }
+      .list-pane { border-right: 0; border-bottom: 1px solid var(--line); }
+      .episode-list { max-height: 360px; }
+    }
+    @media (max-width: 560px) {
+      .shell { padding: 14px; }
+      .toolbar, .grid, .checks, .backend-box, .gate-grid, .coverage { grid-template-columns: 1fr; }
+      .toolbar .search { grid-column: auto; }
+      .metric { min-width: 96px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Open-corpus workflow pilot v0</div>
+        <h1>数据 Item 审阅台</h1>
+        <p class="subtitle">逐条看清：问了什么、怎样算正确、由哪个后端负责</p>
+        <div class="review-hint">建议顺序：① Query 是否合理 → ② 正确状态是否忠于 Query → ③ 后端是否真能产生触发并执行动作 → ④ 来源、隐藏未来与基线是否可信</div>
+      </div>
+      <div class="metrics" id="metrics" aria-label="数据集概览"></div>
+    </header>
+
+    <div class="notice" id="licenseNotice">源仓库未提供明确许可，本批次仅用于内部可执行测试。</div>
+
+    <section class="toolbar" aria-label="筛选器">
+      <div class="control search">
+        <label for="search">搜索</label>
+        <input id="search" type="search" placeholder="Query、场景或 Episode ID">
+      </div>
+      <div class="control">
+        <label for="familyFilter">需求族</label>
+        <select id="familyFilter"><option value="">全部需求族</option></select>
+      </div>
+      <div class="control">
+        <label for="routeFilter">后端路线</label>
+        <select id="routeFilter"><option value="">全部路线</option></select>
+      </div>
+    </section>
+
+    <section class="workspace" aria-live="polite">
+      <aside class="list-pane">
+        <div class="list-head"><span>数据 ITEMS</span><span id="resultCount">0 条</span></div>
+        <div class="episode-list" id="episodeList"><div class="loading">正在读取数据…</div></div>
+      </aside>
+      <article class="detail-pane" id="detailPane"><div class="loading">选择一条数据查看详情</div></article>
+    </section>
+  </main>
+
+  <script>
+    const DATA_ROOT = "../generated/open_corpus_pilot_v0";
+    const state = { episodes: [], families: new Map(), validations: new Map(), selected: null };
+
+    const REVIEW_SPECS = {
+      post_use_toilet_flush: {
+        backend: "Household Workflow Backend",
+        trigger: "观察到 toilet_use_finished（如厕结束）",
+        action: "必须且只能调用 toilet.main / toilet.control / flush",
+        success: ["出现结果事件 toilet_flushed", "最终状态 toilet.main = flushed", "责任状态与释放条件均满足"],
+        forbidden: "不能在使用过程中冲水；不能超过 flush SLA 后仍未冲水",
+        release: "出现 toilet_flushed 后释放责任",
+        source: "harness_v2/workflow_scenario_registry.py + workflow_evaluator.py: eval_post_use_toilet_flush"
+      },
+      away_intercom_notification: {
+        backend: "Household Workflow Backend",
+        trigger: "occupancy.household = away，随后观察到 visitor_rang",
+        action: "调用 notification.service / notification.send / send；channel=app；message='A visitor is at the door.'",
+        success: ["发出 notification_sent，purpose=away_intercom_visitor", "通知发生在离家 guard 内", "通知参数、接收人和渠道匹配"],
+        forbidden: "没有 visitor_rang 时不得通知；住户在家或 guard 外不得执行",
+        release: "occupants_returned 时责任窗口结束",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_away_intercom_notification"
+      },
+      shower_music_availability: {
+        backend: "Household Workflow Backend",
+        trigger: "观察到 shower_started，且 profile.shower_music_opt_in = true",
+        action: "淋浴开始后 play(content='music')；淋浴结束后 stop",
+        success: ["恰好一次 media_started(content='music')", "顺序必须是 shower_started → play → shower_ended → stop", "最终状态 media_player.main = off，且用户明确 opt-in"],
+        forbidden: "不能播放错误内容；不能在淋浴 guard 之外播放；不能漏掉停止动作",
+        release: "shower_ended 与 media_stopped 都出现后释放责任",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_shower_music_availability"
+      },
+      weekly_floor_cleaning: {
+        backend: "Household Workflow Backend",
+        trigger: "观察到 weekly_cleaning_due，且本周清扫 occurrence 状态为 due",
+        action: "调用 vacuum.robot / vacuum.control / start_cleaning",
+        success: ["出现 vacuum_docked(current_week)", "最终状态 vacuum.robot = docked", "当前 weekly occurrence 被标记完成"],
+        forbidden: "不能重复完成同一周任务；不能在允许窗口外启动",
+        release: "weekly_occurrence_id 对应任务完成后释放责任",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_weekly_floor_cleaning"
+      },
+      laundry_completion_notification: {
+        backend: "Household Workflow Backend",
+        trigger: "洗衣机初始已在 washing；随后观察到 laundry_cycle_finished",
+        action: "调用 notification.service / notification.send / send；channel=app；message='Laundry is finished.'",
+        success: ["出现 notification_sent(purpose='laundry_finished')", "通知发生在洗衣完成之后", "通知参数、接收人和渠道匹配"],
+        forbidden: "未经 profile 授权不得重新启动洗衣机；不能在完成前提前通知",
+        release: "正确的 laundry_finished 通知发出后释放责任",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_laundry_completion_notification"
+      },
+      full_bin_collection_notice: {
+        backend: "Household Workflow Backend",
+        trigger: "devices.trash_bin.main = full，且观察到 bin_collection_due",
+        action: "调用 notification.service / notification.send / send；message='The full bin is due for collection.'",
+        success: ["出现 notification_sent(purpose='full_bin_collection')", "垃圾满与收运日两个条件同时成立", "通知参数、接收人和渠道匹配"],
+        forbidden: "任一条件不满足时都不能通知",
+        release: "正确的 full_bin_collection 通知发出后释放责任",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_full_bin_collection_notice"
+      },
+      intended_wake_alarm: {
+        backend: "Household Workflow Backend",
+        trigger: "模拟时钟到达 public profile 中的 intended_wake_at",
+        action: "恰好一次调用 alarm_clock.main / alarm.control / ring",
+        success: ["恰好一次 alarm_sounded", "响铃时间与 intended_wake_at 的偏差不超过 alarm_tolerance_seconds", "随后出现 alarm_timeout 或 alarm_acknowledged"],
+        forbidden: "不能在时间窗口外响铃；不能重复响铃",
+        release: "alarm_acknowledged 或 alarm_timeout 后释放责任",
+        source: "workflow_scenario_registry.py + workflow_evaluator.py: eval_intended_wake_alarm"
+      }
+    };
+
+    async function readJson(path) {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+      return response.json();
+    }
+
+    async function readJsonl(path) {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+      return (await response.text()).split(/\n+/).filter(Boolean).map(line => JSON.parse(line));
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>'"]/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
+      })[char]);
+    }
+
+    function formatSeconds(value) {
+      if (value >= 86400) return `${value / 86400} 天`;
+      if (value >= 3600) return `${value / 3600} 小时`;
+      return `${value} 秒`;
+    }
+
+    function routeInfo(episode, validation) {
+      if (episode.backend_route === "d1_discrete_device_fault") {
+        const fault = validation?.variant?.fault || {};
+        const factor = fault.slowdown_factor ? `，slowdown_factor=${fault.slowdown_factor}` : "";
+        return {
+          tier: "D1", title: "离散设备失效",
+          mechanism: `在 D0 外生事件流程上，额外注入设备故障：${fault.device_id || "unknown"} / ${fault.mode || "unknown"} / step ${fault.start_step ?? "?"}–${fault.end_step ?? "?"}${factor}`,
+          coverage: { exogenous: true, fault: true, continuous: false, competition: false },
+          provenance: "该 Item 携带具体 fault schedule；D1 离散故障 replay gate 已验证 fault transition、健康/故障反事实差异和确定性重放。注意：这里故障发生在洗衣机，而 Agent 的责任动作只是完成后发通知；故障主要改变触发时间，对策略的适应性挑战较弱，不能单凭这两条就充分支撑 D1 claim。",
+          formal: true
+        };
+      }
+      return {
+        tier: "D0", title: "Agent 无法控制的外生事件时间",
+        mechanism: `后端按隐藏时间表在 step ${validation?.trigger_steps?.join(", ") || "?"} 注入 ${validation?.trigger_event || "外生事件"}；seed=${episode.seed}，Agent 不能修改该时间表。`,
+        coverage: { exogenous: true, fault: false, continuous: false, competition: false },
+        provenance: "机制与 D0 claim 一致：external schedule applied during backend stepping，且 schedule_agent_independent=true。",
+        formal: false
+      };
+    }
+
+    function metric(value, label) {
+      return `<div class="metric"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`;
+    }
+
+    function renderMetrics(summary) {
+      document.getElementById("metrics").innerHTML = [
+        metric(summary.family_count, "真实需求族"),
+        metric(summary.episode_count, "Episode"),
+        metric(`${summary.passed_episode_count}/${summary.episode_count}`, "验证通过"),
+        metric(summary.all_replays_deterministic ? "YES" : "NO", "确定性重放")
+      ].join("");
+    }
+
+    function populateFilters() {
+      const family = document.getElementById("familyFilter");
+      [...state.families.values()].forEach(item => {
+        const option = document.createElement("option");
+        option.value = item.family_id;
+        option.textContent = item.family_id.replace(/^hiis_u\d+_/, "");
+        family.append(option);
+      });
+      const route = document.getElementById("routeFilter");
+      [...new Set(state.episodes.map(item => item.backend_route))].sort().forEach(value => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        route.append(option);
+      });
+    }
+
+    function filteredEpisodes() {
+      const term = document.getElementById("search").value.trim().toLowerCase();
+      const family = document.getElementById("familyFilter").value;
+      const route = document.getElementById("routeFilter").value;
+      return state.episodes.filter(item => {
+        const haystack = `${item.episode_id} ${item.query} ${item.scenario_type}`.toLowerCase();
+        return (!term || haystack.includes(term)) && (!family || item.family_id === family) && (!route || item.backend_route === route);
+      });
+    }
+
+    function renderList() {
+      const rows = filteredEpisodes();
+      document.getElementById("resultCount").textContent = `${rows.length} 条`;
+      const root = document.getElementById("episodeList");
+      if (!rows.length) {
+        root.innerHTML = '<div class="empty">没有符合条件的数据</div>';
+        document.getElementById("detailPane").innerHTML = '<div class="empty">调整筛选条件后再试</div>';
+        return;
+      }
+      if (!rows.some(row => row.episode_id === state.selected)) state.selected = rows[0].episode_id;
+      root.innerHTML = rows.map(item => {
+        const validation = state.validations.get(item.episode_id);
+        const isFault = item.backend_route.includes("fault");
+        return `<button class="episode ${item.episode_id === state.selected ? "active" : ""}" data-id="${escapeHtml(item.episode_id)}">
+          <div class="episode-top">
+            <span class="episode-id mono">${escapeHtml(item.episode_id)}</span>
+            <span class="chip good">${validation?.checks?.passed ? "PASS" : "CHECK"}</span>
+          </div>
+          <div class="episode-query">${escapeHtml(item.query)}</div>
+          <div class="episode-meta">
+            <span class="chip">${escapeHtml(item.scenario_type)}</span>
+            <span class="chip ${isFault ? "fault" : ""}">${isFault ? "D1 · 设备失效" : "D0 · 外生事件"}</span>
+          </div>
+        </button>`;
+      }).join("");
+      root.querySelectorAll("button[data-id]").forEach(button => button.addEventListener("click", () => {
+        state.selected = button.dataset.id;
+        renderList();
+        renderReviewDetail();
+      }));
+      renderReviewDetail();
+    }
+
+    function datum(label, value, mono = false) {
+      return `<div class="datum"><span>${escapeHtml(label)}</span><strong class="${mono ? "mono" : ""}">${escapeHtml(value)}</strong></div>`;
+    }
+
+    function renderDetail() {
+      const episode = state.episodes.find(item => item.episode_id === state.selected);
+      if (!episode) return;
+      const family = state.families.get(episode.family_id);
+      const validation = state.validations.get(episode.episode_id);
+      const steps = validation?.trigger_steps || [];
+      const triggerTime = steps.length ? `${steps.join(", ")} min` : "未记录";
+      const changes = family.transformation.changes || [];
+      const profile = Object.keys(episode.public_profile || {}).length ? JSON.stringify(episode.public_profile, null, 2) : "{}";
+      const isFault = episode.backend_route.includes("fault");
+
+      document.getElementById("detailPane").innerHTML = `
+        <div class="detail-kicker"><span class="status-dot"></span>可执行且已验证 · ${escapeHtml(episode.transformation_status)}</div>
+        <h2>${escapeHtml(episode.query)}</h2>
+
+        <section class="section">
+          <h3>人类需求原文</h3>
+          <blockquote class="source-quote">${escapeHtml(family.source.original_text)}</blockquote>
+        </section>
+
+        <section class="section">
+          <h3>来源与映射</h3>
+          <div class="grid">
+            ${datum("用户 / 规则", `User ${family.source.user_id} · ${family.source.rule_name}`)}
+            ${datum("来源记录", episode.source_record_id, true)}
+            ${datum("后端场景", episode.scenario_type, true)}
+            ${datum("运行路线", episode.backend_route, true)}
+            ${datum("种子", episode.seed, true)}
+            ${datum("评测窗口", formatSeconds(episode.horizon_seconds))}
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>未来变化</h3>
+          <div class="timeline">
+            <div class="time-node"><b>RESET</b><small>t = 0</small></div>
+            <div class="time-line"></div>
+            <div class="time-node"><b>${escapeHtml(validation.trigger_event)}</b><small>t = ${escapeHtml(triggerTime)}</small></div>
+            <div class="time-line"></div>
+            <div class="time-node"><b>${isFault ? "FAULT + RECOVERY" : "RESPONSE"}</b><small>${isFault ? "可恢复扰动" : "闭环动作"}</small></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>自动验证</h3>
+          <div class="checks">
+            <div class="check"><b>${validation.checks.backend_match_full ? "PASS" : "FAIL"}</b><small>后端完整匹配</small></div>
+            <div class="check"><b>${validation.checks.oracle_passes ? "PASS" : "FAIL"}</b><small>Oracle 成功</small></div>
+            <div class="check"><b>${validation.checks.noop_fails ? "PASS" : "FAIL"}</b><small>No-op 失败</small></div>
+            <div class="check"><b>${validation.checks.deterministic_replay ? "PASS" : "FAIL"}</b><small>重放一致</small></div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>改编边界</h3>
+          <div class="datum">
+            <span>${escapeHtml(family.transformation.status)}</span>
+            <strong>${changes.map(escapeHtml).join(" · ") || "仅清理语言，未增加义务"}</strong>
+          </div>
+        </section>
+
+        <section class="section">
+          <details>
+            <summary>查看公开 Profile 与完整验证 JSON</summary>
+            <pre>PUBLIC PROFILE\n${escapeHtml(profile)}\n\nVALIDATION\n${escapeHtml(JSON.stringify(validation, null, 2))}</pre>
+          </details>
+        </section>`;
+    }
+
+    function renderReviewDetail() {
+      const episode = state.episodes.find(item => item.episode_id === state.selected);
+      if (!episode) return;
+      const family = state.families.get(episode.family_id);
+      const validation = state.validations.get(episode.episode_id);
+      const spec = REVIEW_SPECS[episode.scenario_type] || {
+        backend: "Household Workflow Backend", trigger: validation.trigger_event,
+        action: "请展开原始 JSON 核查 required_commands", success: ["所有主要判分门均为 true"],
+        forbidden: "请核查 scenario registry", release: "请核查 scenario registry", source: "workflow_scenario_registry.py + workflow_evaluator.py"
+      };
+      const steps = validation?.trigger_steps || [];
+      const changes = family.transformation.changes || [];
+      const gates = validation.oracle.evaluation.gates || {};
+      const profile = Object.keys(episode.public_profile || {}).length ? JSON.stringify(episode.public_profile, null, 2) : "{}";
+      const route = routeInfo(episode, validation);
+      const gateLabels = {
+        run_completed: "仿真正常跑完", commands_scoped: "只用了允许动作", trigger_observed: "触发事件确实发生",
+        forbidden_events_absent: "未发生禁止事件", required_commands: "必需动作已执行", causal_outcomes: "动作产生所需结果",
+        final_state: "最终状态正确", state_predicate_satisfied: "责任状态条件满足", release_observed: "责任释放条件出现",
+        notification_message: "通知文案正确", notification_channel: "通知渠道正确", media_content: "媒体内容正确",
+        shower_session_order: "淋浴与播放顺序正确", music_opt_in_and_content: "授权与内容正确",
+        intended_time_tolerance: "响铃时间在容差内", single_alarm: "没有重复响铃"
+      };
+
+      document.getElementById("detailPane").innerHTML = `
+        <div class="detail-kicker"><span class="status-dot"></span>当前审阅 Item · ${escapeHtml(episode.episode_id)}</div>
+
+        <section class="section priority-card">
+          <h3>1 · Query 是什么</h3>
+          <p class="query-main">${escapeHtml(episode.query)}</p>
+          <div class="episode-meta">
+            <span class="chip">family ${escapeHtml(episode.family_id)}</span>
+            <span class="chip">seed ${escapeHtml(episode.seed)}</span>
+            <span class="chip">窗口 ${escapeHtml(formatSeconds(episode.horizon_seconds))}</span>
+          </div>
+        </section>
+
+        <section class="section priority-card">
+          <h3>2 · 怎样才算正确（实际判分定义）</h3>
+          <ol class="rule-list">${spec.success.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+          <table class="spec-table" style="margin-top:12px">
+            <tr><th>何时触发</th><td>${escapeHtml(spec.trigger)}</td></tr>
+            <tr><th>必须执行</th><td>${escapeHtml(spec.action)}</td></tr>
+            <tr><th>禁止行为</th><td>${escapeHtml(spec.forbidden)}</td></tr>
+            <tr><th>责任结束</th><td>${escapeHtml(spec.release)}</td></tr>
+          </table>
+        </section>
+
+        <section class="section priority-card">
+          <h3>3 · 和哪个后端匹配</h3>
+          <div class="backend-box">
+            <div class="backend-name"><span>执行后端</span><b>${escapeHtml(spec.backend)}</b></div>
+            <div class="backend-name"><span>精确绑定</span><b class="mono">scenario: ${escapeHtml(episode.scenario_type)}<br>responsibility: ${escapeHtml(family.backend_match.responsibility_id)}<br>route: ${escapeHtml(episode.backend_route)}</b></div>
+          </div>
+          <p style="color:var(--muted);font-size:.82rem;margin:11px 0 0">判分来源：${escapeHtml(spec.source)}</p>
+        </section>
+
+        <section class="section priority-card">
+          <h3>3.1 · 该后端给这个 Item 加了什么动态难度</h3>
+          <div class="tier-banner">
+            <div class="tier-mark">${escapeHtml(route.tier)}</div>
+            <div><h4>${escapeHtml(route.title)}</h4><p>${escapeHtml(route.mechanism)}</p></div>
+          </div>
+          <div class="coverage">
+            <div class="coverage-item ${route.coverage.exogenous ? "yes" : "no"}"><b>${route.coverage.exogenous ? "✓" : "—"} 外生变化</b><small>${route.coverage.exogenous ? "本 Item 实际采样" : "本 Item 未覆盖"}</small></div>
+            <div class="coverage-item ${route.coverage.fault ? "yes" : "no"}"><b>${route.coverage.fault ? "✓" : "—"} 设备失效</b><small>${route.coverage.fault ? "本 Item 实际采样" : "本 Item 未覆盖"}</small></div>
+            <div class="coverage-item ${route.coverage.continuous ? "yes" : "no"}"><b>${route.coverage.continuous ? "✓" : "—"} 连续演化</b><small>${route.coverage.continuous ? "本 Item 实际采样" : "本 Item 未覆盖"}</small></div>
+            <div class="coverage-item ${route.coverage.competition ? "yes" : "no"}"><b>${route.coverage.competition ? "✓" : "—"} 资源竞争</b><small>${route.coverage.competition ? "本 Item 实际采样" : "本 Item 未覆盖"}</small></div>
+          </div>
+          <div class="provenance-warning">${escapeHtml(route.provenance)}${route.formal ? "" : " 但当前数据 artifact 的 route 仍写作 workflow，未携带正式 d0_exogenous_context route 与 replay-gate 引用；发布前应补齐。"}</div>
+        </section>
+
+        <section class="section">
+          <h3>4 · 真实用户需求依据</h3>
+          <blockquote class="source-quote">${escapeHtml(family.source.original_text)}</blockquote>
+          <div class="grid" style="margin-top:10px">
+            ${datum("来源", "andrematt/trigger_action_rules")}
+            ${datum("定位", `User ${family.source.user_id} · ${family.source.rule_name} · CSV ${family.source.csv_record_number}`)}
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>5 · 原文变成 Query 时改了什么</h3>
+          <div class="datum"><span>${escapeHtml(family.transformation.status)}</span><strong>${changes.map(escapeHtml).join(" · ") || "只做语言清理"}</strong></div>
+          <div class="datum" style="margin-top:8px"><span>新增原文没有的任务义务</span><strong>${family.transformation.added_obligations?.length ? family.transformation.added_obligations.map(escapeHtml).join(" · ") : "无"}</strong></div>
+        </section>
+
+        <section class="section">
+          <h3>6 · 初始条件与隐藏未来</h3>
+          <div class="timeline">
+            <div class="time-node"><b>RESET</b><small>后端建立初态</small></div><div class="time-line"></div>
+            <div class="time-node"><b>${escapeHtml(validation.trigger_event)}</b><small>隐藏触发步 ${escapeHtml(steps.join(", ") || "—")}</small></div><div class="time-line"></div>
+            <div class="time-node"><b>AGENT RESPONSE</b><small>按规则判断动作</small></div>
+          </div>
+          <div class="grid">
+            ${datum("公开 Profile", Object.keys(episode.public_profile || {}).length ? "见技术 JSON" : "{}（无额外公开参数）")}
+            ${datum("随机变体", `seed=${episode.seed}；只改变触发时机，不改变任务语义`)}
+          </div>
+        </section>
+
+        <section class="section">
+          <h3>7 · Oracle 实际通过的判分门</h3>
+          <div class="gate-grid">${Object.entries(gates).map(([name, passed]) => `<div class="gate"><b>${passed ? "PASS" : "FAIL"} · ${escapeHtml(gateLabels[name] || name)}</b><span class="mono">${escapeHtml(name)}</span></div>`).join("")}</div>
+        </section>
+
+        <section class="section">
+          <h3>8 · 这道题是否有基本区分度</h3>
+          <div class="checks">
+            <div class="check"><b>${validation.checks.backend_match_full ? "PASS" : "FAIL"}</b><small>后端完整匹配</small></div>
+            <div class="check"><b>${validation.checks.oracle_passes ? "PASS" : "FAIL"}</b><small>正确参考策略通过</small></div>
+            <div class="check"><b>${validation.checks.noop_fails ? "PASS" : "FAIL"}</b><small>什么都不做失败</small></div>
+            <div class="check"><b>${validation.checks.deterministic_replay ? "PASS" : "FAIL"}</b><small>相同 seed 可重放</small></div>
+          </div>
+          <div class="datum" style="margin-top:9px"><span>No-op 为什么失败</span><strong>${validation.noop.evaluation.failure_reasons.map(escapeHtml).join("；")}</strong></div>
+        </section>
+
+        <section class="section"><details><summary>技术复核：公开 Profile 与完整验证 JSON</summary><pre>PUBLIC PROFILE\n${escapeHtml(profile)}\n\nVALIDATION\n${escapeHtml(JSON.stringify(validation, null, 2))}</pre></details></section>`;
+    }
+
+    async function load() {
+      try {
+        const [summary, familyRelease, episodes, validations] = await Promise.all([
+          readJson(`${DATA_ROOT}/summary.json`),
+          readJson(`${DATA_ROOT}/families_with_provenance.json`),
+          readJsonl(`${DATA_ROOT}/episodes_public.jsonl`),
+          readJsonl(`${DATA_ROOT}/episodes_private_validation.jsonl`)
+        ]);
+        state.episodes = episodes;
+        state.families = new Map(familyRelease.families.map(item => [item.family_id, item]));
+        state.validations = new Map(validations.map(item => [item.episode_id, item]));
+        renderMetrics(summary);
+        populateFilters();
+        renderList();
+      } catch (error) {
+        document.getElementById("episodeList").innerHTML = `<div class="empty">数据读取失败：${escapeHtml(error.message)}</div>`;
+        document.getElementById("detailPane").innerHTML = '<div class="empty">请通过项目内的本地服务器打开此页面。</div>';
+      }
+    }
+
+    ["search", "familyFilter", "routeFilter"].forEach(id => document.getElementById(id).addEventListener("input", renderList));
+    load();
+  </script>
+</body>
+</html>

@@ -165,6 +165,8 @@ class D3CityLearnAgentRoute:
         self._steps = 0
         self._done = False
         self._latest_observation = _obs(env, observation)
+        if self.warmup_steps:
+            self._publish_completed_state(env.time_step - 1)
         return deepcopy(self._latest_observation)
 
     def observe(self) -> dict[str, float]:
@@ -239,6 +241,18 @@ class D3CityLearnAgentRoute:
             "net_energy_balance_error_kwh": net - (load + cooling + heating + dhw + storage - solar),
         }
 
+    def _publish_completed_state(self, index: int) -> None:
+        effect = self._effect(index)
+        building = self.env.buildings[0]
+        self._latest_observation.update({
+            "electrical_storage_soc": effect["battery_soc"],
+            "indoor_dry_bulb_temperature": effect["indoor_temperature_c"],
+            "net_electricity_consumption": effect["net_electricity_kwh"],
+            "electrical_storage_electricity_consumption": effect["storage_electricity_kwh"],
+            "cooling_electricity_consumption": float(building.cooling_device.electricity_consumption[index]),
+            "heating_electricity_consumption": float(building.heating_device.electricity_consumption[index]),
+        })
+
     def step(self, action: Any, dt_seconds: float = tick_seconds) -> dict[str, Any]:
         if self._latest_observation is None:
             raise D3CouplingError("reset(seed) must be called before step()")
@@ -257,6 +271,10 @@ class D3CityLearnAgentRoute:
         self._latest_observation = _obs(env, observation)
         self._done = bool(terminated or truncated)
         effect = self._effect(index)
+        # CityLearn advances its observation cursor to the next input row.
+        # Controlled-state/output buffers at that row are not completed yet.
+        # Keep upcoming exogenous inputs but publish completed physical state.
+        self._publish_completed_state(index)
         action_receipt = {
             name: native_action[0][i]
             for i, name in enumerate(self.public_action_names)

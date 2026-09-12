@@ -30,7 +30,7 @@ from typing import Any, Mapping
 
 ROOT = Path(__file__).resolve().parent
 MODEL_ROOT = ROOT / "shared_assets" / "modelica_d2_buildings_aixlib_v1"
-MODEL_SOURCE = MODEL_ROOT / "D2BuildingsAixLib.mo"
+MODEL_SOURCE = ROOT / "environment_repairs_v1/models/D2BuildingsAixLib.mo"
 MODEL_NAME = "D2BuildingsAixLib.TwoRoomThermoHygrometric"
 RUN_ROOT = ROOT / "generated" / "d2_modelica_buildings_aixlib_v1" / "runtime_runs"
 
@@ -58,7 +58,7 @@ ACTION = {
 REQUIRED_LIBRARIES = ("Buildings", "AixLib")
 MSL_REPO = MODEL_ROOT / "Modelica"
 MSL_ROOT = MSL_REPO / "Modelica"
-FMU_ROOT = ROOT / "generated" / "d2_modelica_buildings_aixlib_v1" / "fmu" / "D2BuildingsAixLib.fmutmp"
+FMU_ROOT = ROOT / "environment_repairs_v1/build/d2/active"
 FMU_MODEL_IDENTIFIER = "D2BuildingsAixLib"
 FMU_GUID = "{141c19d1-c08f-4a77-a760-7f2d0a2276c7}"
 FMU_VARIABLES = {
@@ -283,6 +283,9 @@ class _FMI2Session:
             )
         self.root = root
         self.binary = binary
+        description_root = ET.parse(description).getroot()
+        self.guid = description_root.attrib['guid']
+        self.variable_refs = {v.attrib['name']:int(v.attrib['valueReference']) for v in description_root.findall('./ModelVariables/ScalarVariable')}
         self.description = description
         self._lib = ctypes.CDLL(str(binary))
         libc = ctypes.CDLL(None)
@@ -329,7 +332,7 @@ class _FMI2Session:
         # FMI resourceLocation is a directory URI.  The trailing slash is
         # required by the generated OpenModelica FMU when resolving resources.
         resource = ((self.root / "resources").resolve().as_uri() + "/").encode("utf-8")
-        self._component = self._instantiate(b"d2_modelica_agent", 1, FMU_GUID.encode("ascii"), resource, ctypes.byref(self._callbacks), 0, 0)
+        self._component = self._instantiate(b"d2_modelica_agent", 1, self.guid.encode("ascii"), resource, ctypes.byref(self._callbacks), 0, 0)
         if not self._component:
             raise ModelicaBackendError("fmi2Instantiate returned NULL")
         try:
@@ -345,7 +348,7 @@ class _FMI2Session:
     def set_action(self, action: float) -> None:
         if self._component is None:
             raise ModelicaBackendError("FMI session is not initialized")
-        vr = (self._ValueReference * 1)(FMU_VARIABLES["radiatorValve"])
+        vr = (self._ValueReference * 1)(self.variable_refs["radiatorValve"])
         values = (self._Real * 1)(float(action))
         self._check(self._set_real(self._component, vr, 1, values), "fmi2SetReal(radiatorValve)")
 
@@ -359,7 +362,7 @@ class _FMI2Session:
             ("room_b_relative_humidity_pct", "roomBRelativeHumidity"),
             ("room_b_temperature_c", "roomBTemperature"),
         )
-        references = (self._ValueReference * len(roles))(*(FMU_VARIABLES[name] for _, name in roles))
+        references = (self._ValueReference * len(roles))(*(self.variable_refs[name] for _, name in roles))
         values = (self._Real * len(roles))()
         self._check(self._get_real(self._component, references, len(roles), values), "fmi2GetReal")
         observation = {role: float(value) for (role, _), value in zip(roles, values)}
@@ -371,9 +374,13 @@ class _FMI2Session:
         if self._component is None:
             raise ModelicaBackendError("FMI session is not initialized")
         self.set_action(action)
-        current = self.time
-        self._check(self._do_step(self._component, current, dt_seconds, 1), "fmi2DoStep")
-        self.time = current + dt_seconds
+        # Resolve input changes and physical dynamics with native one-second
+        # FMI communication substeps; the agent still observes once per tick.
+        end = self.time + dt_seconds
+        while self.time < end - 1e-9:
+            substep = min(1.0, end-self.time)
+            self._check(self._do_step(self._component, self.time, substep, 1), "fmi2DoStep")
+            self.time += substep
 
     def close(self) -> None:
         if self._component is not None:

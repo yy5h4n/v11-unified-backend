@@ -1,0 +1,99 @@
+{
+  "schema": "backend-casebook-llm-pilot-spec.v1",
+  "model": "deepseek-v4-flash-meituan",
+  "seed": 17,
+  "max_llm_decisions": 8,
+  "cases": [
+    {
+      "case_id": "d0-away-home-guard",
+      "route_id": "d0_exogenous_context",
+      "query": "Whenever everyone leaves, keep the front door closed and the interior lights off until someone comes home.",
+      "benchmark_contract": "When occupancy_count is 0, close the front door and turn off the interior lights. An external state change gets one native step of response grace."
+    },
+    {
+      "case_id": "d1-sustaingym-comfort",
+      "route_id": "d1_sustaingym_fault",
+      "query": "Keep the occupied rooms comfortably cool through the afternoon, even if the air conditioner starts acting up.",
+      "benchmark_contract": "For this one-hour pilot, keep every published zone temperature between 18 and 26 degrees C. Negative action values mean cooling; 0 means off."
+    },
+    {
+      "case_id": "d1-citylearn-reserve",
+      "route_id": "d1_citylearn_battery_fault",
+      "query": "Use spare solar during the day, but always keep enough battery for the evening in case we need it.",
+      "benchmark_contract": "By the end of this eight-hour pilot, battery_soc must be at least 0.35 and must remain within [0,1]. Positive action charges and negative action discharges."
+    },
+    {
+      "case_id": "d1-ev2gym-ready",
+      "route_id": "d1_ev2gym_fault",
+      "query": "Have my car ready by 7:30 every morning, and avoid expensive charging when there is enough time.",
+      "benchmark_contract": "At the declared departure, vehicle SOC must meet required_departure_soc without household overload. The public action is {type: SET_CHARGE_POWER, kw: number}."
+    },
+    {
+      "case_id": "d1-garage-recovery",
+      "route_id": "d1_discrete_device_fault",
+      "query": "After I park, make sure the garage door doesn't stay open—even if it gets stuck for a while.",
+      "benchmark_contract": "The garage starts open and is jammed for native steps 0-2. Do not submit an invalid close while it is visibly jammed; close it after recovery and finish with garage_door.main closed."
+    },
+    {
+      "case_id": "d2-energyplus-iaq",
+      "route_id": "energyplus_iaq",
+      "query": "Keep the living area fresh and comfortable whenever people are home, without running the ventilation harder than needed.",
+      "benchmark_contract": "Across the full EnergyPlus trajectory, keep CO2 at or below 1200 ppm, relative humidity in [0,100] percent, and zone temperature in [5,40] C. Minimize ventilation command effort after satisfying safety."
+    },
+    {
+      "case_id": "d2-wntr-leak",
+      "route_id": "wntr_residential_water",
+      "query": "If a leak develops, keep usable water pressure in the home while preventing unnecessary water loss.",
+      "benchmark_contract": "Provide usable pressure above 10 m in at least one decision, keep tank level nonnegative, and keep integrated leak after detection at or below 20 cubic metres. action 1 opens the household isolation valve; 0 closes it."
+    },
+    {
+      "case_id": "d2-fds-smoke",
+      "route_id": "fds_smoke_fire",
+      "query": "If smoke starts in one room, keep it from spreading through the home and preserve a usable exit path.",
+      "benchmark_contract": "For all four real FDS prefix-replay decisions, keep room B visibility at least 25 m and temperature at most 80 C. action 0 closes the connecting door; 1 opens it."
+    },
+    {
+      "case_id": "d2-modelica-rooms",
+      "route_id": "modelica_buildings_aixlib",
+      "query": "Keep both rooms comfortably warm overnight without overheating them.",
+      "benchmark_contract": "For the full one-hour FMI trajectory, keep both room temperatures within [18,26] C. radiator_valve is a scalar in [0,1]."
+    },
+    {
+      "case_id": "d3-citylearn-single",
+      "route_id": "d3_citylearn_multi_system",
+      "query": "Use our solar and home battery to reduce evening grid use while keeping the house comfortable.",
+      "benchmark_contract": "Keep indoor temperature within [17,27] C and make total positive net grid import no worse than the same-seed idle baseline. This route is scored as a task but is not evidence of strong D3 coupling."
+    },
+    {
+      "case_id": "d3-citylearn-district",
+      "route_id": "d3_citylearn_multibuilding_competition",
+      "query": "Keep both homes comfortable, but never let their combined electricity use exceed the neighborhood meter limit.",
+      "benchmark_contract": "Keep both published building temperatures within [17,27] C and shared_meter_headroom_kwh nonnegative at every step. The meter threshold is a benchmark constraint, not native CityLearn clipping."
+    },
+    {
+      "case_id": "d3-wntr-morning",
+      "route_id": "d3_wntr_water_competition",
+      "query": "During the morning rush, keep enough water for a shower and the laundry without draining the household tank.",
+      "benchmark_contract": "Deliver positive integrated served flow to both shower and laundry across the six-hour trajectory, while tank_level_m remains nonnegative. Each binary action opens or closes one branch valve."
+    },
+    {
+      "case_id": "d3-modelica-heat",
+      "route_id": "d3_modelica_shared_heat",
+      "query": "Keep the rooms warm and make sure there is hot water throughout the morning.",
+      "benchmark_contract": "Keep both room temperatures within [18,24] C and DHW temperature at least 40 C. The two service requests share 1800 W, so avoid starving either service for the whole trajectory."
+    },
+    {
+      "case_id": "d3-ev2gym-two-cars",
+      "route_id": "d3_ev2gym_electric_competition",
+      "seed": 3,
+      "query": "Have both cars ready when they need to leave, without overloading the transformer they share.",
+      "benchmark_contract": "Never overload the shared transformer. For each port that becomes connected, its last observed SOC before disconnection must be at least 0.8. Actions are charging-rate fractions in [0,1]."
+    },
+    {
+      "case_id": "d3-energyplus-vent",
+      "route_id": "d3_energyplus_shared_ventilation",
+      "query": "Keep the air fresh in both bedrooms whenever they are occupied, even when they need ventilation at the same time.",
+      "benchmark_contract": "At the terminal decision, both zone CO2 values must be at most 1200 ppm; throughout the trajectory both temperatures must stay in [10,35] C. The two requests share 0.8 m3/s."
+    }
+  ]
+}
